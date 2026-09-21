@@ -1,0 +1,78 @@
+/* Furniwell SEO Dashboard - Light BI Style */
+:root{
+ --bg:#f5f7fb;
+ --card:#ffffff;
+ --text:#111827;
+ --muted:#6b7280;
+ --border:#e5e7eb;
+ --primary:#2563eb;
+ --primary-bg:#eff6ff;
+ --success:#16a34a;
+ --success-bg:#f0fdf4;
+ --warning:#d97706;
+ --warning-bg:#fffbeb;
+}
+*{box-sizing:border-box}
+body{
+ font-family:Arial,"Microsoft YaHei",sans-serif;
+ background:var(--bg)!important;
+ color:var(--text)!important;
+ max-width:1280px;
+ margin:0 auto;
+ padding:40px 32px!important;
+ line-height:1.8;
+}
+h1{font-size:36px;margin-bottom:12px;color:#111827}
+h2{font-size:24px;border-left:4px solid var(--primary);padding-left:14px;margin-top:0}
+h3{font-size:18px;color:#1f2937}
+.box{
+ background:var(--card)!important;
+ border:1px solid var(--border);
+ border-radius:16px!important;
+ padding:28px!important;
+ margin:24px 0!important;
+ box-shadow:0 4px 14px rgba(15,23,42,.04);
+}
+.important{
+ border-left:5px solid var(--primary)!important;
+ background:var(--primary-bg)!important;
+}
+.green{
+ border-left:5px solid var(--success)!important;
+ background:var(--success-bg)!important;
+}
+.warn{
+ border-left:5px solid var(--warning)!important;
+ background:var(--warning-bg)!important;
+}
+.tag{
+ display:inline-block;
+ background:#dbeafe;
+ color:#1d4ed8;
+ border-radius:999px;
+ padding:4px 12px;
+ margin:3px;
+ font-size:14px;
+}
+pre{
+ background:#f8fafc;
+ border:1px solid var(--border);
+ border-radius:12px;
+ padding:20px;
+ overflow:auto;
+}
+table{
+ width:100%;
+ border-collapse:collapse;
+ background:#fff;
+}
+th{
+ background:#f3f6fb;
+ text-align:left;
+ padding:14px;
+ border-bottom:1px solid var(--border);
+}
+td{
+ padding:14px;
+ border-bottom:1px solid var(--border);
+}
