@@ -1,0 +1,883 @@
+{
+  "schemaVersion": 1,
+  "privacy": "public",
+  "updatedAt": "2026-10-10",
+  "weeklyReports": [
+    {
+      "id": "published-2026-10-05",
+      "date": "2026-10-05",
+      "comparedDate": "2026-09-28",
+      "retrievedAt": null,
+      "label": "原发布快照 · 2026-10-05",
+      "classification": "public",
+      "source": {
+        "url": "https://github.com/inesfang/furniwell-seo-dashboard/blob/5bacf97ac74e6dbdeb1d59b40b2ea9b38ab00caa/ahrefs/weekly-report.html",
+        "commit": "5bacf97ac74e6dbdeb1d59b40b2ea9b38ab00caa",
+        "note": "本期来自公开仓库；上期已报告字段按本期减去原报告的绝对变化回推。未报告值保留 null。",
+        "coverage": "7 个网站，DPJ 为 /de/ 目录；非全部品类同行等价比较。"
+      },
+      "rows": [
+        {
+          "target": "furniwell.de",
+          "name": "Furniwell",
+          "traffic": 1401,
+          "previousTraffic": 1425,
+          "keywords": 236,
+          "previousKeywords": 261,
+          "top3": 65,
+          "previousTop3": 65,
+          "top10": 193,
+          "previousTop10": null,
+          "value": 1446.4,
+          "previousValue": 1460.04,
+          "dr": 19,
+          "rd": 839,
+          "paidTraffic": 38,
+          "paidKeywords": 10,
+          "country": "de",
+          "mode": "subdomains",
+          "trafficMode": "adaptive",
+          "volumeMode": "monthly"
+        },
+        {
+          "target": "songmics.de",
+          "name": "SONGMICS",
+          "traffic": 16443,
+          "previousTraffic": 16648,
+          "keywords": 446,
+          "previousKeywords": 497,
+          "top3": 191,
+          "previousTop3": 203,
+          "top10": 381,
+          "previousTop10": null,
+          "value": 4193.27,
+          "previousValue": 4174.03,
+          "dr": 38,
+          "rd": 1090,
+          "paidTraffic": 101,
+          "paidKeywords": 10,
+          "country": "de",
+          "mode": "subdomains",
+          "trafficMode": "adaptive",
+          "volumeMode": "monthly"
+        },
+        {
+          "target": "flexispot.de",
+          "name": "FlexiSpot",
+          "traffic": 68960,
+          "previousTraffic": 63479,
+          "keywords": 1403,
+          "previousKeywords": 1476,
+          "top3": 459,
+          "previousTop3": 490,
+          "top10": 1209,
+          "previousTop10": null,
+          "value": 50253.05,
+          "previousValue": 47383.06,
+          "dr": 48,
+          "rd": 1694,
+          "paidTraffic": 25504,
+          "paidKeywords": 411,
+          "country": "de",
+          "mode": "subdomains",
+          "trafficMode": "adaptive",
+          "volumeMode": "monthly"
+        },
+        {
+          "target": "desktronic.de",
+          "name": "Desktronic",
+          "traffic": 58907,
+          "previousTraffic": 79798,
+          "keywords": 434,
+          "previousKeywords": 464,
+          "top3": 215,
+          "previousTop3": 227,
+          "top10": 383,
+          "previousTop10": null,
+          "value": 79565.44,
+          "previousValue": 123863.26,
+          "dr": 43,
+          "rd": 810,
+          "paidTraffic": 21229,
+          "paidKeywords": 179,
+          "country": "de",
+          "mode": "subdomains",
+          "trafficMode": "adaptive",
+          "volumeMode": "monthly"
+        },
+        {
+          "target": "dpj-workspace.com/de/",
+          "name": "DPJ /de/",
+          "traffic": 861,
+          "previousTraffic": 1184,
+          "keywords": 262,
+          "previousKeywords": 290,
+          "top3": 46,
+          "previousTop3": 58,
+          "top10": 222,
+          "previousTop10": null,
+          "value": 705.62,
+          "previousValue": 847.58,
+          "dr": 27,
+          "rd": 67,
+          "paidTraffic": 7950,
+          "paidKeywords": 124,
+          "country": "de",
+          "mode": "prefix",
+          "trafficMode": "adaptive",
+          "volumeMode": "monthly"
+        },
+        {
+          "target": "yaasa.com",
+          "name": "Yaasa",
+          "traffic": 2693,
+          "previousTraffic": 2690,
+          "keywords": 383,
+          "previousKeywords": 403,
+          "top3": 161,
+          "previousTop3": 165,
+          "top10": 345,
+          "previousTop10": null,
+          "value": 2494.35,
+          "previousValue": 2298.51,
+          "dr": 51,
+          "rd": 1503,
+          "paidTraffic": 6,
+          "paidKeywords": 6,
+          "country": "de",
+          "mode": "subdomains",
+          "trafficMode": "adaptive",
+          "volumeMode": "monthly"
+        },
+        {
+          "target": "ergotopia.de",
+          "name": "Ergotopia",
+          "traffic": 35555,
+          "previousTraffic": 39655,
+          "keywords": 3763,
+          "previousKeywords": 4178,
+          "top3": 1308,
+          "previousTop3": 1388,
+          "top10": 3397,
+          "previousTop10": null,
+          "value": 23695.26,
+          "previousValue": 23959.4,
+          "dr": 56,
+          "rd": 2256,
+          "paidTraffic": 2048,
+          "paidKeywords": 29,
+          "country": "de",
+          "mode": "subdomains",
+          "trafficMode": "adaptive",
+          "volumeMode": "monthly"
+        }
+      ],
+      "actions": [
+        {
+          "priority": "P0",
+          "title": "160×80 排名 URL",
+          "body": "原周报：#37，由泛 /Products/Büro 承接。核实尺寸页与精准内链。",
+          "task": "size-mapping"
+        },
+        {
+          "priority": "P0",
+          "title": "德国词由 /en/ 承接",
+          "body": "检查 elektrisch mit schublade 的 hreflang、canonical 和德语内链。",
+          "task": "technical"
+        },
+        {
+          "priority": "P0",
+          "title": "Gestell 主题",
+          "body": "原周报：Desktronic Gestell 词 #3。强化 Collection 与型号页双向内链。",
+          "task": "gestell"
+        },
+        {
+          "priority": "P1",
+          "title": "140×70 机会",
+          "body": "原周报：产品页 36 → 97，尺寸词 #3。核实目标页与内链。",
+          "task": "size-mapping"
+        }
+      ]
+    },
+    {
+      "id": "verified-2026-10-10",
+      "date": "2026-10-10",
+      "comparedDate": "2026-10-03",
+      "retrievedAt": "2026-10-10T03:33:18.334Z",
+      "label": "首次同步验证 · 2026-10-10",
+      "classification": "public",
+      "source": {
+        "url": "https://app.ahrefs.com/site-explorer",
+        "note": "已获准公开的域级 Ahrefs 周报。DE / adaptive / monthly；DPJ 为 /de/ prefix，其他为 subdomains。Traffic Value 为 USD；Top 10 未返回时保留 null；DR 为全域评分、RD 为实时引用域，DPJ RD 按 www /de/ prefix。不可用值为 null。估算流量不等于真实访问量。",
+        "coverage": "固定 7 个网站；仅域级汇总，页面和关键词原始明细保留私密。",
+        "requests": [
+          {
+            "tool": "site-explorer-metrics",
+            "params": {
+              "target": "furniwell.de",
+              "mode": "subdomains",
+              "country": "de",
+              "date": "2026-10-10",
+              "traffic_mode": "adaptive",
+              "volume_mode": "monthly",
+              "output": "json"
+            }
+          },
+          {
+            "tool": "site-explorer-metrics",
+            "params": {
+              "target": "furniwell.de",
+              "mode": "subdomains",
+              "country": "de",
+              "date": "2026-10-03",
+              "traffic_mode": "adaptive",
+              "volume_mode": "monthly",
+              "output": "json"
+            }
+          },
+          {
+            "tool": "site-explorer-metrics",
+            "params": {
+              "target": "songmics.de",
+              "mode": "subdomains",
+              "country": "de",
+              "date": "2026-10-10",
+              "traffic_mode": "adaptive",
+              "volume_mode": "monthly",
+              "output": "json"
+            }
+          },
+          {
+            "tool": "site-explorer-metrics",
+            "params": {
+              "target": "songmics.de",
+              "mode": "subdomains",
+              "country": "de",
+              "date": "2026-10-03",
+              "traffic_mode": "adaptive",
+              "volume_mode": "monthly",
+              "output": "json"
+            }
+          },
+          {
+            "tool": "site-explorer-metrics",
+            "params": {
+              "target": "flexispot.de",
+              "mode": "subdomains",
+              "country": "de",
+              "date": "2026-10-10",
+              "traffic_mode": "adaptive",
+              "volume_mode": "monthly",
+              "output": "json"
+            }
+          },
+          {
+            "tool": "site-explorer-metrics",
+            "params": {
+              "target": "flexispot.de",
+              "mode": "subdomains",
+              "country": "de",
+              "date": "2026-10-03",
+              "traffic_mode": "adaptive",
+              "volume_mode": "monthly",
+              "output": "json"
+            }
+          },
+          {
+            "tool": "site-explorer-metrics",
+            "params": {
+              "target": "desktronic.de",
+              "mode": "subdomains",
+              "country": "de",
+              "date": "2026-10-10",
+              "traffic_mode": "adaptive",
+              "volume_mode": "monthly",
+              "output": "json"
+            }
+          },
+          {
+            "tool": "site-explorer-metrics",
+            "params": {
+              "target": "desktronic.de",
+              "mode": "subdomains",
+              "country": "de",
+              "date": "2026-10-03",
+              "traffic_mode": "adaptive",
+              "volume_mode": "monthly",
+              "output": "json"
+            }
+          },
+          {
+            "tool": "site-explorer-metrics",
+            "params": {
+              "target": "https://www.dpj-workspace.com/de/",
+              "mode": "prefix",
+              "country": "de",
+              "date": "2026-10-10",
+              "traffic_mode": "adaptive",
+              "volume_mode": "monthly",
+              "output": "json"
+            }
+          },
+          {
+            "tool": "site-explorer-metrics",
+            "params": {
+              "target": "https://www.dpj-workspace.com/de/",
+              "mode": "prefix",
+              "country": "de",
+              "date": "2026-10-03",
+              "traffic_mode": "adaptive",
+              "volume_mode": "monthly",
+              "output": "json"
+            }
+          },
+          {
+            "tool": "site-explorer-metrics",
+            "params": {
+              "target": "yaasa.com",
+              "mode": "subdomains",
+              "country": "de",
+              "date": "2026-10-10",
+              "traffic_mode": "adaptive",
+              "volume_mode": "monthly",
+              "output": "json"
+            }
+          },
+          {
+            "tool": "site-explorer-metrics",
+            "params": {
+              "target": "yaasa.com",
+              "mode": "subdomains",
+              "country": "de",
+              "date": "2026-10-03",
+              "traffic_mode": "adaptive",
+              "volume_mode": "monthly",
+              "output": "json"
+            }
+          },
+          {
+            "tool": "site-explorer-metrics",
+            "params": {
+              "target": "ergotopia.de",
+              "mode": "subdomains",
+              "country": "de",
+              "date": "2026-10-10",
+              "traffic_mode": "adaptive",
+              "volume_mode": "monthly",
+              "output": "json"
+            }
+          },
+          {
+            "tool": "site-explorer-metrics",
+            "params": {
+              "target": "ergotopia.de",
+              "mode": "subdomains",
+              "country": "de",
+              "date": "2026-10-03",
+              "traffic_mode": "adaptive",
+              "volume_mode": "monthly",
+              "output": "json"
+            }
+          }
+        ]
+      },
+      "rows": [
+        {
+          "target": "furniwell.de",
+          "name": "Furniwell",
+          "country": "de",
+          "mode": "subdomains",
+          "trafficMode": "adaptive",
+          "volumeMode": "monthly",
+          "traffic": 864,
+          "previousTraffic": 1270,
+          "keywords": 214,
+          "previousKeywords": 240,
+          "top3": 57,
+          "previousTop3": 65,
+          "top10": null,
+          "previousTop10": null,
+          "value": 475.33,
+          "previousValue": 1222.88,
+          "dr": 18,
+          "rd": 837,
+          "paidTraffic": 23,
+          "paidKeywords": 12
+        },
+        {
+          "target": "songmics.de",
+          "name": "SONGMICS",
+          "country": "de",
+          "mode": "subdomains",
+          "trafficMode": "adaptive",
+          "volumeMode": "monthly",
+          "traffic": 18050,
+          "previousTraffic": 16667,
+          "keywords": 396,
+          "previousKeywords": 458,
+          "top3": 172,
+          "previousTop3": 193,
+          "top10": null,
+          "previousTop10": null,
+          "value": 4499.42,
+          "previousValue": 4268.94,
+          "dr": 38,
+          "rd": 1080,
+          "paidTraffic": 124,
+          "paidKeywords": 13
+        },
+        {
+          "target": "flexispot.de",
+          "name": "FlexiSpot",
+          "country": "de",
+          "mode": "subdomains",
+          "trafficMode": "adaptive",
+          "volumeMode": "monthly",
+          "traffic": 64821,
+          "previousTraffic": 68543,
+          "keywords": 1351,
+          "previousKeywords": 1427,
+          "top3": 442,
+          "previousTop3": 468,
+          "top10": null,
+          "previousTop10": null,
+          "value": 44679,
+          "previousValue": 47697.65,
+          "dr": 49,
+          "rd": 1656,
+          "paidTraffic": 32077,
+          "paidKeywords": 657
+        },
+        {
+          "target": "desktronic.de",
+          "name": "Desktronic",
+          "country": "de",
+          "mode": "subdomains",
+          "trafficMode": "adaptive",
+          "volumeMode": "monthly",
+          "traffic": 30153,
+          "previousTraffic": 50361,
+          "keywords": 408,
+          "previousKeywords": 433,
+          "top3": 207,
+          "previousTop3": 215,
+          "top10": null,
+          "previousTop10": null,
+          "value": 43211.71,
+          "previousValue": 70005.71,
+          "dr": 44,
+          "rd": 811,
+          "paidTraffic": 21354,
+          "paidKeywords": 189
+        },
+        {
+          "target": "dpj-workspace.com/de/",
+          "name": "DPJ /de/",
+          "country": "de",
+          "mode": "prefix",
+          "trafficMode": "adaptive",
+          "volumeMode": "monthly",
+          "traffic": 929,
+          "previousTraffic": 812,
+          "keywords": 241,
+          "previousKeywords": 267,
+          "top3": 45,
+          "previousTop3": 50,
+          "top10": null,
+          "previousTop10": null,
+          "value": 892.59,
+          "previousValue": 695.55,
+          "dr": 27,
+          "rd": 67,
+          "paidTraffic": 8460,
+          "paidKeywords": 148
+        },
+        {
+          "target": "yaasa.com",
+          "name": "Yaasa",
+          "country": "de",
+          "mode": "subdomains",
+          "trafficMode": "adaptive",
+          "volumeMode": "monthly",
+          "traffic": 2648,
+          "previousTraffic": 2524,
+          "keywords": 358,
+          "previousKeywords": 390,
+          "top3": 157,
+          "previousTop3": 167,
+          "top10": null,
+          "previousTop10": null,
+          "value": 2437.72,
+          "previousValue": 2224.41,
+          "dr": 51,
+          "rd": 1485,
+          "paidTraffic": 52,
+          "paidKeywords": 12
+        },
+        {
+          "target": "ergotopia.de",
+          "name": "Ergotopia",
+          "country": "de",
+          "mode": "subdomains",
+          "trafficMode": "adaptive",
+          "volumeMode": "monthly",
+          "traffic": 33759,
+          "previousTraffic": 35027,
+          "keywords": 3497,
+          "previousKeywords": 3826,
+          "top3": 1262,
+          "previousTop3": 1328,
+          "top10": null,
+          "previousTop10": null,
+          "value": 18036.35,
+          "previousValue": 23763.4,
+          "dr": 56,
+          "rd": 2233,
+          "paidTraffic": 2065,
+          "paidKeywords": 36
+        }
+      ],
+      "actions": []
+    }
+  ],
+  "flexispotSnapshots": [
+    {
+      "country": "de",
+      "mode": "subdomains",
+      "trafficMode": "adaptive",
+      "volumeMode": "monthly",
+      "retrievedAt": null,
+      "classification": "public",
+      "siteKeywords": null,
+      "previousSiteKeywords": null,
+      "id": "published-2026-09-28",
+      "label": "9/21 → 9/28 · 原发布分析",
+      "date": "2026-09-28",
+      "comparedDate": "2026-09-21",
+      "scope": "选定 4 个升降桌 / Gestell 页面",
+      "siteTraffic": 61640,
+      "previousSiteTraffic": null,
+      "source": {
+        "url": "https://github.com/inesfang/furniwell-seo-dashboard/blob/5bacf97ac74e6dbdeb1d59b40b2ea9b38ab00caa/competitor/flexispot.html",
+        "note": "原报告 9/28 整站 61,640，与下一期回推 63,479 有差异；不得跨版本拼接。"
+      },
+      "pages": [
+        {
+          "url": "https://www.flexispot.de/cat/hoehenverstellbarer-schreibtisch",
+          "label": "升降桌 Collection",
+          "category": "升降桌",
+          "previousTraffic": 2028,
+          "traffic": 3965,
+          "previousKeywords": 109,
+          "keywords": 100,
+          "keyword": null,
+          "previousKeyword": null,
+          "previousPosition": null,
+          "position": null
+        },
+        {
+          "url": "https://www.flexispot.de/elektrisch-hohenverstellbares-tischgestell-e7-pro.html",
+          "label": "E7 Pro Gestell",
+          "category": "Gestell",
+          "previousTraffic": 515,
+          "traffic": 1443,
+          "previousKeywords": 26,
+          "keywords": 22,
+          "keyword": null,
+          "previousKeyword": null,
+          "previousPosition": null,
+          "position": null
+        },
+        {
+          "url": "https://www.flexispot.de/elektrisch-hohenverstellbares-tischgestell-e7.html",
+          "label": "E7 Gestell",
+          "category": "Gestell",
+          "previousTraffic": 134,
+          "traffic": 1051,
+          "previousKeywords": 31,
+          "keywords": 29,
+          "keyword": null,
+          "previousKeyword": null,
+          "previousPosition": null,
+          "position": null
+        },
+        {
+          "url": "https://www.flexispot.de/elektrisch-hohenverstellbares-tischgestell-e1.html",
+          "label": "E1 Gestell",
+          "category": "Gestell",
+          "previousTraffic": 192,
+          "traffic": 1087,
+          "previousKeywords": 23,
+          "keywords": 26,
+          "keyword": null,
+          "previousKeyword": null,
+          "previousPosition": null,
+          "position": null
+        }
+      ],
+      "findings": [
+        {
+          "label": "观测",
+          "text": "四页合计增加 4,677；关键词 189 → 177。扩词数量不足以解释估算流量增长。"
+        },
+        {
+          "label": "待验证",
+          "text": "原报告记录核心词进入 Top 10；缺逐词流量与 SERP 历史，无法量化排名贡献。"
+        },
+        {
+          "label": "行动",
+          "text": "将主词、Elektrisch、Gestell、尺寸页分工和双向内链纳入 Roadmap。"
+        }
+      ]
+    },
+    {
+      "country": "de",
+      "mode": "subdomains",
+      "trafficMode": "adaptive",
+      "volumeMode": "monthly",
+      "retrievedAt": null,
+      "classification": "public",
+      "siteKeywords": 1403,
+      "previousSiteKeywords": 1476,
+      "id": "published-2026-10-05",
+      "label": "9/28 → 10/05 · 原发布周报",
+      "date": "2026-10-05",
+      "comparedDate": "2026-09-28",
+      "scope": "周报提及的 2 个增长页面；非完整 Top Pages",
+      "siteTraffic": 68960,
+      "previousSiteTraffic": 63479,
+      "source": {
+        "url": "https://github.com/inesfang/furniwell-seo-dashboard/blob/5bacf97ac74e6dbdeb1d59b40b2ea9b38ab00caa/ahrefs/weekly-report.html",
+        "note": "仅保存原周报明确展示的数值；缺失字段为未知。"
+      },
+      "pages": [
+        {
+          "url": "https://www.flexispot.de/cat/tischplatte",
+          "label": "Tischplatte Collection",
+          "category": "桌板",
+          "previousTraffic": 96,
+          "traffic": 2204,
+          "previousKeywords": null,
+          "keywords": null,
+          "keyword": null,
+          "previousKeyword": null,
+          "previousPosition": null,
+          "position": null
+        },
+        {
+          "url": "https://www.flexispot.de/cat/eckschreibtische",
+          "label": "Eckschreibtische Collection",
+          "category": "转角桌",
+          "previousTraffic": 487,
+          "traffic": 2329,
+          "previousKeywords": null,
+          "keywords": null,
+          "keyword": null,
+          "previousKeyword": null,
+          "previousPosition": null,
+          "position": null
+        }
+      ],
+      "findings": [
+        {
+          "label": "观测",
+          "text": "整站 +5,481；两页 +3,950，约为整站净增的 72.1%。该比例不等于原因占比。"
+        },
+        {
+          "label": "观测",
+          "text": "原周报核心词 #9、电动词 #8 稳定；新增估算流量集中于细分商业页。"
+        },
+        {
+          "label": "待验证",
+          "text": "需要完整 Top Pages、逐词贡献和页面改版记录，解释剩余变化与增长原因。"
+        }
+      ]
+    }
+  ],
+  "competitorSnapshots": {
+    "desktronic": [
+      {
+        "id": "published-desktronic-2026-09-21",
+        "label": "原发布分析 · 2026-09-21（单期）",
+        "date": "2026-09-21",
+        "comparedDate": null,
+        "retrievedAt": null,
+        "classification": "public",
+        "siteTraffic": 58433,
+        "previousSiteTraffic": null,
+        "siteKeywords": 538,
+        "previousSiteKeywords": null,
+        "siteTop3": 263,
+        "previousSiteTop3": null,
+        "scope": "原公开分析选页，非完整 Top Pages；缺少比较基线。",
+        "source": {
+          "url": "https://github.com/inesfang/furniwell-seo-dashboard/blob/5bacf97ac74e6dbdeb1d59b40b2ea9b38ab00caa/competitor/desktronic.html",
+          "note": "来自原公开仓库。保留原报告值，不与 2026-10-10 复查值拼接。"
+        },
+        "pages": [
+          {
+            "url": "https://desktronic.de/collections/hohenverstellbare-schreibtische",
+            "label": "升降桌主 Collection",
+            "category": "升降桌 Collection",
+            "traffic": 17255,
+            "previousTraffic": null,
+            "keywords": 184,
+            "previousKeywords": null,
+            "keyword": "höhenverstellbarer schreibtisch",
+            "previousKeyword": null,
+            "position": 2,
+            "previousPosition": null
+          },
+          {
+            "url": "https://desktronic.de/",
+            "label": "品牌主页",
+            "category": "品牌入口",
+            "traffic": 9857,
+            "previousTraffic": null,
+            "keywords": 11,
+            "previousKeywords": null,
+            "keyword": "desktronic",
+            "previousKeyword": null,
+            "position": 1,
+            "previousPosition": null
+          },
+          {
+            "url": "https://desktronic.de/products/cable-tray",
+            "label": "cable-tray",
+            "category": "配件 Product",
+            "traffic": 4774,
+            "previousTraffic": null,
+            "keywords": 9,
+            "previousKeywords": null,
+            "keyword": "desktronic kabelkanal",
+            "previousKeyword": null,
+            "position": 1,
+            "previousPosition": null
+          },
+          {
+            "url": "https://desktronic.de/products/home-pro-schreibtisch-gestell",
+            "label": "home-pro-schreibtisch-gestell",
+            "category": "Product",
+            "traffic": 4039,
+            "previousTraffic": null,
+            "keywords": 4,
+            "previousKeywords": null,
+            "keyword": "desktronic homepro",
+            "previousKeyword": null,
+            "position": 1,
+            "previousPosition": null
+          },
+          {
+            "url": "https://desktronic.de/hohenverstellbare-schreibtische",
+            "label": "/hohenverstellbare-schreibtische",
+            "category": "其他入口",
+            "traffic": 3995,
+            "previousTraffic": null,
+            "keywords": 30,
+            "previousKeywords": null,
+            "keyword": "höhenverstellbarer schreibtisch elektrisch",
+            "previousKeyword": null,
+            "position": 1,
+            "previousPosition": null
+          },
+          {
+            "url": "https://desktronic.de/collections/gestell",
+            "label": "桌架 Collection",
+            "category": "桌架 Collection",
+            "traffic": 2651,
+            "previousTraffic": null,
+            "keywords": 53,
+            "previousKeywords": null,
+            "keyword": "höhenverstellbarer schreibtisch gestell",
+            "previousKeyword": null,
+            "position": 1,
+            "previousPosition": null
+          }
+        ],
+        "keywordEvidence": [],
+        "findings": [
+          {
+            "label": "范围",
+            "text": "此版本是单期历史分析。没有上期流量或逐词比较，不能据此计算增长或证明排名变化。"
+          }
+        ]
+      }
+    ],
+    "songmics": [
+      {
+        "id": "published-songmics-2026-09-21",
+        "label": "原发布分析 · 2026-09-21（单期）",
+        "date": "2026-09-21",
+        "comparedDate": null,
+        "retrievedAt": null,
+        "classification": "public",
+        "siteTraffic": null,
+        "previousSiteTraffic": null,
+        "siteKeywords": null,
+        "previousSiteKeywords": null,
+        "siteTop3": null,
+        "previousSiteTop3": null,
+        "scope": "原公开分析选页，非完整 Top Pages；缺少比较基线。",
+        "source": {
+          "url": "https://github.com/inesfang/furniwell-seo-dashboard/blob/5bacf97ac74e6dbdeb1d59b40b2ea9b38ab00caa/competitor/songmics.html",
+          "note": "来自原公开仓库。保留原报告值，不与 2026-10-10 复查值拼接。"
+        },
+        "pages": [
+          {
+            "url": "https://www.songmics.de/",
+            "label": "品牌主页",
+            "category": "品牌入口",
+            "traffic": 8196,
+            "previousTraffic": null,
+            "keywords": 18,
+            "previousKeywords": null,
+            "keyword": "songmics",
+            "previousKeyword": null,
+            "position": null,
+            "previousPosition": null
+          },
+          {
+            "url": "https://www.songmics.de/collections/vasagle-bucherregale",
+            "label": "vasagle-bucherregale",
+            "category": "其他 Collection",
+            "traffic": 482,
+            "previousTraffic": null,
+            "keywords": 8,
+            "previousKeywords": null,
+            "keyword": "vasagle regal",
+            "previousKeyword": null,
+            "position": null,
+            "previousPosition": null
+          },
+          {
+            "url": "https://www.songmics.de/products/songmics-waschekorb-3-facher-rlh115",
+            "label": "songmics-waschekorb-3-facher-rlh115",
+            "category": "Product",
+            "traffic": 335,
+            "previousTraffic": null,
+            "keywords": 13,
+            "previousKeywords": null,
+            "keyword": "wäschekorb 3 fächer",
+            "previousKeyword": null,
+            "position": null,
+            "previousPosition": null
+          }
+        ],
+        "keywordEvidence": [],
+        "findings": [
+          {
+            "label": "范围",
+            "text": "此版本是单期历史分析。没有上期流量或逐词比较，不能据此计算增长或证明排名变化。"
+          }
+        ]
+      }
+    ]
+  },
+  "weeklyAutomation": {
+    "state": "enabled",
+    "schedule": "每周一 09:00",
+    "timezone": "Asia/Shanghai",
+    "lastSuccessAt": "2026-10-10T03:33:18.334Z",
+    "lastReportId": "verified-2026-10-10"
+  }
+}

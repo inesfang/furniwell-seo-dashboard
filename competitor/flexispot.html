@@ -1,8 +1,10 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>FlexiSpot高自然流量页面拆解</title><style>
-body{font-family:Arial,'Microsoft YaHei';background:#f5f7fa;color:#1f2937;padding:30px;line-height:1.8}.wrap{max-width:1200px;margin:auto}.box{background:#fff;padding:28px;border-radius:16px;margin:22px 0;box-shadow:0 4px 15px #ddd}.important{background:#eff6ff;border-left:5px solid #2563eb}.warn{background:#fff7ed;border-left:5px solid #f97316}.good{background:#ecfdf5;border-left:5px solid #10b981}table{width:100%;border-collapse:collapse;margin-top:14px}td,th{border:1px solid #ddd;padding:12px;text-align:left;vertical-align:top}th{background:#f8fafc}.tag{display:inline-block;padding:3px 9px;border-radius:999px;background:#e0e7ff;color:#3730a3;font-size:12px;font-weight:700;margin-right:6px}.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:16px}.kpi div{background:#fff;border:1px solid #dbe3ef;border-radius:12px;padding:16px}.kpi b{display:block;font-size:22px;color:#111827}.muted{color:#6b7280;font-size:14px}.up{color:#059669;font-weight:700}.down{color:#dc2626;font-weight:700}code{background:#f3f4f6;padding:2px 5px;border-radius:5px}
-</style></head><body><nav data-home-link="true" aria-label="页面导航" style="position:fixed;top:18px;left:18px;z-index:9999"><a href="../index.html" style="display:inline-flex;align-items:center;gap:7px;padding:9px 14px;border:1px solid #d7dee8;border-radius:10px;background:rgba(255,255,255,.96);color:#1f2937;text-decoration:none;font:600 14px/1.2 Arial,'Microsoft YaHei',sans-serif;box-shadow:0 4px 14px rgba(15,23,42,.08);backdrop-filter:blur(6px)">← 返回主页</a></nav><div class="wrap">
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FlexiSpot 页面增长拆解</title><link rel="stylesheet" href="../assets/interactive.css"><script defer src="../data/weekly-reports.js"></script><script defer src="../assets/data-contract.js"></script><script defer src="../assets/app.js"></script></head><body data-view="flexispot" data-depth="1"><a class="skip" href="#main">跳到主要内容</a><nav class="site-nav" id="site-navigation" aria-label="主要导航"></nav><main id="main" class="page"><header class="page-head"><span class="eyebrow">竞品高流量页面拆解</span><h1>FlexiSpot 页面增长拆解</h1><p id="flex-period"></p></header>
+<section class="panel"><div class="controls"><label>数据版本<select id="flex-version"></select></label><label>页面类型<select id="flex-category"></select></label><label>排序<select id="flex-sort"><option value="delta">估算变化 ↓</option><option value="traffic">本期流量 ↓</option></select></label><label>搜索页面或关键词<input id="flex-search" type="search" placeholder="例如 Gestell"></label><label class="check"><input id="flex-growing" type="checkbox">只看增长页</label><button id="flex-reset">清除筛选</button></div><p id="flex-scope" class="caption"></p><div id="flex-stats" class="stats"></div><div class="notice warn">同一历史日期的 Ahrefs 估算值可能随复查而变化。已发布快照与本次复查保留为不同版本，禁止直接拼接。</div></section>
+<section class="panel"><div class="section-top"><h2>页面估算流量变化</h2><button id="flex-export">导出当前筛选</button></div><p class="caption">按当前筛选范围比较两个快照；数值单位为估算月访问量。点击页面名查看详细字段。</p><div id="flex-chart" class="bars" aria-label="页面估算流量变化图"></div><div class="zero-legend">减少 ← 0 → 增加 · 每个版本使用统一比例</div><div id="flex-table" class="table-scroll" style="margin-top:20px"></div><div id="flex-source"></div></section>
+<section class="panel"><h2>该版本的观测与待验证原因</h2><div id="flex-findings"></div><p class="caption">以上结论对应完整所选快照；页面筛选只改变图表与数据明细。</p><a class="button" href="../roadmap/seo-plan.html#task-mapping">转到 Keyword Mapping 任务 →</a></section>
+<details class="accordion"><summary>原分析文档 · 2026-09-28</summary><div class="legacy-content">
 
-<h1>FlexiSpot高自然流量页面拆解</h1>
+<h2>原报告：2026-09-28 vs 2026-09-21</h2>
 
 <div class="box important">
 <h2>Ahrefs数据快照（德国市场）</h2>
@@ -19,25 +21,25 @@ body{font-family:Arial,'Microsoft YaHei';background:#f5f7fa;color:#1f2937;paddin
 
 <div class="box">
 <h2>1. 本周增长到底来自哪些页面</h2>
-<table>
+<div class="table-scroll"><table>
 <tr><th>页面</th><th>9/21 Organic Traffic</th><th>9/28 Organic Traffic</th><th>绝对变化</th><th>WoW</th><th>关键词数变化</th></tr>
 <tr><td>/cat/hoehenverstellbarer-schreibtisch</td><td>2,028</td><td>3,965</td><td class="up">+1,937</td><td class="up">+95.5%</td><td>109 → 100</td></tr>
 <tr><td>/elektrisch-hohenverstellbares-tischgestell-e7-pro.html</td><td>515</td><td>1,443</td><td class="up">+928</td><td class="up">+180.2%</td><td>26 → 22</td></tr>
 <tr><td>/elektrisch-hohenverstellbares-tischgestell-e7.html</td><td>134</td><td>1,051</td><td class="up">+917</td><td class="up">+684.3%</td><td>31 → 29</td></tr>
 <tr><td>/elektrisch-hohenverstellbares-tischgestell-e1.html</td><td>192</td><td>1,087</td><td class="up">+895</td><td class="up">+466.1%</td><td>23 → 26</td></tr>
 <tr><td><strong>4页合计</strong></td><td><strong>2,869</strong></td><td><strong>7,546</strong></td><td class="up"><strong>+4,677</strong></td><td>—</td><td>整体并未扩词</td></tr>
-</table>
-<p><strong>重要：</strong>这些页面的关键词数量没有同步暴增，甚至多数下降。这说明本次增长不是依靠大量新增长尾词，而是<strong>原有高搜索量商业词排名进入更高位置</strong>。</p>
+</table></div>
+<p><strong>重要：</strong>这些页面的关键词数量没有同步暴增，甚至多数下降。仅凭关键词数量不能确定增长机制；<strong>核心词排名提升是待核实解释</strong>。</p>
 </div>
 
 <div class="box warn">
 <h2>2. 核心增长机制：Top 10 突破，而不是关键词数量膨胀</h2>
-<table>
+<div class="table-scroll"><table>
 <tr><th>核心商业词</th><th>约7天前</th><th>当前</th><th>变化意义</th></tr>
 <tr><td><strong>höhenverstellbarer schreibtisch</strong></td><td>#11</td><td class="up">#9</td><td>从第二页边缘进入第一页，主 Collection 流量显著放大</td></tr>
 <tr><td><strong>elektrisch höhenverstellbarer schreibtisch</strong></td><td>#12</td><td class="up">#8</td><td>进入 Top 10，商业意图更强</td></tr>
 <tr><td><strong>höhenverstellbarer schreibtisch gestell</strong></td><td>#14</td><td class="up">#6</td><td>从第二页跃迁到第一页中段，直接带动 Gestell 产品页</td></tr>
-</table>
+</table></div>
 <p>因此这次可以定义为：<strong>“Top 10 突破型增长”</strong>。少数核心词从 11–20 位跨到 4–10 位，带来的流量增量远高于几十个普通长尾词的增长。</p>
 </div>
 
@@ -57,42 +59,42 @@ body{font-family:Arial,'Microsoft YaHei';background:#f5f7fa;color:#1f2937;paddin
 
 <div class="box">
 <h2>4. 与 Furniwell 当前结构的核心差距</h2>
-<table>
+<div class="table-scroll"><table>
 <tr><th>维度</th><th>FlexiSpot</th><th>Furniwell 当前主要问题</th></tr>
 <tr><td>核心 Collection</td><td>承担明确 broad commercial intent</td><td>Collection 更偏商品列表，核心主题解释和购买决策内容不足</td></tr>
 <tr><td>Gestell</td><td>E7/E7 Pro/E1 多页面共同增强</td><td>已有 Gestell 产品/Collection，但主题权重和双向内链不足</td></tr>
 <tr><td>尺寸词</td><td>多个规格/产品路径承接</td><td>已有部分尺寸 Collection，但主 Collection 与尺寸页之间的结构需要强化</td></tr>
 <tr><td>内容集群</td><td>Blog/Guide 持续向商业页面输送相关性</td><td>指南内容与 Collection/Product 的 SEO 闭环较弱</td></tr>
 <tr><td>关键词边界</td><td>主词、Gestell、产品型号分工较清楚</td><td>主 Collection、elektrisch、Gestell、尺寸页存在潜在内部竞争</td></tr>
-</table>
+</table></div>
 </div>
 
 <div class="box good">
 <h2>5. 对 Furniwell 的直接执行动作</h2>
-<table>
+<div class="table-scroll"><table>
 <tr><th>优先级</th><th>页面</th><th>目标词</th><th>本周动作</th></tr>
 <tr><td><strong>P0</strong></td><td>Höhenverstellbarer Schreibtisch 主 Collection</td><td>höhenverstellbarer schreibtisch<br>schreibtisch höhenverstellbar</td><td>升级为 SEO Landing：Title/H1/Intro、尺寸选择、功能对比、FAQ、内部链接；保留商品在前</td></tr>
 <tr><td><strong>P0</strong></td><td>Elektrisch Collection</td><td>elektrisch höhenverstellbarer schreibtisch</td><td>明确只抢 elektrik intent，避免与主 Collection 同词竞争</td></tr>
 <tr><td><strong>P0</strong></td><td>Gestell Collection</td><td>schreibtischgestell höhenverstellbar<br>höhenverstellbares tischgestell</td><td>强化 Gestell H1/正文/FAQ，并向 Dual Ultra X / Dual Ultra 双向内链</td></tr>
 <tr><td><strong>P1</strong></td><td>尺寸 Collection</td><td>180x80 / 160x80 / 140x70 / 120x60</td><td>主 Collection 建尺寸入口；尺寸页只承接规格词</td></tr>
 <tr><td><strong>P1</strong></td><td>Guide / Blog</td><td>选购、尺寸、Gestell、Motor、Traglast 等</td><td>每篇内容至少有 1 条上下文链接回主 Collection 或 Gestell Collection</td></tr>
-</table>
+</table></div>
 </div>
 
 <div class="box">
 <h2>6. 高流量页面结构分析</h2>
 <p>FlexiSpot 主要依靠分类页建立 SEO 入口，同时由产品页、Gestell 页和内容页一起扩展主题权重。</p>
-<table><tr><th>页面类型</th><th>作用</th></tr>
+<div class="table-scroll"><table><tr><th>页面类型</th><th>作用</th></tr>
 <tr><td>Category 页面</td><td>覆盖 höhenverstellbarer Schreibtisch、Bürostuhl 等商业大词。</td></tr>
 <tr><td>Gestell / 产品页</td><td>覆盖高意图属性词、型号词和具体产品需求。</td></tr>
 <tr><td>Guide / Blog</td><td>扩展使用场景、功能、尺寸和人体工学语义，并通过内链支持商业页。</td></tr>
-<tr><td>品牌主页</td><td>承接品牌搜索流量。</td></tr></table>
+<tr><td>品牌主页</td><td>承接品牌搜索流量。</td></tr></table></div>
 </div>
 
 <div class="box important">
 <h2>结论</h2>
-<p><strong>FlexiSpot 本周最值得关注的不是整站流量，而是升降桌核心商业页面的集中增长。</strong>主 Collection + E7 Pro + E7 + E1 四个页面约增加 <strong>4,677</strong> Ahrefs 估算 Organic Traffic，而关键词数量并未同步扩张。增长的核心是 <strong>höhenverstellbarer Schreibtisch / elektrisch / Gestell</strong> 等高商业价值词跨入 Top 10。</p>
+<p><strong>FlexiSpot 本周最值得关注的不是整站流量，而是升降桌核心商业页面的集中增长。</strong>主 Collection + E7 Pro + E7 + E1 四个页面约增加 <strong>4,677</strong> Ahrefs 估算 Organic Traffic，而关键词数量并未同步扩张。原报告将增长解释为核心词跨入 Top 10；该解释仍需逐词流量和排名历史验证。</p>
 <p>对 Furniwell 来说，短期最重要的动作不是大量新增 Blog，而是先把 <strong>主 Collection、Elektrisch Collection、Gestell Collection、尺寸页</strong> 的关键词边界和内链结构做正确，再用内容页向这些商业入口输送权重。</p>
 </div>
 
-</div></body></html>
+</div></details><footer class="page-footer">Ahrefs Organic Traffic 是月自然搜索流量估算；快照差值不等同于本周新增访问量。未记录值用「—」展示。</footer></main><dialog id="page-dialog" aria-label="页面详情"><button id="dialog-close" class="dialog-close" aria-label="关闭页面详情">关闭 ×</button><div id="dialog-content"></div></dialog></body></html>
