@@ -1,5 +1,6 @@
 (function(root){'use strict';
 const metrics=['traffic','previousTraffic','keywords','previousKeywords','top3','previousTop3','top10','previousTop10','value','previousValue','dr','rd','paidTraffic','paidKeywords'];
+const optionalMetrics=['previousPaidTraffic','previousPaidKeywords'];
 const numeric=(v)=>v===null||Number.isFinite(v)&&v>=0;
 const validDate=(v)=>typeof v==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(v)&&new Date(v+'T00:00:00Z').toISOString().slice(0,10)===v;
 const http=(v)=>{try{const u=new URL(v);return u.protocol==='https:'&&!u.username&&!u.password&&!u.search;}catch{return false;}};
@@ -19,6 +20,7 @@ function validateReport(report){
   if(row.target==='dpj-workspace.com/de/'&&row.mode!=='prefix')throw Error('DPJ /de/ 必须使用 prefix。');
   const key=[row.target,row.mode,row.country].join('|');if(keys.has(key))throw Error('同一期存在重复网站。');keys.add(key);
   for(const metric of metrics){if(!(metric in row)||!numeric(row[metric]))throw Error('指标 '+metric+' 必须为非负数字或 null。');}
+  for(const metric of optionalMetrics){if(metric in row&&!numeric(row[metric]))throw Error('指标 '+metric+' 必须为非负数字或 null。');}
   if(row.top3!==null&&row.keywords!==null&&row.top3>row.keywords)throw Error('Top 3 不得超过关键词总数。');
   if(row.top10!==null&&row.keywords!==null&&row.top10>row.keywords)throw Error('Top 10 不得超过关键词总数。');
  }
@@ -27,10 +29,12 @@ function validateReport(report){
  return report;
 }
 function validateBundle(bundle){if(!bundle||bundle.schemaVersion!==1||!Array.isArray(bundle.weeklyReports))throw Error('不支持的数据版本。');const ids=new Set();for(const r of bundle.weeklyReports){validateReport(r);if(ids.has(r.id))throw Error('报告 id 重复。');ids.add(r.id);}return bundle;}
-function delta(current,previous){return current===null||previous===null?null:current-previous;}
-function percent(current,previous){return current===null||previous===null||previous===0?null:(current-previous)/previous*100;}
+function delta(current,previous){return current==null||previous==null?null:current-previous;}
+function percent(current,previous){return current==null||previous==null||previous===0?null:(current-previous)/previous*100;}
+function paidShare(organic,paid){return organic==null||paid==null||organic+paid===0?null:paid/(organic+paid)*100;}
+function channelSummary(row){const organicDelta=delta(row.traffic,row.previousTraffic),paidDelta=delta(row.paidTraffic,row.previousPaidTraffic),share=paidShare(row.traffic,row.paidTraffic),previousShare=paidShare(row.previousTraffic,row.previousPaidTraffic);return {organicDelta,paidDelta,share,previousShare,shareChange:delta(share,previousShare),combinedDelta:organicDelta===null||paidDelta===null?null:organicDelta+paidDelta};}
 function comparable(a,b){return a.country===b.country&&a.mode===b.mode&&a.trafficMode===b.trafficMode&&a.volumeMode===b.volumeMode;}
 function mergeReport(bundle,report){validateReport(report);if(bundle.weeklyReports.some(r=>r.id===report.id))throw Error('报告 id 已存在；请用新 id 保存复查版本。');return {...bundle,weeklyReports:[...bundle.weeklyReports,report].sort((a,b)=>a.date.localeCompare(b.date)||a.id.localeCompare(b.id))};}
-root.SeoContract={validateReport,validateBundle,delta,percent,comparable,mergeReport};
+root.SeoContract={validateReport,validateBundle,delta,percent,paidShare,channelSummary,comparable,mergeReport};
 if(typeof module!=='undefined'&&module.exports)module.exports=root.SeoContract;
 })(typeof window==='undefined'?globalThis:window);

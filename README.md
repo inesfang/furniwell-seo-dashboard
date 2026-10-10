@@ -1,12 +1,12 @@
 # Furniwell SEO Dashboard
 
-保留原静态网站与 URL。FlexiSpot、Desktronic、SONGMICS 按页面变化、逐词证据、关键词分工、官网结构、内链和 Roadmap 行动统一拆解；另有 Collection 任务看板与数据驱动周监控。无服务器依赖、第三方脚本、分析追踪或浏览器 API 密钥。
+保留原静态网站与 URL。FlexiSpot、Desktronic、SONGMICS 按页面变化、逐词证据、关键词分工、官网结构、内链和 Roadmap 行动统一拆解；三个竞品页分别新增域级自然/付费搜索拆分；周监控增加两类搜索结构、各自环比、付费占比、变化解读及付费历史。另有 Collection 任务看板与数据驱动周监控。无服务器依赖、第三方脚本、分析追踪或浏览器 API 密钥。
 
 ## 数据与访问
 
 - 本源目录包含原公开快照，以及用户批准公开的固定 7 站域级周报。复查 Top Pages、逐词数据与施工单补充正文只在独立私密审阅文件中。
 - 周报数值是 Ahrefs 估算月自然流量；快照差值不是一周真实访问量。Traffic Value 存储为 USD，原 API cents 除以 100。
-- 未记录的字段存为 null，显示为「—」。原周报上期值由已报告绝对变化回推；不混用复查版本或未注明日期的旧历史表。
+- 未记录的字段存为 null，显示为「—」。新增 previousPaidTraffic / previousPaidKeywords 为兼容字段；旧版本缺失时不回填。同日复查按采集时刻选最新，保留早期版本。原周报上期值由已报告绝对变化回推；不混用复查版本或未注明日期的旧历史表。
 - Desktronic / SONGMICS 的公开版本只包含原公开单期选页和官网结构。私密审阅版另有 10-05 vs 09-28 的 Top 20、逐词证据与桌类 URL 精确补查。Top 20 不是完整页面集；无基线的页面不补 0，精确补查不混入 Top 20 合计。
 - 两期 Top Keyword 不同时不推断同词排名变化。Organic Keywords 与 Top Pages 的数值和 URL 可能不一致，保留接口与请求参数，不将两接口结果直接相加。官网内容读取不能代替 rendered DOM、canonical 或状态码审计。
 - 浏览器导入默认保留在页面内存。任务状态只有点击「保存到本机」才持久保存；可导出/恢复 JSON。所有操作都不修改 Shopify。
