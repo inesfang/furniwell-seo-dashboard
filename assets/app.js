@@ -23,7 +23,7 @@ const tasks=[
  ['qa','P0','上线前','移动端与参数验收','商品发现仍在首屏；文案与规格逐 SKU 核实；图片 ALT / 宽高 / CLS。','construction-technical'],
  ['review','P1','Phase 4','7 / 14 / 30 天复查','记录上线日；观察排名 URL、Top 3/10、非品牌查询、GSC 与 Ahrefs 同口径。','construction-acceptance']
 ].map(([id,priority,phase,title,body,anchor])=>({id,priority,phase,title,body,anchor}));
-const routes={home:['index.html','概览'],flexispot:['competitor/flexispot.html','FlexiSpot'],desktronic:['competitor/desktronic.html','Desktronic'],songmics:['competitor/songmics.html','SONGMICS'],roadmap:['roadmap/seo-plan.html','SEO Roadmap'],weekly:['ahrefs/weekly-report.html','竞品周监控']};
+const routes={home:['index.html','概览'],flexispot:['competitor/flexispot.html','FlexiSpot'],desktronic:['competitor/desktronic.html','Desktronic'],songmics:['competitor/songmics.html','SONGMICS'],roadmap:['roadmap/seo-plan.html','SEO Roadmap'],frAudit:['seo/fr-audit.html','法国站 SEO 检查'],weekly:['ahrefs/weekly-report.html','竞品周监控']};
 const isPreview=Boolean(window.__SEO_PREVIEW);
 function href(view,anchor=''){return isPreview?'#'+view+(anchor?'/'+anchor:''):(document.body.dataset.depth==='1'?'../':'')+routes[view][0]+(anchor?'#'+anchor:'');}
 function updateNav(view){const nav=$('site-navigation');if(!nav)return;nav.innerHTML='<div class="nav-inner"><a class="brand" href="'+href('home')+'">Furniwell <span class="muted">SEO</span></a><div class="nav-links">'+Object.entries(routes).map(([k,v])=>'<a href="'+href(k)+'" '+(k===view?'aria-current="page"':'')+'>'+v[1]+'</a>').join('')+'</div><span class="nav-badge">'+(data.privacy==='private'?'私密审阅版':'公开快照')+'</span></div>';}
