@@ -1,0 +1,473 @@
+{
+  "id": "weekly-2026-10-12",
+  "date": "2026-10-12",
+  "comparedDate": "2026-10-05",
+  "retrievedAt": "2026-10-12T01:07:41.015Z",
+  "label": "自动周报 · 2026-10-12",
+  "classification": "public",
+  "source": {
+    "url": "https://app.ahrefs.com/site-explorer",
+    "note": "已获准公开的域级 Ahrefs 周报。DE / adaptive / monthly；DPJ 为 /de/ prefix，其他为 subdomains。Traffic Value 为 USD；Top 10 未返回时保留 null；DR 为全域评分、RD 为实时引用域，DPJ RD 按 www /de/ prefix。自然与付费均为估算月搜索流量，付费不完整覆盖非搜索广告；付费占比仅以自然加付费搜索为分母。不可用值为 null；旧版本付费比较基线缺失时不回填。估算流量不等于真实访问量。",
+    "coverage": "固定 7 个网站；仅域级汇总，页面和关键词原始明细保留私密。",
+    "requests": [
+      {
+        "tool": "site-explorer-metrics",
+        "params": {
+          "target": "furniwell.de",
+          "mode": "subdomains",
+          "country": "de",
+          "date": "2026-10-12",
+          "traffic_mode": "adaptive",
+          "volume_mode": "monthly",
+          "output": "json"
+        }
+      },
+      {
+        "tool": "site-explorer-metrics",
+        "params": {
+          "target": "furniwell.de",
+          "mode": "subdomains",
+          "country": "de",
+          "date": "2026-10-05",
+          "traffic_mode": "adaptive",
+          "volume_mode": "monthly",
+          "output": "json"
+        }
+      },
+      {
+        "tool": "site-explorer-domain-rating",
+        "params": {
+          "target": "furniwell.de",
+          "date": "2026-10-12",
+          "output": "json"
+        }
+      },
+      {
+        "tool": "site-explorer-backlinks-stats",
+        "params": {
+          "target": "furniwell.de",
+          "mode": "subdomains",
+          "date": "2026-10-12",
+          "output": "json"
+        }
+      },
+      {
+        "tool": "site-explorer-metrics",
+        "params": {
+          "target": "songmics.de",
+          "mode": "subdomains",
+          "country": "de",
+          "date": "2026-10-12",
+          "traffic_mode": "adaptive",
+          "volume_mode": "monthly",
+          "output": "json"
+        }
+      },
+      {
+        "tool": "site-explorer-metrics",
+        "params": {
+          "target": "songmics.de",
+          "mode": "subdomains",
+          "country": "de",
+          "date": "2026-10-05",
+          "traffic_mode": "adaptive",
+          "volume_mode": "monthly",
+          "output": "json"
+        }
+      },
+      {
+        "tool": "site-explorer-domain-rating",
+        "params": {
+          "target": "songmics.de",
+          "date": "2026-10-12",
+          "output": "json"
+        }
+      },
+      {
+        "tool": "site-explorer-backlinks-stats",
+        "params": {
+          "target": "songmics.de",
+          "mode": "subdomains",
+          "date": "2026-10-12",
+          "output": "json"
+        }
+      },
+      {
+        "tool": "site-explorer-metrics",
+        "params": {
+          "target": "flexispot.de",
+          "mode": "subdomains",
+          "country": "de",
+          "date": "2026-10-12",
+          "traffic_mode": "adaptive",
+          "volume_mode": "monthly",
+          "output": "json"
+        }
+      },
+      {
+        "tool": "site-explorer-metrics",
+        "params": {
+          "target": "flexispot.de",
+          "mode": "subdomains",
+          "country": "de",
+          "date": "2026-10-05",
+          "traffic_mode": "adaptive",
+          "volume_mode": "monthly",
+          "output": "json"
+        }
+      },
+      {
+        "tool": "site-explorer-domain-rating",
+        "params": {
+          "target": "flexispot.de",
+          "date": "2026-10-12",
+          "output": "json"
+        }
+      },
+      {
+        "tool": "site-explorer-backlinks-stats",
+        "params": {
+          "target": "flexispot.de",
+          "mode": "subdomains",
+          "date": "2026-10-12",
+          "output": "json"
+        }
+      },
+      {
+        "tool": "site-explorer-metrics",
+        "params": {
+          "target": "desktronic.de",
+          "mode": "subdomains",
+          "country": "de",
+          "date": "2026-10-12",
+          "traffic_mode": "adaptive",
+          "volume_mode": "monthly",
+          "output": "json"
+        }
+      },
+      {
+        "tool": "site-explorer-metrics",
+        "params": {
+          "target": "desktronic.de",
+          "mode": "subdomains",
+          "country": "de",
+          "date": "2026-10-05",
+          "traffic_mode": "adaptive",
+          "volume_mode": "monthly",
+          "output": "json"
+        }
+      },
+      {
+        "tool": "site-explorer-domain-rating",
+        "params": {
+          "target": "desktronic.de",
+          "date": "2026-10-12",
+          "output": "json"
+        }
+      },
+      {
+        "tool": "site-explorer-backlinks-stats",
+        "params": {
+          "target": "desktronic.de",
+          "mode": "subdomains",
+          "date": "2026-10-12",
+          "output": "json"
+        }
+      },
+      {
+        "tool": "site-explorer-metrics",
+        "params": {
+          "target": "https://www.dpj-workspace.com/de/",
+          "mode": "prefix",
+          "country": "de",
+          "date": "2026-10-12",
+          "traffic_mode": "adaptive",
+          "volume_mode": "monthly",
+          "output": "json"
+        }
+      },
+      {
+        "tool": "site-explorer-metrics",
+        "params": {
+          "target": "https://www.dpj-workspace.com/de/",
+          "mode": "prefix",
+          "country": "de",
+          "date": "2026-10-05",
+          "traffic_mode": "adaptive",
+          "volume_mode": "monthly",
+          "output": "json"
+        }
+      },
+      {
+        "tool": "site-explorer-domain-rating",
+        "params": {
+          "target": "dpj-workspace.com",
+          "date": "2026-10-12",
+          "output": "json"
+        }
+      },
+      {
+        "tool": "site-explorer-backlinks-stats",
+        "params": {
+          "target": "https://www.dpj-workspace.com/de/",
+          "mode": "prefix",
+          "date": "2026-10-12",
+          "output": "json"
+        }
+      },
+      {
+        "tool": "site-explorer-metrics",
+        "params": {
+          "target": "yaasa.com",
+          "mode": "subdomains",
+          "country": "de",
+          "date": "2026-10-12",
+          "traffic_mode": "adaptive",
+          "volume_mode": "monthly",
+          "output": "json"
+        }
+      },
+      {
+        "tool": "site-explorer-metrics",
+        "params": {
+          "target": "yaasa.com",
+          "mode": "subdomains",
+          "country": "de",
+          "date": "2026-10-05",
+          "traffic_mode": "adaptive",
+          "volume_mode": "monthly",
+          "output": "json"
+        }
+      },
+      {
+        "tool": "site-explorer-domain-rating",
+        "params": {
+          "target": "yaasa.com",
+          "date": "2026-10-12",
+          "output": "json"
+        }
+      },
+      {
+        "tool": "site-explorer-backlinks-stats",
+        "params": {
+          "target": "yaasa.com",
+          "mode": "subdomains",
+          "date": "2026-10-12",
+          "output": "json"
+        }
+      },
+      {
+        "tool": "site-explorer-metrics",
+        "params": {
+          "target": "ergotopia.de",
+          "mode": "subdomains",
+          "country": "de",
+          "date": "2026-10-12",
+          "traffic_mode": "adaptive",
+          "volume_mode": "monthly",
+          "output": "json"
+        }
+      },
+      {
+        "tool": "site-explorer-metrics",
+        "params": {
+          "target": "ergotopia.de",
+          "mode": "subdomains",
+          "country": "de",
+          "date": "2026-10-05",
+          "traffic_mode": "adaptive",
+          "volume_mode": "monthly",
+          "output": "json"
+        }
+      },
+      {
+        "tool": "site-explorer-domain-rating",
+        "params": {
+          "target": "ergotopia.de",
+          "date": "2026-10-12",
+          "output": "json"
+        }
+      },
+      {
+        "tool": "site-explorer-backlinks-stats",
+        "params": {
+          "target": "ergotopia.de",
+          "mode": "subdomains",
+          "date": "2026-10-12",
+          "output": "json"
+        }
+      }
+    ]
+  },
+  "rows": [
+    {
+      "target": "furniwell.de",
+      "name": "Furniwell",
+      "country": "de",
+      "mode": "subdomains",
+      "trafficMode": "adaptive",
+      "volumeMode": "monthly",
+      "traffic": 846,
+      "previousTraffic": 1273,
+      "keywords": 208,
+      "previousKeywords": 232,
+      "top3": 59,
+      "previousTop3": 65,
+      "top10": null,
+      "previousTop10": null,
+      "value": 478.01,
+      "previousValue": 1217.6,
+      "dr": 18,
+      "rd": 835,
+      "paidTraffic": 17,
+      "paidKeywords": 11,
+      "previousPaidTraffic": 22,
+      "previousPaidKeywords": 12
+    },
+    {
+      "target": "songmics.de",
+      "name": "SONGMICS",
+      "country": "de",
+      "mode": "subdomains",
+      "trafficMode": "adaptive",
+      "volumeMode": "monthly",
+      "traffic": 17786,
+      "previousTraffic": 16721,
+      "keywords": 384,
+      "previousKeywords": 440,
+      "top3": 169,
+      "previousTop3": 190,
+      "top10": null,
+      "previousTop10": null,
+      "value": 4417.08,
+      "previousValue": 4271.8,
+      "dr": 38,
+      "rd": 1065,
+      "paidTraffic": 126,
+      "paidKeywords": 14,
+      "previousPaidTraffic": 108,
+      "previousPaidKeywords": 11
+    },
+    {
+      "target": "flexispot.de",
+      "name": "FlexiSpot",
+      "country": "de",
+      "mode": "subdomains",
+      "trafficMode": "adaptive",
+      "volumeMode": "monthly",
+      "traffic": 59928,
+      "previousTraffic": 66331,
+      "keywords": 1325,
+      "previousKeywords": 1387,
+      "top3": 424,
+      "previousTop3": 452,
+      "top10": null,
+      "previousTop10": null,
+      "value": 41887.68,
+      "previousValue": 46998.67,
+      "dr": 49,
+      "rd": 1632,
+      "paidTraffic": 47902,
+      "paidKeywords": 942,
+      "previousPaidTraffic": 23011,
+      "previousPaidKeywords": 458
+    },
+    {
+      "target": "desktronic.de",
+      "name": "Desktronic",
+      "country": "de",
+      "mode": "subdomains",
+      "trafficMode": "adaptive",
+      "volumeMode": "monthly",
+      "traffic": 32627,
+      "previousTraffic": 41625,
+      "keywords": 386,
+      "previousKeywords": 425,
+      "top3": 202,
+      "previousTop3": 211,
+      "top10": null,
+      "previousTop10": null,
+      "value": 46318.8,
+      "previousValue": 67125.59,
+      "dr": 44,
+      "rd": 811,
+      "paidTraffic": 21886,
+      "paidKeywords": 198,
+      "previousPaidTraffic": 21284,
+      "previousPaidKeywords": 186
+    },
+    {
+      "target": "dpj-workspace.com/de/",
+      "name": "DPJ /de/",
+      "country": "de",
+      "mode": "prefix",
+      "trafficMode": "adaptive",
+      "volumeMode": "monthly",
+      "traffic": 940,
+      "previousTraffic": 845,
+      "keywords": 231,
+      "previousKeywords": 257,
+      "top3": 44,
+      "previousTop3": 44,
+      "top10": null,
+      "previousTop10": null,
+      "value": 899.32,
+      "previousValue": 717.04,
+      "dr": 27,
+      "rd": 68,
+      "paidTraffic": 11301,
+      "paidKeywords": 192,
+      "previousPaidTraffic": 6858,
+      "previousPaidKeywords": 133
+    },
+    {
+      "target": "yaasa.com",
+      "name": "Yaasa",
+      "country": "de",
+      "mode": "subdomains",
+      "trafficMode": "adaptive",
+      "volumeMode": "monthly",
+      "traffic": 2562,
+      "previousTraffic": 2587,
+      "keywords": 344,
+      "previousKeywords": 378,
+      "top3": 152,
+      "previousTop3": 160,
+      "top10": null,
+      "previousTop10": null,
+      "value": 2389.07,
+      "previousValue": 2431.79,
+      "dr": 51,
+      "rd": 1471,
+      "paidTraffic": 219,
+      "paidKeywords": 21,
+      "previousPaidTraffic": 6,
+      "previousPaidKeywords": 6
+    },
+    {
+      "target": "ergotopia.de",
+      "name": "Ergotopia",
+      "country": "de",
+      "mode": "subdomains",
+      "trafficMode": "adaptive",
+      "volumeMode": "monthly",
+      "traffic": 35780,
+      "previousTraffic": 35001,
+      "keywords": 3417,
+      "previousKeywords": 3719,
+      "top3": 1226,
+      "previousTop3": 1307,
+      "top10": null,
+      "previousTop10": null,
+      "value": 17643.96,
+      "previousValue": 23712.31,
+      "dr": 56,
+      "rd": 2210,
+      "paidTraffic": 2091,
+      "paidKeywords": 47,
+      "previousPaidTraffic": 2056,
+      "previousPaidKeywords": 33
+    }
+  ],
+  "actions": []
+}
