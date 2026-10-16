@@ -1,11 +1,11 @@
-/* Source-backed creative hypotheses. No performance claims. */
+/* Public qualitative conclusions; account metrics remain private. */
 window.FURNIWELL_DEMAND_DATA = {
-  "version": "2026-10-16",
+  "version": "2026-10-16 · 搜索验证修订",
   "title": "用户需求 → 广告素材建议",
   "research_url": "https://furniwell-de-desk-user-research.majorgnat32.chatgpt.site",
   "scope": "德国成人电动坐站桌；常规桌含玻璃桌与桌架升级；L型按同一工作面整体升降理解。",
-  "priority_rule": "P0为首批六个策划测试方向：优先回答适配和使用疑问，并覆盖两种桌型。P1为第二批。排序是运营判断，不是消费者重要性调查、预计ROAS或转化提升承诺。",
-  "evidence_rule": "来源事实、需求推断与创意假设分开记录。评价与论坛仅用于发现出现过的问题；人物年龄、性别和职业只是演出选择，不代表德国买家构成。",
+  "priority_rule": "P0优先测试尺寸和白色外观；P1为桌架、基础体验及L型选型；P2为低样本场景探索；E用于详情页、再营销与购买说明。搜索转化线索只支持需求方向，不能证明素材因果效果。",
+  "evidence_rule": "公开研究与90天内部搜索验证分别记录。搜索词未出现不代表需求不存在；通用升降词形状未明，查询规格不等于成交SKU。年龄、性别、职业和首次购买身份均未获验证。",
   "products": {
     "economy": {
       "name": "Economy 白色 120×60 cm",
@@ -176,21 +176,38 @@ window.FURNIWELL_DEMAND_DATA = {
       "period": "2026年10月16日读取",
       "type": "品牌商品页",
       "notes": "140x70cm默认页面479.99欧；另有120x60cm；玻璃可书写，抽屉和USB。页面注明iPhone 15和16不支持其USB充电；高度表有不含桌板标记，按SKU实测核对。未读取评价作为新增样本。 2026-10-16商品JSON补查：140×70在售，120×60不可售；库存会变化。"
+    },
+    {
+      "id": "Q90",
+      "type": "内部一方数据",
+      "title": "90天搜索字词反向验证",
+      "url": null,
+      "period": "2026-07-19 至 2026-10-16",
+      "notes": "仅公开方向性结论。不是德国全市场抽样；转化操作、实际成交SKU与素材因果效果未确认。原始报表及分析文件另行保留。"
+    },
+    {
+      "id": "P-Solid",
+      "type": "官方变体规格",
+      "title": "Economy Solid 白色140×70官方变体",
+      "url": "https://furniwell.de/products/economy-solid-elektrisch-hohenverstellbarer-schreibtisch?variant=52895330894090",
+      "period": "2026-10-15至16已核验快照；投放前复核",
+      "notes": "用于白色、一体桌板和型号绑定；不是购买人群或素材效果证据。"
     }
   ],
   "cards": [
     {
       "id": "ND-R01",
-      "title": "小房间里，桌子与人都放得下",
+      "title": "按真实尺寸，确认桌子与座椅放得下",
       "type": "常规桌",
-      "need": "空间适配",
-      "persona": "R1 / R2：首次置办、卧室或客厅兼用",
+      "need": "尺寸选型",
+      "persona": "需确认桌子与座椅能否放入现有空间的选购者",
       "product": "economy",
       "priority": "P0",
       "evidence": "IU样本中存在客厅、卧室办公；已购评价出现120cm客厅工作位。真实使用空间值得展示，不能由此推算小户型买家占比。",
       "sources": [
         "S04",
-        "S12"
+        "S12",
+        "Q90"
       ],
       "visual": "从门口斜拍白色120×60桌，桌面、座椅、开门与通道同时入镜。自然日光，保留真实墙距；用同一机位补一张俯视测量图，数字仅来自实测。",
       "shots": [
@@ -230,20 +247,27 @@ window.FURNIWELL_DEMAND_DATA = {
         "PMax"
       ],
       "preflight": "需120×60白色实物与房间实测；图库P1为Solid型号，参考其构图时必须换成P5正确产品。",
-      "status": "策划建议 · 待投放验证"
+      "status": "搜索需求已复核 · 素材效果待测试",
+      "validation": {
+        "level": "直接线索",
+        "role": "尺寸获客测试",
+        "summary": "明确长×深查询有转化支持；紧凑词的样本较小，无法推算小户型客群占比。",
+        "change": "从单一120×60场景扩展为尺寸版本计划，分别核验100×60、120×60、140×60等SKU；本条现有产品锁定仍为120×60。"
+      }
     },
     {
       "id": "ND-R02",
-      "title": "第一张升降桌，先看日常怎么用",
+      "title": "升降桌的日常坐站体验",
       "type": "常规桌",
       "need": "姿势切换",
-      "persona": "R1：从固定桌升级的预算型用户",
+      "persona": "比较升降桌日常使用方式的选购者",
       "product": "economy",
       "priority": "P1",
       "evidence": "DGUV读者样本报告缺少合适桌子的情况；Economy可见评价涉及价格、记忆键和日常使用。支持测试基础体验，不证明低价文案必然胜出。",
       "sources": [
         "S05",
-        "S10"
+        "S10",
+        "Q90"
       ],
       "visual": "明亮但普通的家庭工作角，笔记本、独立键鼠和一页清单，产品占画面主体。依次呈现坐姿、真实按键与站姿，不用疼痛表演开场。",
       "shots": [
@@ -283,21 +307,28 @@ window.FURNIWELL_DEMAND_DATA = {
         "Demand Gen"
       ],
       "preflight": "按键与记忆功能按该SKU实物演示；不通过剪辑伪造升降速度。",
-      "status": "策划建议 · 待投放验证"
+      "status": "搜索需求已复核 · 素材效果待测试",
+      "validation": {
+        "level": "未被直接验证",
+        "role": "基础体验对照",
+        "summary": "通用品类查询有转化；价格和首次购买表述未证明是主导动机。",
+        "change": "移除预算型与首次购买身份假设；以基础坐站体验作对照，价格版独立测试。"
+      }
     },
     {
       "id": "ND-R03",
       "title": "站姿打字，给出可观察的稳定证据",
       "type": "常规桌",
       "need": "稳定可信",
-      "persona": "R3：设备已成形、担心屏幕晃动的使用者",
+      "persona": "希望观察真实站姿打字表现的选购者",
       "product": "economy",
-      "priority": "P0",
+      "priority": "E",
       "evidence": "可见评价同时包含稳定性期待和轻微摇晃自述。稳定应在真实使用条件下检查，额定承重不能替代打字表现。",
       "sources": [
         "S10",
         "S12",
-        "S19"
+        "S19",
+        "Q90"
       ],
       "visual": "固定三脚架从桌前侧拍，桌脚、手部和屏幕边框同时可见；记录实测高度、载荷、支架、地面与设备摆放，保留正常打字表现。",
       "shots": [
@@ -331,19 +362,26 @@ window.FURNIWELL_DEMAND_DATA = {
         "Demand Gen"
       ],
       "preflight": "必须实物拍摄；AI静帧或图生视频不能充当稳定性测试证据。",
-      "status": "策划建议 · 待投放验证"
+      "status": "搜索需求已复核 · 素材效果待测试",
+      "validation": {
+        "level": "未被直接验证",
+        "role": "详情页／再营销证据",
+        "summary": "稳定／承重查询的点击与转化贡献极少，其中摇晃表述也可能是使用问题。",
+        "change": "从原首批获客下调为买前证据；购买影响另做A/B测试。"
+      }
     },
     {
       "id": "ND-R04",
       "title": "四拼桌板，真实接缝与真实使用",
       "type": "常规桌",
       "need": "稳定可信",
-      "persona": "R1 / R3：重视材质细节、担心收到货不一样",
+      "persona": "需确认桌板结构与到货预期的选购者",
       "product": "economy",
-      "priority": "P1",
+      "priority": "E",
       "evidence": "商品规格明确四拼板；可见评价对接缝的描述不一致。应由该SKU实物解释结构，不能用一体板画面代替。",
       "sources": [
-        "S10"
+        "S10",
+        "Q90"
       ],
       "visual": "斜向近景呈现真实拼缝、桌沿与手部，接着拉远展示正常键鼠和纸张使用；不让桌垫遮住全部接缝。",
       "shots": [
@@ -380,20 +418,27 @@ window.FURNIWELL_DEMAND_DATA = {
         "Demand Gen"
       ],
       "preflight": "需要该SKU桌板近景；不要复用P1/P2 Solid无缝台面作为产品图。",
-      "status": "策划建议 · 待投放验证"
+      "status": "搜索需求已复核 · 素材效果待测试",
+      "validation": {
+        "level": "未被直接验证",
+        "role": "结构透明说明",
+        "summary": "拼板／整板词的可见点击很少，没有足够直接转化支持。",
+        "change": "保留真实拼缝与结构，核验是否减少错误预期，不预设它能提升获客。"
+      }
     },
     {
       "id": "ND-R05",
-      "title": "屏幕、输入、资料各有位置",
+      "title": "180×80：先看尺寸与有效深度",
       "type": "常规桌",
-      "need": "功能分区",
-      "persona": "R3：多窗口与纸质资料并用",
+      "need": "尺寸选型",
+      "persona": "需比较工作面尺寸及设备摆放的选购者",
       "product": "dual",
-      "priority": "P1",
+      "priority": "P0",
       "evidence": "ASR强调按任务布置屏幕、键鼠与资料；规格搜索含大尺寸。矩形大桌也能承接多设备，不应见到双屏就一律推荐L型。",
       "sources": [
         "S08",
-        "S21"
+        "S21",
+        "Q90"
       ],
       "visual": "从使用者左后上方拍180×80桌面：主屏在正前方，键鼠居中，侧边独立放文件，仍露出完整前沿和桌脚。",
       "shots": [
@@ -414,10 +459,10 @@ window.FURNIWELL_DEMAND_DATA = {
           "action": "实测尺寸与CTA，不写屏幕数量保证。"
         }
       ],
-      "german_headline": "Platz für Bildschirm und Unterlagen",
-      "german_body": "Plane deine Arbeitsfläche nach deinen Aufgaben – mit Raum für Eingabe, Bildschirm und Dokumente.",
+      "german_headline": "180 × 80 cm für deinen Arbeitsplatz",
+      "german_body": "Prüfe Stellfläche und Tischtiefe – und plane Bildschirm, Eingabe und Unterlagen mit echten Maßen.",
       "cta": "Arbeitsfläche ansehen",
-      "test": "A：三个任务区；B：同SKU仅展示双屏数量。保持设备一致，检验任务解释是否更能带来购买。",
+      "test": "A：同SKU真实180×80尺寸与深度说明；B：同SKU相同设备的场景全景。只改变尺寸解释；Shopping与PMax分别观察，不能据查询组ROAS认定素材获胜。",
       "check": "记录实际屏幕、底座和观看距离；显示器和支臂为场景道具，附送与否应清楚。",
       "related": [
         "FW-C02",
@@ -433,21 +478,28 @@ window.FURNIWELL_DEMAND_DATA = {
         "Demand Gen"
       ],
       "preflight": "使用P3的180×80真实尺寸，不能把设备容量直接移植到120×60。",
-      "status": "策划建议 · 待投放验证"
+      "status": "搜索需求已复核 · 素材效果待测试",
+      "validation": {
+        "level": "直接线索",
+        "role": "尺寸与深度获客测试",
+        "summary": "大尺寸和明确长×深词有转化线索；多屏词未获得点击，资料分区动机未被直接验证。",
+        "change": "上调180×80真实尺寸和有效深度，双屏与文件只是用途示例。"
+      }
     },
     {
       "id": "ND-R06",
       "title": "按自己的坐站位置设置高度",
       "type": "常规桌",
       "need": "姿势切换",
-      "persona": "R4：关注身高适配或成年人共享工作位",
+      "persona": "需要核对最低桌高及坐站位置的选购者",
       "product": "economy",
-      "priority": "P1",
+      "priority": "E",
       "evidence": "ASR提供高度适配参考；DGUV样本提示部分用户缺少设置指导。需要测量与示范，不按性别推断所需桌高。",
       "sources": [
         "S08",
         "S05",
-        "S10"
+        "S10",
+        "Q90"
       ],
       "visual": "侧面机位展示肩、肘、手与桌面关系；坐姿脚部有支撑，站姿自然。控制器特写使用原机，数值仅显示实测结果。",
       "shots": [
@@ -487,20 +539,27 @@ window.FURNIWELL_DEMAND_DATA = {
         "TikTok"
       ],
       "preflight": "最低桌高不适合出镜者时换适配型号，不用不自然姿势完成演示。",
-      "status": "策划建议 · 待投放验证"
+      "status": "搜索需求已复核 · 素材效果待测试",
+      "validation": {
+        "level": "未被直接验证",
+        "role": "高度适配说明",
+        "summary": "高度／共用相关词的可见样本很少，未验证购买强度或使用者身高。",
+        "change": "保留测量与设置教学；不推出高个、矮个或共用人群占比。"
+      }
     },
     {
       "id": "ND-R07",
       "title": "安装能看懂：从编号零件到可用工作位",
       "type": "常规桌",
       "need": "安装交付",
-      "persona": "R1：首次自行安装大件家具",
+      "persona": "需要了解装配条件的选购者",
       "product": "economy",
-      "priority": "P0",
+      "priority": "E",
       "evidence": "Furniwell可见评价提到零件编号；其他已购样本也出现孔位问题。应展示具体装配条件，而非承诺人人都能几分钟装好。",
       "sources": [
         "S10",
-        "S14"
+        "S14",
+        "Q90"
       ],
       "visual": "同一家庭地面工作区，依说明书摆放编号零件；近景展示一个真实连接步骤，再切已完成桌子的坐站使用。",
       "shots": [
@@ -539,21 +598,28 @@ window.FURNIWELL_DEMAND_DATA = {
         "TikTok"
       ],
       "preflight": "脚架、横梁、螺丝孔位须真实；不展示拧空气、漂浮零件或虚构免工具结构。",
-      "status": "策划建议 · 待投放验证"
+      "status": "搜索需求已复核 · 素材效果待测试",
+      "validation": {
+        "level": "未被直接验证",
+        "role": "安装说明／再营销证据",
+        "summary": "安装／交付词点击极少，未观察到直接归因转化。",
+        "change": "从原首批获客下调为买前证据；说明工具、人数和步骤，另测影响。"
+      }
     },
     {
       "id": "ND-R08",
       "title": "下班复位：小物进抽屉，房间回到生活",
       "type": "常规桌",
       "need": "家居收纳",
-      "persona": "R2：工作台与客厅或卧室共用",
+      "persona": "希望评估原有抽屉用途的选购者",
       "product": "g2",
-      "priority": "P1",
+      "priority": "P2",
       "evidence": "可见已购评价涉及抽屉与家居适配；G2页面有原有抽屉。收纳场景是需求推断，效果仍待验证。",
       "sources": [
         "S12",
         "S13",
-        "S22"
+        "S22",
+        "Q90"
       ],
       "visual": "侧窗柔光的真实居室，G2 140×70桌占主体。一本笔记本、笔和小件放进原有单抽屉，收纳前后保持同机位与真实容量。",
       "shots": [
@@ -592,19 +658,26 @@ window.FURNIWELL_DEMAND_DATA = {
         "TikTok"
       ],
       "preflight": "绑定140×70在售SKU；120×60当前不可售，不复用旧版本比例。",
-      "status": "策划建议 · 待投放验证"
+      "status": "搜索需求已复核 · 素材效果待测试",
+      "validation": {
+        "level": "样本不足",
+        "role": "收纳场景探索",
+        "summary": "抽屉／收纳仅有少量归因贡献，尚不足以确认为核心买因。",
+        "change": "保留真实容量与收纳动作；与白色外观测试分开。"
+      }
     },
     {
       "id": "ND-R09",
-      "title": "把一个想法写在真实玻璃台面上",
+      "title": "玻璃外观与书写功能，分开验证",
       "type": "常规桌",
-      "need": "家居收纳",
-      "persona": "R2 / R3：办公中会记下临时想法",
+      "need": "玻璃材质",
+      "persona": "比较玻璃材质或临时书写用途的选购者",
       "product": "g2",
-      "priority": "P1",
+      "priority": "P2",
       "evidence": "G2商品页明确可书写玻璃台面。将其用于临时记事是创作建议，不构成提升记忆或工作效率的证据。",
       "sources": [
-        "S22"
+        "S22",
+        "Q90"
       ],
       "visual": "45°桌面近景，一只手用经实测适用的可擦写笔记下简短待办，再真实擦除；最后拉远到原玻璃桌与抽屉，不添加屏幕式特效。",
       "shots": [
@@ -641,21 +714,28 @@ window.FURNIWELL_DEMAND_DATA = {
         "Demand Gen"
       ],
       "preflight": "写擦效果必须实拍或先实物核验；不能以生成动画当作材质性能证据。",
-      "status": "策划建议 · 待投放验证"
+      "status": "搜索需求已复核 · 素材效果待测试",
+      "validation": {
+        "level": "样本不足",
+        "role": "玻璃材质／书写探索",
+        "summary": "玻璃词有个别转化；可书写词没有点击。材质与书写功能不能混为同一需求。",
+        "change": "先测玻璃外观，再用同SKU独立比较写擦过程；单个高回报样本不定义赢家。"
+      }
     },
     {
       "id": "ND-R10",
-      "title": "想保留现有桌板，先做升级适配",
+      "title": "单独买桌架，先确认桌板兼容与包含项",
       "type": "常规桌",
       "need": "选型升级",
-      "persona": "R3：已有合适桌板的升级用户",
+      "persona": "单独选购桌架、需要确认桌板兼容的选购者",
       "product": "frame",
       "priority": "P1",
       "evidence": "德国搜索中存在单独桌架规格意图；桌架商品给出适配要求。需求存在不等于任意旧桌板均兼容。",
       "sources": [
-        "S21"
+        "S21",
+        "Q90"
       ],
-      "visual": "用同一块经核验的演示桌板，表现测量、核孔、装配和坐站；产品Hero要露出完整框架，桌板以道具说明区分。",
+      "visual": "桌架Hero露出横梁、原立柱、T脚与原控制器，再展示演示桌板尺寸、材质、孔位的核验过程。演示板不包含在桌架商品内；可用经核验新板或旧板，不预设购买者已有旧板。",
       "shots": [
         {
           "time": "0–3s",
@@ -674,8 +754,8 @@ window.FURNIWELL_DEMAND_DATA = {
           "action": "回到桌架Hero与兼容性检查CTA。"
         }
       ],
-      "german_headline": "Deine Tischplatte. Ein neues Gestell.",
-      "german_body": "Prüfe Maße, Material und Befestigung, bevor du deine vorhandene Platte für den Umbau nutzt.",
+      "german_headline": "Das Gestell. Deine passende Tischplatte.",
+      "german_body": "Prüfe Maße, Material und Befestigung deiner ausgewählten Tischplatte. Die Tischplatte ist nicht im Lieferumfang enthalten.",
       "cta": "Kompatibilität prüfen",
       "test": "A：兼容性检查到使用；B：同桌架产品Hero。关注桌架购买和桌板是否包含的咨询。",
       "check": "必须说明仅售桌架、演示桌板不含；不能承诺适配任何桌板。",
@@ -694,21 +774,87 @@ window.FURNIWELL_DEMAND_DATA = {
         "Demand Gen"
       ],
       "preflight": "桌板、载荷、孔位按实物和当前说明书核验，未通过则不拍该组合。",
-      "status": "策划建议 · 待投放验证"
+      "status": "搜索需求已复核 · 素材效果待测试",
+      "validation": {
+        "level": "直接线索",
+        "role": "桌架适配选型测试",
+        "summary": "升降桌架查询有独立转化支持，但不知道购买者是否已经拥有桌板。",
+        "change": "由默认旧板改造改为桌板兼容与包含说明；旧板复用只是可选演示。"
+      }
+    },
+    {
+      "id": "ND-R11",
+      "title": "白色桌体，先让颜色与产品看清楚",
+      "type": "常规桌",
+      "need": "颜色外观",
+      "persona": "明确寻找白色升降桌的选购者",
+      "product": "solid",
+      "priority": "P0",
+      "evidence": "沿用已核验白色Solid 140×70官方变体，仅以真实产品和颜色呈现；不由颜色推断买家性别、职业或收入。",
+      "sources": [
+        "P-Solid",
+        "Q90"
+      ],
+      "visual": "白色Solid 140×70整桌占主体，中性浅灰墙、自然光与少量工作用品；完整保留一体桌板、框架、原控制器与真实白色色调。与同SKU生活场景版保持设备、机位、曝光和优惠一致，只改变背景信息量。",
+      "shots": [
+        {
+          "time": "0–3s",
+          "action": "完整白色产品先入镜，真实色调与桌面边缘清晰可见。"
+        },
+        {
+          "time": "3–7s",
+          "action": "桌面、框架和单控制器近景，保持同一白色变体。"
+        },
+        {
+          "time": "7–12s",
+          "action": "回到整桌自然使用场景；坐站动作连续，不改变产品结构。"
+        },
+        {
+          "time": "12–15s",
+          "action": "白色产品Hero，后期标注已核验型号与140×70 cm。"
+        }
+      ],
+      "german_headline": "Weiß. Klar. Dein Arbeitsplatz.",
+      "german_body": "Der elektrisch höhenverstellbare Schreibtisch in Weiß – mit 140 × 70 cm großer, einteiliger Tischplatte.",
+      "cta": "Weiße Variante ansehen",
+      "test": "A：中性背景白色产品Hero；B：同SKU家居使用场景。固定颜色、尺寸、光线、设备、优惠与落地页；先观察Shopping对应流量，再分别验证PMax与Meta，不把查询表现当作素材效果。",
+      "check": "白色色调与官方SKU一致；不添加抽屉、拼缝或未经核验的USB接口；不能因为白色就称女性专属。",
+      "related": [
+        "FW-C07",
+        "FW-C09"
+      ],
+      "reference_ids": [
+        "DESK-GOOG-008"
+      ],
+      "channels": [
+        "Shopping",
+        "PMax",
+        "Meta",
+        "Demand Gen"
+      ],
+      "preflight": "绑定Solid 140×70白色一体板变体，制作与投放前核对库存；与Economy四拼120×60、G2玻璃桌分开。",
+      "status": "搜索需求已复核 · 素材效果待测试",
+      "validation": {
+        "level": "直接线索",
+        "role": "白色外观获客测试",
+        "summary": "白色查询有归因转化支持，主要来源于Shopping；不代表全部渠道或某个人口群体的偏好。",
+        "change": "新增独立白色方向，与抽屉收纳和玻璃书写拆开验证。"
+      }
     },
     {
       "id": "ND-L01",
       "title": "主区电脑，侧翼资料：把任务分开",
       "type": "L型桌",
       "need": "功能分区",
-      "persona": "L1：屏幕与实物资料频繁切换",
+      "persona": "评估L型两翼用途的选购者",
       "product": "l160",
-      "priority": "P0",
+      "priority": "P2",
       "evidence": "研究中的L型评价出现工作面需求；ASR强调主屏与任务布局。L型价值可用独立任务区解释，不能只数屏幕。",
       "sources": [
         "S08",
         "S11",
-        "S15"
+        "S15",
+        "Q90"
       ],
       "visual": "黑色L型主区放主屏和键鼠，侧翼放文件和图纸；高位三分之四机位同时交代内角、两翼和脚架。人物保持正向输入，仅短时取侧翼资料。",
       "shots": [
@@ -745,20 +891,27 @@ window.FURNIWELL_DEMAND_DATA = {
         "PMax"
       ],
       "preflight": "按黑色L型SKU实拍两翼同步升降；参考库内矩形桌只借鉴任务与机位，不作为L型竞品广告证据。",
-      "status": "策划建议 · 待投放验证"
+      "status": "搜索需求已复核 · 素材效果待测试",
+      "validation": {
+        "level": "样本不足",
+        "role": "L型任务分区探索",
+        "summary": "明确L型升降意图存在；资料分区动机未在搜索词中获得直接支持。",
+        "change": "从原首批下调为场景探索，测试是否能解释两翼用途。"
+      }
     },
     {
       "id": "ND-L02",
       "title": "转角放置前，先量墙、门与椅子",
       "type": "L型桌",
       "need": "空间适配",
-      "persona": "L2：正在规划明确房间转角",
+      "persona": "核对L型外轮廓与摆放条件的选购者",
       "product": "l160",
-      "priority": "P0",
+      "priority": "P1",
       "evidence": "论坛求购样本提出精确边长和不同深度；L型搜索包含大小规格。这支持精确规划需求，不支持“L型总是省空间”。",
       "sources": [
         "S18",
-        "S21"
+        "S21",
+        "Q90"
       ],
       "visual": "同一房间先给真实实景，再以同尺度平面图显示L型外轮廓、门开启区、椅子退出区和暖气位置；不把窗或墙推远来制造宽敞感。",
       "shots": [
@@ -794,20 +947,27 @@ window.FURNIWELL_DEMAND_DATA = {
         "Demand Gen"
       ],
       "preflight": "方向以使用者视角与该SKU安装图为准；未确认可换向前不拍镜像换装。",
-      "status": "策划建议 · 待投放验证"
+      "status": "搜索需求已复核 · 素材效果待测试",
+      "validation": {
+        "level": "样本不足",
+        "role": "L型形状与尺寸选型",
+        "summary": "有明确转角升降查询；转化样本很少，具体房型、左右方向和成交SKU仍未知。",
+        "change": "作为L型优先选型说明，展示外轮廓、深度和坐位，不宣布普遍省空间。"
+      }
     },
     {
       "id": "ND-L03",
       "title": "同一张桌，工作与游戏都保留位置",
       "type": "L型桌",
       "need": "功能分区",
-      "persona": "L3：办公、游戏或内容制作共用设备",
+      "persona": "评估同一L型设备布局能否承接两种任务的选购者",
       "product": "l160",
-      "priority": "P0",
+      "priority": "P2",
       "evidence": "论坛有多屏、麦克风和笔记本共用的自述；这是设备任务线索，并非L型买家年龄性别或全国占比证据。",
       "sources": [
         "S19",
-        "S11"
+        "S11",
+        "Q90"
       ],
       "visual": "同一真实L型工作位，白天办公、晚间游戏；主操作区保持正前方，侧翼容纳经验证的备用设备。仅更换任务与小幅环境光，不靠大量RGB制造差异。",
       "shots": [
@@ -846,20 +1006,27 @@ window.FURNIWELL_DEMAND_DATA = {
         "Demand Gen"
       ],
       "preflight": "先核验屏幕观看距离、支架夹持和设备总重；矩形参考图不直接改标成L型产品。",
-      "status": "策划建议 · 待投放验证"
+      "status": "搜索需求已复核 · 素材效果待测试",
+      "validation": {
+        "level": "样本不足",
+        "role": "L型双用途探索",
+        "summary": "一般升降桌游戏词有少量转化；L型且包含游戏意图的词几乎没有点击，没有转化支持。",
+        "change": "从原首批下调；不得用一般游戏查询表现证明L型工作游戏共用。"
+      }
     },
     {
       "id": "ND-L04",
       "title": "多一条侧翼，不等于屏幕距离更远",
       "type": "L型桌",
       "need": "空间适配",
-      "persona": "L3：大屏或超宽屏适配敏感用户",
+      "persona": "需核对大屏观看距离的选购者",
       "product": "l160",
-      "priority": "P1",
+      "priority": "E",
       "evidence": "Furniwell L型有一条G9用户反馈观看距离偏近；仅为个案，足以提示拍摄前要核验深度，不能估算不适配率。",
       "sources": [
         "S11",
-        "S08"
+        "S08",
+        "Q90"
       ],
       "visual": "固定侧面机位，真实展示眼睛、屏幕和键盘的相对位置；写明演示屏幕型号、底座/支臂、桌面深度和实测观看距离。",
       "shots": [
@@ -894,20 +1061,27 @@ window.FURNIWELL_DEMAND_DATA = {
         "Demand Gen"
       ],
       "preflight": "只有实测组合适配才用于正向广告；不适配则用于中立选型说明，换适合设备拍摄。",
-      "status": "策划建议 · 待投放验证"
+      "status": "搜索需求已复核 · 素材效果待测试",
+      "validation": {
+        "level": "未被直接验证",
+        "role": "屏幕适配说明",
+        "summary": "多屏／设备词没有获得点击；既有大屏距离反馈只是个案。",
+        "change": "保留屏幕、支臂与深度检查，暂不作为独立获客主因。"
+      }
     },
     {
       "id": "ND-L05",
       "title": "从坐到站，线缆也要跟得上",
       "type": "L型桌",
       "need": "稳定可信",
-      "persona": "L1 / L3：多设备且使用升降",
+      "persona": "需要规划线长与插座位置的选购者",
       "product": "l160",
-      "priority": "P1",
+      "priority": "E",
       "evidence": "研究中的L型评价出现另购理线件；设备讨论关注支臂与线缆。理线展示要同时交代是否另购。",
       "sources": [
         "S15",
-        "S19"
+        "S19",
+        "Q90"
       ],
       "visual": "低位侧拍L型底部，观察两翼升降期间线缆、插头与支架；保持真实弯曲余量，不拉直电源线，也不新增产品没有的线槽。",
       "shots": [
@@ -944,21 +1118,28 @@ window.FURNIWELL_DEMAND_DATA = {
         "TikTok"
       ],
       "preflight": "安装点与线长须实测；不得让线缆穿过实体桌板或人物。",
-      "status": "策划建议 · 待投放验证"
+      "status": "搜索需求已复核 · 素材效果待测试",
+      "validation": {
+        "level": "未被直接验证",
+        "role": "线缆适配证据",
+        "summary": "理线／供电词未观察到直接归因转化，无法证明是主要买因。",
+        "change": "保留线缆余量实拍与另购说明，购买影响另测。"
+      }
     },
     {
       "id": "ND-L06",
       "title": "两翼设备不对称，也要检查实际表现",
       "type": "L型桌",
       "need": "稳定可信",
-      "persona": "L1 / L4：固定设备和资料较多的长期使用者",
+      "persona": "需核验两翼设备与实际打字表现的选购者",
       "product": "l160",
-      "priority": "P1",
+      "priority": "E",
       "evidence": "评价和设备讨论提到升高后的稳定需求。静态、动态承重与偏载下的表现并不相同，需要记录真实条件。",
       "sources": [
         "S11",
         "S15",
-        "S19"
+        "S19",
+        "Q90"
       ],
       "visual": "固定相机同时拍到两翼、桌脚与屏幕边框；按说明书允许范围布置设备，记录重量分布与高度，展示正常打字。",
       "shots": [
@@ -990,20 +1171,27 @@ window.FURNIWELL_DEMAND_DATA = {
         "Demand Gen"
       ],
       "preflight": "实物测试并保留原始视频；AI视频仅能做场景示意，不能替代性能证明。",
-      "status": "策划建议 · 待投放验证"
+      "status": "搜索需求已复核 · 素材效果待测试",
+      "validation": {
+        "level": "未被直接验证",
+        "role": "真实使用证据",
+        "summary": "稳定／承重整体可见样本很小，无法单独验证L型偏载需求强度。",
+        "change": "记录真实条件并保留原片；获客效果需独立测试。"
+      }
     },
     {
       "id": "ND-L07",
       "title": "开箱清点，知道何时能开始用",
       "type": "L型桌",
       "need": "安装交付",
-      "persona": "L4：希望避免缺件或等待影响工作安排",
+      "persona": "需要提前确认包装及装配准备的选购者",
       "product": "l160",
-      "priority": "P1",
+      "priority": "E",
       "evidence": "L型可见已购样本出现分批到货、缺板或板面状态问题。只能说明问题出现过，不能推导Furniwell包裹数或履约水平。",
       "sources": [
         "S15",
-        "S16"
+        "S16",
+        "Q90"
       ],
       "visual": "先展示完整L型工作位，再回看该SKU真实包装、零件清单、桌板保护与装配步骤；标签使用无个人信息的演示件。",
       "shots": [
@@ -1039,20 +1227,27 @@ window.FURNIWELL_DEMAND_DATA = {
         "Demand Gen"
       ],
       "preflight": "先取得该SKU当前包装和说明书，未经核验的箱数或时效不进入成品字幕。",
-      "status": "策划建议 · 待投放验证"
+      "status": "搜索需求已复核 · 素材效果待测试",
+      "validation": {
+        "level": "未被直接验证",
+        "role": "包装与交付说明",
+        "summary": "搜索报表缺少售后、缺件与退款数据；安装／交付词样本很少。",
+        "change": "保留清单和装配准备，等待工单和退货原因验证影响。"
+      }
     },
     {
       "id": "ND-L08",
       "title": "内角和桌下，座椅能否自然退出",
       "type": "L型桌",
       "need": "空间适配",
-      "persona": "L2 / L4：关注腿部、立柱与柜体干涉",
+      "persona": "需要检查内角坐位与椅子退出空间的选购者",
       "product": "l160",
-      "priority": "P1",
+      "priority": "E",
       "evidence": "ASR要求按任务安排活动空间；转角规划样本提示几何适配。产品外尺寸不能代替实际坐位和桌下空间。",
       "sources": [
         "S08",
-        "S18"
+        "S18",
+        "Q90"
       ],
       "visual": "从低位侧后方拍完整内角与原立柱，让座椅、双腿和地面清楚可见；实际坐下、退出、站起，柜体和脚位保留真实位置。",
       "shots": [
@@ -1090,21 +1285,28 @@ window.FURNIWELL_DEMAND_DATA = {
         "Demand Gen"
       ],
       "preflight": "桌下柜是否包含、能否随桌升降都要明确；不能摆在会阻挡升降的位置。",
-      "status": "策划建议 · 待投放验证"
+      "status": "搜索需求已复核 · 素材效果待测试",
+      "validation": {
+        "level": "未被直接验证",
+        "role": "坐位与腿部适配说明",
+        "summary": "明确转角意图存在，但腿部、座椅退出和柜体干涉未被字词直接验证。",
+        "change": "用于买前适配说明，测试是否帮助购买与减少不适配。"
+      }
     },
     {
       "id": "ND-X01",
       "title": "矩形还是L型？按任务和房间来选",
       "type": "两类对比",
       "need": "选型升级",
-      "persona": "R3 / L1 / L2：仍在比较形状与尺寸",
+      "persona": "比较矩形与L型外轮廓、深度和任务安排的选购者",
       "product": "dual",
       "priority": "P1",
       "evidence": "研究同时发现大矩形、转角和规格需求。形状选择应同时考虑任务、深度与房间，不以搜索量比值当市场份额。",
       "sources": [
         "S08",
         "S18",
-        "S21"
+        "S21",
+        "Q90"
       ],
       "visual": "同尺度房间平面图分别放置180×80矩形与160×140×60 L型；沿用同一套设备，实景分开拍，交代各自坐位和行走区。",
       "shots": [
@@ -1143,21 +1345,28 @@ window.FURNIWELL_DEMAND_DATA = {
         "Demand Gen"
       ],
       "preflight": "对比实物为P3与本板块L160，分别核验价格与规格；没有对比落地页时先作为再营销轮播测试。",
-      "status": "策划建议 · 待投放验证"
+      "status": "搜索需求已复核 · 素材效果待测试",
+      "validation": {
+        "level": "样本不足",
+        "role": "形状比较选型测试",
+        "summary": "通用升降词形状未明；明确L型可见转化少，没有成交SKU，不能计算两种桌型销量份额。",
+        "change": "保留同尺度选型，形状销量比较待订单SKU验证。"
+      }
     },
     {
       "id": "ND-X02",
       "title": "购买前把大件退换流程讲清楚",
       "type": "两类对比",
       "need": "购买信任",
-      "persona": "R1 / L4：重视试用、退回和售后成本",
+      "persona": "需要了解大件退换流程的选购者",
       "product": "economy",
-      "priority": "P1",
+      "priority": "E",
       "evidence": "样本评价提到试用或退换货信任；Furniwell商品页要求保留包装并拆卸退回。具体政策与费用必须在投放当天复核。",
       "sources": [
         "S13",
         "S10",
-        "S11"
+        "S11",
+        "Q90"
       ],
       "visual": "以产品使用全景开场，随后展示中立的“选型号—保留包装—按现行流程联系”信息卡；不拍虚构客服对话或五星评价。",
       "shots": [
@@ -1192,16 +1401,19 @@ window.FURNIWELL_DEMAND_DATA = {
         "Demand Gen"
       ],
       "preflight": "条款与对应国家、SKU和订单场景一致；不把商品页标题当完整退货政策。",
-      "status": "策划建议 · 待投放验证"
+      "status": "搜索需求已复核 · 素材效果待测试",
+      "validation": {
+        "level": "未被直接验证",
+        "role": "购买与售后说明",
+        "summary": "缺少退款、客服和净利润数据，未验证退换成本对购买的影响。",
+        "change": "继续讲清现行条款，待订单退款和咨询数据验证。"
+      }
     }
   ],
   "first_batch": [
     "ND-R01",
-    "ND-R03",
-    "ND-R07",
-    "ND-L01",
-    "ND-L02",
-    "ND-L03"
+    "ND-R05",
+    "ND-R11"
   ],
   "measurement": {
     "unit": "同一SKU内比较两条素材；匹配渠道、受众、出价、落地页、优惠、归因窗口和时间段。若不能随机分流，结果只作观察性线索。",
@@ -1209,7 +1421,7 @@ window.FURNIWELL_DEMAND_DATA = {
     "diagnostic": "CTR、落地页到达、加购、视频观看用于定位环节；高CTR不等于高购买。安装、尺寸和板面相关咨询/退货用于检查素材是否造成错误预期。",
     "cadence": "同一测试保持一个主要创意变量；预先约定主指标、归因与退款成熟期。用现有转化率和波动决定样本量与预算，不设没有账户依据的固定花费或胜出阈值。",
     "imports": [
-      "Google：日期、系列/广告组、渠道类型、广告/资产ID、素材文件名或URL、搜索字词或受众、展示、点击、花费、购买转化、购买金额、落地页、最终SKU、归因窗口。PMax资产评级不等于独立素材ROAS，组合展示可能无法可靠拆分归因。",
+      "优先补充：按日期、系列、转化操作拆分的转化次数与价值，确认Purchase口径；再补订单SKU、收入与退款。随后关联广告/资产ID、素材名、落地页、渠道和归因窗口。PMax资产评级不能等同独立素材ROAS。",
       "Meta / TikTok：日期、系列/组/广告ID、素材ID或文件名、版位、受众、展示、点击或落地页浏览、花费、购买、购买金额、归因窗口。",
       "经营侧：订单日期、订单ID、SKU、实付、退款金额与原因、履约成本及毛利口径；无需上传姓名、邮箱或电话。",
       "关联字段：将ND编号写入素材文件名和可用的广告命名标签；先在同一SKU、同一渠道内比较，再决定需求方向是否值得放量。"
@@ -1221,8 +1433,12 @@ window.FURNIWELL_DEMAND_DATA = {
       "advice": "一个版本回答一个购买问题。生活场景负责吸引，第二张或后续镜头补尺寸、结构或使用证据；按版位独立构图。"
     },
     {
+      "name": "Shopping / PLA",
+      "advice": "优先核对标题、颜色、长宽与变体落地页一致，再制作清楚的真实产品图。尺寸和白色查询线索较积极，但产品、出价与展示选择仍会影响历史表现。"
+    },
+    {
       "name": "Google PMax",
-      "advice": "保留干净的真实产品与使用场景版本；标注图、对比图和讲解视频另行制作，不把一个拼贴母版强行裁成所有尺寸。具体资产要求在投放时核对。"
+      "advice": "保留干净的真实产品与使用场景版本；标注图、对比图和讲解视频另行制作，不把一个拼贴母版强行裁成所有尺寸。具体资产要求在投放时核对。 本次尺寸查询信号在Shopping与PMax方向不同，分渠道核验；不要直接搬用Shopping表现推断PMax素材效果。"
     },
     {
       "name": "TikTok / 竖版视频",
@@ -1232,5 +1448,51 @@ window.FURNIWELL_DEMAND_DATA = {
       "name": "制作交付",
       "advice": "每条先做一张场景主图、一张证据图和一条竖版视频。建议按渠道重构1:1、4:5、1.91:1或9:16；这是制作选择，并非各平台完整规格表。"
     }
-  ]
+  ],
+  "priority_labels": {
+    "P0": "优先获客测试",
+    "P1": "次级选型测试",
+    "P2": "小额探索",
+    "E": "买前证据"
+  },
+  "validation": {
+    "date": "2026-10-16",
+    "period": "2026-07-19 至 2026-10-16",
+    "source": "Q90 · 用户提供的90天Google Ads搜索字词报表（内部核验）",
+    "method": "剔除汇总行，区分品牌、桌架、L型、形状未明整桌与儿童查询；需求标签可重叠。工作簿与复核代码已另行交付。",
+    "boundary": "转化操作与成交SKU尚未确认；可见字词只覆盖部分流量。公开页面展示方向性结论，账户花费、转化和ROAS明细不在此展示。",
+    "channel": "尺寸信号存在渠道差异：Shopping中的方向较积极，PMax未呈现同样优势。按同一SKU、同一渠道测试，不把历史查询表现当作素材提升证明。",
+    "signals": [
+      {
+        "title": "尺寸选型",
+        "level": "直接线索",
+        "text": "明确长×深查询有较充分归因转化线索。优先展示真实占地和有效深度，同时覆盖紧凑与大尺寸。"
+      },
+      {
+        "title": "白色与桌架",
+        "level": "局部线索",
+        "text": "白色外观和单独桌架有转化线索。白色不能推导性别，桌架不能直接推导已有旧桌板。"
+      },
+      {
+        "title": "L型选型",
+        "level": "样本不足",
+        "text": "明确L型／转角升降查询存在，但可见转化样本很少；任务分区、工作游戏共用仍待测试。"
+      },
+      {
+        "title": "稳定、安装与理线",
+        "level": "未被直接验证",
+        "text": "保留为真实购买说明与适配证据；现有搜索样本不足以支持它们为优先获客买因。"
+      }
+    ],
+    "sizes": [
+      "100×60",
+      "120×60",
+      "140×60",
+      "140×70",
+      "160×80",
+      "180×80"
+    ],
+    "size_note": "这是查询规格清单，不是现有SKU可售清单或销量排名。每个版本须先核验对应SKU、桌板结构、颜色、库存与落地页，不能缩放同一张产品图代替不同尺寸。",
+    "new_lead": "儿童／青少年查询形成新增独立线索；先核查成交SKU、最低高度和适配条件。本轮不据此生成成人桌适合儿童的广告。"
+  }
 };

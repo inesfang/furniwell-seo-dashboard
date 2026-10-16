@@ -8,16 +8,20 @@
   const safe=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const sources=Object.fromEntries(data.sources.map(s=>[s.id,s]));
   const cards=Object.fromEntries(data.cards.map(c=>[c.id,c]));
-  const filters={needQ:'nq',needType:'nt',needTheme:'nn',needChannel:'nc',needPriority:'np'};
+  const filters={needQ:'nq',needType:'nt',needTheme:'nn',needChannel:'nc',needPriority:'np',needEvidence:'ne'};
+  const priorityOrder={P0:0,P1:1,P2:2,E:3};
+  const priorityLabel=c=>data.priority_labels[c.priority]||c.priority;
+  const priorityBadge=c=>`<span class="need-priority ${c.priority.toLowerCase()}">${safe(c.priority)} · ${safe(priorityLabel(c))}</span>`;
   let selected=null;
   const productKeys=c=>c.type==='两类对比'?[c.product,'l160']:[c.product];
   const productNames=c=>productKeys(c).map(k=>data.products[k].name).join(' / ');
-  const links=ids=>`<span class="need-source-links">${ids.map(id=>`<a href="${safe(sources[id].url)}" target="_blank" rel="noopener" title="${safe(sources[id].title)}">${safe(id)} ↗</a>`).join('')}</span>`;
+  const links=ids=>`<span class="need-source-links">${ids.map(id=>sources[id].url?`<a href="${safe(sources[id].url)}" target="_blank" rel="noopener" title="${safe(sources[id].title)}">${safe(id)} ↗</a>`:`<span title="${safe(sources[id].title)}">${safe(id)} · 内部核验</span>`).join('')}</span>`;
   function options(id,values){el(id).insertAdjacentHTML('beforeend',[...new Set(values)].map(v=>`<option value="${safe(v)}">${safe(v)}</option>`).join(''));}
   options('needType',['常规桌','L型桌','两类对比']);
   options('needTheme',data.cards.map(c=>c.need));
   options('needChannel',data.cards.flatMap(c=>c.channels));
-  options('needPriority',['P0','P1']);
+  el('needPriority').insertAdjacentHTML('beforeend',Object.entries(data.priority_labels).map(([key,label])=>`<option value="${safe(key)}">${safe(key+' · '+label)}</option>`).join(''));
+  options('needEvidence',['直接线索','局部线索','样本不足','未被直接验证']);
 
   function matched(){
     const q=el('needQ').value.trim().toLowerCase();
@@ -25,18 +29,21 @@
       &&(!el('needTheme').value||el('needTheme').value===c.need)
       &&(!el('needChannel').value||c.channels.includes(el('needChannel').value))
       &&(!el('needPriority').value||el('needPriority').value===c.priority)
-      &&(!q||[c.id,c.title,c.persona,c.evidence,c.visual,c.german_headline,productNames(c),...c.related].join(' ').toLowerCase().includes(q)));
+      &&(!el('needEvidence').value||el('needEvidence').value===c.validation.level)
+      &&(!q||[c.id,c.title,c.persona,c.evidence,c.visual,c.german_headline,c.validation.level,c.validation.role,c.validation.summary,c.validation.change,productNames(c),...c.related].join(' ').toLowerCase().includes(q)))
+      .sort((a,b)=>priorityOrder[a.priority]-priorityOrder[b.priority]);
   }
   function render(){
     const list=matched();
-    el('needCount').textContent=`显示 ${list.length} / ${data.cards.length} 条建议 · 10条常规桌 / 8条L型 / 2条选型与信任 · 全部待投放验证`;
+    el('needCount').textContent=`显示 ${list.length} / ${data.cards.length} 条建议 · 11条常规桌 / 8条L型 / 2条选型与信任 · 需求已复核，素材效果待测试`;
     el('needCards').innerHTML=list.length?list.map(c=>`<article class="need-card" id="card-${safe(c.id)}">
-      <div class="row"><span class="id">${safe(c.id)}</span><span class="need-priority ${c.priority==='P1'?'p1':''}">${safe(c.priority)} · ${c.priority==='P0'?'首批测试':'第二批'}</span></div>
+      <div class="row"><span class="id">${safe(c.id)}</span>${priorityBadge(c)}</div>
       <div class="need-type">${safe(c.type)} / ${safe(c.need)}</div><h3>${safe(c.title)}</h3>
-      <p><strong>适用人群：</strong>${safe(c.persona)}</p><p class="quiet">${safe(productNames(c))}</p>
+      <p><strong>适用任务：</strong>${safe(c.persona)}</p><p class="quiet">${safe(productNames(c))}</p>
+      <div class="need-validation-card"><span class="pill blue">${safe(c.validation.level)}</span><p>${safe(c.validation.summary)}</p><p><strong>本轮调整：</strong>${safe(c.validation.change)}</p></div>
       <div class="need-german" lang="de">${safe(c.german_headline)}</div>
       <p class="need-visual"><strong>画面：</strong>${safe(c.visual)}</p>
-      <p class="need-evidence-line"><strong>证据与推断：</strong>${safe(c.evidence)}</p>${links(c.sources)}
+      <details class="need-original-evidence"><summary>公开研究与产品依据</summary><p class="need-evidence-line">${safe(c.evidence)}</p>${links(c.sources)}</details>
       <p class="quiet">${safe(c.channels.join(' / '))}</p>
       <button type="button" class="need-button" data-need-id="${safe(c.id)}" aria-label="查看${safe(c.id)} ${safe(c.title)}完整制作简报">镜头 · 文案 · 提示词 · 测试 →</button></article>`).join(''):'<div class="empty need-empty">没有匹配建议，请减少筛选条件或重置。</div>';
   }
@@ -45,16 +52,16 @@
     return `Photorealistic European home-office advertising still. Suggested composition: 4:5 for feed; recompose independently for other placements.\n\nPRODUCT REFERENCE REQUIRED: Attach the official images for the exact selected SKU before generating.\n${ps.map(p=>`${p.name}; SKU ${p.sku}. ${p.lock}`).join('\n')}\n\nUSER TASK AND COMPOSITION: ${c.visual}\n\nPRODUCT AND ACTION CHECKS: ${c.check} ${c.preflight}\n\nKeep realistic furniture scale, body anatomy, screen positions and cable paths. Show the original single controller at its official location. Do not invent product parts, accessories, buttons, capabilities or performance. No generated text, logos, fake review stars or medical claims. Add approved German copy only in post-production. A generated still is a creative illustration and must never be presented as a real stability, assembly, writing/erasing or performance test.`;
   }
   function textBrief(c){
-    return `${c.id} | ${c.title}\n更新：${data.version} | ${c.priority} | ${c.status}\n适用人群：${c.persona}\n需求：${c.need}\n产品：${productNames(c)}\n${productKeys(c).map(k=>`${data.products[k].sku}\n${data.products[k].url}\n产品约束：${data.products[k].lock}`).join('\n')}\n\n证据与推断：${c.evidence}\n${c.sources.map(id=>`${id} ${sources[id].title}: ${sources[id].url}`).join('\n')}\n\n主图构图：${c.visual}\n\n15秒镜头执行稿（实拍后校时）：\n${c.shots.map(s=>`${s.time} ${s.action}`).join('\n')}\n\n德语标题：${c.german_headline}\n德语正文/口播初稿：${c.german_body}\nCTA：${c.cta}\n字幕与口播逐字对应，实际配音后校时。\n\n渠道：${c.channels.join(' / ')}\n测试：${c.test}\n主指标与口径：${data.measurement.primary}\n制作边界：${c.check}\n前置核验：${c.preflight}\n关联原方向：${c.related.join(', ')||'新补充方向'}\n视觉方法参考：${c.reference_ids.join(', ')}（仅作构图与任务参考，不构成竞品效果或L型广告投放证据）\n\n图像提示词：\n${prompt(c)}\n\n完整用户研究：${data.research_url}\n`;
+    return `${c.id} | ${c.title}\n更新：${data.version} | ${c.priority} · ${priorityLabel(c)} | ${c.status}\n适用任务：${c.persona}\n需求：${c.need}\n产品：${productNames(c)}\n${productKeys(c).map(k=>`${data.products[k].sku}\n${data.products[k].url}\n产品约束：${data.products[k].lock}`).join('\n')}\n\n搜索验证：${c.validation.level}\n推荐用途：${c.validation.role}\n搜索结论：${c.validation.summary}\n本轮调整：${c.validation.change}\n${data.validation.boundary}\n\n公开研究与产品依据：${c.evidence}\n${c.sources.map(id=>`${id} ${sources[id].title}: ${sources[id].url||'内部核验，原始数据另行保留'}`).join('\n')}\n\n主图构图：${c.visual}\n\n15秒镜头执行稿（实拍后校时）：\n${c.shots.map(s=>`${s.time} ${s.action}`).join('\n')}\n\n德语标题：${c.german_headline}\n德语正文/口播初稿：${c.german_body}\nCTA：${c.cta}\n字幕与口播逐字对应，实际配音后校时。\n\n渠道：${c.channels.join(' / ')}\n测试：${c.test}\n主指标与口径：${data.measurement.primary}\n制作边界：${c.check}\n前置核验：${c.preflight}\n关联原方向：${c.related.join(', ')||'新补充方向'}\n视觉方法参考：${c.reference_ids.join(', ')}（仅作构图与任务参考，不构成竞品效果或L型广告投放证据）\n\n图像提示词：\n${prompt(c)}\n\n完整用户研究：${data.research_url}\n`;
   }
   function legacyReferences(c){
     return c.reference_ids.map(id=>{const m=byid[id];return m?`<button type="button" class="need-reference" data-need-reference="${safe(id)}"><img src="${safe(path(m.image_path))}" alt="${safe(id+' '+m.scene)}" loading="lazy">${safe(id)}<br>${safe(m.brand+' / '+m.scene)}</button>`:'';}).join('');
   }
   function detail(c){
-    return `<div class="need-detail"><div class="id">${safe(c.id)} · 更新 ${safe(data.version)}</div><h2>${safe(c.title)}</h2><span class="need-priority ${c.priority==='P1'?'p1':''}">${safe(c.priority)}</span> <span class="quiet">${safe(c.status)} · ${safe(c.type)} / ${safe(c.need)}</span>
+    return `<div class="need-detail"><div class="id">${safe(c.id)} · 更新 ${safe(data.version)}</div><h2>${safe(c.title)}</h2>${priorityBadge(c)} <span class="quiet">${safe(c.status)} · ${safe(c.type)} / ${safe(c.need)}</span>
       <div class="need-actions"><button type="button" class="need-button primary" data-need-copy="brief" data-need-key="${safe(c.id)}">复制完整制作简报</button><button type="button" class="need-button" data-need-copy="prompt" data-need-key="${safe(c.id)}">复制图像提示词</button><button type="button" class="need-button" data-need-download="${safe(c.id)}">下载此条 Markdown</button></div><p class="need-copy-status" id="needCopyStatus" role="status" aria-live="polite"></p><div id="needCopyFallback"></div>
-      <div class="need-detail-grid"><div class="need-block"><h3>人群与要完成的任务</h3><p>${safe(c.persona)}</p><p>${safe(c.need)}。画像允许重叠；出镜人物为制作选择，不代表客群人口分布。</p></div>
-      <div class="need-block"><h3>事实 → 推断 → 测试</h3><p>${safe(c.evidence)}</p>${links(c.sources)}<p class="quiet">创意与优先级是基于证据的策划假设，尚无本方向购买效果数据。</p></div>
+      <div class="need-detail-grid"><div class="need-block full need-validation-card"><h3>90天搜索验证 · ${safe(c.validation.level)}</h3><p>${safe(c.validation.summary)}</p><p><strong>推荐用途：</strong>${safe(c.validation.role)}</p><p><strong>本轮调整：</strong>${safe(c.validation.change)}</p><p class="quiet">${safe(data.validation.boundary)}</p></div><div class="need-block"><h3>要完成的选购任务</h3><p>${safe(c.persona)}</p><p>${safe(c.need)}。任务假设可以重叠；出镜人物为制作选择，年龄、性别、职业与首次购买身份均未获验证。</p></div>
+      <div class="need-block"><h3>公开研究与产品依据</h3><p>${safe(c.evidence)}</p>${links(c.sources)}<p class="quiet">需求线索与具体素材效果分开判断；未直接搜索某卖点，不代表不存在该需求。</p></div>
       <div class="need-block full"><h3>静态主图怎么拍</h3><p>${safe(c.visual)}</p><p class="quiet">交付一张场景主图和一张证据图。尺寸标线和字幕在后期添加；稳定、安装、写擦表现须由真实产品验证。</p></div>
       <div class="need-block full"><h3>15秒视频镜头执行稿</h3><div class="tablewrap"><table class="need-story"><thead><tr><th>时间</th><th>画面与动作</th></tr></thead><tbody>${c.shots.map(s=>`<tr><td>${safe(s.time)}</td><td>${safe(s.action)}</td></tr>`).join('')}</tbody></table></div><p class="quiet">时长为剪辑规划；升降、安装等实际过程不伪装成剪辑时长。需要口播时，下方文案为初稿，实录后校时，字幕逐字对应。</p></div>
       <div class="need-block"><h3>德语文案初稿</h3><p lang="de"><strong>${safe(c.german_headline)}</strong></p><p lang="de">${safe(c.german_body)}</p><p lang="de">CTA: ${safe(c.cta)}</p><p class="quiet">不含未经核验的价格、折扣或健康疗效承诺。</p></div>
@@ -89,7 +96,7 @@
     const blob=new Blob([text],{type:'text/markdown;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');
     a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
   }
-  function markdown(list){return `# Furniwell 德国用户需求素材执行包\n\n更新：${data.version}\n完整研究：${data.research_url}\n\n${data.priority_rule}\n${data.evidence_rule}\n\n${list.map(textBrief).join('\n---\n\n')}\n\n## 统一测试口径\n${Object.values(data.measurement).flat().join('\n\n')}\n`;}
+  function markdown(list){return `# Furniwell 德国用户需求素材执行包\n\n更新：${data.version}\n完整研究：${data.research_url}\n\n${data.priority_rule}\n${data.evidence_rule}\n\n搜索验证来源：${data.validation.source}\n${data.validation.method}\n${data.validation.boundary}\n${data.validation.channel}\n尺寸版本计划：${data.validation.sizes.join(' / ')}\n${data.validation.size_note}\n\n${list.map(textBrief).join('\n---\n\n')}\n\n## 统一测试口径\n${Object.values(data.measurement).flat().join('\n\n')}\n`;}
   async function copy(id,kind){
     const text=kind==='prompt'?prompt(cards[id]):textBrief(cards[id]);
     try{await navigator.clipboard.writeText(text);el('needCopyStatus').textContent='已复制，可交给设计或视频制作。';}
@@ -100,7 +107,14 @@
   el('needProductChecks').innerHTML=['l160','g2'].map(k=>{const p=data.products[k];return `<div class="need-method"><h3>${safe(p.name)}</h3><p class="id">${safe(p.sku)}</p><p>${safe(p.facts)}</p><p class="quiet">${safe(p.lock)}</p><a href="${safe(p.url)}" target="_blank" rel="noopener">对应官方变体 ↗</a></div>`;}).join('');
   el('needMeasurement').innerHTML=`<p><strong>比较单位：</strong>${safe(data.measurement.unit)}</p><p><strong>结果指标：</strong>${safe(data.measurement.primary)}</p><p><strong>诊断指标：</strong>${safe(data.measurement.diagnostic)}</p><p><strong>判断节奏：</strong>${safe(data.measurement.cadence)}</p>`;
   el('needImports').innerHTML=data.measurement.imports.map(t=>`<li>${safe(t)}</li>`).join('');
-  el('needSources').innerHTML=data.sources.map(s=>`<article class="need-source"><div class="id">${safe(s.id)} · ${safe(s.type)}</div><h3><a href="${safe(s.url)}" target="_blank" rel="noopener">${safe(s.title)} ↗</a></h3><small>${safe(s.period)}</small><p>${safe(s.notes)}</p></article>`).join('');
+  el('needSources').innerHTML=data.sources.map(s=>`<article class="need-source"><div class="id">${safe(s.id)} · ${safe(s.type)}</div><h3>${s.url?`<a href="${safe(s.url)}" target="_blank" rel="noopener">${safe(s.title)} ↗</a>`:safe(s.title)}</h3><small>${safe(s.period)}</small><p>${safe(s.notes)}</p></article>`).join('');
+  el('needValidationSignals').innerHTML=data.validation.signals.map(s=>`<article class="need-evidence"><span class="pill blue">${safe(s.level)}</span><h3>${safe(s.title)}</h3><p>${safe(s.text)}</p></article>`).join('');
+  el('needValidationMethod').textContent=data.validation.source+'；'+data.validation.period+'。'+data.validation.method;
+  el('needValidationBoundary').textContent=data.validation.boundary+' '+data.evidence_rule;
+  el('needValidationChannel').textContent=data.validation.channel;
+  el('needValidationSizes').textContent=data.validation.sizes.join(' / ')+' cm。'+data.validation.size_note;
+  el('needValidationLead').textContent=data.validation.new_lead;
+  el('needPriorityRule').textContent=data.priority_rule;
   Object.keys(filters).forEach(id=>el(id).addEventListener('input',()=>{render();shareState();}));
   el('needReset').addEventListener('click',()=>{Object.keys(filters).forEach(id=>el(id).value='');render();shareState();});
   el('needShowFirst').addEventListener('click',()=>{Object.keys(filters).forEach(id=>el(id).value='');el('needPriority').value='P0';render();shareState();el('needFilters').scrollIntoView({behavior:'smooth',block:'start'});});
