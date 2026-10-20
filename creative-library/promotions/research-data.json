@@ -1,0 +1,1403 @@
+{
+  "version": "2026-10-20",
+  "title": "促销素材 · Black Friday 2026",
+  "scope": "德国Furniwell为应用对象；以2023–2025可核验案例为主，补2026预热与当前页面，以及2019长期对照。覆盖桌椅品牌及家具零售，非全网穷尽或竞品效果排名。",
+  "year_rule": "发送日、图内期限和官方正文优先。页面更新年不等于图片首发年；混年／复用案例单列，不冒充2026最终投放。",
+  "boundary": "官网横幅、品牌邮件、传单和图像组件均标注来源类型；未验证其是否曾用于Google或Meta付费投放。没有竞品效果数据。",
+  "materials": [
+    {
+      "id": "BF-001",
+      "brand": "FlexiSpot",
+      "category": "桌椅品牌",
+      "year": "2025",
+      "date": "2025-11-03",
+      "market": "德国",
+      "title": "黑金活动入口：日期与两种优惠",
+      "source_url": "https://www.flexispot.de/blog/flexispot-black-friday-2025-die-besten-deals0des-jahres-sind-da",
+      "source_kind": "品牌官网",
+      "stage": "主促",
+      "style": "黑金舞台",
+      "offer": "历史活动含限额50%返现与全站10%优惠；返现有名额、轮次与金额条件。",
+      "visual": "黑金背景、发光拱门和礼盒；左侧标题和时间，右侧舞台。",
+      "borrow": "一个主标题配明确日期，次级利益点集中放在一起。",
+      "adapt": "Furniwell可用深炭灰配暖白桌；把具体桌型做大，主利益只保留一个。",
+      "limit": "不能把限额返现理解为人人半价，也不能照搬该机制。",
+      "asset_role": "完整促销主视觉",
+      "year_evidence": "日期已核验",
+      "collected_at": "2026-10-20",
+      "performance_evidence": "未获得点击、花费、购买或ROAS数据；以下仅为视觉分析和测试假设。",
+      "related": [
+        "FW-BF-01",
+        "FW-BF-08"
+      ],
+      "image": "promotions/references/BF-001.webp",
+      "original_asset_url": "https://s3.springbeetle.eu/dev-de-s3-flexispot/commodity/item/Screenshot%202025-11-03%20133424DEBFS.png",
+      "width": 996,
+      "height": 458,
+      "preview_width": 996,
+      "preview_height": 458,
+      "original_frames": 1,
+      "sha256": "ed8f0bf5acb11932d29ccbcf25749f61987ee41c980e1e6cfefdbc5268bb98dc",
+      "image_note": "从已公开原图保存的静态研究预览。未用生成式工具补画。"
+    },
+    {
+      "id": "BF-002",
+      "brand": "FlexiSpot",
+      "category": "桌椅品牌",
+      "year": "2024",
+      "date": "2024-11-13",
+      "market": "德国",
+      "title": "用价格轨迹表达提前买的理由",
+      "source_url": "https://milled.com/flexispot-de/preise-runter-adrenalin-hoch-black-friday-heizt-auf-yOJP9ewHIRQk2aoR",
+      "source_kind": "品牌邮件归档",
+      "stage": "预热",
+      "style": "价格解释",
+      "offer": "邮件含分批限量代码；图像组件用常规、闪促及黑五价格形成比较。",
+      "visual": "黑底蓝红价格轨迹，火焰强调闪促；这是局部价格图。",
+      "borrow": "解释为什么现在买，而非只写降价。",
+      "adapt": "首选单一到手价和欧元节省额；复杂阶梯放落地页。",
+      "limit": "图内11月21日/28日是历史活动节点；不能推定所有产品早买更便宜。",
+      "asset_role": "邮件内价格图组件",
+      "year_evidence": "日期已核验",
+      "collected_at": "2026-10-20",
+      "performance_evidence": "未获得点击、花费、购买或ROAS数据；以下仅为视觉分析和测试假设。",
+      "related": [
+        "FW-BF-01"
+      ],
+      "image": "promotions/references/BF-002.webp",
+      "original_asset_url": "https://images.milledcdn.com/2024-11-13/yz9fln-gytxdq2uE/QJPAKNyaFv6c.png",
+      "width": 256,
+      "height": 145,
+      "preview_width": 256,
+      "preview_height": 145,
+      "original_frames": 1,
+      "sha256": "730eeecbfbb9403bdab0c7ef40da58bdbd8a460fac0fe92aad5f0f70a65b81b9",
+      "image_note": "从已公开原图保存的静态研究预览。未用生成式工具补画。"
+    },
+    {
+      "id": "BF-003",
+      "brand": "FlexiSpot",
+      "category": "桌椅品牌",
+      "year": "2025",
+      "date": "2025-11-27",
+      "market": "德国",
+      "title": "开抢前提醒与倒计时",
+      "source_url": "https://milled.com/flexispot-de/der-black-friday-wahnsinn-startet-bald-sichern-sie-sich-ihr-cashback-GikuEf0vNqepJm5H",
+      "source_kind": "品牌邮件归档",
+      "stage": "预热",
+      "style": "截止提醒",
+      "offer": "邮件提示分层限量代码及可叠加优惠。",
+      "visual": "黑底白字倒计时；原GIF为时间组件，不是商品广告。",
+      "borrow": "在用户已理解优惠后补一个清楚的时间节点。",
+      "adapt": "收官素材写真实截止日期，放在清楚的商品画面旁。",
+      "limit": "静帧中的时间无实时含义；不设置循环重置的假倒计时。",
+      "asset_role": "邮件内倒计时组件",
+      "year_evidence": "日期已核验",
+      "collected_at": "2026-10-20",
+      "performance_evidence": "未获得点击、花费、购买或ROAS数据；以下仅为视觉分析和测试假设。",
+      "related": [
+        "FW-BF-08"
+      ],
+      "image": "promotions/references/BF-003.webp",
+      "original_asset_url": "https://images.milledcdn.com/2025-11-27/oYbzPF70ks0UHnA6/667R2N1IyFW2.gif",
+      "width": 518,
+      "height": 136,
+      "preview_width": 518,
+      "preview_height": 136,
+      "original_frames": 119,
+      "sha256": "231a28dee18f5a6aaca27a33842471ec024b44a2f8893f3229f9d31dda57bcd3",
+      "image_note": "从已公开原图保存的静态研究预览。原文件为GIF；此处只展示首帧，画面中的倒计时不是实时活动。"
+    },
+    {
+      "id": "BF-004",
+      "brand": "Secretlab",
+      "category": "桌椅品牌",
+      "year": "2024",
+      "date": "2024-11-29",
+      "market": "新加坡",
+      "title": "桌椅与配件的套装利益",
+      "source_url": "https://milled.com/secretlab/shop-black-friday-prices-on-our-bestsellers-wwqWEvJe9iQd2Iwu",
+      "source_kind": "品牌邮件归档",
+      "stage": "主促",
+      "style": "套装升级",
+      "offer": "历史邮件宣称组合最高省350新加坡元，实际依组合且可能包含赠品价值。",
+      "visual": "已取得的图片只有黑底倒计时；套装机制来自邮件正文。",
+      "borrow": "从单椅折扣扩展到完整桌椅工作位的价值。",
+      "adapt": "桌+椅同框，明确包含品、组合到手价和额外节省。",
+      "limit": "不可把套装最高节省写成单椅降幅，也不把配件全部默认包含。",
+      "asset_role": "邮件内倒计时组件",
+      "year_evidence": "日期已核验",
+      "collected_at": "2026-10-20",
+      "performance_evidence": "未获得点击、花费、购买或ROAS数据；以下仅为视觉分析和测试假设。",
+      "related": [
+        "FW-BF-02"
+      ],
+      "image": "promotions/references/BF-004.webp",
+      "original_asset_url": "https://images.milledcdn.com/2024-11-29/SDe57SGmWC_4Wnnc/K8NFzYjvRjys.gif",
+      "width": 336,
+      "height": 84,
+      "preview_width": 336,
+      "preview_height": 84,
+      "original_frames": 59,
+      "sha256": "a7f1f2c87f4cfb4a431350e763d891d4b437699160b17b38107c2e0997f053ac",
+      "image_note": "从已公开原图保存的静态研究预览。原文件为GIF；此处只展示首帧，画面中的倒计时不是实时活动。"
+    },
+    {
+      "id": "BF-005",
+      "brand": "Secretlab",
+      "category": "桌椅品牌",
+      "year": "2026",
+      "date": "2026-09-18",
+      "market": "新加坡",
+      "title": "提前购买：用价保减少等待",
+      "source_url": "https://milled.com/secretlab.co/dark-knight-collection-now-at-black-friday-prices-Pj25oj6TQLbA2Ix2",
+      "source_kind": "品牌邮件归档",
+      "stage": "预热",
+      "style": "购买顾虑",
+      "offer": "9月提前使用黑五价格主题，配适用品、主动申请和排除项的价格匹配机制。",
+      "visual": "本条只分析已读文字；没有收录完整主视觉。",
+      "borrow": "提前买的理由可以是减少后悔，而不仅是更强紧迫感。",
+      "adapt": "若Furniwell有真实价保规则，可单独说明适用SKU、期间与申请方式。",
+      "limit": "这是9月已结束的活动，不是11月最终方案；联名IP、价保及赠品均不可直接借用。",
+      "asset_role": "文字与机制证据",
+      "year_evidence": "日期已核验",
+      "collected_at": "2026-10-20",
+      "performance_evidence": "未获得点击、花费、购买或ROAS数据；以下仅为视觉分析和测试假设。",
+      "related": [
+        "FW-BF-08"
+      ],
+      "image": null,
+      "original_asset_url": null,
+      "image_note": "仅有可核验文字证据或图片未能取得；不补造竞品主视觉。"
+    },
+    {
+      "id": "BF-006",
+      "brand": "SIHOO",
+      "category": "桌椅品牌",
+      "year": "2025",
+      "date": "2025-11-26",
+      "market": "美国",
+      "title": "红黑竖版：椅子、主题、优惠三级",
+      "source_url": "https://milled.com/sihoooffice.com/black-friday-at-sihoo-back-support-for-your-sitting-hours-wehnoex5ACxsj2Ef",
+      "source_kind": "品牌邮件归档",
+      "stage": "主促",
+      "style": "红黑强促",
+      "offer": "竖版图写限时、最高50%和库存提示。",
+      "visual": "上方黑椅，中央大字号黑五，底部优惠；红黑对角切分。",
+      "borrow": "竖屏有清楚的阅读顺序和单一主体。",
+      "adapt": "Furniwell椅子占比应更大，优先展示头枕、靠背和坐姿。",
+      "limit": "竞品占比不是平台标准；“最高”必须限定适用SKU。",
+      "asset_role": "完整促销主视觉",
+      "year_evidence": "日期已核验",
+      "collected_at": "2026-10-20",
+      "performance_evidence": "未获得点击、花费、购买或ROAS数据；以下仅为视觉分析和测试假设。",
+      "related": [
+        "FW-BF-05"
+      ],
+      "image": "promotions/references/BF-006.webp",
+      "original_asset_url": "https://images.milledcdn.com/2025-11-26/SEPzKpSny8Rd8hls/AU5h0S6Jjscs.png",
+      "width": 1080,
+      "height": 1920,
+      "preview_width": 900,
+      "preview_height": 1600,
+      "original_frames": 1,
+      "sha256": "ae85fe221af592a858046a9247fa9973be9451ff2efcf9ed12f5ca473d35ef90",
+      "image_note": "从已公开原图保存的静态研究预览。未用生成式工具补画。"
+    },
+    {
+      "id": "BF-007",
+      "brand": "SIHOO",
+      "category": "桌椅品牌",
+      "year": "2025",
+      "date": "2025-11-26",
+      "market": "美国",
+      "title": "单椅大图配实际价格",
+      "source_url": "https://milled.com/sihoooffice.com/black-friday-at-sihoo-back-support-for-your-sitting-hours-wehnoex5ACxsj2Ef",
+      "source_kind": "品牌邮件归档",
+      "stage": "主促",
+      "style": "单品到手价",
+      "offer": "邮件内产品图展示具体促销价格、折扣角标与背书。",
+      "visual": "白底网椅居中；价格在左上；功能轮廓清楚。",
+      "borrow": "让用户一眼识别是哪一张椅子在优惠。",
+      "adapt": "以Furniwell真实椅款大图、价格及一个调节细节组成首轮版本。",
+      "limit": "第三方奖项与引语属于竞品，不能挪用；产品图不是完整活动页。",
+      "asset_role": "邮件内单品促销组件",
+      "year_evidence": "日期已核验",
+      "collected_at": "2026-10-20",
+      "performance_evidence": "未获得点击、花费、购买或ROAS数据；以下仅为视觉分析和测试假设。",
+      "related": [
+        "FW-BF-05"
+      ],
+      "image": "promotions/references/BF-007.webp",
+      "original_asset_url": "https://images.milledcdn.com/2025-11-26/SEPzKpSny8Rd8hls/H77Dng-_vEOn.jpeg",
+      "width": 1080,
+      "height": 1080,
+      "preview_width": 1080,
+      "preview_height": 1080,
+      "original_frames": 1,
+      "sha256": "3a81c38d846f8e131b6eded4a13de693b58e96b49ef486c82059390f96c7c6e8",
+      "image_note": "从已公开原图保存的静态研究预览。未用生成式工具补画。"
+    },
+    {
+      "id": "BF-008",
+      "brand": "Branch",
+      "category": "桌椅品牌",
+      "year": "2025",
+      "date": "2025-11-27",
+      "market": "美国",
+      "title": "按使用者任务做礼物导购",
+      "source_url": "https://milled.com/branch-furniture/thankful-for-better-workdays-DM61GJBc16jFdIIG",
+      "source_kind": "品牌邮件归档",
+      "stage": "主促",
+      "style": "人群与任务",
+      "offer": "邮件主题属于黑五长周末；此图本身是礼物导购，没有单独价格。",
+      "visual": "多色卡片叠放，线描桌椅配使用者主题；原GIF轮播。",
+      "borrow": "用工作方式区分选品，减少所有SKU挤在同一张图。",
+      "adapt": "可分别做学习、办公、游戏三组，但每张仍只突出一个产品方案。",
+      "limit": "这不是转化已验证的人群画像；不复制插画角色与卡片原稿。",
+      "asset_role": "黑五邮件内礼物导购组件",
+      "year_evidence": "日期已核验",
+      "collected_at": "2026-10-20",
+      "performance_evidence": "未获得点击、花费、购买或ROAS数据；以下仅为视觉分析和测试假设。",
+      "related": [
+        "FW-BF-02",
+        "FW-BF-07"
+      ],
+      "image": "promotions/references/BF-008.webp",
+      "original_asset_url": "https://images.milledcdn.com/2025-11-27/qk8_LB_GxlYKB9Au/xQCLsbR7mNtA.gif",
+      "width": 1500,
+      "height": 1366,
+      "preview_width": 1400,
+      "preview_height": 1275,
+      "original_frames": 5,
+      "sha256": "48b059dadeeeede9d3bdb1405b7e8f39fc7068c85a010321c81eff65c6a1b30c",
+      "image_note": "从已公开原图保存的静态研究预览。原文件为GIF；此处只展示首帧，画面中的倒计时不是实时活动。"
+    },
+    {
+      "id": "BF-009",
+      "brand": "Branch",
+      "category": "桌椅品牌",
+      "year": "2025",
+      "date": "2025-11-28",
+      "market": "美国",
+      "title": "常规优惠、套装优惠、每日单品分层",
+      "source_url": "https://milled.com/branch-furniture/black-friday-deals-are-selling-fast-D3TmQcIbvnkwzPIs",
+      "source_kind": "品牌邮件归档",
+      "stage": "主促",
+      "style": "套装升级",
+      "offer": "邮件列单品15%、组合20%及每日精选25%；各自作用范围不同。",
+      "visual": "文字邮件证据，未取得相应完整促销视觉。",
+      "borrow": "把常规折扣、组合价值和当日特价分开解释。",
+      "adapt": "首轮只选一个优惠机制进图片，其他放对应落地页。",
+      "limit": "不得把三种优惠相加；高点击与成交表现未知。",
+      "asset_role": "文字与机制证据",
+      "year_evidence": "日期已核验",
+      "collected_at": "2026-10-20",
+      "performance_evidence": "未获得点击、花费、购买或ROAS数据；以下仅为视觉分析和测试假设。",
+      "related": [
+        "FW-BF-01",
+        "FW-BF-02"
+      ],
+      "image": null,
+      "original_asset_url": null,
+      "image_note": "仅有可核验文字证据或图片未能取得；不补造竞品主视觉。"
+    },
+    {
+      "id": "BF-010",
+      "brand": "Herman Miller",
+      "category": "桌椅品牌",
+      "year": "2025",
+      "date": "2025-11-22",
+      "market": "美国",
+      "title": "经典产品与服务利益并列",
+      "source_url": "https://milled.com/herman-miller/black-friday-sale-25-off-everything-qZ4IjUfday1dTkgJ",
+      "source_kind": "品牌邮件归档",
+      "stage": "主促",
+      "style": "质感与服务",
+      "offer": "邮件宣传25%促销，另有达到1500美元门槛的免运活动及排除项。",
+      "visual": "本条只读取文字，未取得可用主视觉；不据此描述色彩构图。",
+      "borrow": "价格之外再回答配送与购买信心。",
+      "adapt": "Furniwell仅写已确认的德国配送与退货信息，作为次级一行。",
+      "limit": "不可照搬25%、免运门槛、评价或保修；美国方案不代表德国。",
+      "asset_role": "文字与机制证据",
+      "year_evidence": "日期已核验",
+      "collected_at": "2026-10-20",
+      "performance_evidence": "未获得点击、花费、购买或ROAS数据；以下仅为视觉分析和测试假设。",
+      "related": [
+        "FW-BF-01",
+        "FW-BF-06"
+      ],
+      "image": null,
+      "original_asset_url": null,
+      "image_note": "仅有可核验文字证据或图片未能取得；不补造竞品主视觉。"
+    },
+    {
+      "id": "BF-011",
+      "brand": "Herman Miller",
+      "category": "桌椅品牌",
+      "year": "2024",
+      "date": "2024-11-29",
+      "market": "美国",
+      "title": "基础折扣加额外码的计算",
+      "source_url": "https://milled.com/herman-miller/black-friday-save-extra-with-code-gH1BxajqcVyCFoYP",
+      "source_kind": "品牌邮件归档",
+      "stage": "主促",
+      "style": "优惠解释",
+      "offer": "邮件写基础25%及额外5%代码；有适用与不可叠加条款。",
+      "visual": "未取得有效主视觉，仅分析正文机制。",
+      "borrow": "让用户看到最终价格，而不是心算两层优惠。",
+      "adapt": "若今年采用额外码，在图上优先给实际到手价，并写适用范围。",
+      "limit": "顺序叠加25%和5%并不等于30%；需按真实结算验证。",
+      "asset_role": "文字与机制证据",
+      "year_evidence": "日期已核验",
+      "collected_at": "2026-10-20",
+      "performance_evidence": "未获得点击、花费、购买或ROAS数据；以下仅为视觉分析和测试假设。",
+      "related": [
+        "FW-BF-01"
+      ],
+      "image": null,
+      "original_asset_url": null,
+      "image_note": "仅有可核验文字证据或图片未能取得；不补造竞品主视觉。"
+    },
+    {
+      "id": "BF-012",
+      "brand": "Kave Home",
+      "category": "家具零售",
+      "year": "2025",
+      "date": "2025-11-28",
+      "market": "欧洲／英语邮件",
+      "title": "额外优惠：门槛必须跟随主信息",
+      "source_url": "https://milled.com/kavehome-fr/extra-20-off-everything-final-days-oeAsVKtXInpjrMA8",
+      "source_kind": "品牌邮件归档",
+      "stage": "收官",
+      "style": "优惠解释",
+      "offer": "精选最高50%，满300欧额外20%，附代码、期限与排除项。",
+      "visual": "本条只有邮件文本；未收录完整主视觉。",
+      "borrow": "用额外优惠拉动购买，但门槛紧贴数字。",
+      "adapt": "如果做满减，主图写清最低消费；若无门槛，优先展示单SKU真实价格。",
+      "limit": "不能把50%与20%相加成70%，也不能淡化最低消费。",
+      "asset_role": "文字与机制证据",
+      "year_evidence": "日期已核验",
+      "collected_at": "2026-10-20",
+      "performance_evidence": "未获得点击、花费、购买或ROAS数据；以下仅为视觉分析和测试假设。",
+      "related": [
+        "FW-BF-01",
+        "FW-BF-08"
+      ],
+      "image": null,
+      "original_asset_url": null,
+      "image_note": "仅有可核验文字证据或图片未能取得；不补造竞品主视觉。"
+    },
+    {
+      "id": "BF-013",
+      "brand": "Kave Home",
+      "category": "家具零售",
+      "year": "2024",
+      "date": "2024-11-29",
+      "market": "欧洲／英语邮件",
+      "title": "欧元满减与退货期共同降低顾虑",
+      "source_url": "https://milled.com/kavehome-fr/the-most-sought-after-this-black-friday-i9b9eLyX77RAefaT",
+      "source_kind": "品牌邮件归档",
+      "stage": "收官",
+      "style": "质感与服务",
+      "offer": "历史方案满300减30、满700减100；另提示延长退货期。",
+      "visual": "仅有文字证据，不推断2024版式。",
+      "borrow": "欧元金额能直接表达购买者拿到的利益。",
+      "adapt": "可把“省[Betrag]€”与明确的规格放同一视线，再补真实服务。",
+      "limit": "最高100欧是高门槛利益，不能用于低价单桌。",
+      "asset_role": "文字与机制证据",
+      "year_evidence": "日期已核验",
+      "collected_at": "2026-10-20",
+      "performance_evidence": "未获得点击、花费、购买或ROAS数据；以下仅为视觉分析和测试假设。",
+      "related": [
+        "FW-BF-01",
+        "FW-BF-06"
+      ],
+      "image": null,
+      "original_asset_url": null,
+      "image_note": "仅有可核验文字证据或图片未能取得；不补造竞品主视觉。"
+    },
+    {
+      "id": "BF-014",
+      "brand": "Westwing",
+      "category": "家具零售",
+      "year": "2025",
+      "date": "2025-11-30",
+      "market": "瑞士／德语",
+      "title": "深绿帘幕与克制的收官提醒",
+      "source_url": "https://milled.com/westwing-home-and-living/nur-noch-kurz-alle-black-friday-bestseller-im-final-countdown-WCSfPzlyl-WUjJQz",
+      "source_kind": "品牌邮件归档",
+      "stage": "收官",
+      "style": "质感场景",
+      "offer": "邮件主题为黑五收官，整体选品最高优惠及数量见原页。",
+      "visual": "深绿帘幕、米色沙发露边、居中衬线文字；图片没有堆满折扣。",
+      "borrow": "黑五可以保留家居质感与材质辨识度。",
+      "adapt": "Furniwell用暖白桌+深绿背景，小块价格信息配清楚桌腿轮廓。",
+      "limit": "这是瑞士德语案例；不能当成德国投放记录。",
+      "asset_role": "完整促销主视觉",
+      "year_evidence": "日期已核验",
+      "collected_at": "2026-10-20",
+      "performance_evidence": "未获得点击、花费、购买或ROAS数据；以下仅为视觉分析和测试假设。",
+      "related": [
+        "FW-BF-06",
+        "FW-BF-08"
+      ],
+      "image": "promotions/references/BF-014.webp",
+      "original_asset_url": "https://images.milledcdn.com/2025-11-30/bf1GolfEhyRkdLgy/6TnGKz4djivQ.jpeg",
+      "width": 851,
+      "height": 630,
+      "preview_width": 851,
+      "preview_height": 630,
+      "original_frames": 1,
+      "sha256": "207ba4e77f0d547539039830dc7beda5baed9e6a8660c64b4dc93c5dfcb861ef",
+      "image_note": "从已公开原图保存的静态研究预览。未用生成式工具补画。"
+    },
+    {
+      "id": "BF-015",
+      "brand": "Westwing",
+      "category": "家具零售",
+      "year": "2025",
+      "date": "2025-11-30",
+      "market": "瑞士／德语",
+      "title": "精选清单承接黑五主题",
+      "source_url": "https://milled.com/westwing-home-and-living/nur-noch-kurz-alle-black-friday-bestseller-im-final-countdown-WCSfPzlyl-WUjJQz",
+      "source_kind": "品牌邮件归档",
+      "stage": "收官",
+      "style": "质感场景",
+      "offer": "同一封邮件中的畅销选品入口，非独立广告。",
+      "visual": "米色沙发放在画面下方，绿色帘幕承载标题与小型优惠符号。",
+      "borrow": "用真实商品承接活动主题，避免主图只有抽象促销。",
+      "adapt": "桌子保持主角，绿幕只作色彩参考；不要改成同一沙发布景。",
+      "limit": "“畅销”需要自己的销量依据；同邮件两图不是两次独立投放。",
+      "asset_role": "邮件内精选入口组件",
+      "year_evidence": "日期已核验",
+      "collected_at": "2026-10-20",
+      "performance_evidence": "未获得点击、花费、购买或ROAS数据；以下仅为视觉分析和测试假设。",
+      "related": [
+        "FW-BF-06"
+      ],
+      "image": "promotions/references/BF-015.webp",
+      "original_asset_url": "https://images.milledcdn.com/2025-11-30/bf1GolfEhyRkdLgy/quJPCd02NLa0.webp",
+      "width": 851,
+      "height": 650,
+      "preview_width": 851,
+      "preview_height": 650,
+      "original_frames": 1,
+      "sha256": "490d1df16164280ec19c817d2dca218fa0b4fe363ead59c3363d51117ca64f02",
+      "image_note": "从已公开原图保存的静态研究预览。未用生成式工具补画。"
+    },
+    {
+      "id": "BF-016",
+      "brand": "XXXLutz",
+      "category": "家具零售",
+      "year": "2025",
+      "date": "2025-11-28",
+      "market": "德国",
+      "title": "红白超大数字与线上利益",
+      "source_url": "https://milled.com/xxxlutz/black-friday-bei-xxxlutz-bis-zu-10-online-only-nur-bis-sonntag-dhWiEk70GJv5TgqC",
+      "source_kind": "品牌邮件归档",
+      "stage": "主促",
+      "style": "红黑强促",
+      "offer": "图上写线上限定最高10%，并说明已在价格中扣除。",
+      "visual": "巨大的10%占据中心，红白对比，商品缺席。",
+      "borrow": "优惠是否还要输码，应让用户立即看懂。",
+      "adapt": "作为对照版保留强促结构，主测版加入完整桌子和一条规格。",
+      "limit": "最高10%不是全品类统一10%；这个案例本身不能证明纯折扣图效果更好。",
+      "asset_role": "完整促销主视觉",
+      "year_evidence": "日期已核验",
+      "collected_at": "2026-10-20",
+      "performance_evidence": "未获得点击、花费、购买或ROAS数据；以下仅为视觉分析和测试假设。",
+      "related": [
+        "FW-BF-01"
+      ],
+      "image": "promotions/references/BF-016.webp",
+      "original_asset_url": "https://images.milledcdn.com/2025-11-28/mkmDas8yKPEjFnB8/F5lLQWHLOSAe.jpeg",
+      "width": 1080,
+      "height": 1080,
+      "preview_width": 1080,
+      "preview_height": 1080,
+      "original_frames": 1,
+      "sha256": "82871fa020b7d1d4d0d94b864e7141e2946fce8f693c2e99cc926df3ab29e2a2",
+      "image_note": "从已公开原图保存的静态研究预览。未用生成式工具补画。"
+    },
+    {
+      "id": "BF-017",
+      "brand": "XXXLutz",
+      "category": "家具零售",
+      "year": "2025",
+      "date": "2025-11-28",
+      "market": "德国",
+      "title": "活动页下的单品识别",
+      "source_url": "https://milled.com/xxxlutz/black-friday-bei-xxxlutz-bis-zu-10-online-only-nur-bis-sonntag-dhWiEk70GJv5TgqC",
+      "source_kind": "品牌邮件归档",
+      "stage": "主促",
+      "style": "单品到手价",
+      "offer": "该白底商品图位于同一封黑五邮件的每周精选区。",
+      "visual": "灰色转角沙发在白底中完整展示，图内没有黑五文案。",
+      "borrow": "先把产品形状展示清楚，促销可以由外层文案承载。",
+      "adapt": "PMax保留相同比例的无字桌子／椅子图，与促销文字组合。",
+      "limit": "它是邮件内普通商品图，不能标成独立黑五海报。",
+      "asset_role": "黑五邮件内无字商品组件",
+      "year_evidence": "日期已核验",
+      "collected_at": "2026-10-20",
+      "performance_evidence": "未获得点击、花费、购买或ROAS数据；以下仅为视觉分析和测试假设。",
+      "related": [
+        "FW-BF-01",
+        "FW-BF-06"
+      ],
+      "image": "promotions/references/BF-017.webp",
+      "original_asset_url": "https://images.milledcdn.com/2025-11-28/mkmDas8yKPEjFnB8/PIFN2KQiqQHD.jpeg",
+      "width": 400,
+      "height": 400,
+      "preview_width": 400,
+      "preview_height": 400,
+      "original_frames": 1,
+      "sha256": "f7ce1a1b41e8d7cc3d450e4db196a0cc94687215e12342633e0dd53a6c3cf4cc",
+      "image_note": "从已公开原图保存的静态研究预览。未用生成式工具补画。"
+    },
+    {
+      "id": "BF-018",
+      "brand": "home24",
+      "category": "家具零售",
+      "year": "2026",
+      "date": "2026-10-09",
+      "market": "德国",
+      "title": "黑五购物指南：家具与季节气氛",
+      "source_url": "https://www.home24.de/tipps-ideen-6-tipps-einkaufen-am-black-friday/",
+      "source_kind": "品牌官网",
+      "stage": "预热",
+      "style": "质感场景",
+      "offer": "现页为2026购物指南，内容强调清单、预算与价格核对，不是已生效折扣。",
+      "visual": "横幅中红色单椅、季节装饰与白色躺椅分区排列。",
+      "borrow": "购买预热可以从选品和房间需要开始。",
+      "adapt": "Furniwell用一个真实房间与明确桌型；分栏形式只作站内参考。",
+      "limit": "不是2026最终黑五广告；图库图片可跨年复用，不能凭页标题认定首发年份。",
+      "asset_role": "黑五专题文章配图",
+      "year_evidence": "文章更新日已核验；图片首发年未知",
+      "collected_at": "2026-10-20",
+      "performance_evidence": "未获得点击、花费、购买或ROAS数据；以下仅为视觉分析和测试假设。",
+      "related": [
+        "FW-BF-06"
+      ],
+      "image": "promotions/references/BF-018.webp",
+      "original_asset_url": "https://cdn1.home24.net/prismic-img/home24-production/ZqtQMh5LeNNTxtha_6-tipps-black-friday-top-banner-home24.jpg?auto=format%2Ccompress",
+      "width": 4196,
+      "height": 1044,
+      "preview_width": 1400,
+      "preview_height": 348,
+      "original_frames": 1,
+      "sha256": "4662178b733b93beb7b083a9de16062799a23978af4faab3c3adc3b150e8b2ea",
+      "image_note": "从已公开原图保存的静态研究预览。未用生成式工具补画。"
+    },
+    {
+      "id": "BF-019",
+      "brand": "home24",
+      "category": "家具零售",
+      "year": "待核／复用",
+      "date": "2026-10-20 采集",
+      "market": "德国",
+      "title": "暖色幽默：沙发人格化",
+      "source_url": "https://www.home24.de/black-friday/",
+      "source_kind": "品牌官网",
+      "stage": "收官",
+      "style": "暖色差异",
+      "offer": "图上为Cyber Week最高18%；当前页标题已变2026，但图片文件名带2025编码。",
+      "visual": "奶油色底、蓝红文字，沙发靠垫组成笑脸。",
+      "borrow": "促销可以温暖、有趣，同时保持商品可识别。",
+      "adapt": "桌子仍完整且真实，可用桌面物件形成轻松气氛；保留一块清楚价格区。",
+      "limit": "年份混合，不能认定为2026实际优惠或2025首发；不复制具体表情设计。",
+      "asset_role": "完整促销主视觉",
+      "year_evidence": "当前页2026，资源名含2025；首发年份未确认",
+      "collected_at": "2026-10-20",
+      "performance_evidence": "未获得点击、花费、购买或ROAS数据；以下仅为视觉分析和测试假设。",
+      "related": [
+        "FW-BF-06"
+      ],
+      "image": "promotions/references/BF-019.webp",
+      "original_asset_url": "https://cdn1.home24.net/prismic-img/home24-production/aSRqsGGnmrmGqMMU_DE_2512-cw49_%5BCAMPAIGN%5DCyberWeek_Voucher_CW49_25_TT_TB_BIG_S_M_gb.jpg?auto=format%2Ccompress&w=1200",
+      "width": 1200,
+      "height": 800,
+      "preview_width": 1200,
+      "preview_height": 800,
+      "original_frames": 1,
+      "sha256": "fa2f02c6df67d0a75b73ef6e4bf3895cf78879994a30292b1b65e854df0369ac",
+      "image_note": "从已公开原图保存的静态研究预览。未用生成式工具补画。"
+    },
+    {
+      "id": "BF-020",
+      "brand": "JYSK",
+      "category": "家具零售",
+      "year": "2024",
+      "date": "2024-11-14—20",
+      "market": "加拿大",
+      "title": "蓝色提前购：优惠、安心、单品价格",
+      "source_url": "https://stgraddaradfprod.blob.core.windows.net/jysk/wk46-2024/pdfs/JYSK%20wk46-2024%201.pdf",
+      "source_kind": "品牌传单",
+      "stage": "预热",
+      "style": "购买顾虑",
+      "offer": "传单封面写最高60%，并给提前购买的价格承诺；下方有家具分项期限。",
+      "visual": "霓虹蓝活动大字、巨大折扣、生活方式单椅和实际价格并排。",
+      "borrow": "“为什么现在买”与“具体买什么”在同页解释。",
+      "adapt": "桌椅图+实际价格作为广告；完整品类优惠表留落地页。",
+      "limit": "加拿大历史传单，不代表德国条件；不能复制价格承诺；多信息版不宜直接塞进小尺寸广告。",
+      "asset_role": "品牌传单封面渲染，PDF第1页",
+      "year_evidence": "封面有效期与JYSK.ca标识已核验",
+      "collected_at": "2026-10-20",
+      "performance_evidence": "未获得点击、花费、购买或ROAS数据；以下仅为视觉分析和测试假设。",
+      "related": [
+        "FW-BF-01",
+        "FW-BF-08"
+      ],
+      "image": "promotions/references/BF-020.webp",
+      "original_asset_url": "https://stgraddaradfprod.blob.core.windows.net/jysk/wk46-2024/pdfs/JYSK%20wk46-2024%201.pdf",
+      "width": 1077,
+      "height": 1300,
+      "preview_width": 1077,
+      "preview_height": 1300,
+      "original_frames": 1,
+      "sha256": "f830c696f2ae810b4e35124f0cc5f18f19ff075b89a45e94ee3ff78001cf5c72",
+      "image_note": "从已公开原图保存的静态研究预览。未用生成式工具补画。"
+    },
+    {
+      "id": "BF-021",
+      "brand": "Aosom",
+      "category": "家具零售",
+      "year": "2023",
+      "date": "2023-11-18",
+      "market": "德国",
+      "title": "精选产品价格与黑五主题承接",
+      "source_url": "https://milled.com/aosom-de/black-friday-and-cyber-monday-megadeals-bis-zu-50-sparen-15-rabatt-ZUK1pbZDLg4ZfQFG",
+      "source_kind": "品牌邮件归档",
+      "stage": "预热",
+      "style": "单品到手价",
+      "offer": "邮件列黑五与网一促销、具体家具价格，并说明当时的延长退货期。",
+      "visual": "本条仅有文字证据；没有补画促销主视觉。",
+      "borrow": "把用户能买到的具体家具放到活动里。",
+      "adapt": "以单桌或单椅为主画面，价格、规格和日期相互匹配。",
+      "limit": "不能把标题最高折扣视为每件家具优惠；历史退货期不沿用。",
+      "asset_role": "文字与机制证据",
+      "year_evidence": "日期已核验",
+      "collected_at": "2026-10-20",
+      "performance_evidence": "未获得点击、花费、购买或ROAS数据；以下仅为视觉分析和测试假设。",
+      "related": [
+        "FW-BF-01",
+        "FW-BF-05"
+      ],
+      "image": null,
+      "original_asset_url": null,
+      "image_note": "仅有可核验文字证据或图片未能取得；不补造竞品主视觉。"
+    },
+    {
+      "id": "BF-022",
+      "brand": "Aosom",
+      "category": "家具零售",
+      "year": "2025",
+      "date": "图内截止 2025-11-18",
+      "market": "法国",
+      "title": "红色真实客厅与一条主优惠",
+      "source_url": "https://www.aosom.fr/activity/test",
+      "source_kind": "官网图像／索引存档",
+      "stage": "预热",
+      "style": "红色生活场景",
+      "offer": "画面含指定商品15%代码及订单返款抽奖等不同利益；有效期写在图内。",
+      "visual": "整间红墙客厅，白沙发突出，左上优惠，右下期限。",
+      "borrow": "大促颜色可以进入真实场景，而不只做平面底板。",
+      "adapt": "用暖砖红墙、白色桌子和真实办公摆放，主利益只留一条。",
+      "limit": "当前承载页已换内容；2025日期依原图，活动适用条款无法完整复核。",
+      "asset_role": "完整促销主视觉",
+      "year_evidence": "图内日期已核验；原活动正文不可复原",
+      "collected_at": "2026-10-20",
+      "performance_evidence": "未获得点击、花费、购买或ROAS数据；以下仅为视觉分析和测试假设。",
+      "related": [
+        "FW-BF-01",
+        "FW-BF-06"
+      ],
+      "image": "promotions/references/BF-022.webp",
+      "original_asset_url": "https://img.aosomcdn.com/485/230_club/2025/11/10/1xj0e219a6b5a68c2.jpg",
+      "width": 702,
+      "height": 456,
+      "preview_width": 702,
+      "preview_height": 456,
+      "original_frames": 1,
+      "sha256": "4c09fe710950b1b79128a09f4281999ded500a6eb409f95791f6b1c8a9c645ca",
+      "image_note": "从已公开原图保存的静态研究预览。未用生成式工具补画。"
+    },
+    {
+      "id": "BF-023",
+      "brand": "Porta",
+      "category": "家具零售",
+      "year": "2023",
+      "date": "2023-11-23",
+      "market": "德国",
+      "title": "会员专享：明确谁可以使用",
+      "source_url": "https://milled.com/porta-de/black-friday-deal-25-auf-alles-Km0xqp-jtY_bLGt1",
+      "source_kind": "品牌邮件归档",
+      "stage": "主促",
+      "style": "专属权益",
+      "offer": "历史邮件面向订阅用户，提供个人代码及线下核销方式，另有排除项。",
+      "visual": "只保留文字与机制分析，不收录个人代码。",
+      "borrow": "专享优惠要说明领取人群与使用条件。",
+      "adapt": "若设置邮件优先购，广告先引导登记，再由规则说明具体权益。",
+      "limit": "不能把会员或个人权益写成全站无门槛活动。",
+      "asset_role": "文字与机制证据",
+      "year_evidence": "日期已核验",
+      "collected_at": "2026-10-20",
+      "performance_evidence": "未获得点击、花费、购买或ROAS数据；以下仅为视觉分析和测试假设。",
+      "related": [
+        "FW-BF-08"
+      ],
+      "image": null,
+      "original_asset_url": null,
+      "image_note": "仅有可核验文字证据或图片未能取得；不补造竞品主视觉。"
+    },
+    {
+      "id": "BF-024",
+      "brand": "Wayfair",
+      "category": "家具零售",
+      "year": "2023",
+      "date": "2023-11-20",
+      "market": "澳大利亚／页路径重定向",
+      "title": "按房间与预算精选黑五商品",
+      "source_url": "https://milled.com/wayfair-australia/bedroom-bargains-for-a-restful-night-IK0aqYxx4XmFwYEK",
+      "source_kind": "品牌邮件归档",
+      "stage": "主促",
+      "style": "人群与任务",
+      "offer": "邮件按卧室、沙发椅、地毯与预算选品组织，具体价格以历史活动为准。",
+      "visual": "只读取文字；图片链多为跟踪像素，未纳入视觉分析。",
+      "borrow": "把大型促销变成可选择的小清单。",
+      "adapt": "Furniwell可分小空间、双屏和桌架升级入口；每个入口对应清楚产品范围。",
+      "limit": "归档路径重定向到UK，但正文仍指向澳洲域名；不将它归为英国条件。",
+      "asset_role": "文字与机制证据",
+      "year_evidence": "发送日已核验；市场按正文与落地域名判断",
+      "collected_at": "2026-10-20",
+      "performance_evidence": "未获得点击、花费、购买或ROAS数据；以下仅为视觉分析和测试假设。",
+      "related": [
+        "FW-BF-01",
+        "FW-BF-03",
+        "FW-BF-04"
+      ],
+      "image": null,
+      "original_asset_url": null,
+      "image_note": "仅有可核验文字证据或图片未能取得；不补造竞品主视觉。"
+    },
+    {
+      "id": "BF-025",
+      "brand": "Ergotopia",
+      "category": "桌椅品牌",
+      "year": "待核／复用",
+      "date": "2026-10-20 采集",
+      "market": "德国",
+      "title": "预告、旧条款与商品证据应分开",
+      "source_url": "https://www.ergotopia.de/black-friday",
+      "source_kind": "品牌官网",
+      "stage": "预热",
+      "style": "购买顾虑",
+      "offer": "当前页已写2026预告，但仍含2025年11月的代码截止与“已结束”文字。",
+      "visual": "不把背景底图当完整广告；此处只记录混年页面与机制。",
+      "borrow": "预热页可以承接登记；功能与服务证据在详情页说明。",
+      "adapt": "Furniwell更新黑五标题时，同步检查日期、优惠图和旧文案。",
+      "limit": "不能据此确认2026最终折扣；此例用于信息一致性检查。",
+      "asset_role": "当前页面与混年条款证据",
+      "year_evidence": "页面年份混合，具体优惠未确认",
+      "collected_at": "2026-10-20",
+      "performance_evidence": "未获得点击、花费、购买或ROAS数据；以下仅为视觉分析和测试假设。",
+      "related": [
+        "FW-BF-08"
+      ],
+      "image": null,
+      "original_asset_url": null,
+      "image_note": "仅有可核验文字证据或图片未能取得；不补造竞品主视觉。"
+    },
+    {
+      "id": "BF-026",
+      "brand": "Autonomous",
+      "category": "桌椅品牌",
+      "year": "2026",
+      "date": "2026-10-20 采集",
+      "market": "美国",
+      "title": "黑五选型：高度、承重与桌型",
+      "source_url": "https://www.autonomous.ai/black-friday-desk",
+      "source_kind": "品牌官网",
+      "stage": "预热",
+      "style": "功能选型",
+      "offer": "当前黑五桌页按不同桌架与型号组织，最终节省幅度未提前统一承诺。",
+      "visual": "仅分析已读取的选型文字；未取得可用历史横幅，不标2025主视觉。",
+      "borrow": "不同预算和空间对应不同商品，避免泛家具折扣。",
+      "adapt": "Furniwell把入门白桌、L型和桌架分别对应到清楚创意。",
+      "limit": "旧博客链接已重定向；不能把旧图资源路径当作今年活动证据。",
+      "asset_role": "当前页面与选型机制证据",
+      "year_evidence": "当前2026页面；活动折扣未统一确认",
+      "collected_at": "2026-10-20",
+      "performance_evidence": "未获得点击、花费、购买或ROAS数据；以下仅为视觉分析和测试假设。",
+      "related": [
+        "FW-BF-01",
+        "FW-BF-03",
+        "FW-BF-04"
+      ],
+      "image": null,
+      "original_asset_url": null,
+      "image_note": "仅有可核验文字证据或图片未能取得；不补造竞品主视觉。"
+    },
+    {
+      "id": "BF-027",
+      "brand": "Kave Home",
+      "category": "家具零售",
+      "year": "2019",
+      "date": "2019-12-09",
+      "market": "欧洲／英语邮件",
+      "title": "长期对照：灰底、家具轮廓、午夜截止",
+      "source_url": "https://milled.com/kavehome-fr-1/best-of-black-friday-up-to-45-off-last-hours-Lbg6BPEUZTMVnCL5",
+      "source_kind": "品牌邮件归档",
+      "stage": "收官",
+      "style": "截止提醒",
+      "offer": "历史收官图写精选最高45%及午夜截止。",
+      "visual": "深灰底、侧边单椅与吊灯剪影，白色主标题配红色优惠与按钮。",
+      "borrow": "收官只需日期、一个利益和一个去向。",
+      "adapt": "用完整Furniwell桌型替代边缘剪影；产品辨识度优先。",
+      "limit": "年代较早，只作表达结构对照，不能当作近期市场趋势或今年折扣。",
+      "asset_role": "完整促销主视觉",
+      "year_evidence": "日期已核验",
+      "collected_at": "2026-10-20",
+      "performance_evidence": "未获得点击、花费、购买或ROAS数据；以下仅为视觉分析和测试假设。",
+      "related": [
+        "FW-BF-08"
+      ],
+      "image": "promotions/references/BF-027.webp",
+      "original_asset_url": "https://images.milledcdn.com/2019-12-09/BrmALmwW1r79Gu5T/G94O9SpuHlu0.jpg",
+      "width": 780,
+      "height": 960,
+      "preview_width": 780,
+      "preview_height": 960,
+      "original_frames": 1,
+      "sha256": "120d146230eebc85281fc70207e45535385e320a1b344e67c9f3f4f2ac960825",
+      "image_note": "从已公开原图保存的静态研究预览。未用生成式工具补画。"
+    }
+  ],
+  "products": {
+    "P1": {
+      "name": "Economy Solid 白色 120×60 cm",
+      "url": "https://furniwell.de/products/economy-solid-elektrisch-hohenverstellbarer-schreibtisch?variant=52895330861322",
+      "image": "05_Furniwell_Creative_Opportunities/Furniwell_Product_References/P1.webp",
+      "facts": "一体桌板；单电机；两组记忆高度；白桌白架；规格区承重70 kg；高度73–118 cm不含桌板",
+      "lock": "使用该型号官方原图。保留桌板材质、拼接方式、立柱节数与装配方向、桌脚、单个控制器和线缆。控制器在使用者右手侧的前长边下方。Dual Ultra X按已确认产品约束保持右边距约桌长0.125，官方参考如有冲突先复核。不得混用其他型号控制器。",
+      "as_of": "2026-10-15"
+    },
+    "P2": {
+      "name": "Economy Solid 白色 140×70 cm",
+      "url": "https://furniwell.de/products/economy-solid-elektrisch-hohenverstellbarer-schreibtisch?variant=52895330894090",
+      "image": "05_Furniwell_Creative_Opportunities/Furniwell_Product_References/P2.webp",
+      "facts": "一体桌板；单电机；两组记忆高度；白桌白架；对应140×70在售变体",
+      "lock": "使用该型号官方原图。保留桌板材质、拼接方式、立柱节数与装配方向、桌脚、单个控制器和线缆。控制器在使用者右手侧的前长边下方。Dual Ultra X按已确认产品约束保持右边距约桌长0.125，官方参考如有冲突先复核。不得混用其他型号控制器。",
+      "as_of": "2026-10-15"
+    },
+    "P3": {
+      "name": "Dual Ultra X 白色 180×80 cm",
+      "url": "https://furniwell.de/products/dual-ultra-x-tischgestell-mit-premium-elektrisch-hohenverstellbarer-schreibtisch?variant=52317073998090",
+      "image": "05_Furniwell_Creative_Opportunities/Furniwell_Product_References/P3.webp",
+      "facts": "白桌白架180×80在售变体；双电机；规格区高度60–125 cm不含桌板；多尺寸140/160/180/200 cm可选",
+      "lock": "使用该型号官方原图。保留桌板材质、拼接方式、立柱节数与装配方向、桌脚、单个控制器和线缆。控制器在使用者右手侧的前长边下方。Dual Ultra X按已确认产品约束保持右边距约桌长0.125，官方参考如有冲突先复核。不得混用其他型号控制器。",
+      "as_of": "2026-10-15"
+    },
+    "P4": {
+      "name": "Einzelmotor 白色电动升降桌架",
+      "url": "https://furniwell.de/products/hohenverstellbarer-schreibtisch-gestell-bis-zu-80-kg?variant=41738609655986",
+      "image": "05_Furniwell_Creative_Opportunities/Furniwell_Product_References/P4.webp",
+      "facts": "白色在售变体；单电机；两组记忆高度；规格区72–118 cm；动态80 kg/静态100 kg；只售桌架",
+      "lock": "使用该型号官方原图。保留桌板材质、拼接方式、立柱节数与装配方向、桌脚、单个控制器和线缆。控制器在使用者右手侧的前长边下方。Dual Ultra X按已确认产品约束保持右边距约桌长0.125，官方参考如有冲突先复核。不得混用其他型号控制器。",
+      "as_of": "2026-10-15"
+    },
+    "P5": {
+      "name": "Economy 白色 120×60 cm",
+      "url": "https://furniwell.de/products/economy-elektrisch-hohenverstellbarer-schreibtisch?variant=44533451587850",
+      "image": "05_Furniwell_Creative_Opportunities/Furniwell_Product_References/P5.webp",
+      "facts": "白色120×60在售变体；电动升降；两组记忆高度；规格和描述明确四片桌板拼接",
+      "lock": "使用该型号官方原图。保留桌板材质、拼接方式、立柱节数与装配方向、桌脚、单个控制器和线缆。控制器在使用者右手侧的前长边下方。Dual Ultra X按已确认产品约束保持右边距约桌长0.125，官方参考如有冲突先复核。不得混用其他型号控制器。",
+      "as_of": "2026-10-15"
+    },
+    "P6": {
+      "name": "Dual Ultra X 白色 140×70 cm",
+      "url": "https://furniwell.de/products/dual-ultra-x-tischgestell-mit-premium-elektrisch-hohenverstellbarer-schreibtisch?variant=52317073932554",
+      "image": "05_Furniwell_Creative_Opportunities/Furniwell_Product_References/P6.webp",
+      "facts": "白桌白架140×70在售变体；双电机；完整尺寸和SKU已记录",
+      "lock": "使用该型号官方原图。保留桌板材质、拼接方式、立柱节数与装配方向、桌脚、单个控制器和线缆。控制器在使用者右手侧的前长边下方。Dual Ultra X按已确认产品约束保持右边距约桌长0.125，官方参考如有冲突先复核。不得混用其他型号控制器。",
+      "as_of": "2026-10-15"
+    },
+    "l160": {
+      "name": "L型 黑色 160×140×60 cm",
+      "sku": "G-SDF23-0285-0-B-G-HADT23-0286-BK",
+      "url": "https://furniwell.de/products/l-form-eckschreibtisch-hohenverstellbar-elektrisch-ergonomischer-stehtisch?variant=45028720378122",
+      "library_ids": [],
+      "facts": "2026-10-16商品JSON显示该黑色SKU在售；页面尺寸160×140×60 cm。换向、脚轮、USB与控制器键位须按实物说明书核对，正文存在配置混用，暂不承诺。",
+      "lock": "以该黑色SKU官方多角度图和说明书锁定L型外轮廓、内角、拼板、立柱数量、脚型和原控制器位置；不镜像成另一侧、不新增控制器、抽屉或理线配件。",
+      "as_of": "2026-10-16"
+    },
+    "g2": {
+      "name": "G2 白色玻璃 140×70 cm",
+      "sku": "G-HAD24-0430-142WT-2",
+      "url": "https://furniwell.de/products/hohenverstellbarer-schreibtisch-mit-einteilige-glasplatte-ergonomischer-stehschreibtisch-computertisch?variant=45781441347850",
+      "library_ids": [],
+      "facts": "2026-10-16商品JSON：140×70在售，120×60不可售。页面标注可书写玻璃、一个抽屉、USB-A/C；部分iPhone不支持其USB充电，故本轮不做通用充电承诺。",
+      "lock": "一体白色钢化玻璃台面、原白色两节立柱和脚型、一个原有抽屉、原集成控制器与USB口；不改成四拼板或木板，不增加第二个抽屉。",
+      "as_of": "2026-10-16"
+    },
+    "chair": {
+      "name": "高背可调人体工学椅",
+      "url": "https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken",
+      "image": null,
+      "facts": "仅使用当前页面对应变体的真实结构；本研究不新增调节维度、承重或人体适配承诺。",
+      "lock": "头枕、网背、腰托、扶手、底座与官方参考一致；功能展示先复核具体变体。",
+      "as_of": "2026-10-20 页面核查"
+    },
+    "gaming": {
+      "name": "经典人体工学电竞椅",
+      "url": "https://furniwell.de/products/klassischer-ergonomischer-gaming-stuhl",
+      "image": null,
+      "facts": "沿用该链接的真实款式；与其他脚托款分开。",
+      "lock": "不增添官方款式没有的脚托、按钮或调节结构。",
+      "as_of": "2026-10-20 页面核查"
+    }
+  },
+  "briefs": [
+    {
+      "id": "FW-BF-01",
+      "priority": "P0",
+      "title": "白色120×60：商品、规格、到手价",
+      "product_keys": [
+        "P5"
+      ],
+      "need": "入门预算与小空间；沿用现有需求板块对白色和尺寸的优先顺序。",
+      "refs": [
+        "BF-007",
+        "BF-016",
+        "BF-022"
+      ],
+      "concept": "一张图让人看懂具体桌型、尺寸和能省多少钱。",
+      "scene": "德国小户型Homeoffice，米白墙与浅木地板；白色120×60桌前侧三分之四，完整保留桌脚与使用通道。可有自然坐姿成年人。",
+      "layout": "商品约占画面55–65%为设计目标；左上或上方留一个标题区，价格在独立色块；不遮控制器、拼缝或桌腿。",
+      "copy": [
+        "Black Friday fürs Homeoffice",
+        "Elektrisch. Weiß. 120 × 60 cm.",
+        "[Aktionspreis] € · Du sparst [Betrag] €"
+      ],
+      "variant_a": "优惠优先：同一产品和优惠，主标题突出到手价／欧元节省。",
+      "variant_b": "使用优先：同一产品和优惠，标题突出小空间，价格降为第二层。",
+      "channels": [
+        "PMax",
+        "Meta",
+        "站内"
+      ],
+      "deliverables": "两个版式，各做1:1与4:5；另保留横版及各比例无字版本用于PMax。",
+      "avoid": "四拼Economy不得变一体板；不拿100×60的起价配120×60图；黑五价格未定前不使用现有HW15推算。"
+    },
+    {
+      "id": "FW-BF-02",
+      "priority": "P0",
+      "title": "桌+椅：完整办公位的搭配购",
+      "product_keys": [
+        "P5",
+        "chair"
+      ],
+      "need": "想一次补齐工作位的用户；是否提高组合购买需测试，非已验证人群。",
+      "refs": [
+        "BF-004",
+        "BF-009",
+        "BF-008"
+      ],
+      "concept": "用户看到的是一套可以使用的桌椅方案，并知道两件是否都包含。",
+      "scene": "真实德国公寓办公角；单张白色桌与指定高背椅同框，笔记本、键盘、台灯克制摆放；椅子可稍拉出露出靠背。",
+      "layout": "桌椅完整，文字不压腿部；组合清单和组合价放相邻区域；显示器等道具明确不包含。",
+      "copy": [
+        "Dein Homeoffice. Komplett.",
+        "Tisch + Stuhl im Black Sale",
+        "Setpreis: [Preis] € · [Vorteil]"
+      ],
+      "variant_a": "同一场景突出桌椅组合的实际节省。",
+      "variant_b": "同一优惠突出完整工作位，优惠退到第二层。",
+      "channels": [
+        "Meta",
+        "PMax",
+        "站内"
+      ],
+      "deliverables": "1:1、4:5和1.91:1；PMax商品范围与落地页能够对应这两件商品。",
+      "avoid": "当前产品页有桌+椅42€优惠入口，但黑五期间、适用椅款及与HW15叠加未核实；正式图只使用届时可结算优惠。"
+    },
+    {
+      "id": "FW-BF-03",
+      "priority": "P1",
+      "title": "L型：墙角放下双屏，再给优惠",
+      "product_keys": [
+        "l160"
+      ],
+      "need": "明确L型查询存在，但现有库中转化样本较少。墙角与双屏为小额创意探索，不把场景当成已验证主买因。",
+      "refs": [
+        "BF-024",
+        "BF-026",
+        "BF-015"
+      ],
+      "concept": "把墙角利用和双屏摆放变成点击理由，促销促成行动。",
+      "scene": "德国成人居家办公室；L型桌贴合真实墙角，双显示器、键鼠与文件不拥挤。本简报沿用已记录的黑色变体；若改用火烧纹+黑架，先换成相应官方变体参考。",
+      "layout": "门口斜向的三分之四机位，L型长短边清楚；背景弱化，价格信息放墙面留白。",
+      "copy": [
+        "Mehr Platz zum Black Friday",
+        "Dein Eckplatz. Dein Setup.",
+        "[Aktionspreis] € · [Größe]"
+      ],
+      "variant_a": "优惠标题+相同墙角场景。",
+      "variant_b": "墙角／双屏价值标题+相同价格信息。",
+      "channels": [
+        "PMax",
+        "Meta"
+      ],
+      "deliverables": "1:1和1.91:1为主，4:5重新构图保证L型轮廓。",
+      "avoid": "不将普通直桌拉伸成L型；不把双屏摆放推断为数值承重或零晃动；左右可换只在对应型号确认后写。"
+    },
+    {
+      "id": "FW-BF-04",
+      "priority": "P1",
+      "title": "桌架：给旧桌板一个坐站升级",
+      "product_keys": [
+        "P4"
+      ],
+      "need": "已有合适桌板、考虑升级电动桌架的用户。",
+      "refs": [
+        "BF-024",
+        "BF-026"
+      ],
+      "concept": "说明卖的是桌架，以及为什么只换桌架也值得。",
+      "scene": "一张透明清楚的安装前后任务展示；同一合适桌板在已安装桌架上，镜头露出原有横梁、两根立柱和控制器。",
+      "layout": "主体突出桌架，文字明确“Nur Tischgestell”；演示桌板与屏幕不默认包含。",
+      "copy": [
+        "Upgrade für deinen Schreibtisch",
+        "Elektrisch höhenverstellbar",
+        "Nur Tischgestell · [Preis] €"
+      ],
+      "variant_a": "桌架到手价与完整结构。",
+      "variant_b": "保留桌板、升级坐站的任务价值。",
+      "channels": [
+        "PMax",
+        "Meta",
+        "再营销"
+      ],
+      "deliverables": "1:1和1.91:1；可加8–15秒安装完成与按键使用短片。",
+      "avoid": "不承诺适配所有旧桌板；不凭换桌架宣称环保认证；不要让用户把价格理解为整桌。"
+    },
+    {
+      "id": "FW-BF-05",
+      "priority": "P1",
+      "title": "椅子：清楚的坐姿与一个调节细节",
+      "product_keys": [
+        "chair"
+      ],
+      "need": "希望了解具体椅款及日常坐姿的人。",
+      "refs": [
+        "BF-006",
+        "BF-007",
+        "BF-010"
+      ],
+      "concept": "促销图里仍然能看见椅子对日常使用的价值。",
+      "scene": "成年人自然坐姿工作，侧面看见靠背和扶手；另拍一个真实调节动作。人物身材比例与椅子尺寸相符。",
+      "layout": "主图保留完整靠背与底座；一张图至多增加一个功能细节，不堆所有按钮说明。",
+      "copy": [
+        "Komfort für deinen Arbeitstag",
+        "Dein Bürostuhl im Black Sale",
+        "[Aktionspreis] € · [Vorteil]"
+      ],
+      "variant_a": "无人物的单椅+到手价。",
+      "variant_b": "同椅同优惠，自然坐姿+一个经核实功能。",
+      "channels": [
+        "Meta",
+        "PMax"
+      ],
+      "deliverables": "1:1、4:5；PMax另备无字版。",
+      "avoid": "不复制竞品奖项、评价或医学效果；没有的脚托与调节维度不得增加。"
+    },
+    {
+      "id": "FW-BF-06",
+      "priority": "P1",
+      "title": "家居质感：黑五保留明亮房间",
+      "product_keys": [
+        "P1",
+        "P2"
+      ],
+      "need": "同时考虑家居搭配与办公功能的人；视觉偏好待测试。",
+      "refs": [
+        "BF-014",
+        "BF-015",
+        "BF-018",
+        "BF-019"
+      ],
+      "concept": "以真实房间吸引注意，价格标识负责说明活动。",
+      "scene": "米白墙、自然光、白色或暖木桌面；用小面积深绿或砖红软装营造季节感，不让背景抢走桌子。",
+      "layout": "桌子完整且明亮；黑五标签控制为一块小信息区，保留房间层次。",
+      "copy": [
+        "Ein schönerer Platz zum Arbeiten",
+        "Black Friday bei Furniwell",
+        "[Aktionspreis] € · [Zeitraum]"
+      ],
+      "variant_a": "相同产品和价格的深色强促版。",
+      "variant_b": "相同产品和价格的暖色家居版。",
+      "channels": [
+        "Meta",
+        "PMax",
+        "站内"
+      ],
+      "deliverables": "1:1与1.91:1，4:5重新构图；无字场景版同时保留。",
+      "avoid": "Economy Solid是一体板；不得用普通Economy四拼桌混充；风格偏好不是已验证转化因果。"
+    },
+    {
+      "id": "FW-BF-07",
+      "priority": "P1",
+      "title": "15秒：动作先抓眼，最后落到真实优惠",
+      "product_keys": [
+        "P5"
+      ],
+      "need": "想看电动升降如何融入日常的人。",
+      "refs": [
+        "BF-008",
+        "BF-026",
+        "BF-007"
+      ],
+      "concept": "使用动作解释价值，商品和报价保持同一款。",
+      "scene": "0–3秒：真实白桌+人从坐姿开始使用；3–7秒：原控制器按键与连续升降；7–11秒：站姿整理文件；11–15秒：Hero及真实活动价。",
+      "layout": "9:16为主，字幕留安全区，控制器与倒装两节桌腿清楚；上下动作符合真实机械结构，桌板不变形。",
+      "copy": [
+        "Sitzen. Stehen. Weiterarbeiten.",
+        "Dein Schreibtisch im Black Sale",
+        "[Preis] € · Bis [Datum]"
+      ],
+      "variant_a": "首帧显示商品及活动利益。",
+      "variant_b": "首帧用真实升降动作，优惠在后段出现。",
+      "channels": [
+        "Meta",
+        "YouTube／PMax"
+      ],
+      "deliverables": "15秒竖版与横版；逐镜头关键帧独立制作，生成前先锁原商品图。",
+      "avoid": "不新增立柱关节、第二个控制器、漂浮线缆；价格或日期不得在生成图中随机拼写。"
+    },
+    {
+      "id": "FW-BF-08",
+      "priority": "P2",
+      "title": "收官：一个商品，一个利益，一个截止",
+      "product_keys": [
+        "P5",
+        "chair"
+      ],
+      "need": "已浏览具体商品、尚未下单的用户。",
+      "refs": [
+        "BF-003",
+        "BF-005",
+        "BF-014",
+        "BF-027"
+      ],
+      "concept": "用真实活动截止帮助完成购买，不依赖虚构库存。",
+      "scene": "沿用用户看过的具体款式和主视觉，保留商品识别；不在最后阶段突然换不相关场景。",
+      "layout": "清楚写德国时间的截止日期；商品比倒计时更重要。站内倒计时与广告结束时间相同。",
+      "copy": [
+        "Black Friday: Letzte Chance",
+        "Nur bis [Datum], [Uhrzeit]",
+        "[Aktionspreis] € · [Bedingung]"
+      ],
+      "variant_a": "有明确真实日期的收官提醒。",
+      "variant_b": "同一优惠与相同受众、常规活动文案作对照。",
+      "channels": [
+        "再营销",
+        "Meta",
+        "站内"
+      ],
+      "deliverables": "1:1与4:5；截止后同步停止或替换价格和日期素材。",
+      "avoid": "只有真实即将结束才用；不写未经证明的“仅剩3件”“年度最低”；价保需真实规则，不能借用Secretlab承诺。"
+    }
+  ],
+  "insights": [
+    {
+      "title": "让人先认出是哪一件商品在优惠",
+      "finding": "SIHOO以大幅单椅和实际价格建立识别；XXXLutz的纯折扣主视觉与商品组件承担不同任务。",
+      "refs": [
+        "BF-007",
+        "BF-016",
+        "BF-017"
+      ],
+      "recommendation": "首测商品清楚的到手价图，同时保留纯促销版作对照。",
+      "boundary": "视觉观察；不能由“竞品采用”推导点击或购买一定更高。"
+    },
+    {
+      "title": "把使用价值与优惠放在同一画面",
+      "finding": "黑五邮件既有组合机制，也按办公任务与房间分组。",
+      "refs": [
+        "BF-004",
+        "BF-008",
+        "BF-009",
+        "BF-024"
+      ],
+      "recommendation": "常规桌突出小空间；L型突出墙角双屏；桌椅搭配突出完整工作位。",
+      "boundary": "场景与需求关联属于创意假设，具体表现由Furniwell测试决定。"
+    },
+    {
+      "title": "红黑以外，家居质感值得占一个测试位",
+      "finding": "Westwing用深绿帘幕，home24使用暖色与幽默，Aosom让红色进入真实房间。",
+      "refs": [
+        "BF-014",
+        "BF-019",
+        "BF-022"
+      ],
+      "recommendation": "保留明亮白桌，做“深色强促／暖色家居”的相同商品与报价对照。",
+      "boundary": "不把配色偏好写成德国用户的普遍事实。"
+    },
+    {
+      "title": "只让用户计算一次：直接给到手价",
+      "finding": "Kave Home、Herman Miller与Branch的优惠都带门槛或不同层级。",
+      "refs": [
+        "BF-009",
+        "BF-011",
+        "BF-012",
+        "BF-013"
+      ],
+      "recommendation": "单图只保留一个主利益；尺寸、到手价和欧元节省写清楚，复杂规则放落地页。",
+      "boundary": "示例折扣全部属于历史竞品，不能直接用于Furniwell。"
+    },
+    {
+      "title": "提前购买要有真实理由",
+      "finding": "JYSK提前购承诺与Secretlab价保，都在回应“现在买会不会买贵”。",
+      "refs": [
+        "BF-020",
+        "BF-005"
+      ],
+      "recommendation": "若没有可执行价保，就用真实现价、库存配置与配送信息说明，不编写价格保证。",
+      "boundary": "这些机制在不同市场适用；本研究未判断其法律适用性或商业效果。"
+    },
+    {
+      "title": "每个阶段更新信息，收官减少信息",
+      "finding": "FlexiSpot分阶段促销、Westwing与Kave Home有明确收官表达；当前官网也存在旧图与新年份并存。",
+      "refs": [
+        "BF-001",
+        "BF-003",
+        "BF-014",
+        "BF-019",
+        "BF-025",
+        "BF-027"
+      ],
+      "recommendation": "预热讲选品，主促讲利益，收官讲真实截止；同步更新图、标题、落地页和价格。",
+      "boundary": "当前2026预告不能被当成尚未发生的11月最终广告。"
+    }
+  ],
+  "calendar": [
+    {
+      "period": "10.20—11.05",
+      "phase": "准备与核价",
+      "action": "选3个首测方向；确认具体SKU、活动价、叠加条件、库存及德国截止时间。完成落地页和素材命名。",
+      "assets": "FW-BF-01 / 02 / 03；预算较紧时先做01与03。"
+    },
+    {
+      "period": "11.06—11.19",
+      "phase": "预热与创意观察",
+      "action": "在既有产品投放中引入场景、功能和清楚价格版；保留稳定素材作对照。不要提前使用尚未生效的价格。",
+      "assets": "各方向A/B；依已确认优惠写预热版本。"
+    },
+    {
+      "period": "11.20—11.26",
+      "phase": "Black Week",
+      "action": "使用已经生效的主促优惠；按常规桌、L型、椅子／搭配保持商品与落地页匹配。",
+      "assets": "胜出方向+真实优惠；补桌架或椅子细节。"
+    },
+    {
+      "period": "11.27—11.30",
+      "phase": "黑五与Cyber Monday",
+      "action": "2026黑五11月27日，网一11月30日。只有实际结束的优惠才换收官版，结束后同步撤换。周末预算继续依据回收控制。",
+      "assets": "FW-BF-08及胜出商品视觉；不因日历自动提高周末预算。"
+    }
+  ],
+  "specs": [
+    {
+      "channel": "PMax图片",
+      "size": "1.91:1 · 1200×628；1:1 · 1200×1200；4:5 · 960×1200",
+      "rule": "JPG/PNG，单图≤5MB，核心商品与关键信息放中心80%。现行官方帮助允许叠字，但每个比例至少准备一张无叠字图。",
+      "url": "https://support.google.com/google-ads/answer/14530211"
+    },
+    {
+      "channel": "PMax素材组合",
+      "size": "建议多张独立构图；不能用同图裁切充当不同创意",
+      "rule": "按可购买产品范围组织。Google建议活动提前2–3周准备，并随着活动更新素材；先完成审核再到活动期。",
+      "url": "https://support.google.com/google-ads/answer/14528221?hl=en"
+    },
+    {
+      "channel": "商品Feed主图",
+      "size": "沿用真实商品图与Feed规则",
+      "rule": "活动叠字图与Feed主图分开；不可将带折扣、价格或按钮的促销海报直接替换商品主图。",
+      "url": "https://support.google.com/merchants/answer/6324350?hl=en"
+    },
+    {
+      "channel": "Meta / 站内 / 短视频",
+      "size": "图片以1:1和4:5；短视频9:16与横版分别构图",
+      "rule": "这是本次制作建议；发布前在对应版位预览文字与裁切。促销利益、按钮和日期不压商品与平台界面。",
+      "url": null
+    }
+  ],
+  "tests": [
+    {
+      "name": "01 · 优惠与使用价值",
+      "comparison": "同一SKU、报价、受众与落地页；比较折扣优先和使用优先的标题层级。",
+      "refs": [
+        "FW-BF-01",
+        "FW-BF-03"
+      ],
+      "primary": "Purchase ROAS / 购买成本；结合订单贡献判断。",
+      "diagnostic": "出站CTR、落地页访问、加购、结账与客单价。CTR上升但购买不改善时，不判定胜出。"
+    },
+    {
+      "name": "02 · 强促与家居质感",
+      "comparison": "固定商品、人物与报价，仅更换背景和促销视觉强度。",
+      "refs": [
+        "FW-BF-06"
+      ],
+      "primary": "购买回收与成本",
+      "diagnostic": "出站CTR、访问至购买率；分设备和版位观察裁切与可读性。"
+    },
+    {
+      "name": "03 · 单品与搭配购",
+      "comparison": "分别记录单桌／椅与真实组合优惠。由于商品范围及报价改变，这是方案测试，不是纯版式测试。",
+      "refs": [
+        "FW-BF-02"
+      ],
+      "primary": "贡献与ROAS、组合购买占比、客单价",
+      "diagnostic": "不能只看客单价；核实两件是否真正进入订单。"
+    }
+  ],
+  "first_batch": [
+    "FW-BF-01",
+    "FW-BF-02",
+    "FW-BF-03"
+  ],
+  "measurement_notes": [
+    "Meta可用平台实验比较同产品、同报价的两种表达；其他条件保持一致。",
+    "PMax的素材评级与自然分配只提供方向性线索，不能视为随机A/B因果结论；若账户支持并适合，可使用官方实验。",
+    "首周只作初步观察；等待现有转化延迟及足够购买样本后再决定。不按单日CTR或极少购买判胜。",
+    "保留Purchase转化口径；组合方案同时看客单价、组合购买和可用贡献。研究没有给出预期CTR／ROAS提升。"
+  ],
+  "current_offer_note": "2026-10-20现页有HW15及桌+椅42€优惠入口；本研究没有结算核验叠加条件，也未将它们设为黑五优惠。所有正式活动价、门槛与期限留待业务确认。",
+  "coverage_gaps": [
+    {
+      "brand": "Desktronic",
+      "url": "https://desktronic.de/pages/exklusive-ersparnisse-mit-desktronic",
+      "note": "找到当前Back-to-Work与常规优惠页，未找到本轮可核日期的历史黑五主视觉；不拿常规图充当黑五案例。"
+    },
+    {
+      "brand": "boho / Connox / SKLUM",
+      "url": null,
+      "note": "本轮未取得足够可核验的黑五原图；不补造案例，不将检索不到解释为品牌没有做活动。"
+    },
+    {
+      "brand": "Milled部分邮件",
+      "url": "https://milled.com/",
+      "note": "部分归档文字可读，图片返回跟踪像素或访问受限。只保留文字证据，不生成仿制竞品图。"
+    }
+  ],
+  "summary": {
+    "brands": 15,
+    "records": 27,
+    "visuals": 16,
+    "text_only": 11,
+    "source_pages": 24,
+    "briefs": 8
+  },
+  "priority_rule": "P0/P1/P2用于本轮黑五设计打样与测试安排，不覆盖原需求板块的证据评级。白色和具体尺寸沿用现有线索；预算、小空间、组合购买与L型双屏的具体动机仍需验证。"
+}
