@@ -608,7 +608,7 @@ window.FURNIWELL_VIDEO_DATA = {
       "id": "FV-01",
       "title": "坐着也要适合自己的高度",
       "priority": "首轮优先",
-      "product": "Economy 或当前主推直桌，广告和落地页使用同一变体。",
+      "product": "Economy 白色四拼桌板 120 × 60 cm；SKU G-HAD241222B；变体 44533451587850。",
       "hook_de": "Dein Tisch muss zu dir passen.",
       "hook_b": "Sitzt du an der richtigen Höhe?",
       "duration_seconds": 15,
@@ -620,38 +620,40 @@ window.FURNIWELL_VIDEO_DATA = {
       ],
       "timeline": [
         {
-          "time": "0–2 秒",
-          "shot": "侧面中景，成年人坐在桌前，手臂与工作面高度需要微调",
+          "time": "0–3 秒",
+          "shot": "同一张白色四拼 Economy 120×60；使用者入座，完整保留两根倒装柱、两只脚和右手侧控制器。",
           "subtitle_de": "Dein Tisch muss zu dir passen."
         },
         {
-          "time": "2–5 秒",
-          "shot": "手按实际控制器，桌面整体垂直调节；同机位接适合的坐姿高度",
+          "time": "3–6 秒",
+          "shot": "从使用者一侧拍右前角：右手食指按原装 UP 键；前长边和桌角一起入镜。",
           "subtitle_de": "Deine Höhe."
         },
         {
-          "time": "5–9 秒",
-          "shot": "自然起身，切到站立工作高度；避免剪成一秒就完成全行程",
+          "time": "6–9 秒",
+          "shot": "固定低机位显示两根完整立柱：粗上套管与桌面一起小幅上升，细下管和脚座固定。",
           "subtitle_de": "Sitzen oder stehen."
         },
         {
           "time": "9–12 秒",
-          "shot": "同一个人站着继续处理任务，显示桌子与空间的真实比例",
+          "shot": "剪辑点切到已核对的站立高度首帧；同一人站着操作同一台电脑，桌架不动。",
           "subtitle_de": "Dein Rhythmus."
         },
         {
           "time": "12–15 秒",
-          "shot": "产品全貌与品牌，连接对应商品页",
+          "shot": "同一侧全景定帧，产品、两脚及右手侧控制器清楚；品牌与 CTA 后期加。",
           "subtitle_de": "Jetzt bei Furniwell entdecken."
         }
       ],
-      "boundary": "不同桌款的控制器、记忆键数量和立柱结构分别锁定；不承诺缓解疾病或站立提升工作表现。"
+      "boundary": "本版固定白色四拼 Economy 120×60 与原装右侧外挂控制器；倒装为粗套管在上、细管在下；不承诺疾病改善或工作表现提升。",
+      "product_profile": "economy",
+      "prompt_updated": "2026-10-28"
     },
     {
       "id": "FV-02",
       "title": "一边电脑，一边书写",
       "priority": "首轮优先",
-      "product": "Furniwell 电动 L 型桌。",
+      "product": "L 型黑色桌 160 × 140 × 60 cm；SKU G-SDF23-0285-0-B-G-HADT23-0286-BK；变体 45028720378122。",
       "hook_de": "Arbeiten, ohne ständig umzuräumen.",
       "hook_b": "PC hier. Platz für deine Ideen dort.",
       "duration_seconds": 15,
@@ -663,37 +665,39 @@ window.FURNIWELL_VIDEO_DATA = {
       "timeline": [
         {
           "time": "0–3 秒",
-          "shot": "近景：使用者想摊开文件，键盘正好占住位置",
+          "shot": "固定黑色 L 型 160×140×60；坐内角，电脑在主工作面、笔记本在左侧延伸区。",
           "subtitle_de": "Arbeiten, ohne ständig umzuräumen."
         },
         {
           "time": "3–6 秒",
-          "shot": "固定高斜角展示 L 型全貌，电脑区与空白书写区同时可见",
+          "shot": "从使用者一侧高斜角展示两区与原 L 朝向；三柱三脚保持不动。",
           "subtitle_de": "Zwei Bereiche."
         },
         {
-          "time": "6–10 秒",
-          "shot": "使用者转向侧边书写，电脑区保持原样",
+          "time": "6–9 秒",
+          "shot": "使用者只转向自己的左侧书写，电脑和桌面都不挪动。",
           "subtitle_de": "Ein Arbeitsplatz."
         },
         {
-          "time": "10–12 秒",
-          "shot": "补一个实际升降或站立办公画面",
-          "subtitle_de": "Auch im Stehen."
+          "time": "9–12 秒",
+          "shot": "右手指向主工作面前长边下方的原控制器；不按键、不生成桌腿伸缩。",
+          "subtitle_de": "Alles bleibt an seinem Platz."
         },
         {
           "time": "12–15 秒",
-          "shot": "保留整张 L 型桌及品牌，链接 L 型商品页",
+          "shot": "同侧全景保留完整 L 形、三柱三脚；后期加商品 CTA。",
           "subtitle_de": "Entdecke deinen Eckschreibtisch."
         }
       ],
-      "boundary": "镜头展示真实占地与通道；原参考视频支持分区思路，不证明其产品为电动升降桌。"
+      "boundary": "保留官方黑色 L 型桌朝向、三柱三脚；倒装按用户确认，收合图不猜节数，本版不生成伸缩过程。",
+      "product_profile": "lshape",
+      "prompt_updated": "2026-10-28"
     },
     {
       "id": "FV-03",
-      "title": "整理完线，再让桌子升起来",
+      "title": "保留线长余量，再让桌子升起来",
       "priority": "首轮优先",
-      "product": "具备已核实理线配置的桌款，或明确包含相应配件的组合。",
+      "product": "Economy 白色四拼桌板 120 × 60 cm；SKU G-HAD241222B；变体 44533451587850。",
       "hook_de": "So sieht es unter deinem Schreibtisch aus?",
       "hook_b": "先给整洁后的结果，再回看整理前。",
       "duration_seconds": 15,
@@ -706,38 +710,40 @@ window.FURNIWELL_VIDEO_DATA = {
       ],
       "timeline": [
         {
-          "time": "0–2 秒",
-          "shot": "低机位展示桌下凌乱线材；不是危险绷紧电线",
+          "time": "0–3 秒",
+          "shot": "原 Economy 桌架和电源线，电线保持连接并有余量；不生成理线槽。",
           "subtitle_de": "So sieht es unter deinem Schreibtisch aus?"
         },
         {
-          "time": "2–5 秒",
-          "shot": "用实际配件归拢电源和线材",
-          "subtitle_de": "Ordnung unter dem Tisch."
+          "time": "3–6 秒",
+          "shot": "右手只整理原线材的松弛段，留宽松 U 形余量；不拔插、不增加配件。",
+          "subtitle_de": "Genug Spielraum für deine Kabel."
         },
         {
-          "time": "5–10 秒",
-          "shot": "同机位升降，给足线长，能看到线材自然随动",
+          "time": "6–9 秒",
+          "shot": "右手按原控制器小幅升高；桌面与粗上管一起上移，细下管和脚固定，线缆不绷紧。",
           "subtitle_de": "Platz zum Hochfahren."
         },
         {
-          "time": "10–12 秒",
-          "shot": "拉回整洁工作区与人物",
+          "time": "9–12 秒",
+          "shot": "同一空间和桌款继续工作，真实电源线与余量保留。",
           "subtitle_de": "Bereit für deinen Alltag."
         },
         {
           "time": "12–15 秒",
-          "shot": "商品及实际组合信息，链接对应组合",
+          "shot": "整桌与真实线材全景；不声称附送理线配件。",
           "subtitle_de": "Jetzt entdecken."
         }
       ],
-      "boundary": "必须核对实际理线配件与售卖组合；若为另购件，画面与落地页均说明。"
+      "boundary": "默认仅展示原有线材与松弛余量；不生成未确认标配的理线槽、磁吸盖或供电盒。",
+      "product_profile": "economy",
+      "prompt_updated": "2026-10-28"
     },
     {
       "id": "FV-04",
       "title": "G2：写下、收好、擦净",
       "priority": "第二轮扩展",
-      "product": "G2 玻璃桌；保留一块玻璃桌面与原装单抽屉。",
+      "product": "G2 白色玻璃桌 140 × 70 cm；SKU G-HAD24-0430-142WT-2；变体 45781441347850。",
       "hook_de": "Deine To-dos direkt auf dem Tisch.",
       "hook_b": null,
       "duration_seconds": 15,
@@ -747,37 +753,39 @@ window.FURNIWELL_VIDEO_DATA = {
       "timeline": [
         {
           "time": "0–3 秒",
-          "shot": "使用适配的可擦写笔，在玻璃上写一条简短待办",
+          "shot": "G2 140×70 完整全景；一整片玻璃、一个原装抽屉、右侧内嵌控制面板、两根倒装柱。",
           "subtitle_de": "Deine To-dos direkt auf dem Tisch."
         },
         {
           "time": "3–6 秒",
-          "shot": "勾选已完成事项",
+          "shot": "适配玻璃笔只画一个简单勾号；文字内容后期加，不让 AI 写长句。",
           "subtitle_de": "Aufschreiben."
         },
         {
           "time": "6–9 秒",
-          "shot": "笔和小物放进原装单抽屉，顺手合上",
+          "shot": "剪辑点：原装单抽屉已略开；右手只把笔放进去，不同时生成开抽屉动作。",
           "subtitle_de": "Verstauen."
         },
         {
           "time": "9–12 秒",
-          "shot": "擦净字迹，展示整洁玻璃工作面",
+          "shot": "剪辑点：抽屉已关闭；用布局部擦掉小勾号，玻璃轮廓和控制面板不变。",
           "subtitle_de": "Wegwischen."
         },
         {
           "time": "12–15 秒",
-          "shot": "产品全貌、一次坐站用途提示与 CTA",
+          "shot": "回到同一高度全景；不加外挂黑色控制器，不生成站立高度切换。",
           "subtitle_de": "Entdecke den Furniwell G2."
         }
       ],
-      "boundary": "保留原装单抽屉和玻璃结构；用适配的可擦写笔。此方向是产品延伸假设。"
+      "boundary": "一整片玻璃、一个原装抽屉、右侧内嵌控制面板；不添加 Economy 外挂控制器。",
+      "product_profile": "g2",
+      "prompt_updated": "2026-10-28"
     },
     {
       "id": "FV-05",
       "title": "120 × 60 cm 的卧室工作区",
       "priority": "第二轮扩展",
-      "product": "120 × 60 cm Economy，严格区分四拼版与 Economy Solid 整板版。",
+      "product": "Economy 白色四拼桌板 120 × 60 cm；SKU G-HAD241222B；变体 44533451587850。",
       "hook_de": "Dein Arbeitsplatz auf 120 × 60 cm.",
       "hook_b": null,
       "duration_seconds": 15,
@@ -787,37 +795,39 @@ window.FURNIWELL_VIDEO_DATA = {
       "timeline": [
         {
           "time": "0–3 秒",
-          "shot": "从真实德国卧室门口斜拍，交代门框、床和计划放桌的位置",
+          "shot": "从卧室门口交代已摆好的 Economy 白色四拼 120×60、床和通道；不生成家具凭空出现。",
           "subtitle_de": "Dein Arbeitsplatz auf 120 × 60 cm."
         },
         {
           "time": "3–6 秒",
-          "shot": "同一机位切到布置完成的工作区",
+          "shot": "同一真实比例和门、床位置，人走向座椅；右侧手控器不挪边。",
           "subtitle_de": "Platz für deinen Alltag."
         },
         {
-          "time": "6–10 秒",
-          "shot": "一台笔记本、独立键鼠，成年人自然坐着工作",
+          "time": "6–9 秒",
+          "shot": "同一人坐姿操作一台电脑；四拼、两柱倒装、两脚保持原型。",
           "subtitle_de": "Alles griffbereit."
         },
         {
-          "time": "10–12 秒",
-          "shot": "起身后仍能看见座椅退出区和通道，补升降用途",
-          "subtitle_de": "Flexibel arbeiten."
+          "time": "9–12 秒",
+          "shot": "右手按靠人的前长边下方控制器；仅小幅调节，不在三秒内强行完整升降。",
+          "subtitle_de": "Deine passende Höhe."
         },
         {
           "time": "12–15 秒",
-          "shot": "房间全景与商品 CTA",
+          "shot": "门口机位全景，人物站在椅旁展示通道；不把坐姿高度冒充站立办公高度。",
           "subtitle_de": "Finde deine passende Größe."
         }
       ],
-      "boundary": "桌板尺寸不是椅子与通道的总占地；四拼与 Solid 整板版分别使用正确商品图。"
+      "boundary": "本版固定白色四拼 Economy 120×60，不混用 Solid 整板；通道与座椅退出区按真实比例。",
+      "product_profile": "economy",
+      "prompt_updated": "2026-10-28"
     },
     {
       "id": "FV-06",
       "title": "电竞与工作，自然切换",
       "priority": "第二轮扩展",
-      "product": "同一款实际主推桌，避免更换配置。",
+      "product": "Economy 白色四拼桌板 120 × 60 cm；SKU G-HAD241222B；变体 44533451587850。",
       "hook_de": "Zum Zocken sitzen. Für den nächsten Task aufstehen.",
       "hook_b": null,
       "duration_seconds": 15,
@@ -829,26 +839,33 @@ window.FURNIWELL_VIDEO_DATA = {
       "timeline": [
         {
           "time": "0–3 秒",
-          "shot": "使用者坐着结束一段游戏，手离开鼠标，转到待办任务",
+          "shot": "同一 Economy 四拼桌，使用者坐姿结束鼠标动作，桌架静止。",
           "subtitle_de": "Zum Zocken sitzen."
         },
         {
-          "time": "3–7 秒",
-          "shot": "手按实际控制器并起身，产品保持同一结构",
+          "time": "3–6 秒",
+          "shot": "右手食指按右前工作长边下方原控制器 UP 键，保留桌角上下文。",
+          "subtitle_de": "Deine Höhe auf Knopfdruck."
+        },
+        {
+          "time": "6–9 秒",
+          "shot": "完整两柱入镜，小幅上移粗上套管与桌面；细下管和底脚不动。",
           "subtitle_de": "Für den nächsten Task aufstehen."
         },
         {
-          "time": "7–11 秒",
-          "shot": "站着回复消息或整理任务清单",
+          "time": "9–12 秒",
+          "shot": "剪辑点切到已验收的站立高度首帧，同一人站着处理消息；桌架静止。",
           "subtitle_de": "Ein Tisch für beides."
         },
         {
-          "time": "11–15 秒",
-          "shot": "产品、人物和品牌一起收尾",
+          "time": "12–15 秒",
+          "shot": "同一桌款、人物、机位方向全景收尾；字幕品牌后期加。",
           "subtitle_de": "Entdecke deinen Furniwell Schreibtisch."
         }
       ],
-      "boundary": "不承诺站着打游戏更好；表现休息与任务切换，线材留足升降余量。"
+      "boundary": "不承诺站着打游戏更好；表现休息与任务切换，线材留足升降余量。",
+      "product_profile": "economy",
+      "prompt_updated": "2026-10-28"
     }
   ],
   "conclusions": [
@@ -864,13 +881,13 @@ window.FURNIWELL_VIDEO_DATA = {
     },
     {
       "title": "让理线结果经得起升降",
-      "text": "用实际配置展示整洁与线长余量，连接功能和真实使用。",
+      "text": "用原有线材的松弛余量与小段升降，解释真实使用；不把未确认理线配件当标配。",
       "brief_id": "FV-03"
     }
   ],
   "test_plan": {
     "count": 6,
-    "description": "三个方向各做两个开场；同一方向保持 SKU、主体、优惠、落地页与投放条件一致。若理线组合尚未明确，用 G2 方向替换。",
+    "description": "三个方向各做两个开场；每个方向固定同一 SKU、人物、优惠和落地页。FV-03 默认只演示原有线材与升降余量，不生成未确认配件。",
     "metrics": [
       "可获得的观看留存",
       "点击与有效商品页访问",
@@ -880,10 +897,13 @@ window.FURNIWELL_VIDEO_DATA = {
     "interpretation": "先在同一产品内比较开场，再判断方向能否带来购买。不同价格产品之间的 CPA 差异不能直接归因于创意。"
   },
   "production_rules": [
-    "以对应变体商品图锁定四拼或整板、立柱节数、脚型和控制器。直桌控制器保留原型的右前长边下方位置。",
-    "升降时立柱伸缩、桌板整体垂直移动并始终保持水平。同一视频锁定人物、房间、自然光和产品。",
-    "一条 15 秒广告聚焦一个购买理由；字幕避开平台按钮与底部信息区。",
-    "安装耗时、稳定性、承重和防碰撞等性能证据使用实际拍摄与测试；AI 生活场景不能替代真实性能测试。"
+    "一个方向固定一个 SKU 和变体；先上传对应官网原图，再上传已验收首帧；商品链接不能替代图片附件。",
+    "前边＝靠人的工作长边，右边＝人坐下面对桌面时的右手侧。控制器仅一个，固定在这个物理位置；机位变化不得镜像搬边。",
+    "Economy 为黑色外挂手控器，位于前工作长边下方；G2 为前沿右侧内嵌控制面板，不能共用控制器描述。",
+    "两节倒装柱写成粗外套管在上、细内管在下连接底脚。升起时桌面和粗套管一起上移，露出更多细下管；底脚固定地面，桌面保持水平。",
+    "三秒只演示小段升降；坐站端点用已验收首帧在剪辑点衔接。L 型收合图未确认伸缩节数，暂不生成伸缩过程。",
+    "同一视频锁定人物、房间、机位所在侧、桌板拼缝、立柱数和节数、底脚、控制器与线缆。字幕、口播和促销后期加。",
+    "生成后对比首帧、中间帧和尾帧；错款、控制器移位、倒装翻转或新增部件必须重做。提示词不能代替成片验收。"
   ],
   "offer_snapshot": {
     "date": "2026-10-27",
@@ -912,5 +932,6 @@ window.FURNIWELL_VIDEO_DATA = {
       "note": "自 2025-03-31 起，公开播放计入开始播放和重播，无最低观看时长要求。"
     }
   ],
-  "report_path": "videos/research-2026-10-27.md"
+  "report_path": "videos/research-2026-10-27.md",
+  "grok_prompt_updated": "2026-10-28"
 };
