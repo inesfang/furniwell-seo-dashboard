@@ -1,18 +1,20 @@
-# Furniwell Grok 产品一致性提示词使用指南
+# Furniwell Grok 产品与人物交互提示词使用指南
 
-更新：2026-10-29（北京时间）。固定视频简报新增 Furniwell 灰色高背办公椅 G-OCNC23-0240-2；更换款式和颜色请使用网页的中文 Prompt 生成区。
+更新：2026-10-29（北京时间）。逐镜头定义出镜人数、手部和接触关系；先验收静止首帧，再分别生成五段 3 秒视频，最后硬切剪辑。
 
 附件顺序：image1 主商品原图；image2 搭配椅原图；image3 当前独立镜头已验收首帧。链接不等于已上传附件。
 
 1. 先下载主商品原图与灰色高背办公椅原图并实际上传，分别作为 image1、image2。只粘贴商品链接不会绑定图片。
 
-2. 先复制每镜头的“首帧提示词”制作单张 9:16 首帧；逐张核对产品。这里提供的是提示词，未声称已生成首帧。
+2. 先复制每镜头的“首帧提示词”制作单张 9:16 首帧；先验收人数、手数、肩肘腕连接、椅背在身后及桌沿间隙，再核对产品。错误首帧必须重做，不能交给视频模型修复。
 
 3. 推荐分镜生成：每镜头开独立任务，先上传主商品原图作为 image1、搭配椅原图作为 image2，再上传本镜头已验收首帧作为 image3。image2 不再指首帧，不要上传另一镜头的首帧。
 
-4. 总提示词为可选整条模式，仅在当前 Grok 支持所需时长与多镜头时使用；image1 是主商品原图，image2 是固定灰色搭配椅原图。界面不识别 @image 标签时，用附件选择功能手动指定图片。
+4. 15 秒总提示词现在是剪辑计划，不直接整段交给 Grok 连续生成。每镜头只复制本段 3 秒图生视频指令；image1 主商品、image2 搭配椅、image3 当前首帧。界面不识别标签时手动指定附件。
 
-5. 每镜头只做一个小动作。升降只展示一小段行程；坐、站高度用已校对首帧在剪辑点连接。字幕、口播、品牌和促销信息后期添加。
+5. 每段只做一个小动作：人物镜头桌椅固定，手部特写仅一只右手，升降镜头无人且椅子在运动区外。不生成入座、起身或转身过程；用硬切连接已完成状态。字幕、口播、品牌和促销信息后期添加。
+
+人物交互：人物已坐稳、双手分放大腿；手部特写仅一只右手；升降镜头完全无人。椅背在身体后方，座面承托骨盆，桌沿与扶手不穿模。不生成入座、起身或转身过渡。错误首帧必须重做，不能交给视频模型修复。
 
 关键定义：前＝靠人的工作长边；右＝入座者自己的右手侧。倒装两节立柱＝粗管在上、细管在下。主商品与搭配椅分别锁定，椅子不随桌面升降，不推断为随货套装。
 
@@ -28,10 +30,10 @@ SKU：G-HAD241222B；variant：44533451587850
 
 ## 使用顺序
 1. 先下载主商品原图与灰色高背办公椅原图并实际上传，分别作为 image1、image2。只粘贴商品链接不会绑定图片。
-2. 先复制每镜头的“首帧提示词”制作单张 9:16 首帧；逐张核对产品。这里提供的是提示词，未声称已生成首帧。
+2. 先复制每镜头的“首帧提示词”制作单张 9:16 首帧；先验收人数、手数、肩肘腕连接、椅背在身后及桌沿间隙，再核对产品。错误首帧必须重做，不能交给视频模型修复。
 3. 推荐分镜生成：每镜头开独立任务，先上传主商品原图作为 image1、搭配椅原图作为 image2，再上传本镜头已验收首帧作为 image3。image2 不再指首帧，不要上传另一镜头的首帧。
-4. 总提示词为可选整条模式，仅在当前 Grok 支持所需时长与多镜头时使用；image1 是主商品原图，image2 是固定灰色搭配椅原图。界面不识别 @image 标签时，用附件选择功能手动指定图片。
-5. 每镜头只做一个小动作。升降只展示一小段行程；坐、站高度用已校对首帧在剪辑点连接。字幕、口播、品牌和促销信息后期添加。
+4. 15 秒总提示词现在是剪辑计划，不直接整段交给 Grok 连续生成。每镜头只复制本段 3 秒图生视频指令；image1 主商品、image2 搭配椅、image3 当前首帧。界面不识别标签时手动指定附件。
+5. 每段只做一个小动作：人物镜头桌椅固定，手部特写仅一只右手，升降镜头无人且椅子在运动区外。不生成入座、起身或转身过程；用硬切连接已完成状态。字幕、口播、品牌和促销信息后期添加。
 
 ## 固定产品结构
 - 白色 120 × 60 cm；四片拼接桌板，保留原图拼缝。
@@ -40,9 +42,9 @@ SKU：G-HAD241222B；variant：44533451587850
 - 仅一个黑色外挂手控器：入座者右手侧、靠人的前长边下方；不是右侧短边。
 核验边界：已对照同一变体官方主图确认两节倒装。
 
-## 15 秒总提示词（纯英文；字幕后期加）
+## 15 秒剪辑计划（纯英文；不要整段连续生成）
 ```text
-Production recipe FV-01. Create a 15-second vertical 9:16 product video, five 3-second shots. Use the ACTUALLY UPLOADED @image1 as the exact official product identity reference. A URL or product name alone is not a visual reference. Product fidelity has priority over camera movement and style.
+Production recipe FV-01. EDIT PLAN ONLY: five INDEPENDENT 3-second vertical 9:16 clips, joined into a 15-second ad. Do NOT submit this complete plan as a single continuous Grok generation. Make and approve each start still, then copy only that shot's image-to-video prompt. Actually upload @image1 as the official product reference and @image2 as the companion chair reference; each separate clip also uses its own approved @image3.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -52,39 +54,58 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One modest German home office, soft daylight from a window on the worker's LEFT, pale wall, light oak floor, one centered slim laptop. Keep the same laptop, chair and room throughout.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
 
-EDITING: Use a clean cut between shots. A new checked height may begin at a cut; never morph a low desk into a high desk in one instant. Do not animate a full lift within three seconds.
+EDITING: HARD CUTS between already-established poses. Never animate sitting down, rising from the chair, turning across the desk, or a full sit-to-stand lift.
 
 SHOT 1, 0-3s: @image1 @image2
-START: Medium-wide view from the worker side, slightly toward her left shoulder. The woman is seated facing the laptop. Show the four-panel top, both complete columns, both feet and the keypad at her anatomical right. The desk is stationary.
-ACTION: She settles her forearms naturally and glances toward the right-hand keypad. Do not exaggerate posture or move the desk.
-END: Seated, same desk height and geometry.
+SHOT CAST AND SPATIAL LOCK:
+CAST: exactly ONE anatomically complete seated adult, already seated in the start frame. Pelvis supported by the seat; chair back behind the torso; chest facing the desk; two thighs connected to the same pelvis and knees; both feet on the floor. Exactly one left and one right hand rest separately on their corresponding thighs, palms down, and stay there: no typing or reaching for controls. Each hand connects continuously through wrist, elbow and shoulder to this one person. The person is in FRONT of the chair back. Never film a face through a foreground chair back or hide the entire head and torso while leaving orphan trouser legs. Keep a visible gap between torso and desktop; armrests remain outside the front desk edge and never enter the desktop.
+Locked side view from the person's right, making side profile, shoulder, torso and seat depth readable; never orbit behind or film through the chair back.
+START: The same adult is already seated facing the laptop at an approved seated desk height. Hands rest separately on thighs; armrests are not pushed under the desktop.
+ACTION: Only one tiny glance/head nod toward the screen; hands, torso, chair and desk stay in place.
+END: The same complete seated pose, with both hands still on their thighs; no reach or rising.
 
 SHOT 2, 3-6s: @image1 @image2
-START: Contextual close-up from the worker side of the FRONT-RIGHT working corner. Include the front long edge, its corner and the original hanging keypad. Her RIGHT index finger hovers just above the original UP button.
-ACTION: Her right index finger contacts and holds the existing UP button once. Preserve every button, screw and mounting angle; do not create a new control box.
-END: Finger still on the same UP button; do not show a full height transition.
+SHOT CAST AND SPATIAL LOCK:
+CAST: only ONE right hand belonging to the same adult, continuously connected to one wrist and forearm entering from the worker-side edge of the frame. No second hand, extra forearm, face or torso in this crop. The left hand stays on the lap, entirely outside the crop. The right hand has five fingers. Keep the start-frame grip and perform only the specified small local action; palm, wrist and forearm stay connected with unchanged lengths and no regripping. No hand emerges through the desktop, chair or keypad. If contact is occluded, repair the start-frame camera position instead of inventing another hand.
+Locked contextual close-up showing the real component, its mounting edge/surface and contact point. No push-in, orbit or extreme wide angle.
+START: The exact SKU's original control remains at its original user-right front LONG edge. Only one right hand and connected wrist/forearm are visible. Its index fingertip is already at one existing button; the other four fingers rest curled. Keep the tabletop corner and contact point readable.
+ACTION: Only the right index finger makes one tiny press and stops. Wrist, forearm and other fingers keep their positions. The desk remains stationary throughout; this shot establishes the control location, with lifting in a separate empty shot.
+END: Still one continuously attached right hand; original keypad, edge and desk height unchanged.
 
 SHOT 3, 6-9s: @image1 @image2
-START: Fixed low medium-wide view from the same worker side; both inverted columns and both stationary floor feet are visible. Her right hand continues holding the same keypad.
-ACTION: Show only a SMALL partial upward adjustment of a few centimeters over this clip. The tabletop and upper thick sleeves rise together, revealing slightly more of the anchored lower thin tubes. Keep the top level and all props attached to it.
-END: Stop after the small partial lift. Do not cover the whole sit-to-stand range in three seconds.
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Locked camera and focal length; no push, zoom or orbit.
+The ONLY motion is verified small desk travel. No human enters the motion zone; no button-operating hand is shown.
+START: Empty lifting shot with level top, both complete inverted columns and floor feet readable. Chair is already clear of the lifting path; armrests have clearance from the top and frame. Original cable has slack; feet are grounded.
+ACTION: Only a SMALL partial lift of a few centimeters: the wider upper sleeves and level desktop move upward together, revealing more of the anchored narrow lower sections. Feet and camera fixed; no person or hand; chair still. No full sit-to-stand transition in three seconds.
+END: The same desk after the small lift, with cable slack, feet and chair unchanged.
 
 SHOT 4, 9-12s: @image1 @image2
-START: At an EDIT CUT, the same desk is already at a separately checked standing height. More of the same lower thin tubes is visible. Same room, woman, seams, controller and props. No height-change animation within this shot.
-ACTION: The woman stands naturally and types briefly on the same laptop. The desk and both feet remain still.
-END: Standing work at a stationary desk.
+SHOT CAST AND SPATIAL LOCK:
+CAST: exactly ONE anatomically complete seated adult, already seated in the start frame. Pelvis supported by the seat; chair back behind the torso; chest facing the desk; two thighs connected to the same pelvis and knees; both feet on the floor. Exactly one left and one right hand rest separately on their corresponding thighs, palms down, and stay there: no typing or reaching for controls. Each hand connects continuously through wrist, elbow and shoulder to this one person. The person is in FRONT of the chair back. Never film a face through a foreground chair back or hide the entire head and torso while leaving orphan trouser legs. Keep a visible gap between torso and desktop; armrests remain outside the front desk edge and never enter the desktop.
+Locked side view from the person's right, making side profile, shoulder, torso and seat depth readable; never orbit behind or film through the chair back.
+START: The same adult is already seated facing the laptop at an approved seated desk height. Hands rest separately on thighs; armrests are not pushed under the desktop.
+ACTION: Only one tiny glance/head nod toward the screen; hands, torso, chair and desk stay in place.
+END: The same complete seated pose, with both hands still on their thighs; no reach or rising.
 
 SHOT 5, 12-15s: @image1 @image2
-START: Wide product view from the same worker-side half of the room. Show the entire unchanged desk and both feet; the woman stands beside it without hiding the right-hand keypad.
-ACTION: Hold the frame with only subtle natural human movement. No orbit, furniture transformation, added badge or generated logo.
-END: Clean product hold for an editor-added CTA.
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the complete product and floor feet readable. A very small straight push-in only; no orbit or perspective switch.
+START: The exact product and the same specified chair are already staged. Full product, empty scene, furniture and props still.
+ACTION: Only the camera makes a tiny straight push-in; product, chair and props remain still.
+END: The same complete product and empty chair; room for an editor-added CTA.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -97,6 +118,8 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 
 Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
+Production recipe FV-01, shot 1 START FRAME.
+
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
 COLUMN ASSEMBLY:
@@ -105,18 +128,25 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One modest German home office, soft daylight from a window on the worker's LEFT, pale wall, light oak floor, one centered slim laptop. Keep the same laptop, chair and room throughout.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: exactly ONE anatomically complete seated adult, already seated in the start frame. Pelvis supported by the seat; chair back behind the torso; chest facing the desk; two thighs connected to the same pelvis and knees; both feet on the floor. Exactly one left and one right hand rest separately on their corresponding thighs, palms down, and stay there: no typing or reaching for controls. Each hand connects continuously through wrist, elbow and shoulder to this one person. The person is in FRONT of the chair back. Never film a face through a foreground chair back or hide the entire head and torso while leaving orphan trouser legs. Keep a visible gap between torso and desktop; armrests remain outside the front desk edge and never enter the desktop.
+Locked side view from the person's right, making side profile, shoulder, torso and seat depth readable; never orbit behind or film through the chair back.
 
 THIS SHOT START FRAME:
 
-Medium-wide view from the worker side, slightly toward her left shoulder. The woman is seated facing the laptop. Show the four-panel top, both complete columns, both feet and the keypad at her anatomical right. The desk is stationary.
+The same adult is already seated facing the laptop at an approved seated desk height. Hands rest separately on thighs; armrests are not pushed under the desktop.
 
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -134,22 +164,29 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One modest German home office, soft daylight from a window on the worker's LEFT, pale wall, light oak floor, one centered slim laptop. Keep the same laptop, chair and room throughout.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: exactly ONE anatomically complete seated adult, already seated in the start frame. Pelvis supported by the seat; chair back behind the torso; chest facing the desk; two thighs connected to the same pelvis and knees; both feet on the floor. Exactly one left and one right hand rest separately on their corresponding thighs, palms down, and stay there: no typing or reaching for controls. Each hand connects continuously through wrist, elbow and shoulder to this one person. The person is in FRONT of the chair back. Never film a face through a foreground chair back or hide the entire head and torso while leaving orphan trouser legs. Keep a visible gap between torso and desktop; armrests remain outside the front desk edge and never enter the desktop.
+Locked side view from the person's right, making side profile, shoulder, torso and seat depth readable; never orbit behind or film through the chair back.
 
 ONLY ACTION:
 
-She settles her forearms naturally and glances toward the right-hand keypad. Do not exaggerate posture or move the desk.
+Only one tiny glance/head nod toward the screen; hands, torso, chair and desk stay in place.
 
 END STATE:
 
-Seated, same desk height and geometry.
+The same complete seated pose, with both hands still on their thighs; no reach or rising.
 
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -162,6 +199,8 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 
 Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
+Production recipe FV-01, shot 2 START FRAME.
+
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
 COLUMN ASSEMBLY:
@@ -170,18 +209,25 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One modest German home office, soft daylight from a window on the worker's LEFT, pale wall, light oak floor, one centered slim laptop. Keep the same laptop, chair and room throughout.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: only ONE right hand belonging to the same adult, continuously connected to one wrist and forearm entering from the worker-side edge of the frame. No second hand, extra forearm, face or torso in this crop. The left hand stays on the lap, entirely outside the crop. The right hand has five fingers. Keep the start-frame grip and perform only the specified small local action; palm, wrist and forearm stay connected with unchanged lengths and no regripping. No hand emerges through the desktop, chair or keypad. If contact is occluded, repair the start-frame camera position instead of inventing another hand.
+Locked contextual close-up showing the real component, its mounting edge/surface and contact point. No push-in, orbit or extreme wide angle.
 
 THIS SHOT START FRAME:
 
-Contextual close-up from the worker side of the FRONT-RIGHT working corner. Include the front long edge, its corner and the original hanging keypad. Her RIGHT index finger hovers just above the original UP button.
+The exact SKU's original control remains at its original user-right front LONG edge. Only one right hand and connected wrist/forearm are visible. Its index fingertip is already at one existing button; the other four fingers rest curled. Keep the tabletop corner and contact point readable.
 
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -199,34 +245,43 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One modest German home office, soft daylight from a window on the worker's LEFT, pale wall, light oak floor, one centered slim laptop. Keep the same laptop, chair and room throughout.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: only ONE right hand belonging to the same adult, continuously connected to one wrist and forearm entering from the worker-side edge of the frame. No second hand, extra forearm, face or torso in this crop. The left hand stays on the lap, entirely outside the crop. The right hand has five fingers. Keep the start-frame grip and perform only the specified small local action; palm, wrist and forearm stay connected with unchanged lengths and no regripping. No hand emerges through the desktop, chair or keypad. If contact is occluded, repair the start-frame camera position instead of inventing another hand.
+Locked contextual close-up showing the real component, its mounting edge/surface and contact point. No push-in, orbit or extreme wide angle.
 
 ONLY ACTION:
 
-Her right index finger contacts and holds the existing UP button once. Preserve every button, screw and mounting angle; do not create a new control box.
+Only the right index finger makes one tiny press and stops. Wrist, forearm and other fingers keep their positions. The desk remains stationary throughout; this shot establishes the control location, with lifting in a separate empty shot.
 
 END STATE:
 
-Finger still on the same UP button; do not show a full height transition.
+Still one continuously attached right hand; original keypad, edge and desk height unchanged.
 
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
 
 ## 镜头 3 · 6–9 秒
-后期德语字幕：Sitzen oder stehen.
+后期德语字幕：Passend eingestellt.
 ### 首帧提示词
 ```text
 @image1 @image2
 
 Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
+Production recipe FV-01, shot 3 START FRAME.
+
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
 COLUMN ASSEMBLY:
@@ -235,18 +290,26 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One modest German home office, soft daylight from a window on the worker's LEFT, pale wall, light oak floor, one centered slim laptop. Keep the same laptop, chair and room throughout.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Locked camera and focal length; no push, zoom or orbit.
+The ONLY motion is verified small desk travel. No human enters the motion zone; no button-operating hand is shown.
 
 THIS SHOT START FRAME:
 
-Fixed low medium-wide view from the same worker side; both inverted columns and both stationary floor feet are visible. Her right hand continues holding the same keypad.
+Empty lifting shot with level top, both complete inverted columns and floor feet readable. Chair is already clear of the lifting path; armrests have clearance from the top and frame. Original cable has slack; feet are grounded.
 
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -264,22 +327,30 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One modest German home office, soft daylight from a window on the worker's LEFT, pale wall, light oak floor, one centered slim laptop. Keep the same laptop, chair and room throughout.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Locked camera and focal length; no push, zoom or orbit.
+The ONLY motion is verified small desk travel. No human enters the motion zone; no button-operating hand is shown.
 
 ONLY ACTION:
 
-Show only a SMALL partial upward adjustment of a few centimeters over this clip. The tabletop and upper thick sleeves rise together, revealing slightly more of the anchored lower thin tubes. Keep the top level and all props attached to it.
+Only a SMALL partial lift of a few centimeters: the wider upper sleeves and level desktop move upward together, revealing more of the anchored narrow lower sections. Feet and camera fixed; no person or hand; chair still. No full sit-to-stand transition in three seconds.
 
 END STATE:
 
-Stop after the small partial lift. Do not cover the whole sit-to-stand range in three seconds.
+The same desk after the small lift, with cable slack, feet and chair unchanged.
 
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -292,6 +363,8 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 
 Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
+Production recipe FV-01, shot 4 START FRAME.
+
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
 COLUMN ASSEMBLY:
@@ -300,18 +373,25 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One modest German home office, soft daylight from a window on the worker's LEFT, pale wall, light oak floor, one centered slim laptop. Keep the same laptop, chair and room throughout.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: exactly ONE anatomically complete seated adult, already seated in the start frame. Pelvis supported by the seat; chair back behind the torso; chest facing the desk; two thighs connected to the same pelvis and knees; both feet on the floor. Exactly one left and one right hand rest separately on their corresponding thighs, palms down, and stay there: no typing or reaching for controls. Each hand connects continuously through wrist, elbow and shoulder to this one person. The person is in FRONT of the chair back. Never film a face through a foreground chair back or hide the entire head and torso while leaving orphan trouser legs. Keep a visible gap between torso and desktop; armrests remain outside the front desk edge and never enter the desktop.
+Locked side view from the person's right, making side profile, shoulder, torso and seat depth readable; never orbit behind or film through the chair back.
 
 THIS SHOT START FRAME:
 
-At an EDIT CUT, the same desk is already at a separately checked standing height. More of the same lower thin tubes is visible. Same room, woman, seams, controller and props. No height-change animation within this shot.
+The same adult is already seated facing the laptop at an approved seated desk height. Hands rest separately on thighs; armrests are not pushed under the desktop.
 
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -329,22 +409,29 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One modest German home office, soft daylight from a window on the worker's LEFT, pale wall, light oak floor, one centered slim laptop. Keep the same laptop, chair and room throughout.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: exactly ONE anatomically complete seated adult, already seated in the start frame. Pelvis supported by the seat; chair back behind the torso; chest facing the desk; two thighs connected to the same pelvis and knees; both feet on the floor. Exactly one left and one right hand rest separately on their corresponding thighs, palms down, and stay there: no typing or reaching for controls. Each hand connects continuously through wrist, elbow and shoulder to this one person. The person is in FRONT of the chair back. Never film a face through a foreground chair back or hide the entire head and torso while leaving orphan trouser legs. Keep a visible gap between torso and desktop; armrests remain outside the front desk edge and never enter the desktop.
+Locked side view from the person's right, making side profile, shoulder, torso and seat depth readable; never orbit behind or film through the chair back.
 
 ONLY ACTION:
 
-The woman stands naturally and types briefly on the same laptop. The desk and both feet remain still.
+Only one tiny glance/head nod toward the screen; hands, torso, chair and desk stay in place.
 
 END STATE:
 
-Standing work at a stationary desk.
+The same complete seated pose, with both hands still on their thighs; no reach or rising.
 
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -357,6 +444,8 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 
 Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
+Production recipe FV-01, shot 5 START FRAME.
+
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
 COLUMN ASSEMBLY:
@@ -365,18 +454,25 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One modest German home office, soft daylight from a window on the worker's LEFT, pale wall, light oak floor, one centered slim laptop. Keep the same laptop, chair and room throughout.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the complete product and floor feet readable. A very small straight push-in only; no orbit or perspective switch.
 
 THIS SHOT START FRAME:
 
-Wide product view from the same worker-side half of the room. Show the entire unchanged desk and both feet; the woman stands beside it without hiding the right-hand keypad.
+The exact product and the same specified chair are already staged. Full product, empty scene, furniture and props still.
 
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -394,22 +490,29 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One modest German home office, soft daylight from a window on the worker's LEFT, pale wall, light oak floor, one centered slim laptop. Keep the same laptop, chair and room throughout.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the complete product and floor feet readable. A very small straight push-in only; no orbit or perspective switch.
 
 ONLY ACTION:
 
-Hold the frame with only subtle natural human movement. No orbit, furniture transformation, added badge or generated logo.
+Only the camera makes a tiny straight push-in; product, chair and props remain still.
 
 END STATE:
 
-Clean product hold for an editor-added CTA.
+The same complete product and empty chair; room for an editor-added CTA.
 
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -420,8 +523,10 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 - 倒装立柱粗管在上、细管在下；节数、立柱数量、脚型正确；底脚贴地。
 - 升降时桌面与上部套管一起移动；桌面水平；没有拉伸变形或全行程瞬移。
 - G2 只有原装一个抽屉；L 桌保留原朝向及三根立柱；未确认结构不补画。
-- 对比首帧、运动中间帧和尾帧。发现错款、手控器移位或桌腿翻转，退回首帧或缩小动作后重做，不进入投放。
+- 对比首帧、运动中间帧和尾帧。发现多手、断身、人体消失、穿桌板/椅架、错款或结构变形，整段退回重做；不通过模糊、淡化或裁切掩盖错误，不进入投放。
 - 搭配椅是指定灰色高背款，独立头枕、腰靠、扶手与五爪底座正确；image2 不是首帧，image3 才是当前镜头首帧。
+- 人物镜头恰好一个完整成年人，双手分放对应大腿；椅背在身后，骨盆由坐垫承托。不能从椅背后拍正脸，不能只剩椅下裤腿。
+- 手部特写只见一只右手与连续手腕前臂；无人镜头连残留的手、腿、脚与人影也不能有。
 
 制作边界：提示词与参考图可降低结构错误，不能保证生成模型每帧正确。首帧与成片都要人工核对；错款画面不进入投放。
 
@@ -437,10 +542,10 @@ SKU：G-SDF23-0285-0-B-G-HADT23-0286-BK；variant：45028720378122
 
 ## 使用顺序
 1. 先下载主商品原图与灰色高背办公椅原图并实际上传，分别作为 image1、image2。只粘贴商品链接不会绑定图片。
-2. 先复制每镜头的“首帧提示词”制作单张 9:16 首帧；逐张核对产品。这里提供的是提示词，未声称已生成首帧。
+2. 先复制每镜头的“首帧提示词”制作单张 9:16 首帧；先验收人数、手数、肩肘腕连接、椅背在身后及桌沿间隙，再核对产品。错误首帧必须重做，不能交给视频模型修复。
 3. 推荐分镜生成：每镜头开独立任务，先上传主商品原图作为 image1、搭配椅原图作为 image2，再上传本镜头已验收首帧作为 image3。image2 不再指首帧，不要上传另一镜头的首帧。
-4. 总提示词为可选整条模式，仅在当前 Grok 支持所需时长与多镜头时使用；image1 是主商品原图，image2 是固定灰色搭配椅原图。界面不识别 @image 标签时，用附件选择功能手动指定图片。
-5. 每镜头只做一个小动作。升降只展示一小段行程；坐、站高度用已校对首帧在剪辑点连接。字幕、口播、品牌和促销信息后期添加。
+4. 15 秒总提示词现在是剪辑计划，不直接整段交给 Grok 连续生成。每镜头只复制本段 3 秒图生视频指令；image1 主商品、image2 搭配椅、image3 当前首帧。界面不识别标签时手动指定附件。
+5. 每段只做一个小动作：人物镜头桌椅固定，手部特写仅一只右手，升降镜头无人且椅子在运动区外。不生成入座、起身或转身过程；用硬切连接已完成状态。字幕、口播、品牌和促销信息后期添加。
 
 ## 固定产品结构
 - 黑色 160 × 140 × 60 cm；保留原图 L 形朝向、两翼长度及拼缝。
@@ -449,51 +554,69 @@ SKU：G-SDF23-0285-0-B-G-HADT23-0286-BK；variant：45028720378122
 - 倒装要求按本次用户确认；主图为收合状态，不猜两节或三节，本脚本保持桌架静止。
 核验边界：三柱与脚型已核对；收合主图不足以确认伸缩节数，因此暂不生成 L 型桌伸缩过程。
 
-## 15 秒总提示词（纯英文；字幕后期加）
+## 15 秒剪辑计划（纯英文；不要整段连续生成）
 ```text
-Production recipe FV-02. Create a 15-second vertical 9:16 product video, five 3-second shots. Use the ACTUALLY UPLOADED @image1 as the exact official product identity reference. A URL or product name alone is not a visual reference. Product fidelity has priority over camera movement and style.
+Production recipe FV-02. EDIT PLAN ONLY: five INDEPENDENT 3-second vertical 9:16 clips, joined into a 15-second ad. Do NOT submit this complete plan as a single continuous Grok generation. Make and approve each start still, then copy only that shot's image-to-video prompt. Actually upload @image1 as the official product reference and @image2 as the companion chair reference; each separate clip also uses its own approved @image3.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell black L-shaped electric corner desk, SKU G-SDF23-0285-0-B-G-HADT23-0286-BK, variant 45028720378122, 160 x 140 x 60 cm. Preserve the exact L silhouette, return direction, unequal wing proportions, seams, THREE black lifting columns and THREE original floor feet in @image1. The seated worker occupies the inner working corner and faces the main long working edge; the return is on her LEFT as in the reference. Exactly ONE original hanging keypad remains below the main user-facing long edge on her RIGHT. Never mirror the L, swap its wings, replace it with two separate desks or a two-leg straight desk. No added wheels or drawers.
 COLUMN ASSEMBLY:
 Preserve the user-confirmed INVERTED column installation: upper outer sleeve above the lower inner section. Keep the exact visible collapsed column geometry in @image1. The collapsed photo does not establish the hidden telescoping stage count: do not invent a two-stage or three-stage mechanism. THIS RECIPE HAS NO HEIGHT-CHANGE SHOT; all three columns and feet remain motionless. A lifting shot requires a separately verified raised-state reference of this exact SKU first.
 CONTROLLER LOCATION:
-The one hanging keypad stays under the MAIN user-facing LONG edge on the seated worker's RIGHT, never on either outer short end and never moved to the return. Her RIGHT hand may point toward the original keypad without pressing it; the desk does not move.
+The one hanging keypad stays under the MAIN user-facing LONG edge on the seated worker's RIGHT, never on either outer short end and never moved to the return. The desk does not move; this recipe shows an empty control detail without hands.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home-office corner, soft window light from the worker's LEFT. One laptop on the main wing and an open notebook on the LEFT return. One woman, one chair, one continuous L-shaped desk.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
 
-EDITING: Use a clean cut between shots. A new checked height may begin at a cut; never morph a low desk into a high desk in one instant. Do not animate a full lift within three seconds.
+EDITING: HARD CUTS between already-established poses. Never animate sitting down, rising from the chair, turning across the desk, or a full sit-to-stand lift.
 
 SHOT 1, 0-3s: @image1 @image2
-START: Worker-side three-quarter view of the exact black L desk. The woman is seated at the inner corner facing the main wing; laptop on that wing, notebook on the left return. All furniture already exists.
-ACTION: She brings one sheet toward the laptop area, pauses, then looks toward the available notebook area. No desk or equipment moves.
-END: The same L shape and three feet stay fixed.
+SHOT CAST AND SPATIAL LOCK:
+CAST: exactly ONE anatomically complete seated adult, already seated in the start frame. Pelvis supported by the seat; chair back behind the torso; chest facing the desk; two thighs connected to the same pelvis and knees; both feet on the floor. Exactly one left and one right hand rest separately on their corresponding thighs, palms down, and stay there: no typing or reaching for controls. Each hand connects continuously through wrist, elbow and shoulder to this one person. The person is in FRONT of the chair back. Never film a face through a foreground chair back or hide the entire head and torso while leaving orphan trouser legs. Keep a visible gap between torso and desktop; armrests remain outside the front desk edge and never enter the desktop.
+Locked side view from the person's right, making side profile, shoulder, torso and seat depth readable; never orbit behind or film through the chair back.
+START: The same adult is already seated facing the laptop at an approved seated desk height. Hands rest separately on thighs; armrests are not pushed under the desktop.
+ACTION: Only one tiny glance/head nod toward the screen; hands, torso, chair and desk stay in place.
+END: The same complete seated pose, with both hands still on their thighs; no reach or rising.
 
 SHOT 2, 3-6s: @image1 @image2
-START: Higher worker-side view that keeps BOTH wings, the inner working corner and the unchanged controller location readable.
-ACTION: A very small push-in shows the laptop zone and left writing zone together. No rotation around the desk and no wing swap.
-END: Both work zones remain in place.
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the target detail and its surface or mounting context readable with a tiny straight push-in. Do not force a full-product view into this detail crop; no orbit.
+START: Empty start frame preserving the same L orientation, three columns and three feet; laptop and existing notebook occupy their two original zones.
+ACTION: Only a tiny camera push shows both zones; wings, equipment and chair remain still.
+END: Product, props and empty chair remain intact; no body, hands or feet enter.
 
 SHOT 3, 6-9s: @image1 @image2
-START: Same worker-side view, with the woman beside the left-return notebook and the laptop still on the main wing.
-ACTION: She turns her torso slightly to her LEFT and writes one simple short stroke in the existing notebook. Do not move the laptop, keyboard or either tabletop wing.
-END: Her body changes direction; the product stays unchanged.
+SHOT CAST AND SPATIAL LOCK:
+CAST: only ONE right hand belonging to the same adult, continuously connected to one wrist and forearm entering from the worker-side edge of the frame. No second hand, extra forearm, face or torso in this crop. The left hand stays on the lap, entirely outside the crop. The right hand has five fingers. Keep the start-frame grip and perform only the specified small local action; palm, wrist and forearm stay connected with unchanged lengths and no regripping. No hand emerges through the desktop, chair or keypad. If contact is occluded, repair the start-frame camera position instead of inventing another hand.
+Locked contextual close-up showing the real component, its mounting edge/surface and contact point. No push-in, orbit or extreme wide angle.
+START: The crop already frames the original notebook; only one right hand holds a pen, tip already at the start point on paper. Torso stays outside the crop; no turning into this shot.
+ACTION: The same pen hand writes only one short stroke; notebook, wrist position, desk and camera stay fixed.
+END: Same paper, one right hand and one short stroke; neither wing moves.
 
 SHOT 4, 9-12s: @image1 @image2
-START: Contextual view of the MAIN front long edge, its right corner and the one real keypad on her anatomical RIGHT.
-ACTION: She points to the original keypad with her RIGHT index finger without pressing. All three columns remain stationary; no extension sequence.
-END: Original keypad and L orientation stay fixed.
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the target detail and its surface or mounting context readable with a tiny straight push-in. Do not force a full-product view into this detail crop; no orbit.
+START: Empty contextual detail of the original keypad on the main working LONG edge, with its user-right corner visible; original mounting unchanged.
+ACTION: Only a tiny camera push; frame and mechanical joints remain stationary, with no button press or lift.
+END: Product, props and empty chair remain intact; no body, hands or feet enter.
 
 SHOT 5, 12-15s: @image1 @image2
-START: Wide view from the inner-corner worker side, showing the exact L outline, all three columns and three floor feet.
-ACTION: Hold the product composition. The woman relaxes beside the chair. No height change, orbit, new accessory or mirrored return.
-END: Stable product view with room for a post-production CTA.
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the complete product and floor feet readable. A very small straight push-in only; no orbit or perspective switch.
+START: The exact product and the same specified chair are already staged. Full product, empty scene, furniture and props still.
+ACTION: Only the camera makes a tiny straight push-in; product, chair and props remain still.
+END: The same complete product and empty chair; room for an editor-added CTA.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -506,26 +629,35 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 
 Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
+Production recipe FV-02, shot 1 START FRAME.
+
 PRODUCT IDENTITY — highest priority:
 Furniwell black L-shaped electric corner desk, SKU G-SDF23-0285-0-B-G-HADT23-0286-BK, variant 45028720378122, 160 x 140 x 60 cm. Preserve the exact L silhouette, return direction, unequal wing proportions, seams, THREE black lifting columns and THREE original floor feet in @image1. The seated worker occupies the inner working corner and faces the main long working edge; the return is on her LEFT as in the reference. Exactly ONE original hanging keypad remains below the main user-facing long edge on her RIGHT. Never mirror the L, swap its wings, replace it with two separate desks or a two-leg straight desk. No added wheels or drawers.
 COLUMN ASSEMBLY:
 Preserve the user-confirmed INVERTED column installation: upper outer sleeve above the lower inner section. Keep the exact visible collapsed column geometry in @image1. The collapsed photo does not establish the hidden telescoping stage count: do not invent a two-stage or three-stage mechanism. THIS RECIPE HAS NO HEIGHT-CHANGE SHOT; all three columns and feet remain motionless. A lifting shot requires a separately verified raised-state reference of this exact SKU first.
 CONTROLLER LOCATION:
-The one hanging keypad stays under the MAIN user-facing LONG edge on the seated worker's RIGHT, never on either outer short end and never moved to the return. Her RIGHT hand may point toward the original keypad without pressing it; the desk does not move.
+The one hanging keypad stays under the MAIN user-facing LONG edge on the seated worker's RIGHT, never on either outer short end and never moved to the return. The desk does not move; this recipe shows an empty control detail without hands.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home-office corner, soft window light from the worker's LEFT. One laptop on the main wing and an open notebook on the LEFT return. One woman, one chair, one continuous L-shaped desk.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: exactly ONE anatomically complete seated adult, already seated in the start frame. Pelvis supported by the seat; chair back behind the torso; chest facing the desk; two thighs connected to the same pelvis and knees; both feet on the floor. Exactly one left and one right hand rest separately on their corresponding thighs, palms down, and stay there: no typing or reaching for controls. Each hand connects continuously through wrist, elbow and shoulder to this one person. The person is in FRONT of the chair back. Never film a face through a foreground chair back or hide the entire head and torso while leaving orphan trouser legs. Keep a visible gap between torso and desktop; armrests remain outside the front desk edge and never enter the desktop.
+Locked side view from the person's right, making side profile, shoulder, torso and seat depth readable; never orbit behind or film through the chair back.
 
 THIS SHOT START FRAME:
 
-Worker-side three-quarter view of the exact black L desk. The woman is seated at the inner corner facing the main wing; laptop on that wing, notebook on the left return. All furniture already exists.
+The same adult is already seated facing the laptop at an approved seated desk height. Hands rest separately on thighs; armrests are not pushed under the desktop.
 
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -540,25 +672,32 @@ Furniwell black L-shaped electric corner desk, SKU G-SDF23-0285-0-B-G-HADT23-028
 COLUMN ASSEMBLY:
 Preserve the user-confirmed INVERTED column installation: upper outer sleeve above the lower inner section. Keep the exact visible collapsed column geometry in @image1. The collapsed photo does not establish the hidden telescoping stage count: do not invent a two-stage or three-stage mechanism. THIS RECIPE HAS NO HEIGHT-CHANGE SHOT; all three columns and feet remain motionless. A lifting shot requires a separately verified raised-state reference of this exact SKU first.
 CONTROLLER LOCATION:
-The one hanging keypad stays under the MAIN user-facing LONG edge on the seated worker's RIGHT, never on either outer short end and never moved to the return. Her RIGHT hand may point toward the original keypad without pressing it; the desk does not move.
+The one hanging keypad stays under the MAIN user-facing LONG edge on the seated worker's RIGHT, never on either outer short end and never moved to the return. The desk does not move; this recipe shows an empty control detail without hands.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home-office corner, soft window light from the worker's LEFT. One laptop on the main wing and an open notebook on the LEFT return. One woman, one chair, one continuous L-shaped desk.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: exactly ONE anatomically complete seated adult, already seated in the start frame. Pelvis supported by the seat; chair back behind the torso; chest facing the desk; two thighs connected to the same pelvis and knees; both feet on the floor. Exactly one left and one right hand rest separately on their corresponding thighs, palms down, and stay there: no typing or reaching for controls. Each hand connects continuously through wrist, elbow and shoulder to this one person. The person is in FRONT of the chair back. Never film a face through a foreground chair back or hide the entire head and torso while leaving orphan trouser legs. Keep a visible gap between torso and desktop; armrests remain outside the front desk edge and never enter the desktop.
+Locked side view from the person's right, making side profile, shoulder, torso and seat depth readable; never orbit behind or film through the chair back.
 
 ONLY ACTION:
 
-She brings one sheet toward the laptop area, pauses, then looks toward the available notebook area. No desk or equipment moves.
+Only one tiny glance/head nod toward the screen; hands, torso, chair and desk stay in place.
 
 END STATE:
 
-The same L shape and three feet stay fixed.
+The same complete seated pose, with both hands still on their thighs; no reach or rising.
 
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -571,26 +710,35 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 
 Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
+Production recipe FV-02, shot 2 START FRAME.
+
 PRODUCT IDENTITY — highest priority:
 Furniwell black L-shaped electric corner desk, SKU G-SDF23-0285-0-B-G-HADT23-0286-BK, variant 45028720378122, 160 x 140 x 60 cm. Preserve the exact L silhouette, return direction, unequal wing proportions, seams, THREE black lifting columns and THREE original floor feet in @image1. The seated worker occupies the inner working corner and faces the main long working edge; the return is on her LEFT as in the reference. Exactly ONE original hanging keypad remains below the main user-facing long edge on her RIGHT. Never mirror the L, swap its wings, replace it with two separate desks or a two-leg straight desk. No added wheels or drawers.
 COLUMN ASSEMBLY:
 Preserve the user-confirmed INVERTED column installation: upper outer sleeve above the lower inner section. Keep the exact visible collapsed column geometry in @image1. The collapsed photo does not establish the hidden telescoping stage count: do not invent a two-stage or three-stage mechanism. THIS RECIPE HAS NO HEIGHT-CHANGE SHOT; all three columns and feet remain motionless. A lifting shot requires a separately verified raised-state reference of this exact SKU first.
 CONTROLLER LOCATION:
-The one hanging keypad stays under the MAIN user-facing LONG edge on the seated worker's RIGHT, never on either outer short end and never moved to the return. Her RIGHT hand may point toward the original keypad without pressing it; the desk does not move.
+The one hanging keypad stays under the MAIN user-facing LONG edge on the seated worker's RIGHT, never on either outer short end and never moved to the return. The desk does not move; this recipe shows an empty control detail without hands.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home-office corner, soft window light from the worker's LEFT. One laptop on the main wing and an open notebook on the LEFT return. One woman, one chair, one continuous L-shaped desk.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the target detail and its surface or mounting context readable with a tiny straight push-in. Do not force a full-product view into this detail crop; no orbit.
 
 THIS SHOT START FRAME:
 
-Higher worker-side view that keeps BOTH wings, the inner working corner and the unchanged controller location readable.
+Empty start frame preserving the same L orientation, three columns and three feet; laptop and existing notebook occupy their two original zones.
 
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -605,25 +753,32 @@ Furniwell black L-shaped electric corner desk, SKU G-SDF23-0285-0-B-G-HADT23-028
 COLUMN ASSEMBLY:
 Preserve the user-confirmed INVERTED column installation: upper outer sleeve above the lower inner section. Keep the exact visible collapsed column geometry in @image1. The collapsed photo does not establish the hidden telescoping stage count: do not invent a two-stage or three-stage mechanism. THIS RECIPE HAS NO HEIGHT-CHANGE SHOT; all three columns and feet remain motionless. A lifting shot requires a separately verified raised-state reference of this exact SKU first.
 CONTROLLER LOCATION:
-The one hanging keypad stays under the MAIN user-facing LONG edge on the seated worker's RIGHT, never on either outer short end and never moved to the return. Her RIGHT hand may point toward the original keypad without pressing it; the desk does not move.
+The one hanging keypad stays under the MAIN user-facing LONG edge on the seated worker's RIGHT, never on either outer short end and never moved to the return. The desk does not move; this recipe shows an empty control detail without hands.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home-office corner, soft window light from the worker's LEFT. One laptop on the main wing and an open notebook on the LEFT return. One woman, one chair, one continuous L-shaped desk.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the target detail and its surface or mounting context readable with a tiny straight push-in. Do not force a full-product view into this detail crop; no orbit.
 
 ONLY ACTION:
 
-A very small push-in shows the laptop zone and left writing zone together. No rotation around the desk and no wing swap.
+Only a tiny camera push shows both zones; wings, equipment and chair remain still.
 
 END STATE:
 
-Both work zones remain in place.
+Product, props and empty chair remain intact; no body, hands or feet enter.
 
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -636,26 +791,35 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 
 Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
+Production recipe FV-02, shot 3 START FRAME.
+
 PRODUCT IDENTITY — highest priority:
 Furniwell black L-shaped electric corner desk, SKU G-SDF23-0285-0-B-G-HADT23-0286-BK, variant 45028720378122, 160 x 140 x 60 cm. Preserve the exact L silhouette, return direction, unequal wing proportions, seams, THREE black lifting columns and THREE original floor feet in @image1. The seated worker occupies the inner working corner and faces the main long working edge; the return is on her LEFT as in the reference. Exactly ONE original hanging keypad remains below the main user-facing long edge on her RIGHT. Never mirror the L, swap its wings, replace it with two separate desks or a two-leg straight desk. No added wheels or drawers.
 COLUMN ASSEMBLY:
 Preserve the user-confirmed INVERTED column installation: upper outer sleeve above the lower inner section. Keep the exact visible collapsed column geometry in @image1. The collapsed photo does not establish the hidden telescoping stage count: do not invent a two-stage or three-stage mechanism. THIS RECIPE HAS NO HEIGHT-CHANGE SHOT; all three columns and feet remain motionless. A lifting shot requires a separately verified raised-state reference of this exact SKU first.
 CONTROLLER LOCATION:
-The one hanging keypad stays under the MAIN user-facing LONG edge on the seated worker's RIGHT, never on either outer short end and never moved to the return. Her RIGHT hand may point toward the original keypad without pressing it; the desk does not move.
+The one hanging keypad stays under the MAIN user-facing LONG edge on the seated worker's RIGHT, never on either outer short end and never moved to the return. The desk does not move; this recipe shows an empty control detail without hands.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home-office corner, soft window light from the worker's LEFT. One laptop on the main wing and an open notebook on the LEFT return. One woman, one chair, one continuous L-shaped desk.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: only ONE right hand belonging to the same adult, continuously connected to one wrist and forearm entering from the worker-side edge of the frame. No second hand, extra forearm, face or torso in this crop. The left hand stays on the lap, entirely outside the crop. The right hand has five fingers. Keep the start-frame grip and perform only the specified small local action; palm, wrist and forearm stay connected with unchanged lengths and no regripping. No hand emerges through the desktop, chair or keypad. If contact is occluded, repair the start-frame camera position instead of inventing another hand.
+Locked contextual close-up showing the real component, its mounting edge/surface and contact point. No push-in, orbit or extreme wide angle.
 
 THIS SHOT START FRAME:
 
-Same worker-side view, with the woman beside the left-return notebook and the laptop still on the main wing.
+The crop already frames the original notebook; only one right hand holds a pen, tip already at the start point on paper. Torso stays outside the crop; no turning into this shot.
 
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -670,25 +834,32 @@ Furniwell black L-shaped electric corner desk, SKU G-SDF23-0285-0-B-G-HADT23-028
 COLUMN ASSEMBLY:
 Preserve the user-confirmed INVERTED column installation: upper outer sleeve above the lower inner section. Keep the exact visible collapsed column geometry in @image1. The collapsed photo does not establish the hidden telescoping stage count: do not invent a two-stage or three-stage mechanism. THIS RECIPE HAS NO HEIGHT-CHANGE SHOT; all three columns and feet remain motionless. A lifting shot requires a separately verified raised-state reference of this exact SKU first.
 CONTROLLER LOCATION:
-The one hanging keypad stays under the MAIN user-facing LONG edge on the seated worker's RIGHT, never on either outer short end and never moved to the return. Her RIGHT hand may point toward the original keypad without pressing it; the desk does not move.
+The one hanging keypad stays under the MAIN user-facing LONG edge on the seated worker's RIGHT, never on either outer short end and never moved to the return. The desk does not move; this recipe shows an empty control detail without hands.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home-office corner, soft window light from the worker's LEFT. One laptop on the main wing and an open notebook on the LEFT return. One woman, one chair, one continuous L-shaped desk.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: only ONE right hand belonging to the same adult, continuously connected to one wrist and forearm entering from the worker-side edge of the frame. No second hand, extra forearm, face or torso in this crop. The left hand stays on the lap, entirely outside the crop. The right hand has five fingers. Keep the start-frame grip and perform only the specified small local action; palm, wrist and forearm stay connected with unchanged lengths and no regripping. No hand emerges through the desktop, chair or keypad. If contact is occluded, repair the start-frame camera position instead of inventing another hand.
+Locked contextual close-up showing the real component, its mounting edge/surface and contact point. No push-in, orbit or extreme wide angle.
 
 ONLY ACTION:
 
-She turns her torso slightly to her LEFT and writes one simple short stroke in the existing notebook. Do not move the laptop, keyboard or either tabletop wing.
+The same pen hand writes only one short stroke; notebook, wrist position, desk and camera stay fixed.
 
 END STATE:
 
-Her body changes direction; the product stays unchanged.
+Same paper, one right hand and one short stroke; neither wing moves.
 
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -701,26 +872,35 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 
 Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
+Production recipe FV-02, shot 4 START FRAME.
+
 PRODUCT IDENTITY — highest priority:
 Furniwell black L-shaped electric corner desk, SKU G-SDF23-0285-0-B-G-HADT23-0286-BK, variant 45028720378122, 160 x 140 x 60 cm. Preserve the exact L silhouette, return direction, unequal wing proportions, seams, THREE black lifting columns and THREE original floor feet in @image1. The seated worker occupies the inner working corner and faces the main long working edge; the return is on her LEFT as in the reference. Exactly ONE original hanging keypad remains below the main user-facing long edge on her RIGHT. Never mirror the L, swap its wings, replace it with two separate desks or a two-leg straight desk. No added wheels or drawers.
 COLUMN ASSEMBLY:
 Preserve the user-confirmed INVERTED column installation: upper outer sleeve above the lower inner section. Keep the exact visible collapsed column geometry in @image1. The collapsed photo does not establish the hidden telescoping stage count: do not invent a two-stage or three-stage mechanism. THIS RECIPE HAS NO HEIGHT-CHANGE SHOT; all three columns and feet remain motionless. A lifting shot requires a separately verified raised-state reference of this exact SKU first.
 CONTROLLER LOCATION:
-The one hanging keypad stays under the MAIN user-facing LONG edge on the seated worker's RIGHT, never on either outer short end and never moved to the return. Her RIGHT hand may point toward the original keypad without pressing it; the desk does not move.
+The one hanging keypad stays under the MAIN user-facing LONG edge on the seated worker's RIGHT, never on either outer short end and never moved to the return. The desk does not move; this recipe shows an empty control detail without hands.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home-office corner, soft window light from the worker's LEFT. One laptop on the main wing and an open notebook on the LEFT return. One woman, one chair, one continuous L-shaped desk.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the target detail and its surface or mounting context readable with a tiny straight push-in. Do not force a full-product view into this detail crop; no orbit.
 
 THIS SHOT START FRAME:
 
-Contextual view of the MAIN front long edge, its right corner and the one real keypad on her anatomical RIGHT.
+Empty contextual detail of the original keypad on the main working LONG edge, with its user-right corner visible; original mounting unchanged.
 
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -735,57 +915,73 @@ Furniwell black L-shaped electric corner desk, SKU G-SDF23-0285-0-B-G-HADT23-028
 COLUMN ASSEMBLY:
 Preserve the user-confirmed INVERTED column installation: upper outer sleeve above the lower inner section. Keep the exact visible collapsed column geometry in @image1. The collapsed photo does not establish the hidden telescoping stage count: do not invent a two-stage or three-stage mechanism. THIS RECIPE HAS NO HEIGHT-CHANGE SHOT; all three columns and feet remain motionless. A lifting shot requires a separately verified raised-state reference of this exact SKU first.
 CONTROLLER LOCATION:
-The one hanging keypad stays under the MAIN user-facing LONG edge on the seated worker's RIGHT, never on either outer short end and never moved to the return. Her RIGHT hand may point toward the original keypad without pressing it; the desk does not move.
+The one hanging keypad stays under the MAIN user-facing LONG edge on the seated worker's RIGHT, never on either outer short end and never moved to the return. The desk does not move; this recipe shows an empty control detail without hands.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home-office corner, soft window light from the worker's LEFT. One laptop on the main wing and an open notebook on the LEFT return. One woman, one chair, one continuous L-shaped desk.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the target detail and its surface or mounting context readable with a tiny straight push-in. Do not force a full-product view into this detail crop; no orbit.
 
 ONLY ACTION:
 
-She points to the original keypad with her RIGHT index finger without pressing. All three columns remain stationary; no extension sequence.
+Only a tiny camera push; frame and mechanical joints remain stationary, with no button press or lift.
 
 END STATE:
 
-Original keypad and L orientation stay fixed.
+Product, props and empty chair remain intact; no body, hands or feet enter.
 
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
 
 ## 镜头 5 · 12–15 秒
-后期德语字幕：Entdecke deinen Eckschreibtisch.
+后期德语字幕：Jetzt bei Furniwell entdecken.
 ### 首帧提示词
 ```text
 @image1 @image2
 
 Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
+Production recipe FV-02, shot 5 START FRAME.
+
 PRODUCT IDENTITY — highest priority:
 Furniwell black L-shaped electric corner desk, SKU G-SDF23-0285-0-B-G-HADT23-0286-BK, variant 45028720378122, 160 x 140 x 60 cm. Preserve the exact L silhouette, return direction, unequal wing proportions, seams, THREE black lifting columns and THREE original floor feet in @image1. The seated worker occupies the inner working corner and faces the main long working edge; the return is on her LEFT as in the reference. Exactly ONE original hanging keypad remains below the main user-facing long edge on her RIGHT. Never mirror the L, swap its wings, replace it with two separate desks or a two-leg straight desk. No added wheels or drawers.
 COLUMN ASSEMBLY:
 Preserve the user-confirmed INVERTED column installation: upper outer sleeve above the lower inner section. Keep the exact visible collapsed column geometry in @image1. The collapsed photo does not establish the hidden telescoping stage count: do not invent a two-stage or three-stage mechanism. THIS RECIPE HAS NO HEIGHT-CHANGE SHOT; all three columns and feet remain motionless. A lifting shot requires a separately verified raised-state reference of this exact SKU first.
 CONTROLLER LOCATION:
-The one hanging keypad stays under the MAIN user-facing LONG edge on the seated worker's RIGHT, never on either outer short end and never moved to the return. Her RIGHT hand may point toward the original keypad without pressing it; the desk does not move.
+The one hanging keypad stays under the MAIN user-facing LONG edge on the seated worker's RIGHT, never on either outer short end and never moved to the return. The desk does not move; this recipe shows an empty control detail without hands.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home-office corner, soft window light from the worker's LEFT. One laptop on the main wing and an open notebook on the LEFT return. One woman, one chair, one continuous L-shaped desk.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the complete product and floor feet readable. A very small straight push-in only; no orbit or perspective switch.
 
 THIS SHOT START FRAME:
 
-Wide view from the inner-corner worker side, showing the exact L outline, all three columns and three floor feet.
+The exact product and the same specified chair are already staged. Full product, empty scene, furniture and props still.
 
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -800,25 +996,32 @@ Furniwell black L-shaped electric corner desk, SKU G-SDF23-0285-0-B-G-HADT23-028
 COLUMN ASSEMBLY:
 Preserve the user-confirmed INVERTED column installation: upper outer sleeve above the lower inner section. Keep the exact visible collapsed column geometry in @image1. The collapsed photo does not establish the hidden telescoping stage count: do not invent a two-stage or three-stage mechanism. THIS RECIPE HAS NO HEIGHT-CHANGE SHOT; all three columns and feet remain motionless. A lifting shot requires a separately verified raised-state reference of this exact SKU first.
 CONTROLLER LOCATION:
-The one hanging keypad stays under the MAIN user-facing LONG edge on the seated worker's RIGHT, never on either outer short end and never moved to the return. Her RIGHT hand may point toward the original keypad without pressing it; the desk does not move.
+The one hanging keypad stays under the MAIN user-facing LONG edge on the seated worker's RIGHT, never on either outer short end and never moved to the return. The desk does not move; this recipe shows an empty control detail without hands.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home-office corner, soft window light from the worker's LEFT. One laptop on the main wing and an open notebook on the LEFT return. One woman, one chair, one continuous L-shaped desk.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the complete product and floor feet readable. A very small straight push-in only; no orbit or perspective switch.
 
 ONLY ACTION:
 
-Hold the product composition. The woman relaxes beside the chair. No height change, orbit, new accessory or mirrored return.
+Only the camera makes a tiny straight push-in; product, chair and props remain still.
 
 END STATE:
 
-Stable product view with room for a post-production CTA.
+The same complete product and empty chair; room for an editor-added CTA.
 
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -829,8 +1032,10 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 - 倒装立柱粗管在上、细管在下；节数、立柱数量、脚型正确；底脚贴地。
 - 升降时桌面与上部套管一起移动；桌面水平；没有拉伸变形或全行程瞬移。
 - G2 只有原装一个抽屉；L 桌保留原朝向及三根立柱；未确认结构不补画。
-- 对比首帧、运动中间帧和尾帧。发现错款、手控器移位或桌腿翻转，退回首帧或缩小动作后重做，不进入投放。
+- 对比首帧、运动中间帧和尾帧。发现多手、断身、人体消失、穿桌板/椅架、错款或结构变形，整段退回重做；不通过模糊、淡化或裁切掩盖错误，不进入投放。
 - 搭配椅是指定灰色高背款，独立头枕、腰靠、扶手与五爪底座正确；image2 不是首帧，image3 才是当前镜头首帧。
+- 人物镜头恰好一个完整成年人，双手分放对应大腿；椅背在身后，骨盆由坐垫承托。不能从椅背后拍正脸，不能只剩椅下裤腿。
+- 手部特写只见一只右手与连续手腕前臂；无人镜头连残留的手、腿、脚与人影也不能有。
 
 制作边界：提示词与参考图可降低结构错误，不能保证生成模型每帧正确。首帧与成片都要人工核对；错款画面不进入投放。
 
@@ -846,10 +1051,10 @@ SKU：G-HAD241222B；variant：44533451587850
 
 ## 使用顺序
 1. 先下载主商品原图与灰色高背办公椅原图并实际上传，分别作为 image1、image2。只粘贴商品链接不会绑定图片。
-2. 先复制每镜头的“首帧提示词”制作单张 9:16 首帧；逐张核对产品。这里提供的是提示词，未声称已生成首帧。
+2. 先复制每镜头的“首帧提示词”制作单张 9:16 首帧；先验收人数、手数、肩肘腕连接、椅背在身后及桌沿间隙，再核对产品。错误首帧必须重做，不能交给视频模型修复。
 3. 推荐分镜生成：每镜头开独立任务，先上传主商品原图作为 image1、搭配椅原图作为 image2，再上传本镜头已验收首帧作为 image3。image2 不再指首帧，不要上传另一镜头的首帧。
-4. 总提示词为可选整条模式，仅在当前 Grok 支持所需时长与多镜头时使用；image1 是主商品原图，image2 是固定灰色搭配椅原图。界面不识别 @image 标签时，用附件选择功能手动指定图片。
-5. 每镜头只做一个小动作。升降只展示一小段行程；坐、站高度用已校对首帧在剪辑点连接。字幕、口播、品牌和促销信息后期添加。
+4. 15 秒总提示词现在是剪辑计划，不直接整段交给 Grok 连续生成。每镜头只复制本段 3 秒图生视频指令；image1 主商品、image2 搭配椅、image3 当前首帧。界面不识别标签时手动指定附件。
+5. 每段只做一个小动作：人物镜头桌椅固定，手部特写仅一只右手，升降镜头无人且椅子在运动区外。不生成入座、起身或转身过程；用硬切连接已完成状态。字幕、口播、品牌和促销信息后期添加。
 
 ## 固定产品结构
 - 白色 120 × 60 cm；四片拼接桌板，保留原图拼缝。
@@ -858,9 +1063,9 @@ SKU：G-HAD241222B；variant：44533451587850
 - 仅一个黑色外挂手控器：入座者右手侧、靠人的前长边下方；不是右侧短边。
 核验边界：已对照同一变体官方主图确认两节倒装。
 
-## 15 秒总提示词（纯英文；字幕后期加）
+## 15 秒剪辑计划（纯英文；不要整段连续生成）
 ```text
-Production recipe FV-03. Create a 15-second vertical 9:16 product video, five 3-second shots. Use the ACTUALLY UPLOADED @image1 as the exact official product identity reference. A URL or product name alone is not a visual reference. Product fidelity has priority over camera movement and style.
+Production recipe FV-03. EDIT PLAN ONLY: five INDEPENDENT 3-second vertical 9:16 clips, joined into a 15-second ad. Do NOT submit this complete plan as a single continuous Grok generation. Make and approve each start still, then copy only that shot's image-to-video prompt. Actually upload @image1 as the official product reference and @image2 as the companion chair reference; each separate clip also uses its own approved @image3.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -870,109 +1075,63 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home office, same woman and one laptop. Only the real desk power lead and laptop lead are present. The existing power connection stays connected. No cable tray, magnetic cover or hidden power box is included or invented.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
 
-EDITING: Use a clean cut between shots. A new checked height may begin at a cut; never morph a low desk into a high desk in one instant. Do not animate a full lift within three seconds.
+EDITING: HARD CUTS between already-established poses. Never animate sitting down, rising from the chair, turning across the desk, or a full sit-to-stand lift.
 
 SHOT 1, 0-3s: @image1 @image2
-START: Low worker-side view of both original inverted legs and the real loose power lead. The lead hangs safely with slack and is clear of the telescoping joints.
-ACTION: Make a tiny controlled camera push-in toward the loose lead. The desk remains stationary. No exaggerated tangles or dangerously taut cable.
-END: The original cable and original frame are still visible.
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the target detail and its surface or mounting context readable with a tiny straight push-in. Do not force a full-product view into this detail crop; no orbit.
+START: Empty low view; original power lead connected with slack and clear of telescoping joints. No person crouches under the desk.
+ACTION: Tiny camera push to inspect the original lead only; no hands, unplugging or added organizers.
+END: Product, props and empty chair remain intact; no body, hands or feet enter.
 
 SHOT 2, 3-6s: @image1 @image2
-START: Same low view. Her RIGHT hand is beside the free slack portion of the original lead, away from sockets and moving joints.
-ACTION: She gently arranges the loose length into a broad slack U-loop behind the frame. Do not unplug, shorten, conceal or clamp the cable; do not add an organizer.
-END: A free slack loop remains visible; the electrical connection is unchanged.
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the target detail and its surface or mounting context readable with a tiny straight push-in. Do not force a full-product view into this detail crop; no orbit.
+START: At a HARD CUT, the original lead already forms a broad slack U-loop; connection stays intact. Do not show the arranging process.
+ACTION: Tiny camera push to inspect the established slack; cable and furniture remain still.
+END: Product, props and empty chair remain intact; no body, hands or feet enter.
 
 SHOT 3, 6-9s: @image1 @image2
-START: Fixed view showing the right-hand original keypad, both inverted columns, both feet and the slack lead together.
-ACTION: Her RIGHT hand holds the original UP button for a small partial lift only. Upper thick sleeves rise with the level desktop; lower thin sections and feet stay anchored. The cable slack changes naturally without tension.
-END: The small adjustment ends with slack still visible.
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Locked camera and focal length; no push, zoom or orbit.
+The ONLY motion is verified small desk travel. No human enters the motion zone; no button-operating hand is shown.
+START: Empty lifting shot with level top, both complete inverted columns and floor feet readable. Chair is already clear of the lifting path; armrests have clearance from the top and frame. Original cable has slack; feet are grounded.
+ACTION: Only a SMALL partial lift of a few centimeters: the wider upper sleeves and level desktop move upward together, revealing more of the anchored narrow lower sections. Feet and camera fixed; no person or hand; chair still. No full sit-to-stand transition in three seconds.
+END: The same desk after the small lift, with cable slack, feet and chair unchanged.
 
 SHOT 4, 9-12s: @image1 @image2
-START: Same office and identical desk after the small adjustment. Laptop stays on the same part of the four-panel top.
-ACTION: The woman continues a short task at the stationary desk. Do not change the wiring path, add a tray or hide the cord by dissolving it.
-END: A believable, unchanged workspace.
+SHOT CAST AND SPATIAL LOCK:
+CAST: exactly ONE anatomically complete seated adult, already seated in the start frame. Pelvis supported by the seat; chair back behind the torso; chest facing the desk; two thighs connected to the same pelvis and knees; both feet on the floor. Exactly one left and one right hand rest separately on their corresponding thighs, palms down, and stay there: no typing or reaching for controls. Each hand connects continuously through wrist, elbow and shoulder to this one person. The person is in FRONT of the chair back. Never film a face through a foreground chair back or hide the entire head and torso while leaving orphan trouser legs. Keep a visible gap between torso and desktop; armrests remain outside the front desk edge and never enter the desktop.
+Locked side view from the person's right, making side profile, shoulder, torso and seat depth readable; never orbit behind or film through the chair back.
+START: The same adult is already seated facing the laptop at an approved seated desk height. Hands rest separately on thighs; armrests are not pushed under the desktop.
+ACTION: Only one tiny glance/head nod toward the screen; hands, torso, chair and desk stay in place.
+END: The same complete seated pose, with both hands still on their thighs; no reach or rising.
 
 SHOT 5, 12-15s: @image1 @image2
-START: Full desk view with both feet and one unchanged right-hand keypad.
-ACTION: Hold the frame; keep the original visible cable slack. No accessory bundle, included-organizer claim or generated promo text.
-END: Product hero for a separately edited CTA.
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the complete product and floor feet readable. A very small straight push-in only; no orbit or perspective switch.
+START: The exact product and the same specified chair are already staged. Full product, empty scene, furniture and props still.
+ACTION: Only the camera makes a tiny straight push-in; product, chair and props remain still.
+END: The same complete product and empty chair; room for an editor-added CTA.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
 
 ## 镜头 1 · 0–3 秒
-后期德语字幕：So sieht es unter deinem Schreibtisch aus?
-### 首帧提示词
-```text
-@image1 @image2
-
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
-
-PRODUCT IDENTITY — highest priority:
-Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
-COLUMN ASSEMBLY:
-INVERTED TWO-STAGE COLUMNS: the WIDER outer sleeve is UPPER, attached to the underside frame; the NARROWER inner section is LOWER, attached to the floor foot. Thick at the top, slim at the bottom. The thick upper sleeve and desktop travel upward together; the thin lower section remains anchored to the foot, so more of the thin section becomes visible below the upper sleeve. On lowering, the upper sleeve covers more of the lower section. The feet stay planted. Do not swap tube widths, turn either column upside down, add a third section, stretch solid metal, or lift only the tabletop.
-CONTROLLER LOCATION:
-One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
-ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
-CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
-One German home office, same woman and one laptop. Only the real desk power lead and laptop lead are present. The existing power connection stays connected. No cable tray, magnetic cover or hidden power box is included or invented.
-COMPANION CHAIR — @image2:
-Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
-Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
-Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
-
-THIS SHOT START FRAME:
-
-Low worker-side view of both original inverted legs and the real loose power lead. The lead hangs safely with slack and is clear of the telescoping joints.
-
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
-
-HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
-```
-### 单镜头 Grok 图生视频提示词
-```text
-@image1 @image2 @image3
-
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
-
-PRODUCT IDENTITY — highest priority:
-Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
-COLUMN ASSEMBLY:
-INVERTED TWO-STAGE COLUMNS: the WIDER outer sleeve is UPPER, attached to the underside frame; the NARROWER inner section is LOWER, attached to the floor foot. Thick at the top, slim at the bottom. The thick upper sleeve and desktop travel upward together; the thin lower section remains anchored to the foot, so more of the thin section becomes visible below the upper sleeve. On lowering, the upper sleeve covers more of the lower section. The feet stay planted. Do not swap tube widths, turn either column upside down, add a third section, stretch solid metal, or lift only the tabletop.
-CONTROLLER LOCATION:
-One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
-ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
-CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
-One German home office, same woman and one laptop. Only the real desk power lead and laptop lead are present. The existing power connection stays connected. No cable tray, magnetic cover or hidden power box is included or invented.
-COMPANION CHAIR — @image2:
-Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
-Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
-Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
-
-ONLY ACTION:
-
-Make a tiny controlled camera push-in toward the loose lead. The desk remains stationary. No exaggerated tangles or dangerously taut cable.
-
-END STATE:
-
-The original cable and original frame are still visible.
-
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
-
-HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
-```
-
-## 镜头 2 · 3–6 秒
 后期德语字幕：Genug Spielraum für deine Kabel.
 ### 首帧提示词
 ```text
@@ -980,6 +1139,8 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 
 Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
+Production recipe FV-03, shot 1 START FRAME.
+
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
 COLUMN ASSEMBLY:
@@ -988,18 +1149,25 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home office, same woman and one laptop. Only the real desk power lead and laptop lead are present. The existing power connection stays connected. No cable tray, magnetic cover or hidden power box is included or invented.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the target detail and its surface or mounting context readable with a tiny straight push-in. Do not force a full-product view into this detail crop; no orbit.
 
 THIS SHOT START FRAME:
 
-Same low view. Her RIGHT hand is beside the free slack portion of the original lead, away from sockets and moving joints.
+Empty low view; original power lead connected with slack and clear of telescoping joints. No person crouches under the desk.
 
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -1017,34 +1185,43 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home office, same woman and one laptop. Only the real desk power lead and laptop lead are present. The existing power connection stays connected. No cable tray, magnetic cover or hidden power box is included or invented.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the target detail and its surface or mounting context readable with a tiny straight push-in. Do not force a full-product view into this detail crop; no orbit.
 
 ONLY ACTION:
 
-She gently arranges the loose length into a broad slack U-loop behind the frame. Do not unplug, shorten, conceal or clamp the cable; do not add an organizer.
+Tiny camera push to inspect the original lead only; no hands, unplugging or added organizers.
 
 END STATE:
 
-A free slack loop remains visible; the electrical connection is unchanged.
+Product, props and empty chair remain intact; no body, hands or feet enter.
 
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
 
-## 镜头 3 · 6–9 秒
-后期德语字幕：Platz zum Hochfahren.
+## 镜头 2 · 3–6 秒
+后期德语字幕：Mit etwas Spielraum.
 ### 首帧提示词
 ```text
 @image1 @image2
 
 Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
+Production recipe FV-03, shot 2 START FRAME.
+
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
 COLUMN ASSEMBLY:
@@ -1053,18 +1230,25 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home office, same woman and one laptop. Only the real desk power lead and laptop lead are present. The existing power connection stays connected. No cable tray, magnetic cover or hidden power box is included or invented.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the target detail and its surface or mounting context readable with a tiny straight push-in. Do not force a full-product view into this detail crop; no orbit.
 
 THIS SHOT START FRAME:
 
-Fixed view showing the right-hand original keypad, both inverted columns, both feet and the slack lead together.
+At a HARD CUT, the original lead already forms a broad slack U-loop; connection stays intact. Do not show the arranging process.
 
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -1082,22 +1266,112 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home office, same woman and one laptop. Only the real desk power lead and laptop lead are present. The existing power connection stays connected. No cable tray, magnetic cover or hidden power box is included or invented.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the target detail and its surface or mounting context readable with a tiny straight push-in. Do not force a full-product view into this detail crop; no orbit.
 
 ONLY ACTION:
 
-Her RIGHT hand holds the original UP button for a small partial lift only. Upper thick sleeves rise with the level desktop; lower thin sections and feet stay anchored. The cable slack changes naturally without tension.
+Tiny camera push to inspect the established slack; cable and furniture remain still.
 
 END STATE:
 
-The small adjustment ends with slack still visible.
+Product, props and empty chair remain intact; no body, hands or feet enter.
 
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
+
+HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
+```
+
+## 镜头 3 · 6–9 秒
+后期德语字幕：Passend eingestellt.
+### 首帧提示词
+```text
+@image1 @image2
+
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
+
+Production recipe FV-03, shot 3 START FRAME.
+
+PRODUCT IDENTITY — highest priority:
+Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
+COLUMN ASSEMBLY:
+INVERTED TWO-STAGE COLUMNS: the WIDER outer sleeve is UPPER, attached to the underside frame; the NARROWER inner section is LOWER, attached to the floor foot. Thick at the top, slim at the bottom. The thick upper sleeve and desktop travel upward together; the thin lower section remains anchored to the foot, so more of the thin section becomes visible below the upper sleeve. On lowering, the upper sleeve covers more of the lower section. The feet stay planted. Do not swap tube widths, turn either column upside down, add a third section, stretch solid metal, or lift only the tabletop.
+CONTROLLER LOCATION:
+One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
+ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
+CONTINUITY:
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
+One German home office, same woman and one laptop. Only the real desk power lead and laptop lead are present. The existing power connection stays connected. No cable tray, magnetic cover or hidden power box is included or invented.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Locked camera and focal length; no push, zoom or orbit.
+The ONLY motion is verified small desk travel. No human enters the motion zone; no button-operating hand is shown.
+
+THIS SHOT START FRAME:
+
+Empty lifting shot with level top, both complete inverted columns and floor feet readable. Chair is already clear of the lifting path; armrests have clearance from the top and frame. Original cable has slack; feet are grounded.
+
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
+
+HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
+```
+### 单镜头 Grok 图生视频提示词
+```text
+@image1 @image2 @image3
+
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+
+PRODUCT IDENTITY — highest priority:
+Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
+COLUMN ASSEMBLY:
+INVERTED TWO-STAGE COLUMNS: the WIDER outer sleeve is UPPER, attached to the underside frame; the NARROWER inner section is LOWER, attached to the floor foot. Thick at the top, slim at the bottom. The thick upper sleeve and desktop travel upward together; the thin lower section remains anchored to the foot, so more of the thin section becomes visible below the upper sleeve. On lowering, the upper sleeve covers more of the lower section. The feet stay planted. Do not swap tube widths, turn either column upside down, add a third section, stretch solid metal, or lift only the tabletop.
+CONTROLLER LOCATION:
+One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
+ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
+CONTINUITY:
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
+One German home office, same woman and one laptop. Only the real desk power lead and laptop lead are present. The existing power connection stays connected. No cable tray, magnetic cover or hidden power box is included or invented.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Locked camera and focal length; no push, zoom or orbit.
+The ONLY motion is verified small desk travel. No human enters the motion zone; no button-operating hand is shown.
+
+ONLY ACTION:
+
+Only a SMALL partial lift of a few centimeters: the wider upper sleeves and level desktop move upward together, revealing more of the anchored narrow lower sections. Feet and camera fixed; no person or hand; chair still. No full sit-to-stand transition in three seconds.
+
+END STATE:
+
+The same desk after the small lift, with cable slack, feet and chair unchanged.
+
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -1110,6 +1384,8 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 
 Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
+Production recipe FV-03, shot 4 START FRAME.
+
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
 COLUMN ASSEMBLY:
@@ -1118,18 +1394,25 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home office, same woman and one laptop. Only the real desk power lead and laptop lead are present. The existing power connection stays connected. No cable tray, magnetic cover or hidden power box is included or invented.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: exactly ONE anatomically complete seated adult, already seated in the start frame. Pelvis supported by the seat; chair back behind the torso; chest facing the desk; two thighs connected to the same pelvis and knees; both feet on the floor. Exactly one left and one right hand rest separately on their corresponding thighs, palms down, and stay there: no typing or reaching for controls. Each hand connects continuously through wrist, elbow and shoulder to this one person. The person is in FRONT of the chair back. Never film a face through a foreground chair back or hide the entire head and torso while leaving orphan trouser legs. Keep a visible gap between torso and desktop; armrests remain outside the front desk edge and never enter the desktop.
+Locked side view from the person's right, making side profile, shoulder, torso and seat depth readable; never orbit behind or film through the chair back.
 
 THIS SHOT START FRAME:
 
-Same office and identical desk after the small adjustment. Laptop stays on the same part of the four-panel top.
+The same adult is already seated facing the laptop at an approved seated desk height. Hands rest separately on thighs; armrests are not pushed under the desktop.
 
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -1147,34 +1430,43 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home office, same woman and one laptop. Only the real desk power lead and laptop lead are present. The existing power connection stays connected. No cable tray, magnetic cover or hidden power box is included or invented.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: exactly ONE anatomically complete seated adult, already seated in the start frame. Pelvis supported by the seat; chair back behind the torso; chest facing the desk; two thighs connected to the same pelvis and knees; both feet on the floor. Exactly one left and one right hand rest separately on their corresponding thighs, palms down, and stay there: no typing or reaching for controls. Each hand connects continuously through wrist, elbow and shoulder to this one person. The person is in FRONT of the chair back. Never film a face through a foreground chair back or hide the entire head and torso while leaving orphan trouser legs. Keep a visible gap between torso and desktop; armrests remain outside the front desk edge and never enter the desktop.
+Locked side view from the person's right, making side profile, shoulder, torso and seat depth readable; never orbit behind or film through the chair back.
 
 ONLY ACTION:
 
-The woman continues a short task at the stationary desk. Do not change the wiring path, add a tray or hide the cord by dissolving it.
+Only one tiny glance/head nod toward the screen; hands, torso, chair and desk stay in place.
 
 END STATE:
 
-A believable, unchanged workspace.
+The same complete seated pose, with both hands still on their thighs; no reach or rising.
 
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
 
 ## 镜头 5 · 12–15 秒
-后期德语字幕：Jetzt entdecken.
+后期德语字幕：Jetzt bei Furniwell entdecken.
 ### 首帧提示词
 ```text
 @image1 @image2
 
 Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
+Production recipe FV-03, shot 5 START FRAME.
+
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
 COLUMN ASSEMBLY:
@@ -1183,18 +1475,25 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home office, same woman and one laptop. Only the real desk power lead and laptop lead are present. The existing power connection stays connected. No cable tray, magnetic cover or hidden power box is included or invented.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the complete product and floor feet readable. A very small straight push-in only; no orbit or perspective switch.
 
 THIS SHOT START FRAME:
 
-Full desk view with both feet and one unchanged right-hand keypad.
+The exact product and the same specified chair are already staged. Full product, empty scene, furniture and props still.
 
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -1212,22 +1511,29 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home office, same woman and one laptop. Only the real desk power lead and laptop lead are present. The existing power connection stays connected. No cable tray, magnetic cover or hidden power box is included or invented.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the complete product and floor feet readable. A very small straight push-in only; no orbit or perspective switch.
 
 ONLY ACTION:
 
-Hold the frame; keep the original visible cable slack. No accessory bundle, included-organizer claim or generated promo text.
+Only the camera makes a tiny straight push-in; product, chair and props remain still.
 
 END STATE:
 
-Product hero for a separately edited CTA.
+The same complete product and empty chair; room for an editor-added CTA.
 
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -1238,8 +1544,10 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 - 倒装立柱粗管在上、细管在下；节数、立柱数量、脚型正确；底脚贴地。
 - 升降时桌面与上部套管一起移动；桌面水平；没有拉伸变形或全行程瞬移。
 - G2 只有原装一个抽屉；L 桌保留原朝向及三根立柱；未确认结构不补画。
-- 对比首帧、运动中间帧和尾帧。发现错款、手控器移位或桌腿翻转，退回首帧或缩小动作后重做，不进入投放。
+- 对比首帧、运动中间帧和尾帧。发现多手、断身、人体消失、穿桌板/椅架、错款或结构变形，整段退回重做；不通过模糊、淡化或裁切掩盖错误，不进入投放。
 - 搭配椅是指定灰色高背款，独立头枕、腰靠、扶手与五爪底座正确；image2 不是首帧，image3 才是当前镜头首帧。
+- 人物镜头恰好一个完整成年人，双手分放对应大腿；椅背在身后，骨盆由坐垫承托。不能从椅背后拍正脸，不能只剩椅下裤腿。
+- 手部特写只见一只右手与连续手腕前臂；无人镜头连残留的手、腿、脚与人影也不能有。
 
 制作边界：提示词与参考图可降低结构错误，不能保证生成模型每帧正确。首帧与成片都要人工核对；错款画面不进入投放。
 
@@ -1255,10 +1563,10 @@ SKU：G-HAD24-0430-142WT-2；variant：45781441347850
 
 ## 使用顺序
 1. 先下载主商品原图与灰色高背办公椅原图并实际上传，分别作为 image1、image2。只粘贴商品链接不会绑定图片。
-2. 先复制每镜头的“首帧提示词”制作单张 9:16 首帧；逐张核对产品。这里提供的是提示词，未声称已生成首帧。
+2. 先复制每镜头的“首帧提示词”制作单张 9:16 首帧；先验收人数、手数、肩肘腕连接、椅背在身后及桌沿间隙，再核对产品。错误首帧必须重做，不能交给视频模型修复。
 3. 推荐分镜生成：每镜头开独立任务，先上传主商品原图作为 image1、搭配椅原图作为 image2，再上传本镜头已验收首帧作为 image3。image2 不再指首帧，不要上传另一镜头的首帧。
-4. 总提示词为可选整条模式，仅在当前 Grok 支持所需时长与多镜头时使用；image1 是主商品原图，image2 是固定灰色搭配椅原图。界面不识别 @image 标签时，用附件选择功能手动指定图片。
-5. 每镜头只做一个小动作。升降只展示一小段行程；坐、站高度用已校对首帧在剪辑点连接。字幕、口播、品牌和促销信息后期添加。
+4. 15 秒总提示词现在是剪辑计划，不直接整段交给 Grok 连续生成。每镜头只复制本段 3 秒图生视频指令；image1 主商品、image2 搭配椅、image3 当前首帧。界面不识别标签时手动指定附件。
+5. 每段只做一个小动作：人物镜头桌椅固定，手部特写仅一只右手，升降镜头无人且椅子在运动区外。不生成入座、起身或转身过程；用硬切连接已完成状态。字幕、口播、品牌和促销信息后期添加。
 
 ## 固定产品结构
 - 白色 140 × 70 cm；一整片玻璃桌面，不生成拼缝。
@@ -1267,9 +1575,9 @@ SKU：G-HAD24-0430-142WT-2；variant：45781441347850
 - 控制面板内嵌于靠人的前长边右侧饰条；照原图保留按键与接口，不额外挂黑色控制器。
 核验边界：已核对玻璃、原装单抽屉、前沿右侧内嵌控制面板与两节倒装立柱。
 
-## 15 秒总提示词（纯英文；字幕后期加）
+## 15 秒剪辑计划（纯英文；不要整段连续生成）
 ```text
-Production recipe FV-04. Create a 15-second vertical 9:16 product video, five 3-second shots. Use the ACTUALLY UPLOADED @image1 as the exact official product identity reference. A URL or product name alone is not a visual reference. Product fidelity has priority over camera movement and style.
+Production recipe FV-04. EDIT PLAN ONLY: five INDEPENDENT 3-second vertical 9:16 clips, joined into a 15-second ad. Do NOT submit this complete plan as a single continuous Grok generation. Make and approve each start still, then copy only that shot's image-to-video prompt. Actually upload @image1 as the official product reference and @image2 as the companion chair reference; each separate clip also uses its own approved @image3.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell G2 white glass desk, SKU G-HAD24-0430-142WT-2, variant 45781441347850, 140 x 70 cm. ONE continuous glass desktop, its original white front fascia, exactly ONE original central pull-out drawer with its real runners, two white columns and two original white floor feet. The ORIGINAL control strip and USB ports are INTEGRATED INTO the front fascia on the seated worker's RIGHT. Copy the exact visible layout in @image1. Do NOT add a separate hanging black Economy keypad. No desktop seams, wooden replacement top, second drawer, cabinet or wheel.
@@ -1279,39 +1587,57 @@ CONTROLLER LOCATION:
 The one control strip is BUILT INTO the white FRONT FASCIA on the seated worker's RIGHT. It is not a hanging keypad under the desk and it is not mounted on a short end. Preserve its button and port positions; no duplicate controller.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One bright German home office. The same woman, one suitable erasable glass marker and one small cloth. Keep the glass clear enough to see its continuous surface. All writing is a simple mark, not AI-generated words.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
 
-EDITING: Use a clean cut between shots. A new checked height may begin at a cut; never morph a low desk into a high desk in one instant. Do not animate a full lift within three seconds.
+EDITING: HARD CUTS between already-established poses. Never animate sitting down, rising from the chair, turning across the desk, or a full sit-to-stand lift.
 
 SHOT 1, 0-3s: @image1 @image2
-START: Worker-side three-quarter full view of the white G2, both inverted legs, ONE closed central drawer and the integrated control strip at the worker's right.
-ACTION: A subtle push-in introduces the glass surface. The woman rests her hand nearby without touching the controls. The desk stays at one height.
-END: The same intact G2 geometry.
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the complete product and floor feet readable. A very small straight push-in only; no orbit or perspective switch.
+START: The exact product and the same specified chair are already staged. Full product, empty scene, furniture and props still.
+ACTION: Only the camera makes a tiny straight push-in; product, chair and props remain still.
+END: The same complete product and empty chair; room for an editor-added CTA.
 
 SHOT 2, 3-6s: @image1 @image2
-START: Close view of the continuous glass from the worker side. Her RIGHT hand holds an erasable glass marker just above one clear area. Drawer stays closed.
-ACTION: Draw only ONE small simple check mark on the glass. No words, complex lettering, new tabletop panel or extra controls.
-END: One small check mark on the same glass.
+SHOT CAST AND SPATIAL LOCK:
+CAST: only ONE right hand belonging to the same adult, continuously connected to one wrist and forearm entering from the worker-side edge of the frame. No second hand, extra forearm, face or torso in this crop. The left hand stays on the lap, entirely outside the crop. The right hand has five fingers. Keep the start-frame grip and perform only the specified small local action; palm, wrist and forearm stay connected with unchanged lengths and no regripping. No hand emerges through the desktop, chair or keypad. If contact is occluded, repair the start-frame camera position instead of inventing another hand.
+Locked contextual close-up showing the real component, its mounting edge/surface and contact point. No push-in, orbit or extreme wide angle.
+START: Continuous glass stays still; original drawer closed. One right hand already holds a suitable erasable glass marker with tip at the start contact point. Five fingers connect to wrist and forearm.
+ACTION: Keep the same grip; move only the marker tip to draw one tiny check mark. Camera, glass and drawer stay still.
+END: Same one right hand and marker, one small check mark; no extra fingers or glass seams.
 
 SHOT 3, 6-9s: @image1 @image2
-START: At an EDIT CUT, the ONE original central drawer is already open slightly, with its original runners and front panel unchanged. Her right hand holds the same marker above the drawer.
-ACTION: Place the marker into the already-open original drawer. Keep the drawer at its existing opening amount; do not add a second drawer or animate an opening transformation.
-END: Marker rests inside that same drawer.
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the target detail and its surface or mounting context readable with a tiny straight push-in. Do not force a full-product view into this detail crop; no orbit.
+START: At a HARD CUT, the one original drawer is already slightly open and the same marker is already inside; the same small check mark remains on the glass. Preserve the original front and runners.
+ACTION: Tiny camera push to inspect the original drawer only: no placing the pen, pulling the drawer or hands.
+END: Product, props and empty chair remain intact; no body, hands or feet enter.
 
 SHOT 4, 9-12s: @image1 @image2
-START: At an EDIT CUT, the original drawer is closed. The one check mark remains on the glass. Her right hand holds the cloth at the edge of that mark.
-ACTION: Wipe the small mark away with one short local pass. Keep the glass outline, integrated right-hand controls and desk frame unchanged.
-END: Clean continuous glass, one closed original drawer.
+SHOT CAST AND SPATIAL LOCK:
+CAST: only ONE right hand belonging to the same adult, continuously connected to one wrist and forearm entering from the worker-side edge of the frame. No second hand, extra forearm, face or torso in this crop. The left hand stays on the lap, entirely outside the crop. The right hand has five fingers. Keep the start-frame grip and perform only the specified small local action; palm, wrist and forearm stay connected with unchanged lengths and no regripping. No hand emerges through the desktop, chair or keypad. If contact is occluded, repair the start-frame camera position instead of inventing another hand.
+Locked contextual close-up showing the real component, its mounting edge/surface and contact point. No push-in, orbit or extreme wide angle.
+START: At a HARD CUT the original drawer is already closed. One right hand already holds a small cloth contacting one edge of the check mark; only that connected hand, wrist and forearm are visible.
+ACTION: Keep the same grip and make one short local wipe only. No arm extension or change to glass, edge or controls. Camera locked.
+END: The small mark is wiped away; still one original hand, unchanged desk and one drawer.
 
 SHOT 5, 12-15s: @image1 @image2
-START: Return to the first full G2 view; same height, woman, room, one drawer, integrated right-side strip and both inverted legs.
-ACTION: Hold the finished workspace. No separate black hanging keypad, added USB port or standing-height transition.
-END: Stable product view for post-production branding.
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the complete product and floor feet readable. A very small straight push-in only; no orbit or perspective switch.
+START: The exact product and the same specified chair are already staged. Full product, empty scene, furniture and props still.
+ACTION: Only the camera makes a tiny straight push-in; product, chair and props remain still.
+END: The same complete product and empty chair; room for an editor-added CTA.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -1324,6 +1650,8 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 
 Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
+Production recipe FV-04, shot 1 START FRAME.
+
 PRODUCT IDENTITY — highest priority:
 Furniwell G2 white glass desk, SKU G-HAD24-0430-142WT-2, variant 45781441347850, 140 x 70 cm. ONE continuous glass desktop, its original white front fascia, exactly ONE original central pull-out drawer with its real runners, two white columns and two original white floor feet. The ORIGINAL control strip and USB ports are INTEGRATED INTO the front fascia on the seated worker's RIGHT. Copy the exact visible layout in @image1. Do NOT add a separate hanging black Economy keypad. No desktop seams, wooden replacement top, second drawer, cabinet or wheel.
 COLUMN ASSEMBLY:
@@ -1332,18 +1660,25 @@ CONTROLLER LOCATION:
 The one control strip is BUILT INTO the white FRONT FASCIA on the seated worker's RIGHT. It is not a hanging keypad under the desk and it is not mounted on a short end. Preserve its button and port positions; no duplicate controller.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One bright German home office. The same woman, one suitable erasable glass marker and one small cloth. Keep the glass clear enough to see its continuous surface. All writing is a simple mark, not AI-generated words.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the complete product and floor feet readable. A very small straight push-in only; no orbit or perspective switch.
 
 THIS SHOT START FRAME:
 
-Worker-side three-quarter full view of the white G2, both inverted legs, ONE closed central drawer and the integrated control strip at the worker's right.
+The exact product and the same specified chair are already staged. Full product, empty scene, furniture and props still.
 
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -1361,22 +1696,29 @@ CONTROLLER LOCATION:
 The one control strip is BUILT INTO the white FRONT FASCIA on the seated worker's RIGHT. It is not a hanging keypad under the desk and it is not mounted on a short end. Preserve its button and port positions; no duplicate controller.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One bright German home office. The same woman, one suitable erasable glass marker and one small cloth. Keep the glass clear enough to see its continuous surface. All writing is a simple mark, not AI-generated words.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the complete product and floor feet readable. A very small straight push-in only; no orbit or perspective switch.
 
 ONLY ACTION:
 
-A subtle push-in introduces the glass surface. The woman rests her hand nearby without touching the controls. The desk stays at one height.
+Only the camera makes a tiny straight push-in; product, chair and props remain still.
 
 END STATE:
 
-The same intact G2 geometry.
+The same complete product and empty chair; room for an editor-added CTA.
 
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -1389,6 +1731,8 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 
 Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
+Production recipe FV-04, shot 2 START FRAME.
+
 PRODUCT IDENTITY — highest priority:
 Furniwell G2 white glass desk, SKU G-HAD24-0430-142WT-2, variant 45781441347850, 140 x 70 cm. ONE continuous glass desktop, its original white front fascia, exactly ONE original central pull-out drawer with its real runners, two white columns and two original white floor feet. The ORIGINAL control strip and USB ports are INTEGRATED INTO the front fascia on the seated worker's RIGHT. Copy the exact visible layout in @image1. Do NOT add a separate hanging black Economy keypad. No desktop seams, wooden replacement top, second drawer, cabinet or wheel.
 COLUMN ASSEMBLY:
@@ -1397,18 +1741,25 @@ CONTROLLER LOCATION:
 The one control strip is BUILT INTO the white FRONT FASCIA on the seated worker's RIGHT. It is not a hanging keypad under the desk and it is not mounted on a short end. Preserve its button and port positions; no duplicate controller.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One bright German home office. The same woman, one suitable erasable glass marker and one small cloth. Keep the glass clear enough to see its continuous surface. All writing is a simple mark, not AI-generated words.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: only ONE right hand belonging to the same adult, continuously connected to one wrist and forearm entering from the worker-side edge of the frame. No second hand, extra forearm, face or torso in this crop. The left hand stays on the lap, entirely outside the crop. The right hand has five fingers. Keep the start-frame grip and perform only the specified small local action; palm, wrist and forearm stay connected with unchanged lengths and no regripping. No hand emerges through the desktop, chair or keypad. If contact is occluded, repair the start-frame camera position instead of inventing another hand.
+Locked contextual close-up showing the real component, its mounting edge/surface and contact point. No push-in, orbit or extreme wide angle.
 
 THIS SHOT START FRAME:
 
-Close view of the continuous glass from the worker side. Her RIGHT hand holds an erasable glass marker just above one clear area. Drawer stays closed.
+Continuous glass stays still; original drawer closed. One right hand already holds a suitable erasable glass marker with tip at the start contact point. Five fingers connect to wrist and forearm.
 
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -1426,22 +1777,29 @@ CONTROLLER LOCATION:
 The one control strip is BUILT INTO the white FRONT FASCIA on the seated worker's RIGHT. It is not a hanging keypad under the desk and it is not mounted on a short end. Preserve its button and port positions; no duplicate controller.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One bright German home office. The same woman, one suitable erasable glass marker and one small cloth. Keep the glass clear enough to see its continuous surface. All writing is a simple mark, not AI-generated words.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: only ONE right hand belonging to the same adult, continuously connected to one wrist and forearm entering from the worker-side edge of the frame. No second hand, extra forearm, face or torso in this crop. The left hand stays on the lap, entirely outside the crop. The right hand has five fingers. Keep the start-frame grip and perform only the specified small local action; palm, wrist and forearm stay connected with unchanged lengths and no regripping. No hand emerges through the desktop, chair or keypad. If contact is occluded, repair the start-frame camera position instead of inventing another hand.
+Locked contextual close-up showing the real component, its mounting edge/surface and contact point. No push-in, orbit or extreme wide angle.
 
 ONLY ACTION:
 
-Draw only ONE small simple check mark on the glass. No words, complex lettering, new tabletop panel or extra controls.
+Keep the same grip; move only the marker tip to draw one tiny check mark. Camera, glass and drawer stay still.
 
 END STATE:
 
-One small check mark on the same glass.
+Same one right hand and marker, one small check mark; no extra fingers or glass seams.
 
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -1454,6 +1812,8 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 
 Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
+Production recipe FV-04, shot 3 START FRAME.
+
 PRODUCT IDENTITY — highest priority:
 Furniwell G2 white glass desk, SKU G-HAD24-0430-142WT-2, variant 45781441347850, 140 x 70 cm. ONE continuous glass desktop, its original white front fascia, exactly ONE original central pull-out drawer with its real runners, two white columns and two original white floor feet. The ORIGINAL control strip and USB ports are INTEGRATED INTO the front fascia on the seated worker's RIGHT. Copy the exact visible layout in @image1. Do NOT add a separate hanging black Economy keypad. No desktop seams, wooden replacement top, second drawer, cabinet or wheel.
 COLUMN ASSEMBLY:
@@ -1462,18 +1822,25 @@ CONTROLLER LOCATION:
 The one control strip is BUILT INTO the white FRONT FASCIA on the seated worker's RIGHT. It is not a hanging keypad under the desk and it is not mounted on a short end. Preserve its button and port positions; no duplicate controller.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One bright German home office. The same woman, one suitable erasable glass marker and one small cloth. Keep the glass clear enough to see its continuous surface. All writing is a simple mark, not AI-generated words.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the target detail and its surface or mounting context readable with a tiny straight push-in. Do not force a full-product view into this detail crop; no orbit.
 
 THIS SHOT START FRAME:
 
-At an EDIT CUT, the ONE original central drawer is already open slightly, with its original runners and front panel unchanged. Her right hand holds the same marker above the drawer.
+At a HARD CUT, the one original drawer is already slightly open and the same marker is already inside; the same small check mark remains on the glass. Preserve the original front and runners.
 
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -1491,22 +1858,29 @@ CONTROLLER LOCATION:
 The one control strip is BUILT INTO the white FRONT FASCIA on the seated worker's RIGHT. It is not a hanging keypad under the desk and it is not mounted on a short end. Preserve its button and port positions; no duplicate controller.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One bright German home office. The same woman, one suitable erasable glass marker and one small cloth. Keep the glass clear enough to see its continuous surface. All writing is a simple mark, not AI-generated words.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the target detail and its surface or mounting context readable with a tiny straight push-in. Do not force a full-product view into this detail crop; no orbit.
 
 ONLY ACTION:
 
-Place the marker into the already-open original drawer. Keep the drawer at its existing opening amount; do not add a second drawer or animate an opening transformation.
+Tiny camera push to inspect the original drawer only: no placing the pen, pulling the drawer or hands.
 
 END STATE:
 
-Marker rests inside that same drawer.
+Product, props and empty chair remain intact; no body, hands or feet enter.
 
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -1519,6 +1893,8 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 
 Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
+Production recipe FV-04, shot 4 START FRAME.
+
 PRODUCT IDENTITY — highest priority:
 Furniwell G2 white glass desk, SKU G-HAD24-0430-142WT-2, variant 45781441347850, 140 x 70 cm. ONE continuous glass desktop, its original white front fascia, exactly ONE original central pull-out drawer with its real runners, two white columns and two original white floor feet. The ORIGINAL control strip and USB ports are INTEGRATED INTO the front fascia on the seated worker's RIGHT. Copy the exact visible layout in @image1. Do NOT add a separate hanging black Economy keypad. No desktop seams, wooden replacement top, second drawer, cabinet or wheel.
 COLUMN ASSEMBLY:
@@ -1527,18 +1903,25 @@ CONTROLLER LOCATION:
 The one control strip is BUILT INTO the white FRONT FASCIA on the seated worker's RIGHT. It is not a hanging keypad under the desk and it is not mounted on a short end. Preserve its button and port positions; no duplicate controller.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One bright German home office. The same woman, one suitable erasable glass marker and one small cloth. Keep the glass clear enough to see its continuous surface. All writing is a simple mark, not AI-generated words.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: only ONE right hand belonging to the same adult, continuously connected to one wrist and forearm entering from the worker-side edge of the frame. No second hand, extra forearm, face or torso in this crop. The left hand stays on the lap, entirely outside the crop. The right hand has five fingers. Keep the start-frame grip and perform only the specified small local action; palm, wrist and forearm stay connected with unchanged lengths and no regripping. No hand emerges through the desktop, chair or keypad. If contact is occluded, repair the start-frame camera position instead of inventing another hand.
+Locked contextual close-up showing the real component, its mounting edge/surface and contact point. No push-in, orbit or extreme wide angle.
 
 THIS SHOT START FRAME:
 
-At an EDIT CUT, the original drawer is closed. The one check mark remains on the glass. Her right hand holds the cloth at the edge of that mark.
+At a HARD CUT the original drawer is already closed. One right hand already holds a small cloth contacting one edge of the check mark; only that connected hand, wrist and forearm are visible.
 
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -1556,22 +1939,29 @@ CONTROLLER LOCATION:
 The one control strip is BUILT INTO the white FRONT FASCIA on the seated worker's RIGHT. It is not a hanging keypad under the desk and it is not mounted on a short end. Preserve its button and port positions; no duplicate controller.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One bright German home office. The same woman, one suitable erasable glass marker and one small cloth. Keep the glass clear enough to see its continuous surface. All writing is a simple mark, not AI-generated words.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: only ONE right hand belonging to the same adult, continuously connected to one wrist and forearm entering from the worker-side edge of the frame. No second hand, extra forearm, face or torso in this crop. The left hand stays on the lap, entirely outside the crop. The right hand has five fingers. Keep the start-frame grip and perform only the specified small local action; palm, wrist and forearm stay connected with unchanged lengths and no regripping. No hand emerges through the desktop, chair or keypad. If contact is occluded, repair the start-frame camera position instead of inventing another hand.
+Locked contextual close-up showing the real component, its mounting edge/surface and contact point. No push-in, orbit or extreme wide angle.
 
 ONLY ACTION:
 
-Wipe the small mark away with one short local pass. Keep the glass outline, integrated right-hand controls and desk frame unchanged.
+Keep the same grip and make one short local wipe only. No arm extension or change to glass, edge or controls. Camera locked.
 
 END STATE:
 
-Clean continuous glass, one closed original drawer.
+The small mark is wiped away; still one original hand, unchanged desk and one drawer.
 
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -1584,6 +1974,8 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 
 Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
+Production recipe FV-04, shot 5 START FRAME.
+
 PRODUCT IDENTITY — highest priority:
 Furniwell G2 white glass desk, SKU G-HAD24-0430-142WT-2, variant 45781441347850, 140 x 70 cm. ONE continuous glass desktop, its original white front fascia, exactly ONE original central pull-out drawer with its real runners, two white columns and two original white floor feet. The ORIGINAL control strip and USB ports are INTEGRATED INTO the front fascia on the seated worker's RIGHT. Copy the exact visible layout in @image1. Do NOT add a separate hanging black Economy keypad. No desktop seams, wooden replacement top, second drawer, cabinet or wheel.
 COLUMN ASSEMBLY:
@@ -1592,18 +1984,25 @@ CONTROLLER LOCATION:
 The one control strip is BUILT INTO the white FRONT FASCIA on the seated worker's RIGHT. It is not a hanging keypad under the desk and it is not mounted on a short end. Preserve its button and port positions; no duplicate controller.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One bright German home office. The same woman, one suitable erasable glass marker and one small cloth. Keep the glass clear enough to see its continuous surface. All writing is a simple mark, not AI-generated words.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the complete product and floor feet readable. A very small straight push-in only; no orbit or perspective switch.
 
 THIS SHOT START FRAME:
 
-Return to the first full G2 view; same height, woman, room, one drawer, integrated right-side strip and both inverted legs.
+The exact product and the same specified chair are already staged. Full product, empty scene, furniture and props still.
 
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -1621,22 +2020,29 @@ CONTROLLER LOCATION:
 The one control strip is BUILT INTO the white FRONT FASCIA on the seated worker's RIGHT. It is not a hanging keypad under the desk and it is not mounted on a short end. Preserve its button and port positions; no duplicate controller.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One bright German home office. The same woman, one suitable erasable glass marker and one small cloth. Keep the glass clear enough to see its continuous surface. All writing is a simple mark, not AI-generated words.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the complete product and floor feet readable. A very small straight push-in only; no orbit or perspective switch.
 
 ONLY ACTION:
 
-Hold the finished workspace. No separate black hanging keypad, added USB port or standing-height transition.
+Only the camera makes a tiny straight push-in; product, chair and props remain still.
 
 END STATE:
 
-Stable product view for post-production branding.
+The same complete product and empty chair; room for an editor-added CTA.
 
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -1647,8 +2053,10 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 - 倒装立柱粗管在上、细管在下；节数、立柱数量、脚型正确；底脚贴地。
 - 升降时桌面与上部套管一起移动；桌面水平；没有拉伸变形或全行程瞬移。
 - G2 只有原装一个抽屉；L 桌保留原朝向及三根立柱；未确认结构不补画。
-- 对比首帧、运动中间帧和尾帧。发现错款、手控器移位或桌腿翻转，退回首帧或缩小动作后重做，不进入投放。
+- 对比首帧、运动中间帧和尾帧。发现多手、断身、人体消失、穿桌板/椅架、错款或结构变形，整段退回重做；不通过模糊、淡化或裁切掩盖错误，不进入投放。
 - 搭配椅是指定灰色高背款，独立头枕、腰靠、扶手与五爪底座正确；image2 不是首帧，image3 才是当前镜头首帧。
+- 人物镜头恰好一个完整成年人，双手分放对应大腿；椅背在身后，骨盆由坐垫承托。不能从椅背后拍正脸，不能只剩椅下裤腿。
+- 手部特写只见一只右手与连续手腕前臂；无人镜头连残留的手、腿、脚与人影也不能有。
 
 制作边界：提示词与参考图可降低结构错误，不能保证生成模型每帧正确。首帧与成片都要人工核对；错款画面不进入投放。
 
@@ -1664,10 +2072,10 @@ SKU：G-HAD241222B；variant：44533451587850
 
 ## 使用顺序
 1. 先下载主商品原图与灰色高背办公椅原图并实际上传，分别作为 image1、image2。只粘贴商品链接不会绑定图片。
-2. 先复制每镜头的“首帧提示词”制作单张 9:16 首帧；逐张核对产品。这里提供的是提示词，未声称已生成首帧。
+2. 先复制每镜头的“首帧提示词”制作单张 9:16 首帧；先验收人数、手数、肩肘腕连接、椅背在身后及桌沿间隙，再核对产品。错误首帧必须重做，不能交给视频模型修复。
 3. 推荐分镜生成：每镜头开独立任务，先上传主商品原图作为 image1、搭配椅原图作为 image2，再上传本镜头已验收首帧作为 image3。image2 不再指首帧，不要上传另一镜头的首帧。
-4. 总提示词为可选整条模式，仅在当前 Grok 支持所需时长与多镜头时使用；image1 是主商品原图，image2 是固定灰色搭配椅原图。界面不识别 @image 标签时，用附件选择功能手动指定图片。
-5. 每镜头只做一个小动作。升降只展示一小段行程；坐、站高度用已校对首帧在剪辑点连接。字幕、口播、品牌和促销信息后期添加。
+4. 15 秒总提示词现在是剪辑计划，不直接整段交给 Grok 连续生成。每镜头只复制本段 3 秒图生视频指令；image1 主商品、image2 搭配椅、image3 当前首帧。界面不识别标签时手动指定附件。
+5. 每段只做一个小动作：人物镜头桌椅固定，手部特写仅一只右手，升降镜头无人且椅子在运动区外。不生成入座、起身或转身过程；用硬切连接已完成状态。字幕、口播、品牌和促销信息后期添加。
 
 ## 固定产品结构
 - 白色 120 × 60 cm；四片拼接桌板，保留原图拼缝。
@@ -1676,9 +2084,9 @@ SKU：G-HAD241222B；variant：44533451587850
 - 仅一个黑色外挂手控器：入座者右手侧、靠人的前长边下方；不是右侧短边。
 核验边界：已对照同一变体官方主图确认两节倒装。
 
-## 15 秒总提示词（纯英文；字幕后期加）
+## 15 秒剪辑计划（纯英文；不要整段连续生成）
 ```text
-Production recipe FV-05. Create a 15-second vertical 9:16 product video, five 3-second shots. Use the ACTUALLY UPLOADED @image1 as the exact official product identity reference. A URL or product name alone is not a visual reference. Product fidelity has priority over camera movement and style.
+Production recipe FV-05. EDIT PLAN ONLY: five INDEPENDENT 3-second vertical 9:16 clips, joined into a 15-second ad. Do NOT submit this complete plan as a single continuous Grok generation. Make and approve each start still, then copy only that shot's image-to-video prompt. Actually upload @image1 as the official product reference and @image2 as the companion chair reference; each separate clip also uses its own approved @image3.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -1688,39 +2096,57 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One real-scale modest German bedroom. The SAME white 120 x 60 cm four-panel Economy is already installed beside a bed. Keep the doorway, bed, chair exit space and walking path fixed. One slim laptop only.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
 
-EDITING: Use a clean cut between shots. A new checked height may begin at a cut; never morph a low desk into a high desk in one instant. Do not animate a full lift within three seconds.
+EDITING: HARD CUTS between already-established poses. Never animate sitting down, rising from the chair, turning across the desk, or a full sit-to-stand lift.
 
 SHOT 1, 0-3s: @image1 @image2
-START: Doorway-side wide view looking toward the worker-facing long edge. The desk already exists in the room. Show its whole top, both legs and feet, the bed and the open walkway.
-ACTION: A slow, very small push-in establishes the completed room. No empty-room transformation or furniture appearing from nothing.
-END: The exact 120 x 60 cm desk stays in place.
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the complete product and floor feet readable. A very small straight push-in only; no orbit or perspective switch.
+START: The exact product and the same specified chair are already staged. Full product, empty scene, furniture and props still.
+ACTION: Only the camera makes a tiny straight push-in; product, chair and props remain still.
+END: The same complete product and empty chair; room for an editor-added CTA.
 
 SHOT 2, 3-6s: @image1 @image2
-START: Worker-side medium-wide view. The front long edge is nearest the woman, and the original controller is to her RIGHT. The bed and door remain at their established positions.
-ACTION: She approaches the existing chair naturally. Keep enough physical clearance; do not scale down the desk or remove furniture to create space.
-END: Believable chair and walkway clearance.
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the target detail and its surface or mounting context readable with a tiny straight push-in. Do not force a full-product view into this detail crop; no orbit.
+START: Empty room start frame; chair is already clear of the desk edge, with real-scale walkway, bed, doorway and product. No legs or feet beneath the chair.
+ACTION: Tiny camera push shows chair clearance only; no entering or sitting down and no rescaling furniture.
+END: Product, props and empty chair remain intact; no body, hands or feet enter.
 
 SHOT 3, 6-9s: @image1 @image2
-START: Same desk and room, woman seated with the one laptop. Both original feet stay visible below the desk.
-ACTION: She types briefly. No new monitor, drawer, seamless replacement tabletop or changed foot shape.
-END: Seated work on the exact product.
+SHOT CAST AND SPATIAL LOCK:
+CAST: exactly ONE anatomically complete seated adult, already seated in the start frame. Pelvis supported by the seat; chair back behind the torso; chest facing the desk; two thighs connected to the same pelvis and knees; both feet on the floor. Exactly one left and one right hand rest separately on their corresponding thighs, palms down, and stay there: no typing or reaching for controls. Each hand connects continuously through wrist, elbow and shoulder to this one person. The person is in FRONT of the chair back. Never film a face through a foreground chair back or hide the entire head and torso while leaving orphan trouser legs. Keep a visible gap between torso and desktop; armrests remain outside the front desk edge and never enter the desktop.
+Locked side view from the person's right, making side profile, shoulder, torso and seat depth readable; never orbit behind or film through the chair back.
+START: The same adult is already seated facing the laptop at an approved seated desk height. Hands rest separately on thighs; armrests are not pushed under the desktop.
+ACTION: Only one tiny glance/head nod toward the screen; hands, torso, chair and desk stay in place.
+END: The same complete seated pose, with both hands still on their thighs; no reach or rising.
 
 SHOT 4, 9-12s: @image1 @image2
-START: Contextual close-up of the front-right long edge. Her RIGHT index finger is beside the original keypad, with the original tabletop corner visible.
-ACTION: Press the existing UP button once; show only a small height adjustment if the legs are in frame. No full-stroke lift in three seconds and no relocation to the short edge.
-END: Original keypad in the original mounting place.
+SHOT CAST AND SPATIAL LOCK:
+CAST: only ONE right hand belonging to the same adult, continuously connected to one wrist and forearm entering from the worker-side edge of the frame. No second hand, extra forearm, face or torso in this crop. The left hand stays on the lap, entirely outside the crop. The right hand has five fingers. Keep the start-frame grip and perform only the specified small local action; palm, wrist and forearm stay connected with unchanged lengths and no regripping. No hand emerges through the desktop, chair or keypad. If contact is occluded, repair the start-frame camera position instead of inventing another hand.
+Locked contextual close-up showing the real component, its mounting edge/surface and contact point. No push-in, orbit or extreme wide angle.
+START: The exact SKU's original control remains at its original user-right front LONG edge. Only one right hand and connected wrist/forearm are visible. Its index fingertip is already at one existing button; the other four fingers rest curled. Keep the tabletop corner and contact point readable.
+ACTION: Only the right index finger makes one tiny press and stops. Wrist, forearm and other fingers keep their positions. The desk remains stationary throughout; this shot establishes the control location, with lifting in a separate empty shot.
+END: Still one continuously attached right hand; original keypad, edge and desk height unchanged.
 
 SHOT 5, 12-15s: @image1 @image2
-START: Return to the doorway-side wide view at the same checked room layout. The woman stands beside the chair; no claim that the unchanged seated-height desk is already at standing-work height.
-ACTION: Hold the desk, chair clearance and walkway in frame. No scale change, mirrored room or generated dimension graphic.
-END: Stable room-and-product hero.
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the complete product and floor feet readable. A very small straight push-in only; no orbit or perspective switch.
+START: The exact product and the same specified chair are already staged. Full product, empty scene, furniture and props still.
+ACTION: Only the camera makes a tiny straight push-in; product, chair and props remain still.
+END: The same complete product and empty chair; room for an editor-added CTA.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -1733,6 +2159,8 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 
 Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
+Production recipe FV-05, shot 1 START FRAME.
+
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
 COLUMN ASSEMBLY:
@@ -1741,18 +2169,25 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One real-scale modest German bedroom. The SAME white 120 x 60 cm four-panel Economy is already installed beside a bed. Keep the doorway, bed, chair exit space and walking path fixed. One slim laptop only.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the complete product and floor feet readable. A very small straight push-in only; no orbit or perspective switch.
 
 THIS SHOT START FRAME:
 
-Doorway-side wide view looking toward the worker-facing long edge. The desk already exists in the room. Show its whole top, both legs and feet, the bed and the open walkway.
+The exact product and the same specified chair are already staged. Full product, empty scene, furniture and props still.
 
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -1770,22 +2205,29 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One real-scale modest German bedroom. The SAME white 120 x 60 cm four-panel Economy is already installed beside a bed. Keep the doorway, bed, chair exit space and walking path fixed. One slim laptop only.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the complete product and floor feet readable. A very small straight push-in only; no orbit or perspective switch.
 
 ONLY ACTION:
 
-A slow, very small push-in establishes the completed room. No empty-room transformation or furniture appearing from nothing.
+Only the camera makes a tiny straight push-in; product, chair and props remain still.
 
 END STATE:
 
-The exact 120 x 60 cm desk stays in place.
+The same complete product and empty chair; room for an editor-added CTA.
 
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -1798,6 +2240,8 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 
 Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
+Production recipe FV-05, shot 2 START FRAME.
+
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
 COLUMN ASSEMBLY:
@@ -1806,18 +2250,25 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One real-scale modest German bedroom. The SAME white 120 x 60 cm four-panel Economy is already installed beside a bed. Keep the doorway, bed, chair exit space and walking path fixed. One slim laptop only.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the target detail and its surface or mounting context readable with a tiny straight push-in. Do not force a full-product view into this detail crop; no orbit.
 
 THIS SHOT START FRAME:
 
-Worker-side medium-wide view. The front long edge is nearest the woman, and the original controller is to her RIGHT. The bed and door remain at their established positions.
+Empty room start frame; chair is already clear of the desk edge, with real-scale walkway, bed, doorway and product. No legs or feet beneath the chair.
 
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -1835,22 +2286,29 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One real-scale modest German bedroom. The SAME white 120 x 60 cm four-panel Economy is already installed beside a bed. Keep the doorway, bed, chair exit space and walking path fixed. One slim laptop only.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the target detail and its surface or mounting context readable with a tiny straight push-in. Do not force a full-product view into this detail crop; no orbit.
 
 ONLY ACTION:
 
-She approaches the existing chair naturally. Keep enough physical clearance; do not scale down the desk or remove furniture to create space.
+Tiny camera push shows chair clearance only; no entering or sitting down and no rescaling furniture.
 
 END STATE:
 
-Believable chair and walkway clearance.
+Product, props and empty chair remain intact; no body, hands or feet enter.
 
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -1863,6 +2321,8 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 
 Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
+Production recipe FV-05, shot 3 START FRAME.
+
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
 COLUMN ASSEMBLY:
@@ -1871,18 +2331,25 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One real-scale modest German bedroom. The SAME white 120 x 60 cm four-panel Economy is already installed beside a bed. Keep the doorway, bed, chair exit space and walking path fixed. One slim laptop only.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: exactly ONE anatomically complete seated adult, already seated in the start frame. Pelvis supported by the seat; chair back behind the torso; chest facing the desk; two thighs connected to the same pelvis and knees; both feet on the floor. Exactly one left and one right hand rest separately on their corresponding thighs, palms down, and stay there: no typing or reaching for controls. Each hand connects continuously through wrist, elbow and shoulder to this one person. The person is in FRONT of the chair back. Never film a face through a foreground chair back or hide the entire head and torso while leaving orphan trouser legs. Keep a visible gap between torso and desktop; armrests remain outside the front desk edge and never enter the desktop.
+Locked side view from the person's right, making side profile, shoulder, torso and seat depth readable; never orbit behind or film through the chair back.
 
 THIS SHOT START FRAME:
 
-Same desk and room, woman seated with the one laptop. Both original feet stay visible below the desk.
+The same adult is already seated facing the laptop at an approved seated desk height. Hands rest separately on thighs; armrests are not pushed under the desktop.
 
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -1900,34 +2367,43 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One real-scale modest German bedroom. The SAME white 120 x 60 cm four-panel Economy is already installed beside a bed. Keep the doorway, bed, chair exit space and walking path fixed. One slim laptop only.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: exactly ONE anatomically complete seated adult, already seated in the start frame. Pelvis supported by the seat; chair back behind the torso; chest facing the desk; two thighs connected to the same pelvis and knees; both feet on the floor. Exactly one left and one right hand rest separately on their corresponding thighs, palms down, and stay there: no typing or reaching for controls. Each hand connects continuously through wrist, elbow and shoulder to this one person. The person is in FRONT of the chair back. Never film a face through a foreground chair back or hide the entire head and torso while leaving orphan trouser legs. Keep a visible gap between torso and desktop; armrests remain outside the front desk edge and never enter the desktop.
+Locked side view from the person's right, making side profile, shoulder, torso and seat depth readable; never orbit behind or film through the chair back.
 
 ONLY ACTION:
 
-She types briefly. No new monitor, drawer, seamless replacement tabletop or changed foot shape.
+Only one tiny glance/head nod toward the screen; hands, torso, chair and desk stay in place.
 
 END STATE:
 
-Seated work on the exact product.
+The same complete seated pose, with both hands still on their thighs; no reach or rising.
 
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
 
 ## 镜头 4 · 9–12 秒
-后期德语字幕：Deine passende Höhe.
+后期德语字幕：Deine Höhe.
 ### 首帧提示词
 ```text
 @image1 @image2
 
 Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
+Production recipe FV-05, shot 4 START FRAME.
+
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
 COLUMN ASSEMBLY:
@@ -1936,18 +2412,25 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One real-scale modest German bedroom. The SAME white 120 x 60 cm four-panel Economy is already installed beside a bed. Keep the doorway, bed, chair exit space and walking path fixed. One slim laptop only.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: only ONE right hand belonging to the same adult, continuously connected to one wrist and forearm entering from the worker-side edge of the frame. No second hand, extra forearm, face or torso in this crop. The left hand stays on the lap, entirely outside the crop. The right hand has five fingers. Keep the start-frame grip and perform only the specified small local action; palm, wrist and forearm stay connected with unchanged lengths and no regripping. No hand emerges through the desktop, chair or keypad. If contact is occluded, repair the start-frame camera position instead of inventing another hand.
+Locked contextual close-up showing the real component, its mounting edge/surface and contact point. No push-in, orbit or extreme wide angle.
 
 THIS SHOT START FRAME:
 
-Contextual close-up of the front-right long edge. Her RIGHT index finger is beside the original keypad, with the original tabletop corner visible.
+The exact SKU's original control remains at its original user-right front LONG edge. Only one right hand and connected wrist/forearm are visible. Its index fingertip is already at one existing button; the other four fingers rest curled. Keep the tabletop corner and contact point readable.
 
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -1965,22 +2448,29 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One real-scale modest German bedroom. The SAME white 120 x 60 cm four-panel Economy is already installed beside a bed. Keep the doorway, bed, chair exit space and walking path fixed. One slim laptop only.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: only ONE right hand belonging to the same adult, continuously connected to one wrist and forearm entering from the worker-side edge of the frame. No second hand, extra forearm, face or torso in this crop. The left hand stays on the lap, entirely outside the crop. The right hand has five fingers. Keep the start-frame grip and perform only the specified small local action; palm, wrist and forearm stay connected with unchanged lengths and no regripping. No hand emerges through the desktop, chair or keypad. If contact is occluded, repair the start-frame camera position instead of inventing another hand.
+Locked contextual close-up showing the real component, its mounting edge/surface and contact point. No push-in, orbit or extreme wide angle.
 
 ONLY ACTION:
 
-Press the existing UP button once; show only a small height adjustment if the legs are in frame. No full-stroke lift in three seconds and no relocation to the short edge.
+Only the right index finger makes one tiny press and stops. Wrist, forearm and other fingers keep their positions. The desk remains stationary throughout; this shot establishes the control location, with lifting in a separate empty shot.
 
 END STATE:
 
-Original keypad in the original mounting place.
+Still one continuously attached right hand; original keypad, edge and desk height unchanged.
 
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -1993,6 +2483,8 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 
 Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
+Production recipe FV-05, shot 5 START FRAME.
+
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
 COLUMN ASSEMBLY:
@@ -2001,18 +2493,25 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One real-scale modest German bedroom. The SAME white 120 x 60 cm four-panel Economy is already installed beside a bed. Keep the doorway, bed, chair exit space and walking path fixed. One slim laptop only.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the complete product and floor feet readable. A very small straight push-in only; no orbit or perspective switch.
 
 THIS SHOT START FRAME:
 
-Return to the doorway-side wide view at the same checked room layout. The woman stands beside the chair; no claim that the unchanged seated-height desk is already at standing-work height.
+The exact product and the same specified chair are already staged. Full product, empty scene, furniture and props still.
 
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -2030,22 +2529,29 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One real-scale modest German bedroom. The SAME white 120 x 60 cm four-panel Economy is already installed beside a bed. Keep the doorway, bed, chair exit space and walking path fixed. One slim laptop only.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the complete product and floor feet readable. A very small straight push-in only; no orbit or perspective switch.
 
 ONLY ACTION:
 
-Hold the desk, chair clearance and walkway in frame. No scale change, mirrored room or generated dimension graphic.
+Only the camera makes a tiny straight push-in; product, chair and props remain still.
 
 END STATE:
 
-Stable room-and-product hero.
+The same complete product and empty chair; room for an editor-added CTA.
 
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -2056,8 +2562,10 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 - 倒装立柱粗管在上、细管在下；节数、立柱数量、脚型正确；底脚贴地。
 - 升降时桌面与上部套管一起移动；桌面水平；没有拉伸变形或全行程瞬移。
 - G2 只有原装一个抽屉；L 桌保留原朝向及三根立柱；未确认结构不补画。
-- 对比首帧、运动中间帧和尾帧。发现错款、手控器移位或桌腿翻转，退回首帧或缩小动作后重做，不进入投放。
+- 对比首帧、运动中间帧和尾帧。发现多手、断身、人体消失、穿桌板/椅架、错款或结构变形，整段退回重做；不通过模糊、淡化或裁切掩盖错误，不进入投放。
 - 搭配椅是指定灰色高背款，独立头枕、腰靠、扶手与五爪底座正确；image2 不是首帧，image3 才是当前镜头首帧。
+- 人物镜头恰好一个完整成年人，双手分放对应大腿；椅背在身后，骨盆由坐垫承托。不能从椅背后拍正脸，不能只剩椅下裤腿。
+- 手部特写只见一只右手与连续手腕前臂；无人镜头连残留的手、腿、脚与人影也不能有。
 
 制作边界：提示词与参考图可降低结构错误，不能保证生成模型每帧正确。首帧与成片都要人工核对；错款画面不进入投放。
 
@@ -2073,10 +2581,10 @@ SKU：G-HAD241222B；variant：44533451587850
 
 ## 使用顺序
 1. 先下载主商品原图与灰色高背办公椅原图并实际上传，分别作为 image1、image2。只粘贴商品链接不会绑定图片。
-2. 先复制每镜头的“首帧提示词”制作单张 9:16 首帧；逐张核对产品。这里提供的是提示词，未声称已生成首帧。
+2. 先复制每镜头的“首帧提示词”制作单张 9:16 首帧；先验收人数、手数、肩肘腕连接、椅背在身后及桌沿间隙，再核对产品。错误首帧必须重做，不能交给视频模型修复。
 3. 推荐分镜生成：每镜头开独立任务，先上传主商品原图作为 image1、搭配椅原图作为 image2，再上传本镜头已验收首帧作为 image3。image2 不再指首帧，不要上传另一镜头的首帧。
-4. 总提示词为可选整条模式，仅在当前 Grok 支持所需时长与多镜头时使用；image1 是主商品原图，image2 是固定灰色搭配椅原图。界面不识别 @image 标签时，用附件选择功能手动指定图片。
-5. 每镜头只做一个小动作。升降只展示一小段行程；坐、站高度用已校对首帧在剪辑点连接。字幕、口播、品牌和促销信息后期添加。
+4. 15 秒总提示词现在是剪辑计划，不直接整段交给 Grok 连续生成。每镜头只复制本段 3 秒图生视频指令；image1 主商品、image2 搭配椅、image3 当前首帧。界面不识别标签时手动指定附件。
+5. 每段只做一个小动作：人物镜头桌椅固定，手部特写仅一只右手，升降镜头无人且椅子在运动区外。不生成入座、起身或转身过程；用硬切连接已完成状态。字幕、口播、品牌和促销信息后期添加。
 
 ## 固定产品结构
 - 白色 120 × 60 cm；四片拼接桌板，保留原图拼缝。
@@ -2085,9 +2593,9 @@ SKU：G-HAD241222B；variant：44533451587850
 - 仅一个黑色外挂手控器：入座者右手侧、靠人的前长边下方；不是右侧短边。
 核验边界：已对照同一变体官方主图确认两节倒装。
 
-## 15 秒总提示词（纯英文；字幕后期加）
+## 15 秒剪辑计划（纯英文；不要整段连续生成）
 ```text
-Production recipe FV-06. Create a 15-second vertical 9:16 product video, five 3-second shots. Use the ACTUALLY UPLOADED @image1 as the exact official product identity reference. A URL or product name alone is not a visual reference. Product fidelity has priority over camera movement and style.
+Production recipe FV-06. EDIT PLAN ONLY: five INDEPENDENT 3-second vertical 9:16 clips, joined into a 15-second ad. Do NOT submit this complete plan as a single continuous Grok generation. Make and approve each start still, then copy only that shot's image-to-video prompt. Actually upload @image1 as the official product reference and @image2 as the companion chair reference; each separate clip also uses its own approved @image3.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -2097,50 +2605,71 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home office used for gaming and everyday work. One laptop, one mouse and the same chair. Same soft left-side window light, same woman and same four-panel desk throughout. No added RGB parts on the desk.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
 
-EDITING: Use a clean cut between shots. A new checked height may begin at a cut; never morph a low desk into a high desk in one instant. Do not animate a full lift within three seconds.
+EDITING: HARD CUTS between already-established poses. Never animate sitting down, rising from the chair, turning across the desk, or a full sit-to-stand lift.
 
 SHOT 1, 0-3s: @image1 @image2
-START: Worker-side medium-wide view. The woman is seated at the laptop with her RIGHT hand on the mouse. Preserve both original columns and the single keypad on her anatomical right.
-ACTION: She finishes a short mouse movement and takes her hand off the mouse. The desk does not move.
-END: Same product and seated configuration.
+SHOT CAST AND SPATIAL LOCK:
+CAST: exactly ONE anatomically complete seated adult, already seated in the start frame. Pelvis supported by the seat; chair back behind the torso; chest facing the desk; two thighs connected to the same pelvis and knees; both feet on the floor. Exactly one left and one right hand rest separately on their corresponding thighs, palms down, and stay there: no typing or reaching for controls. Each hand connects continuously through wrist, elbow and shoulder to this one person. The person is in FRONT of the chair back. Never film a face through a foreground chair back or hide the entire head and torso while leaving orphan trouser legs. Keep a visible gap between torso and desktop; armrests remain outside the front desk edge and never enter the desktop.
+Locked side view from the person's right, making side profile, shoulder, torso and seat depth readable; never orbit behind or film through the chair back.
+START: The same adult is already seated facing the laptop at an approved seated desk height. Hands rest separately on thighs; armrests are not pushed under the desktop.
+ACTION: Only one tiny glance/head nod toward the screen; hands, torso, chair and desk stay in place.
+END: The same complete seated pose, with both hands still on their thighs; no reach or rising.
 
 SHOT 2, 3-6s: @image1 @image2
-START: Contextual view of the actual front-right long edge and one hanging keypad. Her RIGHT index finger approaches the original UP button.
-ACTION: Hold that one existing UP button once. Do not add a remote control, side keypad, phone app or new memory button.
-END: Right hand at the same original controller.
+SHOT CAST AND SPATIAL LOCK:
+CAST: only ONE right hand belonging to the same adult, continuously connected to one wrist and forearm entering from the worker-side edge of the frame. No second hand, extra forearm, face or torso in this crop. The left hand stays on the lap, entirely outside the crop. The right hand has five fingers. Keep the start-frame grip and perform only the specified small local action; palm, wrist and forearm stay connected with unchanged lengths and no regripping. No hand emerges through the desktop, chair or keypad. If contact is occluded, repair the start-frame camera position instead of inventing another hand.
+Locked contextual close-up showing the real component, its mounting edge/surface and contact point. No push-in, orbit or extreme wide angle.
+START: The exact SKU's original control remains at its original user-right front LONG edge. Only one right hand and connected wrist/forearm are visible. Its index fingertip is already at one existing button; the other four fingers rest curled. Keep the tabletop corner and contact point readable.
+ACTION: Only the right index finger makes one tiny press and stops. Wrist, forearm and other fingers keep their positions. The desk remains stationary throughout; this shot establishes the control location, with lifting in a separate empty shot.
+END: Still one continuously attached right hand; original keypad, edge and desk height unchanged.
 
 SHOT 3, 6-9s: @image1 @image2
-START: Fixed worker-side view with both whole inverted columns and both feet visible. The woman is clear of the chair and her right hand remains at the same controller.
-ACTION: Show a small partial upward adjustment only. Thick upper sleeves move upward with the level tabletop; thin lower sections and floor feet remain anchored. No instant full lift.
-END: Stop after a few centimeters; a later edit supplies the checked standing-height state.
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Locked camera and focal length; no push, zoom or orbit.
+The ONLY motion is verified small desk travel. No human enters the motion zone; no button-operating hand is shown.
+START: Empty lifting shot with level top, both complete inverted columns and floor feet readable. Chair is already clear of the lifting path; armrests have clearance from the top and frame. Original cable has slack; feet are grounded.
+ACTION: Only a SMALL partial lift of a few centimeters: the wider upper sleeves and level desktop move upward together, revealing more of the anchored narrow lower sections. Feet and camera fixed; no person or hand; chair still. No full sit-to-stand transition in three seconds.
+END: The same desk after the small lift, with cable slack, feet and chair unchanged.
 
 SHOT 4, 9-12s: @image1 @image2
-START: At an EDIT CUT, the same product is already at a separately checked standing height with longer visible lower thin sections. Same woman, room, controller, four-panel seams and laptop.
-ACTION: She stands and types one short response on the laptop. The desk remains stationary and horizontal.
-END: Standing task on the same furniture.
+SHOT CAST AND SPATIAL LOCK:
+CAST: exactly ONE anatomically complete seated adult, already seated in the start frame. Pelvis supported by the seat; chair back behind the torso; chest facing the desk; two thighs connected to the same pelvis and knees; both feet on the floor. Exactly one left and one right hand rest separately on their corresponding thighs, palms down, and stay there: no typing or reaching for controls. Each hand connects continuously through wrist, elbow and shoulder to this one person. The person is in FRONT of the chair back. Never film a face through a foreground chair back or hide the entire head and torso while leaving orphan trouser legs. Keep a visible gap between torso and desktop; armrests remain outside the front desk edge and never enter the desktop.
+Locked side view from the person's right, making side profile, shoulder, torso and seat depth readable; never orbit behind or film through the chair back.
+START: The same adult is already seated facing the laptop at an approved seated desk height. Hands rest separately on thighs; armrests are not pushed under the desktop.
+ACTION: Only one tiny glance/head nod toward the screen; hands, torso, chair and desk stay in place.
+END: The same complete seated pose, with both hands still on their thighs; no reach or rising.
 
 SHOT 5, 12-15s: @image1 @image2
-START: Wide hero of the same standing configuration from the worker-side half of the room. Both feet and the correct right-hand controller are readable.
-ACTION: Hold with subtle natural movement only. Do not generate a new desk model, extra controller, captions or promotional badges.
-END: Stable product-and-person finish.
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the complete product and floor feet readable. A very small straight push-in only; no orbit or perspective switch.
+START: The exact product and the same specified chair are already staged. Full product, empty scene, furniture and props still.
+ACTION: Only the camera makes a tiny straight push-in; product, chair and props remain still.
+END: The same complete product and empty chair; room for an editor-added CTA.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
 
 ## 镜头 1 · 0–3 秒
-后期德语字幕：Zum Zocken sitzen.
+后期德语字幕：Für deine Gaming-Pause.
 ### 首帧提示词
 ```text
 @image1 @image2
 
 Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
+
+Production recipe FV-06, shot 1 START FRAME.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -2150,18 +2679,25 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home office used for gaming and everyday work. One laptop, one mouse and the same chair. Same soft left-side window light, same woman and same four-panel desk throughout. No added RGB parts on the desk.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: exactly ONE anatomically complete seated adult, already seated in the start frame. Pelvis supported by the seat; chair back behind the torso; chest facing the desk; two thighs connected to the same pelvis and knees; both feet on the floor. Exactly one left and one right hand rest separately on their corresponding thighs, palms down, and stay there: no typing or reaching for controls. Each hand connects continuously through wrist, elbow and shoulder to this one person. The person is in FRONT of the chair back. Never film a face through a foreground chair back or hide the entire head and torso while leaving orphan trouser legs. Keep a visible gap between torso and desktop; armrests remain outside the front desk edge and never enter the desktop.
+Locked side view from the person's right, making side profile, shoulder, torso and seat depth readable; never orbit behind or film through the chair back.
 
 THIS SHOT START FRAME:
 
-Worker-side medium-wide view. The woman is seated at the laptop with her RIGHT hand on the mouse. Preserve both original columns and the single keypad on her anatomical right.
+The same adult is already seated facing the laptop at an approved seated desk height. Hands rest separately on thighs; armrests are not pushed under the desktop.
 
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -2179,33 +2715,42 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home office used for gaming and everyday work. One laptop, one mouse and the same chair. Same soft left-side window light, same woman and same four-panel desk throughout. No added RGB parts on the desk.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: exactly ONE anatomically complete seated adult, already seated in the start frame. Pelvis supported by the seat; chair back behind the torso; chest facing the desk; two thighs connected to the same pelvis and knees; both feet on the floor. Exactly one left and one right hand rest separately on their corresponding thighs, palms down, and stay there: no typing or reaching for controls. Each hand connects continuously through wrist, elbow and shoulder to this one person. The person is in FRONT of the chair back. Never film a face through a foreground chair back or hide the entire head and torso while leaving orphan trouser legs. Keep a visible gap between torso and desktop; armrests remain outside the front desk edge and never enter the desktop.
+Locked side view from the person's right, making side profile, shoulder, torso and seat depth readable; never orbit behind or film through the chair back.
 
 ONLY ACTION:
 
-She finishes a short mouse movement and takes her hand off the mouse. The desk does not move.
+Only one tiny glance/head nod toward the screen; hands, torso, chair and desk stay in place.
 
 END STATE:
 
-Same product and seated configuration.
+The same complete seated pose, with both hands still on their thighs; no reach or rising.
 
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
 
 ## 镜头 2 · 3–6 秒
-后期德语字幕：Deine Höhe auf Knopfdruck.
+后期德语字幕：Deine Höhe.
 ### 首帧提示词
 ```text
 @image1 @image2
 
 Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
+
+Production recipe FV-06, shot 2 START FRAME.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -2215,18 +2760,25 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home office used for gaming and everyday work. One laptop, one mouse and the same chair. Same soft left-side window light, same woman and same four-panel desk throughout. No added RGB parts on the desk.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: only ONE right hand belonging to the same adult, continuously connected to one wrist and forearm entering from the worker-side edge of the frame. No second hand, extra forearm, face or torso in this crop. The left hand stays on the lap, entirely outside the crop. The right hand has five fingers. Keep the start-frame grip and perform only the specified small local action; palm, wrist and forearm stay connected with unchanged lengths and no regripping. No hand emerges through the desktop, chair or keypad. If contact is occluded, repair the start-frame camera position instead of inventing another hand.
+Locked contextual close-up showing the real component, its mounting edge/surface and contact point. No push-in, orbit or extreme wide angle.
 
 THIS SHOT START FRAME:
 
-Contextual view of the actual front-right long edge and one hanging keypad. Her RIGHT index finger approaches the original UP button.
+The exact SKU's original control remains at its original user-right front LONG edge. Only one right hand and connected wrist/forearm are visible. Its index fingertip is already at one existing button; the other four fingers rest curled. Keep the tabletop corner and contact point readable.
 
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -2244,33 +2796,42 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home office used for gaming and everyday work. One laptop, one mouse and the same chair. Same soft left-side window light, same woman and same four-panel desk throughout. No added RGB parts on the desk.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: only ONE right hand belonging to the same adult, continuously connected to one wrist and forearm entering from the worker-side edge of the frame. No second hand, extra forearm, face or torso in this crop. The left hand stays on the lap, entirely outside the crop. The right hand has five fingers. Keep the start-frame grip and perform only the specified small local action; palm, wrist and forearm stay connected with unchanged lengths and no regripping. No hand emerges through the desktop, chair or keypad. If contact is occluded, repair the start-frame camera position instead of inventing another hand.
+Locked contextual close-up showing the real component, its mounting edge/surface and contact point. No push-in, orbit or extreme wide angle.
 
 ONLY ACTION:
 
-Hold that one existing UP button once. Do not add a remote control, side keypad, phone app or new memory button.
+Only the right index finger makes one tiny press and stops. Wrist, forearm and other fingers keep their positions. The desk remains stationary throughout; this shot establishes the control location, with lifting in a separate empty shot.
 
 END STATE:
 
-Right hand at the same original controller.
+Still one continuously attached right hand; original keypad, edge and desk height unchanged.
 
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
 
 ## 镜头 3 · 6–9 秒
-后期德语字幕：Für den nächsten Task aufstehen.
+后期德语字幕：Passend eingestellt.
 ### 首帧提示词
 ```text
 @image1 @image2
 
 Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
+
+Production recipe FV-06, shot 3 START FRAME.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -2280,18 +2841,26 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home office used for gaming and everyday work. One laptop, one mouse and the same chair. Same soft left-side window light, same woman and same four-panel desk throughout. No added RGB parts on the desk.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Locked camera and focal length; no push, zoom or orbit.
+The ONLY motion is verified small desk travel. No human enters the motion zone; no button-operating hand is shown.
 
 THIS SHOT START FRAME:
 
-Fixed worker-side view with both whole inverted columns and both feet visible. The woman is clear of the chair and her right hand remains at the same controller.
+Empty lifting shot with level top, both complete inverted columns and floor feet readable. Chair is already clear of the lifting path; armrests have clearance from the top and frame. Original cable has slack; feet are grounded.
 
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -2309,33 +2878,43 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home office used for gaming and everyday work. One laptop, one mouse and the same chair. Same soft left-side window light, same woman and same four-panel desk throughout. No added RGB parts on the desk.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Locked camera and focal length; no push, zoom or orbit.
+The ONLY motion is verified small desk travel. No human enters the motion zone; no button-operating hand is shown.
 
 ONLY ACTION:
 
-Show a small partial upward adjustment only. Thick upper sleeves move upward with the level tabletop; thin lower sections and floor feet remain anchored. No instant full lift.
+Only a SMALL partial lift of a few centimeters: the wider upper sleeves and level desktop move upward together, revealing more of the anchored narrow lower sections. Feet and camera fixed; no person or hand; chair still. No full sit-to-stand transition in three seconds.
 
 END STATE:
 
-Stop after a few centimeters; a later edit supplies the checked standing-height state.
+The same desk after the small lift, with cable slack, feet and chair unchanged.
 
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
 
 ## 镜头 4 · 9–12 秒
-后期德语字幕：Ein Tisch für beides.
+后期德语字幕：Für Arbeit und Freizeit.
 ### 首帧提示词
 ```text
 @image1 @image2
 
 Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
+
+Production recipe FV-06, shot 4 START FRAME.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -2345,18 +2924,25 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home office used for gaming and everyday work. One laptop, one mouse and the same chair. Same soft left-side window light, same woman and same four-panel desk throughout. No added RGB parts on the desk.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: exactly ONE anatomically complete seated adult, already seated in the start frame. Pelvis supported by the seat; chair back behind the torso; chest facing the desk; two thighs connected to the same pelvis and knees; both feet on the floor. Exactly one left and one right hand rest separately on their corresponding thighs, palms down, and stay there: no typing or reaching for controls. Each hand connects continuously through wrist, elbow and shoulder to this one person. The person is in FRONT of the chair back. Never film a face through a foreground chair back or hide the entire head and torso while leaving orphan trouser legs. Keep a visible gap between torso and desktop; armrests remain outside the front desk edge and never enter the desktop.
+Locked side view from the person's right, making side profile, shoulder, torso and seat depth readable; never orbit behind or film through the chair back.
 
 THIS SHOT START FRAME:
 
-At an EDIT CUT, the same product is already at a separately checked standing height with longer visible lower thin sections. Same woman, room, controller, four-panel seams and laptop.
+The same adult is already seated facing the laptop at an approved seated desk height. Hands rest separately on thighs; armrests are not pushed under the desktop.
 
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -2374,33 +2960,42 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home office used for gaming and everyday work. One laptop, one mouse and the same chair. Same soft left-side window light, same woman and same four-panel desk throughout. No added RGB parts on the desk.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: exactly ONE anatomically complete seated adult, already seated in the start frame. Pelvis supported by the seat; chair back behind the torso; chest facing the desk; two thighs connected to the same pelvis and knees; both feet on the floor. Exactly one left and one right hand rest separately on their corresponding thighs, palms down, and stay there: no typing or reaching for controls. Each hand connects continuously through wrist, elbow and shoulder to this one person. The person is in FRONT of the chair back. Never film a face through a foreground chair back or hide the entire head and torso while leaving orphan trouser legs. Keep a visible gap between torso and desktop; armrests remain outside the front desk edge and never enter the desktop.
+Locked side view from the person's right, making side profile, shoulder, torso and seat depth readable; never orbit behind or film through the chair back.
 
 ONLY ACTION:
 
-She stands and types one short response on the laptop. The desk remains stationary and horizontal.
+Only one tiny glance/head nod toward the screen; hands, torso, chair and desk stay in place.
 
 END STATE:
 
-Standing task on the same furniture.
+The same complete seated pose, with both hands still on their thighs; no reach or rising.
 
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
 
 ## 镜头 5 · 12–15 秒
-后期德语字幕：Entdecke deinen Furniwell Schreibtisch.
+后期德语字幕：Jetzt bei Furniwell entdecken.
 ### 首帧提示词
 ```text
 @image1 @image2
 
 Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
+
+Production recipe FV-06, shot 5 START FRAME.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -2410,18 +3005,25 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home office used for gaming and everyday work. One laptop, one mouse and the same chair. Same soft left-side window light, same woman and same four-panel desk throughout. No added RGB parts on the desk.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the complete product and floor feet readable. A very small straight push-in only; no orbit or perspective switch.
 
 THIS SHOT START FRAME:
 
-Wide hero of the same standing configuration from the worker-side half of the room. Both feet and the correct right-hand controller are readable.
+The exact product and the same specified chair are already staged. Full product, empty scene, furniture and props still.
 
-Freeze the beginning of the action; do not show a motion trail, duplicate pose or simultaneous before/after states.
+Freeze this single start pose; do not include the action or end state. No motion trail, duplicate pose or simultaneous before/after states. Reject a faulty anatomical start frame before video generation.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -2439,22 +3041,29 @@ CONTROLLER LOCATION:
 One black hanging keypad BELOW the front long edge at the seated worker's RIGHT. For a button shot, the worker uses her RIGHT index finger and approaches from her own side of the desk. Keep the real front-right tabletop corner and a portion of the long edge in view; never mount the keypad on the short end.
 ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK means the opposite edge. RIGHT always means her anatomical right when she sits facing the work surface, never the camera's right. The keypad stays fixed at that physical right-front working position across cuts. Keep cameras on the worker-facing side of the desk; no camera crossing behind the back edge and no horizontal mirroring. If a reverse view is ever used, her physical right may appear on screen-left; do not relocate the controller to compensate.
 CONTINUITY:
-Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
+In person shots ONLY: the same adult woman, about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Empty shots have zero people or body parts. One-hand close-ups show only her right hand and its connected wrist/forearm. Keep the same room, props and light direction across hard cuts.
 One German home office used for gaming and everyday work. One laptop, one mouse and the same chair. Same soft left-side window light, same woman and same four-panel desk throughout. No added RGB parts on the desk.
 COMPANION CHAIR — @image2:
 Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
 Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
 Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
+HUMAN / CONTACT GEOMETRY: establish physical staging before motion. The same adult appears ONLY in shots explicitly marked as a person shot. Empty shots do not inherit body parts from the previous shot. Start each clip from its own approved still and join clips with HARD CUTS. Never combine sitting down, standing up, turning, operating controls and lifting into one continuous action. Lock the camera for human-contact shots. No human is present during desk motion. Camera-only shots have no hand or furniture motion. Body, clothing, desktop and chair are separate opaque solids: resolve occlusion by real depth, never transparency, melting or disappearance.
+
+SHOT CAST AND SPATIAL LOCK:
+CAST: ZERO people, ZERO hands and ZERO feet. The chair is fully empty; no trouser legs, shoes or human silhouette beneath it. Cut directly to this approved empty start frame; never dissolve a person away within the clip.
+Keep the complete product and floor feet readable. A very small straight push-in only; no orbit or perspective switch.
 
 ONLY ACTION:
 
-Hold with subtle natural movement only. Do not generate a new desk model, extra controller, captions or promotional badges.
+Only the camera makes a tiny straight push-in; product, chair and props remain still.
 
 END STATE:
 
-Stable product-and-person finish.
+The same complete product and empty chair; room for an editor-added CTA.
 
-Keep camera motion minimal. No internal cut, orbit or unrequested action. Animate only the stated parts; preserve everything else.
+No internal cut, orbit or unrequested action. Use ONLY the camera or body motion specified for this shot, never both. Preserve everything else.
+
+START-FRAME AND CLIP ACCEPTANCE: before animation, check actor/hand count, shoulder-elbow-wrist continuity, pelvis supported by seat, chair back behind the person, and clearance to desktop and armrests. Hand details contain only one right hand; empty shots have no leftover legs or feet. Reject an invalid start frame before animation; do not ask the video model to repair it. Inspect beginning, middle of action and end of each clip. Extra hands, detached torso, intersections or disappearing body mean reject the whole clip and regenerate with less motion or retain the approved still. Blurring, fading or cropping the defect is not a repair. Prompts reduce risk but do not guarantee every generated frame.
 
 HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end, second controller, ordinary columns with wider lower tubes, changed stage count, floating feet, bending/tilting/elastic desktop, extra drawer, extra leg, disappearing cable, unsupported accessory. No generated captions, voice-over, music, promo badge or brand lettering. Add German subtitles and branding in editing. If geometry cannot be kept, reduce the action or retain the approved still; do not redesign the product.
 ```
@@ -2465,7 +3074,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 - 倒装立柱粗管在上、细管在下；节数、立柱数量、脚型正确；底脚贴地。
 - 升降时桌面与上部套管一起移动；桌面水平；没有拉伸变形或全行程瞬移。
 - G2 只有原装一个抽屉；L 桌保留原朝向及三根立柱；未确认结构不补画。
-- 对比首帧、运动中间帧和尾帧。发现错款、手控器移位或桌腿翻转，退回首帧或缩小动作后重做，不进入投放。
+- 对比首帧、运动中间帧和尾帧。发现多手、断身、人体消失、穿桌板/椅架、错款或结构变形，整段退回重做；不通过模糊、淡化或裁切掩盖错误，不进入投放。
 - 搭配椅是指定灰色高背款，独立头枕、腰靠、扶手与五爪底座正确；image2 不是首帧，image3 才是当前镜头首帧。
+- 人物镜头恰好一个完整成年人，双手分放对应大腿；椅背在身后，骨盆由坐垫承托。不能从椅背后拍正脸，不能只剩椅下裤腿。
+- 手部特写只见一只右手与连续手腕前臂；无人镜头连残留的手、腿、脚与人影也不能有。
 
 制作边界：提示词与参考图可降低结构错误，不能保证生成模型每帧正确。首帧与成片都要人工核对；错款画面不进入投放。
