@@ -1,39 +1,36 @@
 # Furniwell Grok 产品一致性提示词使用指南
 
+更新：2026-10-29（北京时间）。固定视频简报新增 Furniwell 灰色高背办公椅 G-OCNC23-0240-2；更换款式和颜色请使用网页的中文 Prompt 生成区。
 
+附件顺序：image1 主商品原图；image2 搭配椅原图；image3 当前独立镜头已验收首帧。链接不等于已上传附件。
 
-更新：2026-10-28（北京时间）。研究样本仍为 2026-10-27 快照。
-
-
-
-1. 先下载下方同一 SKU 的官网原图并实际上传。只粘贴商品链接不会把图片绑定给 Grok。
+1. 先下载主商品原图与灰色高背办公椅原图并实际上传，分别作为 image1、image2。只粘贴商品链接不会绑定图片。
 
 2. 先复制每镜头的“首帧提示词”制作单张 9:16 首帧；逐张核对产品。这里提供的是提示词，未声称已生成首帧。
 
-3. 推荐分镜生成：每镜头开独立任务，先上传官网原图作为 image1，再上传本镜头已验收首帧作为 image2，使用该镜头图生视频提示词。不要把另一镜头首帧放入 image2。
+3. 推荐分镜生成：每镜头开独立任务，先上传主商品原图作为 image1、搭配椅原图作为 image2，再上传本镜头已验收首帧作为 image3。image2 不再指首帧，不要上传另一镜头的首帧。
 
-4. 总提示词为可选整条模式，仅在当前 Grok 支持所需时长与多镜头时使用；附件 image1 仍是同一 SKU 官网原图。界面不识别 @image 标签时，用附件选择功能手动指定图片。
+4. 总提示词为可选整条模式，仅在当前 Grok 支持所需时长与多镜头时使用；image1 是主商品原图，image2 是固定灰色搭配椅原图。界面不识别 @image 标签时，用附件选择功能手动指定图片。
 
 5. 每镜头只做一个小动作。升降只展示一小段行程；坐、站高度用已校对首帧在剪辑点连接。字幕、口播、品牌和促销信息后期添加。
 
-
-
-关键定义：前＝靠人的工作长边；右＝入座者自己的右手侧。倒装两节立柱＝粗外套管在上、细内管在下并连接底脚。G2 是内嵌控制面板；Economy 是外挂控制器。
-
-
+关键定义：前＝靠人的工作长边；右＝入座者自己的右手侧。倒装两节立柱＝粗管在上、细管在下。主商品与搭配椅分别锁定，椅子不随桌面升降，不推断为随货套装。
 
 # FV-01 · 坐着也要适合自己的高度 · Grok 产品锁定版
-更新日期：2026-10-28（北京时间）；研究样本日期仍为 2026-10-27。
+更新日期：2026-10-29（北京时间）；研究样本日期仍为 2026-10-27。
 固定产品：Economy 白色四拼桌板 120 × 60 cm
 SKU：G-HAD241222B；variant：44533451587850
 商品：https://furniwell.de/products/economy-elektrisch-hohenverstellbarer-schreibtisch?variant=44533451587850
-官网原图：https://cdn.shopify.com/s/files/1/0580/4615/2882/files/EconomyElektrischHohenverstellbarerSchreibtisch-sku_1.jpg?v=1764671992
+官网原图 / image1：https://cdn.shopify.com/s/files/1/0580/4615/2882/files/EconomyElektrischHohenverstellbarerSchreibtisch-sku_1.jpg?v=1764671992
+搭配椅 / image2：G-OCNC23-0240-2；https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+椅子官网原图：https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+每镜头首帧作为 image3；搭配椅单独销售。更换椅子款式或颜色请使用网页的中文 Prompt 生成区。
 
 ## 使用顺序
-1. 先下载下方同一 SKU 的官网原图并实际上传。只粘贴商品链接不会把图片绑定给 Grok。
+1. 先下载主商品原图与灰色高背办公椅原图并实际上传，分别作为 image1、image2。只粘贴商品链接不会绑定图片。
 2. 先复制每镜头的“首帧提示词”制作单张 9:16 首帧；逐张核对产品。这里提供的是提示词，未声称已生成首帧。
-3. 推荐分镜生成：每镜头开独立任务，先上传官网原图作为 image1，再上传本镜头已验收首帧作为 image2，使用该镜头图生视频提示词。不要把另一镜头首帧放入 image2。
-4. 总提示词为可选整条模式，仅在当前 Grok 支持所需时长与多镜头时使用；附件 image1 仍是同一 SKU 官网原图。界面不识别 @image 标签时，用附件选择功能手动指定图片。
+3. 推荐分镜生成：每镜头开独立任务，先上传主商品原图作为 image1、搭配椅原图作为 image2，再上传本镜头已验收首帧作为 image3。image2 不再指首帧，不要上传另一镜头的首帧。
+4. 总提示词为可选整条模式，仅在当前 Grok 支持所需时长与多镜头时使用；image1 是主商品原图，image2 是固定灰色搭配椅原图。界面不识别 @image 标签时，用附件选择功能手动指定图片。
 5. 每镜头只做一个小动作。升降只展示一小段行程；坐、站高度用已校对首帧在剪辑点连接。字幕、口播、品牌和促销信息后期添加。
 
 ## 固定产品结构
@@ -57,30 +54,34 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One modest German home office, soft daylight from a window on the worker's LEFT, pale wall, light oak floor, one centered slim laptop. Keep the same laptop, chair and room throughout.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 EDITING: Use a clean cut between shots. A new checked height may begin at a cut; never morph a low desk into a high desk in one instant. Do not animate a full lift within three seconds.
 
-SHOT 1, 0-3s: @image1
+SHOT 1, 0-3s: @image1 @image2
 START: Medium-wide view from the worker side, slightly toward her left shoulder. The woman is seated facing the laptop. Show the four-panel top, both complete columns, both feet and the keypad at her anatomical right. The desk is stationary.
 ACTION: She settles her forearms naturally and glances toward the right-hand keypad. Do not exaggerate posture or move the desk.
 END: Seated, same desk height and geometry.
 
-SHOT 2, 3-6s: @image1
+SHOT 2, 3-6s: @image1 @image2
 START: Contextual close-up from the worker side of the FRONT-RIGHT working corner. Include the front long edge, its corner and the original hanging keypad. Her RIGHT index finger hovers just above the original UP button.
 ACTION: Her right index finger contacts and holds the existing UP button once. Preserve every button, screw and mounting angle; do not create a new control box.
 END: Finger still on the same UP button; do not show a full height transition.
 
-SHOT 3, 6-9s: @image1
+SHOT 3, 6-9s: @image1 @image2
 START: Fixed low medium-wide view from the same worker side; both inverted columns and both stationary floor feet are visible. Her right hand continues holding the same keypad.
 ACTION: Show only a SMALL partial upward adjustment of a few centimeters over this clip. The tabletop and upper thick sleeves rise together, revealing slightly more of the anchored lower thin tubes. Keep the top level and all props attached to it.
 END: Stop after the small partial lift. Do not cover the whole sit-to-stand range in three seconds.
 
-SHOT 4, 9-12s: @image1
+SHOT 4, 9-12s: @image1 @image2
 START: At an EDIT CUT, the same desk is already at a separately checked standing height. More of the same lower thin tubes is visible. Same room, woman, seams, controller and props. No height-change animation within this shot.
 ACTION: The woman stands naturally and types briefly on the same laptop. The desk and both feet remain still.
 END: Standing work at a stationary desk.
 
-SHOT 5, 12-15s: @image1
+SHOT 5, 12-15s: @image1 @image2
 START: Wide product view from the same worker-side half of the room. Show the entire unchanged desk and both feet; the woman stands beside it without hiding the right-hand keypad.
 ACTION: Hold the frame with only subtle natural human movement. No orbit, furniture transformation, added badge or generated logo.
 END: Clean product hold for an editor-added CTA.
@@ -92,9 +93,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：Dein Tisch muss zu dir passen.
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -106,6 +107,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One modest German home office, soft daylight from a window on the worker's LEFT, pale wall, light oak floor, one centered slim laptop. Keep the same laptop, chair and room throughout.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -117,9 +122,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -131,6 +136,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One modest German home office, soft daylight from a window on the worker's LEFT, pale wall, light oak floor, one centered slim laptop. Keep the same laptop, chair and room throughout.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -149,9 +158,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：Deine Höhe.
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -163,6 +172,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One modest German home office, soft daylight from a window on the worker's LEFT, pale wall, light oak floor, one centered slim laptop. Keep the same laptop, chair and room throughout.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -174,9 +187,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -188,6 +201,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One modest German home office, soft daylight from a window on the worker's LEFT, pale wall, light oak floor, one centered slim laptop. Keep the same laptop, chair and room throughout.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -206,9 +223,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：Sitzen oder stehen.
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -220,6 +237,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One modest German home office, soft daylight from a window on the worker's LEFT, pale wall, light oak floor, one centered slim laptop. Keep the same laptop, chair and room throughout.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -231,9 +252,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -245,6 +266,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One modest German home office, soft daylight from a window on the worker's LEFT, pale wall, light oak floor, one centered slim laptop. Keep the same laptop, chair and room throughout.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -263,9 +288,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：Dein Rhythmus.
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -277,6 +302,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One modest German home office, soft daylight from a window on the worker's LEFT, pale wall, light oak floor, one centered slim laptop. Keep the same laptop, chair and room throughout.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -288,9 +317,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -302,6 +331,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One modest German home office, soft daylight from a window on the worker's LEFT, pale wall, light oak floor, one centered slim laptop. Keep the same laptop, chair and room throughout.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -320,9 +353,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：Jetzt bei Furniwell entdecken.
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -334,6 +367,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One modest German home office, soft daylight from a window on the worker's LEFT, pale wall, light oak floor, one centered slim laptop. Keep the same laptop, chair and room throughout.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -345,9 +382,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -359,6 +396,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One modest German home office, soft daylight from a window on the worker's LEFT, pale wall, light oak floor, one centered slim laptop. Keep the same laptop, chair and room throughout.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -380,21 +421,25 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 - 升降时桌面与上部套管一起移动；桌面水平；没有拉伸变形或全行程瞬移。
 - G2 只有原装一个抽屉；L 桌保留原朝向及三根立柱；未确认结构不补画。
 - 对比首帧、运动中间帧和尾帧。发现错款、手控器移位或桌腿翻转，退回首帧或缩小动作后重做，不进入投放。
+- 搭配椅是指定灰色高背款，独立头枕、腰靠、扶手与五爪底座正确；image2 不是首帧，image3 才是当前镜头首帧。
 
 制作边界：提示词与参考图可降低结构错误，不能保证生成模型每帧正确。首帧与成片都要人工核对；错款画面不进入投放。
 
 # FV-02 · 一边电脑，一边书写 · Grok 产品锁定版
-更新日期：2026-10-28（北京时间）；研究样本日期仍为 2026-10-27。
+更新日期：2026-10-29（北京时间）；研究样本日期仍为 2026-10-27。
 固定产品：L 型黑色桌 160 × 140 × 60 cm
 SKU：G-SDF23-0285-0-B-G-HADT23-0286-BK；variant：45028720378122
 商品：https://furniwell.de/products/l-form-eckschreibtisch-hohenverstellbar-elektrisch-ergonomischer-stehtisch?variant=45028720378122
-官网原图：https://cdn.shopify.com/s/files/1/0580/4615/2882/files/L-Form_Eckschreibtisch_hohenverstellbar_Elektrisch_Ergonomischer_Stehtisch_Schwarz-_Schwarz_abe49266-f00a-463f-b9d4-c0fd761fa9ad.jpg?v=1765536019
+官网原图 / image1：https://cdn.shopify.com/s/files/1/0580/4615/2882/files/L-Form_Eckschreibtisch_hohenverstellbar_Elektrisch_Ergonomischer_Stehtisch_Schwarz-_Schwarz_abe49266-f00a-463f-b9d4-c0fd761fa9ad.jpg?v=1765536019
+搭配椅 / image2：G-OCNC23-0240-2；https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+椅子官网原图：https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+每镜头首帧作为 image3；搭配椅单独销售。更换椅子款式或颜色请使用网页的中文 Prompt 生成区。
 
 ## 使用顺序
-1. 先下载下方同一 SKU 的官网原图并实际上传。只粘贴商品链接不会把图片绑定给 Grok。
+1. 先下载主商品原图与灰色高背办公椅原图并实际上传，分别作为 image1、image2。只粘贴商品链接不会绑定图片。
 2. 先复制每镜头的“首帧提示词”制作单张 9:16 首帧；逐张核对产品。这里提供的是提示词，未声称已生成首帧。
-3. 推荐分镜生成：每镜头开独立任务，先上传官网原图作为 image1，再上传本镜头已验收首帧作为 image2，使用该镜头图生视频提示词。不要把另一镜头首帧放入 image2。
-4. 总提示词为可选整条模式，仅在当前 Grok 支持所需时长与多镜头时使用；附件 image1 仍是同一 SKU 官网原图。界面不识别 @image 标签时，用附件选择功能手动指定图片。
+3. 推荐分镜生成：每镜头开独立任务，先上传主商品原图作为 image1、搭配椅原图作为 image2，再上传本镜头已验收首帧作为 image3。image2 不再指首帧，不要上传另一镜头的首帧。
+4. 总提示词为可选整条模式，仅在当前 Grok 支持所需时长与多镜头时使用；image1 是主商品原图，image2 是固定灰色搭配椅原图。界面不识别 @image 标签时，用附件选择功能手动指定图片。
 5. 每镜头只做一个小动作。升降只展示一小段行程；坐、站高度用已校对首帧在剪辑点连接。字幕、口播、品牌和促销信息后期添加。
 
 ## 固定产品结构
@@ -418,30 +463,34 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home-office corner, soft window light from the worker's LEFT. One laptop on the main wing and an open notebook on the LEFT return. One woman, one chair, one continuous L-shaped desk.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 EDITING: Use a clean cut between shots. A new checked height may begin at a cut; never morph a low desk into a high desk in one instant. Do not animate a full lift within three seconds.
 
-SHOT 1, 0-3s: @image1
+SHOT 1, 0-3s: @image1 @image2
 START: Worker-side three-quarter view of the exact black L desk. The woman is seated at the inner corner facing the main wing; laptop on that wing, notebook on the left return. All furniture already exists.
 ACTION: She brings one sheet toward the laptop area, pauses, then looks toward the available notebook area. No desk or equipment moves.
 END: The same L shape and three feet stay fixed.
 
-SHOT 2, 3-6s: @image1
+SHOT 2, 3-6s: @image1 @image2
 START: Higher worker-side view that keeps BOTH wings, the inner working corner and the unchanged controller location readable.
 ACTION: A very small push-in shows the laptop zone and left writing zone together. No rotation around the desk and no wing swap.
 END: Both work zones remain in place.
 
-SHOT 3, 6-9s: @image1
+SHOT 3, 6-9s: @image1 @image2
 START: Same worker-side view, with the woman beside the left-return notebook and the laptop still on the main wing.
 ACTION: She turns her torso slightly to her LEFT and writes one simple short stroke in the existing notebook. Do not move the laptop, keyboard or either tabletop wing.
 END: Her body changes direction; the product stays unchanged.
 
-SHOT 4, 9-12s: @image1
+SHOT 4, 9-12s: @image1 @image2
 START: Contextual view of the MAIN front long edge, its right corner and the one real keypad on her anatomical RIGHT.
 ACTION: She points to the original keypad with her RIGHT index finger without pressing. All three columns remain stationary; no extension sequence.
 END: Original keypad and L orientation stay fixed.
 
-SHOT 5, 12-15s: @image1
+SHOT 5, 12-15s: @image1 @image2
 START: Wide view from the inner-corner worker side, showing the exact L outline, all three columns and three floor feet.
 ACTION: Hold the product composition. The woman relaxes beside the chair. No height change, orbit, new accessory or mirrored return.
 END: Stable product view with room for a post-production CTA.
@@ -453,9 +502,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：Arbeiten, ohne ständig umzuräumen.
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell black L-shaped electric corner desk, SKU G-SDF23-0285-0-B-G-HADT23-0286-BK, variant 45028720378122, 160 x 140 x 60 cm. Preserve the exact L silhouette, return direction, unequal wing proportions, seams, THREE black lifting columns and THREE original floor feet in @image1. The seated worker occupies the inner working corner and faces the main long working edge; the return is on her LEFT as in the reference. Exactly ONE original hanging keypad remains below the main user-facing long edge on her RIGHT. Never mirror the L, swap its wings, replace it with two separate desks or a two-leg straight desk. No added wheels or drawers.
@@ -467,6 +516,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home-office corner, soft window light from the worker's LEFT. One laptop on the main wing and an open notebook on the LEFT return. One woman, one chair, one continuous L-shaped desk.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -478,9 +531,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell black L-shaped electric corner desk, SKU G-SDF23-0285-0-B-G-HADT23-0286-BK, variant 45028720378122, 160 x 140 x 60 cm. Preserve the exact L silhouette, return direction, unequal wing proportions, seams, THREE black lifting columns and THREE original floor feet in @image1. The seated worker occupies the inner working corner and faces the main long working edge; the return is on her LEFT as in the reference. Exactly ONE original hanging keypad remains below the main user-facing long edge on her RIGHT. Never mirror the L, swap its wings, replace it with two separate desks or a two-leg straight desk. No added wheels or drawers.
@@ -492,6 +545,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home-office corner, soft window light from the worker's LEFT. One laptop on the main wing and an open notebook on the LEFT return. One woman, one chair, one continuous L-shaped desk.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -510,9 +567,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：Zwei Bereiche.
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell black L-shaped electric corner desk, SKU G-SDF23-0285-0-B-G-HADT23-0286-BK, variant 45028720378122, 160 x 140 x 60 cm. Preserve the exact L silhouette, return direction, unequal wing proportions, seams, THREE black lifting columns and THREE original floor feet in @image1. The seated worker occupies the inner working corner and faces the main long working edge; the return is on her LEFT as in the reference. Exactly ONE original hanging keypad remains below the main user-facing long edge on her RIGHT. Never mirror the L, swap its wings, replace it with two separate desks or a two-leg straight desk. No added wheels or drawers.
@@ -524,6 +581,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home-office corner, soft window light from the worker's LEFT. One laptop on the main wing and an open notebook on the LEFT return. One woman, one chair, one continuous L-shaped desk.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -535,9 +596,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell black L-shaped electric corner desk, SKU G-SDF23-0285-0-B-G-HADT23-0286-BK, variant 45028720378122, 160 x 140 x 60 cm. Preserve the exact L silhouette, return direction, unequal wing proportions, seams, THREE black lifting columns and THREE original floor feet in @image1. The seated worker occupies the inner working corner and faces the main long working edge; the return is on her LEFT as in the reference. Exactly ONE original hanging keypad remains below the main user-facing long edge on her RIGHT. Never mirror the L, swap its wings, replace it with two separate desks or a two-leg straight desk. No added wheels or drawers.
@@ -549,6 +610,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home-office corner, soft window light from the worker's LEFT. One laptop on the main wing and an open notebook on the LEFT return. One woman, one chair, one continuous L-shaped desk.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -567,9 +632,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：Ein Arbeitsplatz.
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell black L-shaped electric corner desk, SKU G-SDF23-0285-0-B-G-HADT23-0286-BK, variant 45028720378122, 160 x 140 x 60 cm. Preserve the exact L silhouette, return direction, unequal wing proportions, seams, THREE black lifting columns and THREE original floor feet in @image1. The seated worker occupies the inner working corner and faces the main long working edge; the return is on her LEFT as in the reference. Exactly ONE original hanging keypad remains below the main user-facing long edge on her RIGHT. Never mirror the L, swap its wings, replace it with two separate desks or a two-leg straight desk. No added wheels or drawers.
@@ -581,6 +646,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home-office corner, soft window light from the worker's LEFT. One laptop on the main wing and an open notebook on the LEFT return. One woman, one chair, one continuous L-shaped desk.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -592,9 +661,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell black L-shaped electric corner desk, SKU G-SDF23-0285-0-B-G-HADT23-0286-BK, variant 45028720378122, 160 x 140 x 60 cm. Preserve the exact L silhouette, return direction, unequal wing proportions, seams, THREE black lifting columns and THREE original floor feet in @image1. The seated worker occupies the inner working corner and faces the main long working edge; the return is on her LEFT as in the reference. Exactly ONE original hanging keypad remains below the main user-facing long edge on her RIGHT. Never mirror the L, swap its wings, replace it with two separate desks or a two-leg straight desk. No added wheels or drawers.
@@ -606,6 +675,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home-office corner, soft window light from the worker's LEFT. One laptop on the main wing and an open notebook on the LEFT return. One woman, one chair, one continuous L-shaped desk.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -624,9 +697,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：Alles bleibt an seinem Platz.
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell black L-shaped electric corner desk, SKU G-SDF23-0285-0-B-G-HADT23-0286-BK, variant 45028720378122, 160 x 140 x 60 cm. Preserve the exact L silhouette, return direction, unequal wing proportions, seams, THREE black lifting columns and THREE original floor feet in @image1. The seated worker occupies the inner working corner and faces the main long working edge; the return is on her LEFT as in the reference. Exactly ONE original hanging keypad remains below the main user-facing long edge on her RIGHT. Never mirror the L, swap its wings, replace it with two separate desks or a two-leg straight desk. No added wheels or drawers.
@@ -638,6 +711,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home-office corner, soft window light from the worker's LEFT. One laptop on the main wing and an open notebook on the LEFT return. One woman, one chair, one continuous L-shaped desk.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -649,9 +726,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell black L-shaped electric corner desk, SKU G-SDF23-0285-0-B-G-HADT23-0286-BK, variant 45028720378122, 160 x 140 x 60 cm. Preserve the exact L silhouette, return direction, unequal wing proportions, seams, THREE black lifting columns and THREE original floor feet in @image1. The seated worker occupies the inner working corner and faces the main long working edge; the return is on her LEFT as in the reference. Exactly ONE original hanging keypad remains below the main user-facing long edge on her RIGHT. Never mirror the L, swap its wings, replace it with two separate desks or a two-leg straight desk. No added wheels or drawers.
@@ -663,6 +740,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home-office corner, soft window light from the worker's LEFT. One laptop on the main wing and an open notebook on the LEFT return. One woman, one chair, one continuous L-shaped desk.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -681,9 +762,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：Entdecke deinen Eckschreibtisch.
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell black L-shaped electric corner desk, SKU G-SDF23-0285-0-B-G-HADT23-0286-BK, variant 45028720378122, 160 x 140 x 60 cm. Preserve the exact L silhouette, return direction, unequal wing proportions, seams, THREE black lifting columns and THREE original floor feet in @image1. The seated worker occupies the inner working corner and faces the main long working edge; the return is on her LEFT as in the reference. Exactly ONE original hanging keypad remains below the main user-facing long edge on her RIGHT. Never mirror the L, swap its wings, replace it with two separate desks or a two-leg straight desk. No added wheels or drawers.
@@ -695,6 +776,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home-office corner, soft window light from the worker's LEFT. One laptop on the main wing and an open notebook on the LEFT return. One woman, one chair, one continuous L-shaped desk.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -706,9 +791,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell black L-shaped electric corner desk, SKU G-SDF23-0285-0-B-G-HADT23-0286-BK, variant 45028720378122, 160 x 140 x 60 cm. Preserve the exact L silhouette, return direction, unequal wing proportions, seams, THREE black lifting columns and THREE original floor feet in @image1. The seated worker occupies the inner working corner and faces the main long working edge; the return is on her LEFT as in the reference. Exactly ONE original hanging keypad remains below the main user-facing long edge on her RIGHT. Never mirror the L, swap its wings, replace it with two separate desks or a two-leg straight desk. No added wheels or drawers.
@@ -720,6 +805,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home-office corner, soft window light from the worker's LEFT. One laptop on the main wing and an open notebook on the LEFT return. One woman, one chair, one continuous L-shaped desk.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -741,21 +830,25 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 - 升降时桌面与上部套管一起移动；桌面水平；没有拉伸变形或全行程瞬移。
 - G2 只有原装一个抽屉；L 桌保留原朝向及三根立柱；未确认结构不补画。
 - 对比首帧、运动中间帧和尾帧。发现错款、手控器移位或桌腿翻转，退回首帧或缩小动作后重做，不进入投放。
+- 搭配椅是指定灰色高背款，独立头枕、腰靠、扶手与五爪底座正确；image2 不是首帧，image3 才是当前镜头首帧。
 
 制作边界：提示词与参考图可降低结构错误，不能保证生成模型每帧正确。首帧与成片都要人工核对；错款画面不进入投放。
 
 # FV-03 · 保留线长余量，再让桌子升起来 · Grok 产品锁定版
-更新日期：2026-10-28（北京时间）；研究样本日期仍为 2026-10-27。
+更新日期：2026-10-29（北京时间）；研究样本日期仍为 2026-10-27。
 固定产品：Economy 白色四拼桌板 120 × 60 cm
 SKU：G-HAD241222B；variant：44533451587850
 商品：https://furniwell.de/products/economy-elektrisch-hohenverstellbarer-schreibtisch?variant=44533451587850
-官网原图：https://cdn.shopify.com/s/files/1/0580/4615/2882/files/EconomyElektrischHohenverstellbarerSchreibtisch-sku_1.jpg?v=1764671992
+官网原图 / image1：https://cdn.shopify.com/s/files/1/0580/4615/2882/files/EconomyElektrischHohenverstellbarerSchreibtisch-sku_1.jpg?v=1764671992
+搭配椅 / image2：G-OCNC23-0240-2；https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+椅子官网原图：https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+每镜头首帧作为 image3；搭配椅单独销售。更换椅子款式或颜色请使用网页的中文 Prompt 生成区。
 
 ## 使用顺序
-1. 先下载下方同一 SKU 的官网原图并实际上传。只粘贴商品链接不会把图片绑定给 Grok。
+1. 先下载主商品原图与灰色高背办公椅原图并实际上传，分别作为 image1、image2。只粘贴商品链接不会绑定图片。
 2. 先复制每镜头的“首帧提示词”制作单张 9:16 首帧；逐张核对产品。这里提供的是提示词，未声称已生成首帧。
-3. 推荐分镜生成：每镜头开独立任务，先上传官网原图作为 image1，再上传本镜头已验收首帧作为 image2，使用该镜头图生视频提示词。不要把另一镜头首帧放入 image2。
-4. 总提示词为可选整条模式，仅在当前 Grok 支持所需时长与多镜头时使用；附件 image1 仍是同一 SKU 官网原图。界面不识别 @image 标签时，用附件选择功能手动指定图片。
+3. 推荐分镜生成：每镜头开独立任务，先上传主商品原图作为 image1、搭配椅原图作为 image2，再上传本镜头已验收首帧作为 image3。image2 不再指首帧，不要上传另一镜头的首帧。
+4. 总提示词为可选整条模式，仅在当前 Grok 支持所需时长与多镜头时使用；image1 是主商品原图，image2 是固定灰色搭配椅原图。界面不识别 @image 标签时，用附件选择功能手动指定图片。
 5. 每镜头只做一个小动作。升降只展示一小段行程；坐、站高度用已校对首帧在剪辑点连接。字幕、口播、品牌和促销信息后期添加。
 
 ## 固定产品结构
@@ -779,30 +872,34 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home office, same woman and one laptop. Only the real desk power lead and laptop lead are present. The existing power connection stays connected. No cable tray, magnetic cover or hidden power box is included or invented.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 EDITING: Use a clean cut between shots. A new checked height may begin at a cut; never morph a low desk into a high desk in one instant. Do not animate a full lift within three seconds.
 
-SHOT 1, 0-3s: @image1
+SHOT 1, 0-3s: @image1 @image2
 START: Low worker-side view of both original inverted legs and the real loose power lead. The lead hangs safely with slack and is clear of the telescoping joints.
 ACTION: Make a tiny controlled camera push-in toward the loose lead. The desk remains stationary. No exaggerated tangles or dangerously taut cable.
 END: The original cable and original frame are still visible.
 
-SHOT 2, 3-6s: @image1
+SHOT 2, 3-6s: @image1 @image2
 START: Same low view. Her RIGHT hand is beside the free slack portion of the original lead, away from sockets and moving joints.
 ACTION: She gently arranges the loose length into a broad slack U-loop behind the frame. Do not unplug, shorten, conceal or clamp the cable; do not add an organizer.
 END: A free slack loop remains visible; the electrical connection is unchanged.
 
-SHOT 3, 6-9s: @image1
+SHOT 3, 6-9s: @image1 @image2
 START: Fixed view showing the right-hand original keypad, both inverted columns, both feet and the slack lead together.
 ACTION: Her RIGHT hand holds the original UP button for a small partial lift only. Upper thick sleeves rise with the level desktop; lower thin sections and feet stay anchored. The cable slack changes naturally without tension.
 END: The small adjustment ends with slack still visible.
 
-SHOT 4, 9-12s: @image1
+SHOT 4, 9-12s: @image1 @image2
 START: Same office and identical desk after the small adjustment. Laptop stays on the same part of the four-panel top.
 ACTION: The woman continues a short task at the stationary desk. Do not change the wiring path, add a tray or hide the cord by dissolving it.
 END: A believable, unchanged workspace.
 
-SHOT 5, 12-15s: @image1
+SHOT 5, 12-15s: @image1 @image2
 START: Full desk view with both feet and one unchanged right-hand keypad.
 ACTION: Hold the frame; keep the original visible cable slack. No accessory bundle, included-organizer claim or generated promo text.
 END: Product hero for a separately edited CTA.
@@ -814,9 +911,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：So sieht es unter deinem Schreibtisch aus?
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -828,6 +925,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home office, same woman and one laptop. Only the real desk power lead and laptop lead are present. The existing power connection stays connected. No cable tray, magnetic cover or hidden power box is included or invented.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -839,9 +940,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -853,6 +954,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home office, same woman and one laptop. Only the real desk power lead and laptop lead are present. The existing power connection stays connected. No cable tray, magnetic cover or hidden power box is included or invented.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -871,9 +976,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：Genug Spielraum für deine Kabel.
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -885,6 +990,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home office, same woman and one laptop. Only the real desk power lead and laptop lead are present. The existing power connection stays connected. No cable tray, magnetic cover or hidden power box is included or invented.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -896,9 +1005,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -910,6 +1019,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home office, same woman and one laptop. Only the real desk power lead and laptop lead are present. The existing power connection stays connected. No cable tray, magnetic cover or hidden power box is included or invented.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -928,9 +1041,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：Platz zum Hochfahren.
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -942,6 +1055,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home office, same woman and one laptop. Only the real desk power lead and laptop lead are present. The existing power connection stays connected. No cable tray, magnetic cover or hidden power box is included or invented.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -953,9 +1070,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -967,6 +1084,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home office, same woman and one laptop. Only the real desk power lead and laptop lead are present. The existing power connection stays connected. No cable tray, magnetic cover or hidden power box is included or invented.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -985,9 +1106,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：Bereit für deinen Alltag.
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -999,6 +1120,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home office, same woman and one laptop. Only the real desk power lead and laptop lead are present. The existing power connection stays connected. No cable tray, magnetic cover or hidden power box is included or invented.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -1010,9 +1135,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -1024,6 +1149,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home office, same woman and one laptop. Only the real desk power lead and laptop lead are present. The existing power connection stays connected. No cable tray, magnetic cover or hidden power box is included or invented.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -1042,9 +1171,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：Jetzt entdecken.
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -1056,6 +1185,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home office, same woman and one laptop. Only the real desk power lead and laptop lead are present. The existing power connection stays connected. No cable tray, magnetic cover or hidden power box is included or invented.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -1067,9 +1200,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -1081,6 +1214,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home office, same woman and one laptop. Only the real desk power lead and laptop lead are present. The existing power connection stays connected. No cable tray, magnetic cover or hidden power box is included or invented.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -1102,21 +1239,25 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 - 升降时桌面与上部套管一起移动；桌面水平；没有拉伸变形或全行程瞬移。
 - G2 只有原装一个抽屉；L 桌保留原朝向及三根立柱；未确认结构不补画。
 - 对比首帧、运动中间帧和尾帧。发现错款、手控器移位或桌腿翻转，退回首帧或缩小动作后重做，不进入投放。
+- 搭配椅是指定灰色高背款，独立头枕、腰靠、扶手与五爪底座正确；image2 不是首帧，image3 才是当前镜头首帧。
 
 制作边界：提示词与参考图可降低结构错误，不能保证生成模型每帧正确。首帧与成片都要人工核对；错款画面不进入投放。
 
 # FV-04 · G2：写下、收好、擦净 · Grok 产品锁定版
-更新日期：2026-10-28（北京时间）；研究样本日期仍为 2026-10-27。
+更新日期：2026-10-29（北京时间）；研究样本日期仍为 2026-10-27。
 固定产品：G2 白色玻璃桌 140 × 70 cm
 SKU：G-HAD24-0430-142WT-2；variant：45781441347850
 商品：https://furniwell.de/products/hohenverstellbarer-schreibtisch-mit-einteilige-glasplatte-ergonomischer-stehschreibtisch-computertisch?variant=45781441347850
-官网原图：https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0430-1.4m.jpg?v=1718078234
+官网原图 / image1：https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0430-1.4m.jpg?v=1718078234
+搭配椅 / image2：G-OCNC23-0240-2；https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+椅子官网原图：https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+每镜头首帧作为 image3；搭配椅单独销售。更换椅子款式或颜色请使用网页的中文 Prompt 生成区。
 
 ## 使用顺序
-1. 先下载下方同一 SKU 的官网原图并实际上传。只粘贴商品链接不会把图片绑定给 Grok。
+1. 先下载主商品原图与灰色高背办公椅原图并实际上传，分别作为 image1、image2。只粘贴商品链接不会绑定图片。
 2. 先复制每镜头的“首帧提示词”制作单张 9:16 首帧；逐张核对产品。这里提供的是提示词，未声称已生成首帧。
-3. 推荐分镜生成：每镜头开独立任务，先上传官网原图作为 image1，再上传本镜头已验收首帧作为 image2，使用该镜头图生视频提示词。不要把另一镜头首帧放入 image2。
-4. 总提示词为可选整条模式，仅在当前 Grok 支持所需时长与多镜头时使用；附件 image1 仍是同一 SKU 官网原图。界面不识别 @image 标签时，用附件选择功能手动指定图片。
+3. 推荐分镜生成：每镜头开独立任务，先上传主商品原图作为 image1、搭配椅原图作为 image2，再上传本镜头已验收首帧作为 image3。image2 不再指首帧，不要上传另一镜头的首帧。
+4. 总提示词为可选整条模式，仅在当前 Grok 支持所需时长与多镜头时使用；image1 是主商品原图，image2 是固定灰色搭配椅原图。界面不识别 @image 标签时，用附件选择功能手动指定图片。
 5. 每镜头只做一个小动作。升降只展示一小段行程；坐、站高度用已校对首帧在剪辑点连接。字幕、口播、品牌和促销信息后期添加。
 
 ## 固定产品结构
@@ -1140,30 +1281,34 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One bright German home office. The same woman, one suitable erasable glass marker and one small cloth. Keep the glass clear enough to see its continuous surface. All writing is a simple mark, not AI-generated words.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 EDITING: Use a clean cut between shots. A new checked height may begin at a cut; never morph a low desk into a high desk in one instant. Do not animate a full lift within three seconds.
 
-SHOT 1, 0-3s: @image1
+SHOT 1, 0-3s: @image1 @image2
 START: Worker-side three-quarter full view of the white G2, both inverted legs, ONE closed central drawer and the integrated control strip at the worker's right.
 ACTION: A subtle push-in introduces the glass surface. The woman rests her hand nearby without touching the controls. The desk stays at one height.
 END: The same intact G2 geometry.
 
-SHOT 2, 3-6s: @image1
+SHOT 2, 3-6s: @image1 @image2
 START: Close view of the continuous glass from the worker side. Her RIGHT hand holds an erasable glass marker just above one clear area. Drawer stays closed.
 ACTION: Draw only ONE small simple check mark on the glass. No words, complex lettering, new tabletop panel or extra controls.
 END: One small check mark on the same glass.
 
-SHOT 3, 6-9s: @image1
+SHOT 3, 6-9s: @image1 @image2
 START: At an EDIT CUT, the ONE original central drawer is already open slightly, with its original runners and front panel unchanged. Her right hand holds the same marker above the drawer.
 ACTION: Place the marker into the already-open original drawer. Keep the drawer at its existing opening amount; do not add a second drawer or animate an opening transformation.
 END: Marker rests inside that same drawer.
 
-SHOT 4, 9-12s: @image1
+SHOT 4, 9-12s: @image1 @image2
 START: At an EDIT CUT, the original drawer is closed. The one check mark remains on the glass. Her right hand holds the cloth at the edge of that mark.
 ACTION: Wipe the small mark away with one short local pass. Keep the glass outline, integrated right-hand controls and desk frame unchanged.
 END: Clean continuous glass, one closed original drawer.
 
-SHOT 5, 12-15s: @image1
+SHOT 5, 12-15s: @image1 @image2
 START: Return to the first full G2 view; same height, woman, room, one drawer, integrated right-side strip and both inverted legs.
 ACTION: Hold the finished workspace. No separate black hanging keypad, added USB port or standing-height transition.
 END: Stable product view for post-production branding.
@@ -1175,9 +1320,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：Deine To-dos direkt auf dem Tisch.
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell G2 white glass desk, SKU G-HAD24-0430-142WT-2, variant 45781441347850, 140 x 70 cm. ONE continuous glass desktop, its original white front fascia, exactly ONE original central pull-out drawer with its real runners, two white columns and two original white floor feet. The ORIGINAL control strip and USB ports are INTEGRATED INTO the front fascia on the seated worker's RIGHT. Copy the exact visible layout in @image1. Do NOT add a separate hanging black Economy keypad. No desktop seams, wooden replacement top, second drawer, cabinet or wheel.
@@ -1189,6 +1334,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One bright German home office. The same woman, one suitable erasable glass marker and one small cloth. Keep the glass clear enough to see its continuous surface. All writing is a simple mark, not AI-generated words.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -1200,9 +1349,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell G2 white glass desk, SKU G-HAD24-0430-142WT-2, variant 45781441347850, 140 x 70 cm. ONE continuous glass desktop, its original white front fascia, exactly ONE original central pull-out drawer with its real runners, two white columns and two original white floor feet. The ORIGINAL control strip and USB ports are INTEGRATED INTO the front fascia on the seated worker's RIGHT. Copy the exact visible layout in @image1. Do NOT add a separate hanging black Economy keypad. No desktop seams, wooden replacement top, second drawer, cabinet or wheel.
@@ -1214,6 +1363,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One bright German home office. The same woman, one suitable erasable glass marker and one small cloth. Keep the glass clear enough to see its continuous surface. All writing is a simple mark, not AI-generated words.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -1232,9 +1385,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：Aufschreiben.
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell G2 white glass desk, SKU G-HAD24-0430-142WT-2, variant 45781441347850, 140 x 70 cm. ONE continuous glass desktop, its original white front fascia, exactly ONE original central pull-out drawer with its real runners, two white columns and two original white floor feet. The ORIGINAL control strip and USB ports are INTEGRATED INTO the front fascia on the seated worker's RIGHT. Copy the exact visible layout in @image1. Do NOT add a separate hanging black Economy keypad. No desktop seams, wooden replacement top, second drawer, cabinet or wheel.
@@ -1246,6 +1399,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One bright German home office. The same woman, one suitable erasable glass marker and one small cloth. Keep the glass clear enough to see its continuous surface. All writing is a simple mark, not AI-generated words.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -1257,9 +1414,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell G2 white glass desk, SKU G-HAD24-0430-142WT-2, variant 45781441347850, 140 x 70 cm. ONE continuous glass desktop, its original white front fascia, exactly ONE original central pull-out drawer with its real runners, two white columns and two original white floor feet. The ORIGINAL control strip and USB ports are INTEGRATED INTO the front fascia on the seated worker's RIGHT. Copy the exact visible layout in @image1. Do NOT add a separate hanging black Economy keypad. No desktop seams, wooden replacement top, second drawer, cabinet or wheel.
@@ -1271,6 +1428,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One bright German home office. The same woman, one suitable erasable glass marker and one small cloth. Keep the glass clear enough to see its continuous surface. All writing is a simple mark, not AI-generated words.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -1289,9 +1450,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：Verstauen.
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell G2 white glass desk, SKU G-HAD24-0430-142WT-2, variant 45781441347850, 140 x 70 cm. ONE continuous glass desktop, its original white front fascia, exactly ONE original central pull-out drawer with its real runners, two white columns and two original white floor feet. The ORIGINAL control strip and USB ports are INTEGRATED INTO the front fascia on the seated worker's RIGHT. Copy the exact visible layout in @image1. Do NOT add a separate hanging black Economy keypad. No desktop seams, wooden replacement top, second drawer, cabinet or wheel.
@@ -1303,6 +1464,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One bright German home office. The same woman, one suitable erasable glass marker and one small cloth. Keep the glass clear enough to see its continuous surface. All writing is a simple mark, not AI-generated words.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -1314,9 +1479,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell G2 white glass desk, SKU G-HAD24-0430-142WT-2, variant 45781441347850, 140 x 70 cm. ONE continuous glass desktop, its original white front fascia, exactly ONE original central pull-out drawer with its real runners, two white columns and two original white floor feet. The ORIGINAL control strip and USB ports are INTEGRATED INTO the front fascia on the seated worker's RIGHT. Copy the exact visible layout in @image1. Do NOT add a separate hanging black Economy keypad. No desktop seams, wooden replacement top, second drawer, cabinet or wheel.
@@ -1328,6 +1493,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One bright German home office. The same woman, one suitable erasable glass marker and one small cloth. Keep the glass clear enough to see its continuous surface. All writing is a simple mark, not AI-generated words.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -1346,9 +1515,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：Wegwischen.
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell G2 white glass desk, SKU G-HAD24-0430-142WT-2, variant 45781441347850, 140 x 70 cm. ONE continuous glass desktop, its original white front fascia, exactly ONE original central pull-out drawer with its real runners, two white columns and two original white floor feet. The ORIGINAL control strip and USB ports are INTEGRATED INTO the front fascia on the seated worker's RIGHT. Copy the exact visible layout in @image1. Do NOT add a separate hanging black Economy keypad. No desktop seams, wooden replacement top, second drawer, cabinet or wheel.
@@ -1360,6 +1529,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One bright German home office. The same woman, one suitable erasable glass marker and one small cloth. Keep the glass clear enough to see its continuous surface. All writing is a simple mark, not AI-generated words.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -1371,9 +1544,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell G2 white glass desk, SKU G-HAD24-0430-142WT-2, variant 45781441347850, 140 x 70 cm. ONE continuous glass desktop, its original white front fascia, exactly ONE original central pull-out drawer with its real runners, two white columns and two original white floor feet. The ORIGINAL control strip and USB ports are INTEGRATED INTO the front fascia on the seated worker's RIGHT. Copy the exact visible layout in @image1. Do NOT add a separate hanging black Economy keypad. No desktop seams, wooden replacement top, second drawer, cabinet or wheel.
@@ -1385,6 +1558,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One bright German home office. The same woman, one suitable erasable glass marker and one small cloth. Keep the glass clear enough to see its continuous surface. All writing is a simple mark, not AI-generated words.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -1403,9 +1580,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：Entdecke den Furniwell G2.
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell G2 white glass desk, SKU G-HAD24-0430-142WT-2, variant 45781441347850, 140 x 70 cm. ONE continuous glass desktop, its original white front fascia, exactly ONE original central pull-out drawer with its real runners, two white columns and two original white floor feet. The ORIGINAL control strip and USB ports are INTEGRATED INTO the front fascia on the seated worker's RIGHT. Copy the exact visible layout in @image1. Do NOT add a separate hanging black Economy keypad. No desktop seams, wooden replacement top, second drawer, cabinet or wheel.
@@ -1417,6 +1594,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One bright German home office. The same woman, one suitable erasable glass marker and one small cloth. Keep the glass clear enough to see its continuous surface. All writing is a simple mark, not AI-generated words.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -1428,9 +1609,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell G2 white glass desk, SKU G-HAD24-0430-142WT-2, variant 45781441347850, 140 x 70 cm. ONE continuous glass desktop, its original white front fascia, exactly ONE original central pull-out drawer with its real runners, two white columns and two original white floor feet. The ORIGINAL control strip and USB ports are INTEGRATED INTO the front fascia on the seated worker's RIGHT. Copy the exact visible layout in @image1. Do NOT add a separate hanging black Economy keypad. No desktop seams, wooden replacement top, second drawer, cabinet or wheel.
@@ -1442,6 +1623,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One bright German home office. The same woman, one suitable erasable glass marker and one small cloth. Keep the glass clear enough to see its continuous surface. All writing is a simple mark, not AI-generated words.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -1463,21 +1648,25 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 - 升降时桌面与上部套管一起移动；桌面水平；没有拉伸变形或全行程瞬移。
 - G2 只有原装一个抽屉；L 桌保留原朝向及三根立柱；未确认结构不补画。
 - 对比首帧、运动中间帧和尾帧。发现错款、手控器移位或桌腿翻转，退回首帧或缩小动作后重做，不进入投放。
+- 搭配椅是指定灰色高背款，独立头枕、腰靠、扶手与五爪底座正确；image2 不是首帧，image3 才是当前镜头首帧。
 
 制作边界：提示词与参考图可降低结构错误，不能保证生成模型每帧正确。首帧与成片都要人工核对；错款画面不进入投放。
 
 # FV-05 · 120 × 60 cm 的卧室工作区 · Grok 产品锁定版
-更新日期：2026-10-28（北京时间）；研究样本日期仍为 2026-10-27。
+更新日期：2026-10-29（北京时间）；研究样本日期仍为 2026-10-27。
 固定产品：Economy 白色四拼桌板 120 × 60 cm
 SKU：G-HAD241222B；variant：44533451587850
 商品：https://furniwell.de/products/economy-elektrisch-hohenverstellbarer-schreibtisch?variant=44533451587850
-官网原图：https://cdn.shopify.com/s/files/1/0580/4615/2882/files/EconomyElektrischHohenverstellbarerSchreibtisch-sku_1.jpg?v=1764671992
+官网原图 / image1：https://cdn.shopify.com/s/files/1/0580/4615/2882/files/EconomyElektrischHohenverstellbarerSchreibtisch-sku_1.jpg?v=1764671992
+搭配椅 / image2：G-OCNC23-0240-2；https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+椅子官网原图：https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+每镜头首帧作为 image3；搭配椅单独销售。更换椅子款式或颜色请使用网页的中文 Prompt 生成区。
 
 ## 使用顺序
-1. 先下载下方同一 SKU 的官网原图并实际上传。只粘贴商品链接不会把图片绑定给 Grok。
+1. 先下载主商品原图与灰色高背办公椅原图并实际上传，分别作为 image1、image2。只粘贴商品链接不会绑定图片。
 2. 先复制每镜头的“首帧提示词”制作单张 9:16 首帧；逐张核对产品。这里提供的是提示词，未声称已生成首帧。
-3. 推荐分镜生成：每镜头开独立任务，先上传官网原图作为 image1，再上传本镜头已验收首帧作为 image2，使用该镜头图生视频提示词。不要把另一镜头首帧放入 image2。
-4. 总提示词为可选整条模式，仅在当前 Grok 支持所需时长与多镜头时使用；附件 image1 仍是同一 SKU 官网原图。界面不识别 @image 标签时，用附件选择功能手动指定图片。
+3. 推荐分镜生成：每镜头开独立任务，先上传主商品原图作为 image1、搭配椅原图作为 image2，再上传本镜头已验收首帧作为 image3。image2 不再指首帧，不要上传另一镜头的首帧。
+4. 总提示词为可选整条模式，仅在当前 Grok 支持所需时长与多镜头时使用；image1 是主商品原图，image2 是固定灰色搭配椅原图。界面不识别 @image 标签时，用附件选择功能手动指定图片。
 5. 每镜头只做一个小动作。升降只展示一小段行程；坐、站高度用已校对首帧在剪辑点连接。字幕、口播、品牌和促销信息后期添加。
 
 ## 固定产品结构
@@ -1501,30 +1690,34 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One real-scale modest German bedroom. The SAME white 120 x 60 cm four-panel Economy is already installed beside a bed. Keep the doorway, bed, chair exit space and walking path fixed. One slim laptop only.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 EDITING: Use a clean cut between shots. A new checked height may begin at a cut; never morph a low desk into a high desk in one instant. Do not animate a full lift within three seconds.
 
-SHOT 1, 0-3s: @image1
+SHOT 1, 0-3s: @image1 @image2
 START: Doorway-side wide view looking toward the worker-facing long edge. The desk already exists in the room. Show its whole top, both legs and feet, the bed and the open walkway.
 ACTION: A slow, very small push-in establishes the completed room. No empty-room transformation or furniture appearing from nothing.
 END: The exact 120 x 60 cm desk stays in place.
 
-SHOT 2, 3-6s: @image1
+SHOT 2, 3-6s: @image1 @image2
 START: Worker-side medium-wide view. The front long edge is nearest the woman, and the original controller is to her RIGHT. The bed and door remain at their established positions.
 ACTION: She approaches the existing chair naturally. Keep enough physical clearance; do not scale down the desk or remove furniture to create space.
 END: Believable chair and walkway clearance.
 
-SHOT 3, 6-9s: @image1
+SHOT 3, 6-9s: @image1 @image2
 START: Same desk and room, woman seated with the one laptop. Both original feet stay visible below the desk.
 ACTION: She types briefly. No new monitor, drawer, seamless replacement tabletop or changed foot shape.
 END: Seated work on the exact product.
 
-SHOT 4, 9-12s: @image1
+SHOT 4, 9-12s: @image1 @image2
 START: Contextual close-up of the front-right long edge. Her RIGHT index finger is beside the original keypad, with the original tabletop corner visible.
 ACTION: Press the existing UP button once; show only a small height adjustment if the legs are in frame. No full-stroke lift in three seconds and no relocation to the short edge.
 END: Original keypad in the original mounting place.
 
-SHOT 5, 12-15s: @image1
+SHOT 5, 12-15s: @image1 @image2
 START: Return to the doorway-side wide view at the same checked room layout. The woman stands beside the chair; no claim that the unchanged seated-height desk is already at standing-work height.
 ACTION: Hold the desk, chair clearance and walkway in frame. No scale change, mirrored room or generated dimension graphic.
 END: Stable room-and-product hero.
@@ -1536,9 +1729,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：Dein Arbeitsplatz auf 120 × 60 cm.
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -1550,6 +1743,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One real-scale modest German bedroom. The SAME white 120 x 60 cm four-panel Economy is already installed beside a bed. Keep the doorway, bed, chair exit space and walking path fixed. One slim laptop only.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -1561,9 +1758,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -1575,6 +1772,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One real-scale modest German bedroom. The SAME white 120 x 60 cm four-panel Economy is already installed beside a bed. Keep the doorway, bed, chair exit space and walking path fixed. One slim laptop only.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -1593,9 +1794,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：Platz für deinen Alltag.
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -1607,6 +1808,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One real-scale modest German bedroom. The SAME white 120 x 60 cm four-panel Economy is already installed beside a bed. Keep the doorway, bed, chair exit space and walking path fixed. One slim laptop only.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -1618,9 +1823,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -1632,6 +1837,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One real-scale modest German bedroom. The SAME white 120 x 60 cm four-panel Economy is already installed beside a bed. Keep the doorway, bed, chair exit space and walking path fixed. One slim laptop only.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -1650,9 +1859,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：Alles griffbereit.
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -1664,6 +1873,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One real-scale modest German bedroom. The SAME white 120 x 60 cm four-panel Economy is already installed beside a bed. Keep the doorway, bed, chair exit space and walking path fixed. One slim laptop only.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -1675,9 +1888,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -1689,6 +1902,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One real-scale modest German bedroom. The SAME white 120 x 60 cm four-panel Economy is already installed beside a bed. Keep the doorway, bed, chair exit space and walking path fixed. One slim laptop only.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -1707,9 +1924,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：Deine passende Höhe.
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -1721,6 +1938,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One real-scale modest German bedroom. The SAME white 120 x 60 cm four-panel Economy is already installed beside a bed. Keep the doorway, bed, chair exit space and walking path fixed. One slim laptop only.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -1732,9 +1953,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -1746,6 +1967,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One real-scale modest German bedroom. The SAME white 120 x 60 cm four-panel Economy is already installed beside a bed. Keep the doorway, bed, chair exit space and walking path fixed. One slim laptop only.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -1764,9 +1989,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：Finde deine passende Größe.
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -1778,6 +2003,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One real-scale modest German bedroom. The SAME white 120 x 60 cm four-panel Economy is already installed beside a bed. Keep the doorway, bed, chair exit space and walking path fixed. One slim laptop only.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -1789,9 +2018,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -1803,6 +2032,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One real-scale modest German bedroom. The SAME white 120 x 60 cm four-panel Economy is already installed beside a bed. Keep the doorway, bed, chair exit space and walking path fixed. One slim laptop only.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -1824,21 +2057,25 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 - 升降时桌面与上部套管一起移动；桌面水平；没有拉伸变形或全行程瞬移。
 - G2 只有原装一个抽屉；L 桌保留原朝向及三根立柱；未确认结构不补画。
 - 对比首帧、运动中间帧和尾帧。发现错款、手控器移位或桌腿翻转，退回首帧或缩小动作后重做，不进入投放。
+- 搭配椅是指定灰色高背款，独立头枕、腰靠、扶手与五爪底座正确；image2 不是首帧，image3 才是当前镜头首帧。
 
 制作边界：提示词与参考图可降低结构错误，不能保证生成模型每帧正确。首帧与成片都要人工核对；错款画面不进入投放。
 
 # FV-06 · 电竞与工作，自然切换 · Grok 产品锁定版
-更新日期：2026-10-28（北京时间）；研究样本日期仍为 2026-10-27。
+更新日期：2026-10-29（北京时间）；研究样本日期仍为 2026-10-27。
 固定产品：Economy 白色四拼桌板 120 × 60 cm
 SKU：G-HAD241222B；variant：44533451587850
 商品：https://furniwell.de/products/economy-elektrisch-hohenverstellbarer-schreibtisch?variant=44533451587850
-官网原图：https://cdn.shopify.com/s/files/1/0580/4615/2882/files/EconomyElektrischHohenverstellbarerSchreibtisch-sku_1.jpg?v=1764671992
+官网原图 / image1：https://cdn.shopify.com/s/files/1/0580/4615/2882/files/EconomyElektrischHohenverstellbarerSchreibtisch-sku_1.jpg?v=1764671992
+搭配椅 / image2：G-OCNC23-0240-2；https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+椅子官网原图：https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+每镜头首帧作为 image3；搭配椅单独销售。更换椅子款式或颜色请使用网页的中文 Prompt 生成区。
 
 ## 使用顺序
-1. 先下载下方同一 SKU 的官网原图并实际上传。只粘贴商品链接不会把图片绑定给 Grok。
+1. 先下载主商品原图与灰色高背办公椅原图并实际上传，分别作为 image1、image2。只粘贴商品链接不会绑定图片。
 2. 先复制每镜头的“首帧提示词”制作单张 9:16 首帧；逐张核对产品。这里提供的是提示词，未声称已生成首帧。
-3. 推荐分镜生成：每镜头开独立任务，先上传官网原图作为 image1，再上传本镜头已验收首帧作为 image2，使用该镜头图生视频提示词。不要把另一镜头首帧放入 image2。
-4. 总提示词为可选整条模式，仅在当前 Grok 支持所需时长与多镜头时使用；附件 image1 仍是同一 SKU 官网原图。界面不识别 @image 标签时，用附件选择功能手动指定图片。
+3. 推荐分镜生成：每镜头开独立任务，先上传主商品原图作为 image1、搭配椅原图作为 image2，再上传本镜头已验收首帧作为 image3。image2 不再指首帧，不要上传另一镜头的首帧。
+4. 总提示词为可选整条模式，仅在当前 Grok 支持所需时长与多镜头时使用；image1 是主商品原图，image2 是固定灰色搭配椅原图。界面不识别 @image 标签时，用附件选择功能手动指定图片。
 5. 每镜头只做一个小动作。升降只展示一小段行程；坐、站高度用已校对首帧在剪辑点连接。字幕、口播、品牌和促销信息后期添加。
 
 ## 固定产品结构
@@ -1862,30 +2099,34 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home office used for gaming and everyday work. One laptop, one mouse and the same chair. Same soft left-side window light, same woman and same four-panel desk throughout. No added RGB parts on the desk.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 EDITING: Use a clean cut between shots. A new checked height may begin at a cut; never morph a low desk into a high desk in one instant. Do not animate a full lift within three seconds.
 
-SHOT 1, 0-3s: @image1
+SHOT 1, 0-3s: @image1 @image2
 START: Worker-side medium-wide view. The woman is seated at the laptop with her RIGHT hand on the mouse. Preserve both original columns and the single keypad on her anatomical right.
 ACTION: She finishes a short mouse movement and takes her hand off the mouse. The desk does not move.
 END: Same product and seated configuration.
 
-SHOT 2, 3-6s: @image1
+SHOT 2, 3-6s: @image1 @image2
 START: Contextual view of the actual front-right long edge and one hanging keypad. Her RIGHT index finger approaches the original UP button.
 ACTION: Hold that one existing UP button once. Do not add a remote control, side keypad, phone app or new memory button.
 END: Right hand at the same original controller.
 
-SHOT 3, 6-9s: @image1
+SHOT 3, 6-9s: @image1 @image2
 START: Fixed worker-side view with both whole inverted columns and both feet visible. The woman is clear of the chair and her right hand remains at the same controller.
 ACTION: Show a small partial upward adjustment only. Thick upper sleeves move upward with the level tabletop; thin lower sections and floor feet remain anchored. No instant full lift.
 END: Stop after a few centimeters; a later edit supplies the checked standing-height state.
 
-SHOT 4, 9-12s: @image1
+SHOT 4, 9-12s: @image1 @image2
 START: At an EDIT CUT, the same product is already at a separately checked standing height with longer visible lower thin sections. Same woman, room, controller, four-panel seams and laptop.
 ACTION: She stands and types one short response on the laptop. The desk remains stationary and horizontal.
 END: Standing task on the same furniture.
 
-SHOT 5, 12-15s: @image1
+SHOT 5, 12-15s: @image1 @image2
 START: Wide hero of the same standing configuration from the worker-side half of the room. Both feet and the correct right-hand controller are readable.
 ACTION: Hold with subtle natural movement only. Do not generate a new desk model, extra controller, captions or promotional badges.
 END: Stable product-and-person finish.
@@ -1897,9 +2138,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：Zum Zocken sitzen.
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -1911,6 +2152,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home office used for gaming and everyday work. One laptop, one mouse and the same chair. Same soft left-side window light, same woman and same four-panel desk throughout. No added RGB parts on the desk.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -1922,9 +2167,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -1936,6 +2181,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home office used for gaming and everyday work. One laptop, one mouse and the same chair. Same soft left-side window light, same woman and same four-panel desk throughout. No added RGB parts on the desk.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -1954,9 +2203,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：Deine Höhe auf Knopfdruck.
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -1968,6 +2217,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home office used for gaming and everyday work. One laptop, one mouse and the same chair. Same soft left-side window light, same woman and same four-panel desk throughout. No added RGB parts on the desk.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -1979,9 +2232,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -1993,6 +2246,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home office used for gaming and everyday work. One laptop, one mouse and the same chair. Same soft left-side window light, same woman and same four-panel desk throughout. No added RGB parts on the desk.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -2011,9 +2268,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：Für den nächsten Task aufstehen.
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -2025,6 +2282,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home office used for gaming and everyday work. One laptop, one mouse and the same chair. Same soft left-side window light, same woman and same four-panel desk throughout. No added RGB parts on the desk.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -2036,9 +2297,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -2050,6 +2311,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home office used for gaming and everyday work. One laptop, one mouse and the same chair. Same soft left-side window light, same woman and same four-panel desk throughout. No added RGB parts on the desk.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -2068,9 +2333,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：Ein Tisch für beides.
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -2082,6 +2347,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home office used for gaming and everyday work. One laptop, one mouse and the same chair. Same soft left-side window light, same woman and same four-panel desk throughout. No added RGB parts on the desk.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -2093,9 +2362,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -2107,6 +2376,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home office used for gaming and everyday work. One laptop, one mouse and the same chair. Same soft left-side window light, same woman and same four-panel desk throughout. No added RGB parts on the desk.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -2125,9 +2398,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 后期德语字幕：Entdecke deinen Furniwell Schreibtisch.
 ### 首帧提示词
 ```text
-@image1
+@image1 @image2
 
-Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official product photograph and the only product-shape reference. Preserve the furniture; change only the human staging and room described below.
+Create ONE photorealistic 9:16 still image, not a storyboard or collage. The attached @image1 is the exact official desk photograph and the only desk-shape reference; @image2 independently locks the companion chair. Preserve the furniture; change only the human staging and room described below.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -2139,6 +2412,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home office used for gaming and everyday work. One laptop, one mouse and the same chair. Same soft left-side window light, same woman and same four-panel desk throughout. No added RGB parts on the desk.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 THIS SHOT START FRAME:
 
@@ -2150,9 +2427,9 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 ```
 ### 单镜头 Grok 图生视频提示词
 ```text
-@image1 @image2
+@image1 @image2 @image3
 
-Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is THIS SHOT'S already approved start frame. Begin exactly from @image2. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
+Generate ONE 3-second vertical 9:16 image-to-video clip. In this separate clip task, @image1 is the official product identity reference; @image2 is the approved Furniwell chair photograph; @image3 is THIS SHOT'S already approved start frame. Begin exactly from @image3. Preserve its framing, pose, geometry, room, props and lighting. Do not create a different opening composition.
 
 PRODUCT IDENTITY — highest priority:
 Furniwell Economy, SKU G-HAD241222B, variant 44533451587850. White 120 x 60 cm FOUR-PANEL desktop, with the exact seam pattern in @image1. Two white lifting columns, TWO telescoping sections per column. Two original white T-shaped floor feet with their original dark leveling pads. Exactly ONE original black hanging digital keypad under the user-facing FRONT LONG EDGE, on the seated user's anatomical RIGHT. Copy its actual housing, angle, display and buttons from @image1. No drawer, glass top, third column, wheels, extra keypad or added cable tray.
@@ -2164,6 +2441,10 @@ ORIENTATION: FRONT means the long working edge nearest the seated woman; BACK me
 CONTINUITY:
 Same adult woman in every shot: about 30, brown hair in a low ponytail, cream sweater, charcoal trousers. Natural UGC movement, realistic hands. No change of actor, clothing, room, props or light direction.
 One German home office used for gaming and everyday work. One laptop, one mouse and the same chair. Same soft left-side window light, same woman and same four-panel desk throughout. No added RGB parts on the desk.
+COMPANION CHAIR — @image2:
+Use only Furniwell high-back office chair, SKU G-OCNC23-0240-2, variant 44820467712266, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212
+Chair product: https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266
+Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.
 
 ONLY ACTION:
 
@@ -2185,5 +2466,6 @@ HARD FAILURES: wrong SKU, mirrored scene, controller on user-left or a short end
 - 升降时桌面与上部套管一起移动；桌面水平；没有拉伸变形或全行程瞬移。
 - G2 只有原装一个抽屉；L 桌保留原朝向及三根立柱；未确认结构不补画。
 - 对比首帧、运动中间帧和尾帧。发现错款、手控器移位或桌腿翻转，退回首帧或缩小动作后重做，不进入投放。
+- 搭配椅是指定灰色高背款，独立头枕、腰靠、扶手与五爪底座正确；image2 不是首帧，image3 才是当前镜头首帧。
 
 制作边界：提示词与参考图可降低结构错误，不能保证生成模型每帧正确。首帧与成片都要人工核对；错款画面不进入投放。
