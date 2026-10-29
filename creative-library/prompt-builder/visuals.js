@@ -89,7 +89,7 @@
   function block(p,o){const i=intent(o.idea),family=o.product.caps.family;let context=i.bedroom?'成人卧室的工作区；空间画面保留床边或衣柜的真实尺度。':i.living?'真实客厅里的工作区；保留生活空间与工作空间的关系。':'按以下室内布置安排，生活与工作任务必须真实可信。';if(p.id==='studio')context='商品摄影棚；不把棚拍描述为真实家庭使用证据。';const crop=p.kind==='detail'?'本张是功能近景，允许画面外裁掉与功能无关的部分，但目标部件、所属安装边和比例必须准确。':p.kind==='task'?'本张是桌面任务中近景，允许局部裁切，必须保留足以识别所选商品的原有结构。':'本张是中远景或全景，主商品全貌、支撑结构及底脚完整，必要的操作空间真实存在。';
     const night=o.idea.id==='FW-C20';const light=night&&p.id!=='evening'?'夜间使用画外中性工作灯与低亮度环境补光，约 '+(p.id==='frontal'?'4500':p.id==='detail'?'5500':'5000')+' K；通过本方案机位对应的侧向光形成明暗，不出现日光或明亮窗外。':p.light;
     const props=family==='frame'?'按裸桌架售卖状态展示，工具或适配资料独立放在地面外侧；不增加桌板，不把另购部件当作标配。':family==='chair'?'相关笔记、资料放在人物手中或画外；不因道具描述新增椅子结构或随货配件。':p.props;
-    return ['【独立视觉方案：'+p.name+'】',context,'镜头与景别：'+p.camera,'产品摆放：'+p.placement,'室内布置：'+p.room,'光线：'+light,'视觉效果：'+p.palette,'道具组织：'+props,'人物处理：'+(family==='desk'?p.people:'根据所选商品和任务安排必要人物，不继承桌类特有功能。'+p.people.replace(/升降桌使用原安装位置的右手侧控制器，不虚构按键或显示内容。/,'')),crop,'本方案排除：'+p.avoid,'每次仅生成这一张独立画面。相同 SKU 的其他方案要分别执行；禁止把多个视觉方案合成一张拼图。','产品结构不参与变化：仅改变光线、机位、摆放、房间、道具和人物任务。相机始终从可核对的使用者一侧取景，不能镜像或推测原图看不见的背面。'].join('\n');
+    return ['【独立视觉方案：'+p.name+'】',context,'镜头与景别：'+p.camera,'产品摆放：'+p.placement,'室内布置：'+p.room,'光线：'+light,'视觉效果：'+p.palette,'道具组织：'+props,'人物处理：'+(family==='desk'?p.people:'根据所选商品和任务安排必要人物，不继承桌类特有功能。'+p.people.replace(/升降桌使用原安装位置的右手侧控制器，不虚构按键或显示内容。/,'')),crop,'本方案排除：'+p.avoid,o.batchSize>1?`这是整批第 ${o.batchIndex}/${o.batchSize} 张的具体拍法；交付本张独立图片后继续下一任务，全部 ${o.batchSize} 个任务都要完成。`:'每次仅生成这一张独立画面。相同 SKU 的其他方案要分别执行；禁止把多个视觉方案合成一张拼图。','产品结构不参与变化：仅改变光线、机位、摆放、房间、道具和人物任务。相机始终从可核对的使用者一侧取景，不能镜像或推测原图看不见的背面。'].join('\n');
   }
   window.FurniwellVisualPlans={profiles,preferred,intent,fit,select,block};
 })();
