@@ -6,7 +6,7 @@
   const E=window.FurniwellPromptEngine,G=window.FurniwellGrok,B=window.PromptBuilder;
   const originalView=window.view,originalShare=window.shareState,main=document.querySelector('main');
   if(!E||!G||!B||!main)return;
-  const version='20261030-clarity1';
+  const version='20261030-clarity2';
   const definitions={
     references:{title:'参考素材库',description:'按图片、视频和表达方式找参考，完整分析与来源在详情中查看。',tabs:[['images','图片参考'],['video-samples','视频样本'],['video-analysis','视频内容拆解']]},
     ideas:{title:'创意方案库',description:'从推荐方向开始，也可以按原创方案、用户需求或视频任务选择。',tabs:[['recommended','优先推荐 · Top 10'],['all-ideas','全部原创方向'],['needs','用户需求建议'],['video-ideas','视频制作方向']]},
@@ -80,7 +80,7 @@
     f.hadResult=!!s.result;
   }
   function currentRoute(){if(currentView==='gallery')return document.body.dataset.imagePanel==='prompt'?'image-prompt':'images';if(currentView==='videos')return {samples:'video-samples',analysis:'video-analysis',directions:'video-ideas',generator:'video-prompt',production:'video-production'}[window.VideoLibrary.getShareState().vt||'samples']||'video-samples';return {top10:'recommended',plans:'all-ideas',needs:'needs',promotions:'promotions',products:productTab}[currentView]||'images';}
-  function render(){const key=currentRoute(),r=routes[key],config=definitions[r.section];last[r.section]=key;document.body.dataset.librarySection=r.section;
+  function render(remember=true){const key=currentRoute(),r=routes[key],config=definitions[r.section];if(remember)last[r.section]=key;document.body.dataset.librarySection=r.section;
     if(currentView==='gallery'&&byId('galleryView').parentElement!==pages[r.section])pages[r.section].append(byId('galleryView'));if(currentView==='videos'&&byId('videosView').parentElement!==pages[r.section])pages[r.section].append(byId('videosView'));
     for(const [name,page]of Object.entries(pages))page.hidden=name!==r.section;
     setText(byId('orgTitle'),config.title);setText(byId('orgDescription'),config.description);
@@ -90,7 +90,7 @@
     productFacts.hidden=productTab==='rules';rules.hidden=productTab!=='rules';
     for(const mode of Object.keys(forms))paintForm(mode);
   }
-  window.view=function(v){originalView(v);render();};
+  window.view=function(v){originalView(v);render(false);};
   window.shareState=function(extra={}){if(!restoring){originalShare(extra);if(currentView==='products'&&productTab==='rules'){const p=new URLSearchParams(location.hash.slice(1));p.set('pr','rules');history.replaceState(null,'','#'+p.toString());}}render();};
   function navigate(key){const r=routes[key];if(!r)return;if(byId('modal').open)byId('modal').close();if(r.view==='products')productTab=key==='rules'?'rules':'facts';window.view(r.view);if(r.image)B.setImagePanel(r.image,false);if(r.video)window.VideoLibrary.setTab(r.video,false);window.shareState();}
   document.addEventListener('click',e=>{const b=e.target.closest('[data-section],[data-org-route]');if(!b)return;if(b.dataset.orgRoute)navigate(b.dataset.orgRoute);else navigate(last[b.dataset.section]);});
