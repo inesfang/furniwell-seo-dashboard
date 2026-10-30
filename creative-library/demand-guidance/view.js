@@ -40,11 +40,14 @@
       <div class="row"><span class="id">${safe(c.id)}</span>${priorityBadge(c)}</div>
       <div class="need-type">${safe(c.type)} / ${safe(c.need)}</div><h3>${safe(c.title)}</h3>
       <p><strong>适用任务：</strong>${safe(c.persona)}</p><p class="quiet">${safe(productNames(c))}</p>
+      <div class="need-validation-summary"><span class="pill blue">${safe(c.validation.level)}</span></div>
+      <p class="quiet">${safe(c.channels.join(' / '))}</p>
+      <details class="need-card-evidence"><summary>画面、文案与研究摘要</summary>
       <div class="need-validation-card"><span class="pill blue">${safe(c.validation.level)}</span><p>${safe(c.validation.summary)}</p><p><strong>本轮调整：</strong>${safe(c.validation.change)}</p></div>
       <div class="need-german" lang="de">${safe(c.german_headline)}</div>
       <p class="need-visual"><strong>画面：</strong>${safe(c.visual)}</p>
       <details class="need-original-evidence"><summary>公开研究与产品依据</summary><p class="need-evidence-line">${safe(c.evidence)}</p>${links(c.sources)}</details>
-      <p class="quiet">${safe(c.channels.join(' / '))}</p>
+      </details>
       <button type="button" class="need-button" data-need-id="${safe(c.id)}" aria-label="查看${safe(c.id)} ${safe(c.title)}完整制作简报">镜头 · 文案 · 提示词 · 测试 →</button></article>`).join(''):'<div class="empty need-empty">没有匹配建议，请减少筛选条件或重置。</div>';
   }
   function prompt(c){
@@ -139,3 +142,4 @@
     if(r.get('view')==='needs'){view('needs');restore(r);if(cards[r.get('nd')])open(r.get('nd'));}
   });
 })();
+
