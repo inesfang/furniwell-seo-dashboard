@@ -31,7 +31,7 @@
    const b=result.batches.find(b=>b.id===placement)||result.batches[0],i=Number(String(part).replace('image-',''));
    if(!/^image-\d+$/.test(part)||!b.jobs[i])return {text:'请先选择一个单张图片任务。Grok 模式按任务逐张执行。',executable:false};
    const v=result.visuals[i],task=(idea?.layout||'展示当前 SKU 与真实使用空间。').replace(/\d{2,3}\s*[×xX]\s*\d{2,3}(?:\s*cm)?/g,'所选规格').replace(/白色|黑色|白桌|黑桌/g,'所选颜色');
-   const text=[result.chair?'实际上传主商品与已选搭配椅原图，分别锁定两件商品。':'实际上传当前主商品原图。',`只生成第${i+1}/${b.count}张完整独立广告图片，${b.ratio}，不拼图；完成后继续其他单张任务。`,identity(result),`本张视觉：${v.name}。${visualNotes[v.id]||[v.camera,v.light,v.placement,v.room].join('')}`,`画面任务：${task}`,extra?'已核实补充事实：'+extra:'','不复制官网原房间与光线。人物身体、手腕、手指与家具接触正常，无多手、穿模；不得以场景演示冒充性能测试。无叠字、价格、认证标识或虚假赠品；真实广告标题和活动后期加入。'].filter(Boolean).join('\n');
+   const text=[result.chair?'实际上传主商品与已选搭配椅原图，分别锁定两件商品。':'实际上传当前主商品原图。',`只生成第${i+1}/${b.count}张完整独立广告图片，${b.ratio}，不拼图；完成后继续其他单张任务。`,identity(result),`本张视觉：${v.name}。${visualNotes[v.id]||[v.camera,v.light,v.placement,v.room].join('')}`,`画面任务：${task}`,extra?'已核实补充事实：'+extra:'',result.promotion?window.FurniwellPromotionComposer.block(result.promotion,true)+'人物与家具接触正常，无多手、穿模。不伪造评价、认证或赠品。':'不复制官网原房间与光线。人物身体、手腕、手指与家具接触正常，无多手、穿模；不得以场景演示冒充性能测试。无叠字、价格、认证标识或虚假赠品；真实广告标题和活动后期加入。'].filter(Boolean).join('\n');
    return {text,executable:true,index:i,label:`第 ${i+1}/${b.count} 张 · ${v.name}`};
   }
   const a=result.assets.find(a=>a.id===placement)||result.assets[0],m=/^(keyframe|clip)-(\d+)$/.exec(part),i=m&&Number(m[2]),s=m&&a.shots[i];
