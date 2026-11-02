@@ -6,16 +6,21 @@
   const E=window.FurniwellPromptEngine,G=window.FurniwellGrok,B=window.PromptBuilder;
   const originalView=window.view,originalShare=window.shareState,main=document.querySelector('main');
   if(!E||!G||!B||!main)return;
-  const version='20261030-clarity2';
+  const version='20261102-categories1',K=window.KuzmotecLibrary;
   const definitions={
     references:{title:'参考素材库',description:'按图片、视频和表达方式找参考，完整分析与来源在详情中查看。',tabs:[['images','图片参考'],['video-samples','视频样本'],['video-analysis','视频内容拆解']]},
     ideas:{title:'创意方案库',description:'从推荐方向开始，也可以按原创方案、用户需求或视频任务选择。',tabs:[['recommended','优先推荐 · Top 10'],['all-ideas','全部原创方向'],['needs','用户需求建议'],['video-ideas','视频制作方向']]},
     workspace:{title:'制作工作台',description:'选定商品和思路，制作对应的中文图片或视频 Prompt。',tabs:[['image-prompt','图片 Prompt'],['video-prompt','视频 Prompt']]},
     promotions:{title:'促销专题',description:'黑五案例、制作建议和排期集中保留，活动事实按原记录日期核对。',tabs:[]},
-    products:{title:'产品与规范',description:'核对原产品事实、结构边界、广告版位与图生视频制作规则。',tabs:[['facts','产品事实'],['rules','制作与投放规范'],['video-production','视频测试与来源']]}
+    products:{title:'产品与规范',description:'核对原产品事实、结构边界、广告版位与图生视频制作规则。',tabs:[['facts','产品事实'],['rules','制作与投放规范'],['video-production','视频测试与来源']]},
+    cats:{title:'猫砂盆',description:'KuzmoTec 猫砂盆视频制作资源库。',tabs:[]}
   };
   const routes={images:{section:'references',view:'gallery',image:'browse'},'video-samples':{section:'references',view:'videos',video:'samples'},'video-analysis':{section:'references',view:'videos',video:'analysis'},recommended:{section:'ideas',view:'top10'},'all-ideas':{section:'ideas',view:'plans'},needs:{section:'ideas',view:'needs'},'video-ideas':{section:'ideas',view:'videos',video:'directions'},'image-prompt':{section:'workspace',view:'gallery',image:'prompt'},'video-prompt':{section:'workspace',view:'videos',video:'generator'},promotions:{section:'promotions',view:'promotions'},facts:{section:'products',view:'products'},rules:{section:'products',view:'products'},'video-production':{section:'products',view:'videos',video:'production'}};
   const last={references:'images',ideas:'recommended',workspace:'image-prompt',promotions:'promotions',products:'facts'};
+  for(const tab of ['samples','ideas','generator','workflow','products'])routes['cat-'+tab]={section:'cats',view:'cats',cat:tab};
+  const lastCategory={desk:'images',cat:'cat-samples'},deskNav=document.querySelector('aside .nav');
+  const categories=document.createElement('div');categories.className='org-categories';categories.setAttribute('aria-label','按产品分类');categories.innerHTML='<span class="org-category-label">按产品分类</span><button type="button" data-category="desk">升降桌 / 桌椅<small>Furniwell · 原有资料完整保留</small></button><button type="button" data-category="cat">猫砂盆<small>KuzmoTec · 视频制作流程</small></button>';deskNav.before(categories);
+  const catNav=document.createElement('nav');catNav.className='org-cat-nav';catNav.hidden=true;catNav.setAttribute('aria-label','猫砂盆功能');catNav.innerHTML=[['samples','视频参考与拆解','5 个红人视频 · 时间线'],['ideas','视频素材思路','8 个方向 · 来源可回溯'],['generator','视频制作工作台','SKU · 关键帧 · Grok Prompt'],['workflow','制作流程与规范','独立生成 · 使用顺序 · 验收'],['products','产品与 SKU','13 款 · 16 个变体']].map(([id,title,sub])=>`<button type="button" data-org-route="cat-${id}">${title}<small>${sub}</small></button>`).join('');deskNav.after(catNav);
   let productTab=new URLSearchParams(location.hash.slice(1)).get('pr')==='rules'?'rules':'facts',restoring=false;
 
   function details(title,nodes,parent){const d=document.createElement('details');d.className='org-disclosure';const summary=document.createElement('summary');summary.textContent=title;d.append(summary);for(const n of nodes)if(n)d.append(n);if(parent)parent.append(d);return d;}
@@ -36,6 +41,7 @@
   for(const key of ['top10','plans','needs'])pages.ideas.append(byId(key+'View'));
   pages.references.append(byId('galleryView'),byId('videosView'));
   pages.promotions.append(byId('promotionsView'));pages.products.append(byId('productsView'));
+  if(K)pages.cats.append(K.root);
 
   // Keep original explanatory blocks, with their original controls and links, behind disclosures.
   details('视频研究概况与核验说明',[...byId('videosView').children].filter(n=>n.matches('.vl-hero,.vl-stats,.vl-boundary,.vl-footnote')),byId('videosView'));
@@ -79,23 +85,27 @@
     if(s.result&&!f.hadResult){steps[0].open=false;steps[1].open=false;steps[2].open=false;}
     f.hadResult=!!s.result;
   }
-  function currentRoute(){if(currentView==='gallery')return document.body.dataset.imagePanel==='prompt'?'image-prompt':'images';if(currentView==='videos')return {samples:'video-samples',analysis:'video-analysis',directions:'video-ideas',generator:'video-prompt',production:'video-production'}[window.VideoLibrary.getShareState().vt||'samples']||'video-samples';return {top10:'recommended',plans:'all-ideas',needs:'needs',promotions:'promotions',products:productTab}[currentView]||'images';}
-  function render(remember=true){const key=currentRoute(),r=routes[key],config=definitions[r.section];if(remember)last[r.section]=key;document.body.dataset.librarySection=r.section;
+  function currentRoute(){if(currentView==='cats'&&K)return 'cat-'+K.state.tab;if(currentView==='gallery')return document.body.dataset.imagePanel==='prompt'?'image-prompt':'images';if(currentView==='videos')return {samples:'video-samples',analysis:'video-analysis',directions:'video-ideas',generator:'video-prompt',production:'video-production'}[window.VideoLibrary.getShareState().vt||'samples']||'video-samples';return {top10:'recommended',plans:'all-ideas',needs:'needs',promotions:'promotions',products:productTab}[currentView]||'images';}
+  function render(remember=true){const key=currentRoute(),r=routes[key],isCat=r.section==='cats',config=isCat&&K?K.metadata():definitions[r.section];if(remember){if(!isCat)last[r.section]=key;lastCategory[isCat?'cat':'desk']=key;}document.body.dataset.librarySection=r.section;document.body.dataset.libraryCategory=isCat?'cat':'desk';
+    deskNav.hidden=isCat;catNav.hidden=!isCat;about.hidden=isCat;if(K)K.root.hidden=!isCat;setText(header.querySelector('.org-kicker'),isCat?'KUZMOTEC · CREATIVE LIBRARY':'FURNIWELL · CREATIVE LIBRARY');
+    for(const b of categories.querySelectorAll('[data-category]')){const active=b.dataset.category===(isCat?'cat':'desk');b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));}
+    side.hidden=isCat;
     if(currentView==='gallery'&&byId('galleryView').parentElement!==pages[r.section])pages[r.section].append(byId('galleryView'));if(currentView==='videos'&&byId('videosView').parentElement!==pages[r.section])pages[r.section].append(byId('videosView'));
     for(const [name,page]of Object.entries(pages))page.hidden=name!==r.section;
     setText(byId('orgTitle'),config.title);setText(byId('orgDescription'),config.description);
-    const counts={images:DATA.materials.length+' 张图片参考','video-samples':window.FURNIWELL_VIDEO_DATA.materials.length+' 条视频样本','video-analysis':window.FURNIWELL_VIDEO_DATA.analyses.length+' 条字幕拆解',recommended:'10 条推荐 · 共 '+DATA.creatives.length+' 个原创方向','all-ideas':DATA.creatives.length+' 个原创方向',needs:window.FURNIWELL_DEMAND_DATA.cards.length+' 条独立需求建议','video-ideas':window.FURNIWELL_VIDEO_DATA.directions.length+' 个视频方向',promotions:window.FURNIWELL_PROMOTION_DATA.summary.records+' 条促销案例',facts:DATA.products.length+' 款原研究产品 + 补充核验',rules:'结构 · 版位 · 验收','image-prompt':'中文 · 图片制作','video-prompt':'中文 · 逐镜头制作','video-production':'视频测试与来源'};setText(byId('orgCount'),counts[key]||'');
+    const counts={images:DATA.materials.length+' 张图片参考','video-samples':window.FURNIWELL_VIDEO_DATA.materials.length+' 条视频样本','video-analysis':window.FURNIWELL_VIDEO_DATA.analyses.length+' 条字幕拆解',recommended:'10 条推荐 · 共 '+DATA.creatives.length+' 个原创方向','all-ideas':DATA.creatives.length+' 个原创方向',needs:window.FURNIWELL_DEMAND_DATA.cards.length+' 条独立需求建议','video-ideas':window.FURNIWELL_VIDEO_DATA.directions.length+' 个视频方向',promotions:window.FURNIWELL_PROMOTION_DATA.summary.records+' 条促销案例',facts:DATA.products.length+' 款原研究产品 + 补充核验',rules:'结构 · 版位 · 验收','image-prompt':'中文 · 图片制作','video-prompt':'中文 · 逐镜头制作','video-production':'视频测试与来源'};setText(byId('orgCount'),isCat?config.count:counts[key]||'');
     for(const button of document.querySelectorAll('.nav [data-section]')){const active=button.dataset.section===r.section;button.classList.toggle('active',active);if(active)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current');}
     for(const button of document.querySelectorAll('.org-subnav [data-org-route]')){const active=button.dataset.orgRoute===key;button.classList.toggle('active',active);if(active)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current');}
+    for(const button of catNav.querySelectorAll('[data-org-route]')){const active=button.dataset.orgRoute===key;button.classList.toggle('active',active);if(active)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current');}
     productFacts.hidden=productTab==='rules';rules.hidden=productTab!=='rules';
     for(const mode of Object.keys(forms))paintForm(mode);
   }
-  window.view=function(v){originalView(v);render(false);};
-  window.shareState=function(extra={}){if(!restoring){originalShare(extra);if(currentView==='products'&&productTab==='rules'){const p=new URLSearchParams(location.hash.slice(1));p.set('pr','rules');history.replaceState(null,'','#'+p.toString());}}render();};
-  function navigate(key){const r=routes[key];if(!r)return;if(byId('modal').open)byId('modal').close();if(r.view==='products')productTab=key==='rules'?'rules':'facts';window.view(r.view);if(r.image)B.setImagePanel(r.image,false);if(r.video)window.VideoLibrary.setTab(r.video,false);window.shareState();}
-  document.addEventListener('click',e=>{const b=e.target.closest('[data-section],[data-org-route]');if(!b)return;if(b.dataset.orgRoute)navigate(b.dataset.orgRoute);else navigate(last[b.dataset.section]);});
+  window.view=function(v){if(v==='cats'&&K){originalView('gallery');currentView='cats';document.body.dataset.libraryView='cats';}else originalView(v);render(false);};
+  window.shareState=function(extra={}){if(!restoring){if(currentView==='cats'&&K){const p=new URLSearchParams({view:'cats',...K.getShareState()});history.replaceState(null,'','#'+p.toString());}else{originalShare(extra);if(currentView==='products'&&productTab==='rules'){const p=new URLSearchParams(location.hash.slice(1));p.set('pr','rules');history.replaceState(null,'','#'+p.toString());}}}render();};
+  function navigate(key){const r=routes[key];if(!r)return;if(byId('modal').open)byId('modal').close();if(r.view==='products')productTab=key==='rules'?'rules':'facts';window.view(r.view);if(r.cat&&K)K.show(r.cat);if(r.image)B.setImagePanel(r.image,false);if(r.video)window.VideoLibrary.setTab(r.video,false);window.shareState();}
+  document.addEventListener('click',e=>{const b=e.target.closest('[data-section],[data-org-route],[data-category]');if(!b)return;if(b.dataset.category)navigate(lastCategory[b.dataset.category]);else if(b.dataset.orgRoute)navigate(b.dataset.orgRoute);else navigate(last[b.dataset.section]);});
   document.addEventListener('change',e=>{if(e.target.closest('#imagePromptBuilder'))paintForm('image');if(e.target.closest('#videoPromptBuilder'))paintForm('video');});
-  function restore(){const p=new URLSearchParams(location.hash.slice(1)),v=p.get('view');restoring=true;try{productTab=p.get('pr')==='rules'?'rules':'facts';if(['gallery','videos','top10','plans','needs','products','promotions'].includes(v))originalView(v);if(v==='gallery'&&p.get('ip')!=='prompt'){for(const id of ['q','brand','platform','benefit','scene'])byId(id).value=p.get(id)||'';byId('coreOnly').checked=p.get('core')==='1';renderGallery();}render();}finally{restoring=false;}}
+  function restore(){const p=new URLSearchParams(location.hash.slice(1)),v=p.get('view');restoring=true;try{productTab=p.get('pr')==='rules'?'rules':'facts';if(v==='cats'&&K){originalView('gallery');currentView='cats';document.body.dataset.libraryView='cats';K.restore(p);}else if(['gallery','videos','top10','plans','needs','products','promotions'].includes(v))originalView(v);if(v==='gallery'&&p.get('ip')!=='prompt'){for(const id of ['q','brand','platform','benefit','scene'])byId(id).value=p.get(id)||'';byId('coreOnly').checked=p.get('core')==='1';renderGallery();}render();}finally{restoring=false;}}
   window.addEventListener('hashchange',restore);
   window.FurniwellOrganization={version,navigate,render,currentRoute,pages};
   restore();
