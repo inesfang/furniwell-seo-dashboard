@@ -43,7 +43,7 @@
    const previous=i?shotSpecs[idea.shots[i-1]]:null,next=i<idea.shots.length-1?shotSpecs[idea.shots[i+1]]:null;
    const bridge=previous?`承接前镜「${previous.title}」尾态，房间与产品位置不变；换机位用新首帧核对尾态，硬切。${previous.cats&&!spec.cats?'猫已自然离开镜头或在画外，不残留肢体。':!previous.cats&&spec.cats?'切到稍后，猫从画外自然来到指定位置。':''}`:'建立房间与商品位置的统一锚点。';
    const end=next?`尾态留给下一镜「${next.title}」核对，${spec.cats&&!next.cats?'猫先离开画面或切至猫在画外的视角。':'物件不瞬移。'}`:'结尾保持商品和空间稳定。';
-   const frame=`${i===0?'@image1':'@image1 @image2'}\n生成第${i+1}/5张独立广告关键帧，${ratio}。只交付这一张完整单幅，不拼图。image1须实际上传为该SKU官方原图。${i>0?'另上传已经验收的第一张关键帧image2，仅锁定房间布局、光线与已有角色；商品仍只以image1为准，不照搬image2的机位与动作。':''}${lock}\n${baseScene}\n${identities}${spec.frame}${bridge}${manual}不复制官网原图中的人物、猫、房间、文字与装饰。画面无字幕、无价格；App使用后期真实截图。`;
+   const frame=`${i===0?'@image1':'@image1（若支持多参考，再添加 image2）'}\n生成第${i+1}/5张独立广告关键帧，${ratio}。只交付这一张完整单幅，不拼图。image1须实际上传为该SKU官方原图。${i>0?'如界面支持多参考，再上传已验收的第一张关键帧image2作为房间与角色参考；不支持时仅上传商品原图，人工对照上镜尾帧核对房间和角色。商品仍以image1为准，不照搬image2的机位与动作。':''}${lock}\n${baseScene}\n${identities}${spec.frame}${bridge}${manual}不复制官网原图中的人物、猫、房间、文字与装饰。画面无字幕、无价格；App使用后期真实截图。`;
    const video=`将当前实际上传的第${i+1}镜头关键帧（文件image${image}）作为首帧，生成${duration}秒${ratio}写实广告片段，只做本镜头。${lock.replace('原图','本镜头首帧')}\n${spec.motion}\n本镜头猫${spec.cats}只、可见人手${spec.hands}只，其他人或动物不入画。${identities}${checks}${end}${manual}不生成文字、App数据、配音、音乐或额外转场，仅保留轻微环境声。`;
    return {index:i+1,key,title:spec.title,image,range,cats:spec.cats,hands:spec.hands,frame,video,frameCount:count(frame),videoCount:count(video),frameValid:count(frame)<=limit,videoValid:count(video)<=limit,bridge,end,edit:duration===6?'界面生成 6 秒，后期选取其中稳定连续 3 秒':'成片取连续稳定 3 秒'};
   });
