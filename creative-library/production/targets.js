@@ -41,7 +41,7 @@
   const text=[isFrame?(result.chair?'实际上传主商品与已选搭配椅原图，分别锁定两件商品。':'实际上传当前主商品原图。'):'上传本镜合格关键帧作首帧，保持商品、椅子、人物与房间。',
    isFrame?`只生成镜头${i+1}/5的一张独立静止首帧，${a.ratio}，不拼图、不画动作轨迹。`:`只生成镜头${i+1}/5的一段独立3秒写实视频，${a.ratio}。若界面只可选6秒，生成后剪取稳定连续3秒。`,
    identity(result,isFrame?'对应商品原图':'本镜头已验收首帧'),result.ideaId==='FV-05'?'卧室保留床、门与通道。':'',window.CreativeFieldcraft.findDesk(result.fieldLook).short,cast(s),`起始状态：${s.start}`,s.camera,
-   isFrame?'只画上述开始状态，先验收产品、人物结构和接触关系，不表现后续运动。':`唯一动作：${s.action}；结束：${s.end}`,i?`前镜尾态：${a.shots[i-1].end}${a.shots[i-1].cast==='seated'&&s.cast==='hand'?'时间跳切，手在画外就位。':''}同机位接合格尾帧；换机位另验首帧并核对尾态，硬切。`:'',extra?'已核实补充事实：'+extra:'',
+   isFrame?'只画上述开始状态，先验收产品、人物结构和接触关系，不表现后续运动。':`唯一动作：${s.action}；结束：${s.end}`,i?`前镜尾态：${a.shots[i-1].end}${a.shots[i-1].cast==='seated'&&s.cast==='hand'?'时间跳切，手在画外就位。':''}同机位且状态连续才接尾帧；否则另验首帧，核对尾态后硬切。`:'',extra?'已核实补充事实：'+extra:'',
    '锁定商品、房间、道具、服装和光线；主体离画或合理时间跳切。遮挡真实，无多手、断肢、穿模和变形。无字幕、价格、口播或音乐。'].filter(Boolean).join('\n');
   return {text,executable:true,index:i,label:`镜头 ${i+1}/5 · ${isFrame?'首帧':'短视频'}`};
  }
