@@ -19,10 +19,11 @@
   workplace:'商务办公纵深构图，白色日光，实用工作设备与简洁收纳；保留通道；最多一位自然工作的成年人，不用居家绿植地毯布景。'
  };
  const nightNotes={space:'夜间门口全景，完整桌与过道；灰墙、硬地、无地毯，侧方低亮环境灯。',frontal:'夜间近正面构图，深蓝灰墙与封闭柜，左上中性侧灯勾勒轮廓。',documentary:'夜间人物侧前中景，灰绿家庭工作角，局部任务灯照亮纸笔。',evening:'夜间真实工作角，工作灯照亮桌面任务，窗外暗，产品颜色不变。'};
+ const promoNotes={space:'门口全景，灰墙木地、阴天漫射光，完整商品与通道。',frontal:'正面水平构图，深蓝灰墙、定向侧光，商品轮廓清楚。',documentary:'侧前中景，灰绿工作角，阴天散射光，有真实生活痕迹。',detail:'原装部件近景，安装边同框，中性柔光，背景简洁。',evening:'夜间工作角，局部工作灯与暗背景，不改变商品原色。',studio:'素色背景完整商品棚拍，柔光与自然地面阴影。',overhead:'高位斜俯拍工作面，中性漫射光，保留前沿与原拼缝。',workplace:'办公空间纵深构图，中性照明与玻璃隔断，保留真实通道。'};
  function identity(result,source='原图'){
   const p=result.product,S=window.FurniwellPromptEngine.structure(p);
   return [`主商品 SKU ${p.sku||p.variant}，所选变体${p.variantTitle}；只以${source}锁定。`,...S.facts,...(['desk','frame'].includes(p.caps.family)?['如有控制器，在入座者右手边、靠人的前工作长边；人面对镜头时常显示在画面左侧。禁止移到其他边，内嵌款保持内嵌。']:[]),
-   result.chair?`若出现搭配椅，只用已选 SKU ${result.chair.sku}（${result.chair.color}），保留该椅原有头枕、扶手、脚托、底座与脚轮，不添加原图没有的部件。`:'主商品本身为椅子，不额外添加另一把椅子。',
+   result.chair?`若出现搭配椅，只用已选 SKU ${result.chair.sku}（${result.chair.color}），头枕、扶手、底座、脚轮及是否有脚托均以该椅原图为准，不增加不存在的部件。`:'主商品本身为椅子，不额外添加另一把椅子。',
    p.caps.family==='frame'?'这是单独售卖桌架，不增加桌板或将道具当作随货。':'数量、尺寸、比例、材质和原色保持，不镜像，不混用其他 SKU。'].join('');
  }
  function cast(step){return {empty:'本镜头0人0手0脚，椅子空置，不残留桌下腿脚。',hand:'只见同一成年人的一只右手，五指、手腕与前臂连续；另一手、脸和躯干在画外，不换手、不穿过桌板或机件。',seated:'恰好一名成年人已坐稳；坐垫承托骨盆，椅背在身后，双手分放左右大腿、双脚着地；不入座、不起身、不转身。',standing:'恰好一名成年人已站稳，双脚着地、双臂下垂，与商品有可见间隙；不触碰家具、不转身。'}[step.cast]||'人数和首帧姿态保持，不新增肢体。';}
@@ -31,8 +32,10 @@
   if(result.mode==='image'){
    const b=result.batches.find(b=>b.id===placement)||result.batches[0],i=Number(String(part).replace('image-',''));
    if(!/^image-\d+$/.test(part)||!b.jobs[i])return {text:'请先选择一个单张图片任务。Grok 模式按任务逐张执行。',executable:false};
-   const v=result.visuals[i],task=(idea?.layout||'展示当前 SKU 与真实使用空间。').replace(/\d{2,3}\s*[×xX]\s*\d{2,3}(?:\s*cm)?/g,'所选规格').replace(/白色|黑色|白桌|黑桌/g,'所选颜色');
-   const text=[result.chair?'实际上传主商品与已选搭配椅原图，分别锁定两件商品。':'实际上传当前主商品原图。',`只生成第${i+1}/${b.count}张完整独立广告图片，${b.ratio}，不拼图；完成后继续其他单张任务。`,identity(result),`本张视觉：${v.name}。${idea?.id==='FW-C20'?(nightNotes[v.id]||[v.camera,v.light,v.placement,v.room].join('')):(visualNotes[v.id]||[v.camera,v.light,v.placement,v.room].join(''))}`,`画面任务：${task}`,extra?'已核实补充事实：'+extra:'',result.promotion?window.FurniwellPromotionComposer.block(result.promotion,true)+'人物与家具接触正常，无多手、穿模。不伪造评价、认证或赠品。':'不复制官网原房间与光线。人物身体、手腕、手指与家具接触正常，无多手、穿模；不得以场景演示冒充性能测试。无叠字、价格、认证标识或虚假赠品；真实广告标题和活动后期加入。'].filter(Boolean).join('\n');
+   const v=result.visuals[i],task=(idea?.layout||'展示当前 SKU 与真实使用空间。').replace(/\d{2,3}\s*[×xX]\s*\d{2,3}(?:\s*cm)?/g,'所选规格').replace(/白色|黑色|白桌|黑桌/g,'所选颜色'),promo=result.promotion;
+   const hasPerson=promo&&['space','frontal','documentary','evening','studio','workplace'].includes(v.id)&&(promo.cast==='standing'||promo.cast==='auto'&&['documentary','workplace'].includes(v.id));
+   const promoCast=hasPerson?'一位成人全身站稳于商品旁，双脚着地、双臂下垂，不接触家具；手脚完整，不穿模。':'无人、无手脚、椅子空置。';
+   const text=[result.chair?'实际上传主商品与已选搭配椅原图，分别锁定两件商品。':'实际上传当前主商品原图。',`只生成第${i+1}/${b.count}张完整独立广告图片，${b.ratio}，不拼图；完成后继续其他单张任务。`,identity(result),`本张视觉：${v.name}。${promo?promoNotes[v.id]:(idea?.id==='FW-C20'?(nightNotes[v.id]||[v.camera,v.light,v.placement,v.room].join('')):(visualNotes[v.id]||[v.camera,v.light,v.placement,v.room].join('')))}`,promo?window.FurniwellPromotionComposer.shortVisual(promo,i,result.ideaId):`画面任务：${task}`,extra?'已核实补充事实：'+extra:'',promo?window.FurniwellPromotionComposer.block(promo,true)+promoCast+'不伪造评价、认证或赠品。':'不复制官网原房间与光线。最多一位成人，身体四肢连续、手腕和手指自然，不多手、穿模；异常需重做。无叠字、价格、认证标识或虚假赠品；真实广告标题和活动后期加入。'].filter(Boolean).join('\n');
    return {text,executable:true,index:i,label:`第 ${i+1}/${b.count} 张 · ${v.name}`};
   }
   const a=result.assets.find(a=>a.id===placement)||result.assets[0],m=/^(keyframe|clip)-(\d+)$/.exec(part),i=m&&Number(m[2]),s=m&&a.shots[i];

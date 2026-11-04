@@ -1,7 +1,7 @@
 {
-  "version": "2026-10-20",
+  "version": "2026-11-04",
   "title": "促销素材 · Black Friday 2026",
-  "scope": "德国Furniwell为应用对象；以2023–2025可核验案例为主，补2026预热与当前页面，以及2019长期对照。覆盖桌椅品牌及家具零售，非全网穷尽或竞品效果排名。",
+  "scope": "德国Furniwell为应用对象；以2023–2025可核验案例为主，补2026预热与当前页面，以及2019长期对照。覆盖桌椅品牌及家具零售，非全网穷尽或竞品效果排名。 2026-11-04 新增核查德国活动页及第三方广告示例，独立标明来源、地区和年份边界。",
   "year_rule": "发送日、图内期限和官方正文优先。页面更新年不等于图片首发年；混年／复用案例单列，不冒充2026最终投放。",
   "boundary": "官网横幅、品牌邮件、传单和图像组件均标注来源类型；未验证其是否曾用于Google或Meta付费投放。没有竞品效果数据。",
   "materials": [
@@ -871,6 +871,204 @@
       "original_frames": 1,
       "sha256": "120d146230eebc85281fc70207e45535385e320a1b344e67c9f3f4f2ac960825",
       "image_note": "从已公开原图保存的静态研究预览。未用生成式工具补画。"
+    },
+    {
+      "brand": "FlexiSpot",
+      "category": "桌椅品牌",
+      "year": "2026",
+      "date": "2026-11-04 页面核查",
+      "market": "德国",
+      "title": "建筑空间分区与酒红主视觉",
+      "source_url": "https://www.flexispot.de/black-friday-2026",
+      "source_kind": "品牌官网活动页",
+      "stage": "预热",
+      "style": "建筑色面",
+      "offer": "页面以 Black Month 活动呈现多阶段优惠；不同商品与时段条件不同。",
+      "visual": "深酒红背景与米色建筑体块，多个房间形成层次；标题及优惠集中在空白区域。",
+      "borrow": "利用深浅色面、空间层次和明确的文字组，让家居主题与促销同时易读。",
+      "adapt": "换成单个真实 Furniwell 商品，在可核对的实际场景中利用墙面与留白；保持桌体和控制器清晰。",
+      "limit": "官网活动页截图，不等于已投放广告；不复制建筑造型、商标或竞品优惠。",
+      "asset_role": "官网活动主视觉截图",
+      "year_evidence": "官方 2026 黑五页面；2026-11-04 查阅",
+      "related": [
+        "FW-BF-12",
+        "FW-BF-13"
+      ],
+      "id": "BF-028",
+      "collected_at": "2026-11-04",
+      "performance_evidence": "未获取点击、花费或成交数据；所列为视觉观察和可测试假设，不代表效果。",
+      "image": "promotions/references/BF-028.webp",
+      "width": 1348,
+      "height": 926,
+      "preview_width": 1280,
+      "preview_height": 371,
+      "sha256": "8c0862f928775f7e6894e0f8b7f1cc308ee6b73fb988be310f967faeeac8841b",
+      "image_note": "公开页面局部截图，仅供研究；不代表独立广告。"
+    },
+    {
+      "brand": "Desktronic",
+      "category": "桌椅品牌",
+      "year": "2026",
+      "date": "2026-11-04 页面核查",
+      "market": "德国",
+      "title": "大标题、清晰商品与克制优惠标签",
+      "source_url": "https://desktronic.de/collections/black-friday-hoehenverstellbare-schreibtische",
+      "source_kind": "品牌官网商品集合页",
+      "stage": "预热",
+      "style": "商品与字体",
+      "offer": "官网集合页展示黑五优惠和具体商品价格；具体权益按原页为准。",
+      "visual": "大号黑色标题、浅色留白和简洁商品图，小尺寸标签提示折扣。",
+      "borrow": "让商品轮廓与字重形成主次，促销不必依赖大面积红色爆炸贴。",
+      "adapt": "转换成单个所选 SKU 的原创棚拍海报，不复刻网页商品卡片或列表。",
+      "limit": "这是官网商品集合页，不是单张广告海报；页面商品和价格不可移用。",
+      "asset_role": "官网商品集合页截图",
+      "year_evidence": "页面标题明确标注 2026；2026-11-04 查阅",
+      "related": [
+        "FW-BF-09",
+        "FW-BF-10"
+      ],
+      "id": "BF-029",
+      "collected_at": "2026-11-04",
+      "performance_evidence": "未获取点击、花费或成交数据；所列为视觉观察和可测试假设，不代表效果。",
+      "image": "promotions/references/BF-029.webp",
+      "width": 1353,
+      "height": 929,
+      "preview_width": 1280,
+      "preview_height": 863,
+      "sha256": "c12bd327899f2cb7b70c5e65ad5fa279f3004f5154c6ce5ad5ba4d2a1d73ae37",
+      "image_note": "公开页面局部截图，仅供研究；不代表独立广告。"
+    },
+    {
+      "brand": "faee Home",
+      "category": "家具零售",
+      "year": "2026",
+      "date": "2026-11-04 页面核查",
+      "market": "德国",
+      "title": "深色背景突出浅色家具与优惠信息",
+      "source_url": "https://www.faee-home.de/black-november/",
+      "source_kind": "品牌官网活动页",
+      "stage": "主促",
+      "style": "深浅反差",
+      "offer": "Black November 页面分别展示商品折扣和额外优惠码，并列有使用条件。",
+      "visual": "深紫红背景衬托浅色沙发，主标题、优惠和代码集中在同一信息区，配霓虹与镜面球。",
+      "borrow": "借鉴深浅反差和优惠信息分组；主商品保持清楚。",
+      "adapt": "把灯效与镜球换成哑光材质、自然投影和克制排版，更贴近有质感的桌椅海报。",
+      "limit": "官网活动页截图，不等于已投放广告；不使用竞品霓虹风、Logo、价格或优惠码。",
+      "asset_role": "官网活动主视觉截图",
+      "year_evidence": "原页活动条款明确至 2026-11-30；2026-11-04 查阅",
+      "related": [
+        "FW-BF-10",
+        "FW-BF-13"
+      ],
+      "id": "BF-030",
+      "collected_at": "2026-11-04",
+      "performance_evidence": "未获取点击、花费或成交数据；所列为视觉观察和可测试假设，不代表效果。",
+      "image": "promotions/references/BF-030.webp",
+      "width": 1348,
+      "height": 926,
+      "preview_width": 1280,
+      "preview_height": 639,
+      "sha256": "f38c20aa82e095b40eb5112b40e50dca90aebc1e2eb557622342f8f8ce32afb7",
+      "image_note": "公开页面局部截图，仅供研究；不代表独立广告。"
+    },
+    {
+      "brand": "Secretlab",
+      "category": "桌椅品牌",
+      "year": "2026",
+      "date": "2026-09-23 第三方快照",
+      "market": "未披露（英语创意）",
+      "title": "真实工作场景与边缘信息带",
+      "source_url": "https://www.sprites.ai/black-friday-furniture-ads?ad=meta%3Ameta-1653372003178978",
+      "source_kind": "Meta 广告第三方收录",
+      "stage": "预热",
+      "style": "场景加信息带",
+      "offer": "第三方快照呈现黑五预热信息；权益与实时状态未独立核实。",
+      "visual": "工作场景为主体，桌椅同框，深色横向信息带集中呈现促销标题及权益。",
+      "borrow": "以照片承担生活感，再把促销信息收拢在不遮商品的边缘。",
+      "adapt": "以真实 SKU 与官网搭配椅拍摄感重构，改变场景与信息带位置，不沿用任何竞品权益。",
+      "limit": "第三方归档截图不是当前在投证明；原广告市场、实时状态和成效未核实。",
+      "asset_role": "第三方收录的 Meta 广告图",
+      "year_evidence": "第三方归档标注 2026-09-23；不推定当前仍在投",
+      "related": [
+        "FW-BF-11",
+        "FW-BF-14"
+      ],
+      "ad_library_url": "https://www.facebook.com/ads/library/?id=1653372003178978",
+      "id": "BF-031",
+      "collected_at": "2026-11-04",
+      "performance_evidence": "未获取点击、花费或成交数据；所列为视觉观察和可测试假设，不代表效果。",
+      "image": "promotions/references/BF-031.webp",
+      "width": 1080,
+      "height": 1080,
+      "preview_width": 1000,
+      "preview_height": 1000,
+      "sha256": "31001baf66f573e58f3df019f360b92607f5d128847b745cf6612449df58e6a9",
+      "image_note": "公开第三方收录图的静态研究预览；不作为自有广告素材。"
+    },
+    {
+      "brand": "Rosen",
+      "category": "家具零售",
+      "year": "待核／复用",
+      "date": "2026-10-29 文章展示",
+      "market": "未独立核实（西班牙语创意）",
+      "title": "字体占比与大面积商品画面",
+      "source_url": "https://confect.io/blog/black-friday-catalog-ad-examples-for-meta-ads",
+      "source_kind": "Confect 第三方案例",
+      "stage": "主促",
+      "style": "大字与商品",
+      "offer": "文章展示黑五主题促销创意，实际投放日期与地区未独立核实。",
+      "visual": "广告示例在社交界面中以醒目大字、有限色彩与家居商品共同构成主要层级。",
+      "borrow": "使用字重、留白与单一明确利益形成辨识度，而非依赖多个贴纸。",
+      "adapt": "采用原创德语文案与真实桌型，使用独立的字形组合和构图。",
+      "limit": "示例来自第三方文章，素材实际年份、地区与投放成效未独立核实；界面不用于投放。",
+      "asset_role": "第三方文章中的广告示例截图",
+      "year_evidence": "文章 2026-10-29 展示；创意实际首发年份待核",
+      "related": [
+        "FW-BF-10"
+      ],
+      "id": "BF-032",
+      "collected_at": "2026-11-04",
+      "performance_evidence": "未获取点击、花费或成交数据；所列为视觉观察和可测试假设，不代表效果。",
+      "image": "promotions/references/BF-032.webp",
+      "width": 808,
+      "height": 1333,
+      "preview_width": 606,
+      "preview_height": 1000,
+      "sha256": "482e55c38cf1535fd27a480f7d9a36e32ff41c92a7dab0c81a8107a59562787f",
+      "image_note": "公开第三方收录图的静态研究预览；不作为自有广告素材。"
+    },
+    {
+      "brand": "Bedre Nætter",
+      "category": "家具零售",
+      "year": "待核／复用",
+      "date": "2026-10-29 文章展示",
+      "market": "未独立核实",
+      "title": "家居实景与独立促销信息区",
+      "source_url": "https://confect.io/blog/black-friday-catalog-ad-examples-for-meta-ads",
+      "source_kind": "Confect 第三方案例",
+      "stage": "主促",
+      "style": "实景与色带",
+      "offer": "文章展示家居促销广告示例；具体优惠、投放时间和地区未独立核实。",
+      "visual": "床品在生活化室内场景中展示，促销内容集中于相对独立的高对比色带。",
+      "borrow": "把生活场景与促销信息分区，降低文字与家具结构互相遮挡。",
+      "adapt": "用 Furniwell 桌椅与原创家居场景重做，采用更克制的深色细带和少量文字。",
+      "limit": "第三方文章内的广告示例，实际年份、地区与成效未核；不复制原图、商标或价格。",
+      "asset_role": "第三方文章中的广告示例截图",
+      "year_evidence": "文章 2026-10-29 展示；创意实际首发年份待核",
+      "related": [
+        "FW-BF-11",
+        "FW-BF-14"
+      ],
+      "id": "BF-033",
+      "collected_at": "2026-11-04",
+      "performance_evidence": "未获取点击、花费或成交数据；所列为视觉观察和可测试假设，不代表效果。",
+      "image": "promotions/references/BF-033.webp",
+      "width": 808,
+      "height": 1333,
+      "preview_width": 606,
+      "preview_height": 1000,
+      "sha256": "d5e333ada3080dd1fbe72f75fb1fe6b22926794cbe866f3a6da3b42da5693555",
+      "image_note": "公开第三方收录图的静态研究预览；不作为自有广告素材。"
     }
   ],
   "products": {
@@ -1206,6 +1404,179 @@
       ],
       "deliverables": "1:1与4:5；截止后同步停止或替换价格和日期素材。",
       "avoid": "只有真实即将结束才用；不写未经证明的“仅剩3件”“年度最低”；价保需真实规则，不能借用Secretlab承诺。"
+    },
+    {
+      "id": "FW-BF-09",
+      "priority": "P1",
+      "title": "棚拍轮廓 · 杂志留白",
+      "product_keys": [
+        "P5"
+      ],
+      "need": "让商品清楚可辨，同时测试有设计感的原创促销表达。",
+      "refs": [
+        "BF-029"
+      ],
+      "concept": "用干净摄影背景和克制字体强调商品轮廓与已确认优惠。",
+      "scene": "浅灰摄影背景，单个所选 SKU 完整呈现；不强制添加人或椅子。",
+      "layout": "照片中的自然留白容纳主标语与折扣；用细线和高对比字重，不套白色图片卡片。",
+      "copy": [
+        "BLACK FRIDAY",
+        "Angebote für dein Homeoffice",
+        "ANGEBOTE ENTDECKEN"
+      ],
+      "variant_a": "商品占主导，促销信息控制在一组明确留白中。",
+      "variant_b": "保持同一商品与已确认优惠，重新安排机位、光线和文字层级，不只更换道具。",
+      "channels": [
+        "PMax",
+        "Meta"
+      ],
+      "deliverables": "选择单张或四张独立图片；各平台按比例分别排版并检查。",
+      "avoid": "主商品、右手侧前工作长边控制器、桌腿与原图一致；实际折扣、期限和条件由执行者确认；不复制竞品素材。"
+    },
+    {
+      "id": "FW-BF-10",
+      "priority": "P1",
+      "title": "字体主导 · 深浅反差",
+      "product_keys": [
+        "P5"
+      ],
+      "need": "让商品清楚可辨，同时测试有设计感的原创促销表达。",
+      "refs": [
+        "BF-029",
+        "BF-030",
+        "BF-032"
+      ],
+      "concept": "用大胆字重和有限色彩表达黑五，避免重复红色徽章。",
+      "scene": "选择真实商品原色与干净背景；色彩对比围绕商品，不改变产品材质。",
+      "layout": "标题与优惠成组，大字作为平面设计；不得遮挡控制器、腿部与条件。",
+      "copy": [
+        "BLACK FRIDAY",
+        "Angebote für dein Homeoffice",
+        "ANGEBOTE ENTDECKEN"
+      ],
+      "variant_a": "商品占主导，促销信息控制在一组明确留白中。",
+      "variant_b": "保持同一商品与已确认优惠，重新安排机位、光线和文字层级，不只更换道具。",
+      "channels": [
+        "PMax",
+        "Meta"
+      ],
+      "deliverables": "选择单张或四张独立图片；各平台按比例分别排版并检查。",
+      "avoid": "主商品、右手侧前工作长边控制器、桌腿与原图一致；实际折扣、期限和条件由执行者确认；不复制竞品素材。"
+    },
+    {
+      "id": "FW-BF-11",
+      "priority": "P1",
+      "title": "生活实景 · 窄信息带",
+      "product_keys": [
+        "P5"
+      ],
+      "need": "让商品清楚可辨，同时测试有设计感的原创促销表达。",
+      "refs": [
+        "BF-031",
+        "BF-033"
+      ],
+      "concept": "以真实工作环境承载生活感，让促销信息收拢在照片边缘。",
+      "scene": "生活化工作角，拍摄整桌与通道；如出现人物，最多一位自然站立且不接触家具。",
+      "layout": "大幅摄影与窄信息带形成层级，商品主体和促销文字均可辨认。",
+      "copy": [
+        "BLACK FRIDAY",
+        "Angebote für dein Homeoffice",
+        "ANGEBOTE ENTDECKEN"
+      ],
+      "variant_a": "商品占主导，促销信息控制在一组明确留白中。",
+      "variant_b": "保持同一商品与已确认优惠，重新安排机位、光线和文字层级，不只更换道具。",
+      "channels": [
+        "PMax",
+        "Meta"
+      ],
+      "deliverables": "选择单张或四张独立图片；各平台按比例分别排版并检查。",
+      "avoid": "主商品、右手侧前工作长边控制器、桌腿与原图一致；实际折扣、期限和条件由执行者确认；不复制竞品素材。"
+    },
+    {
+      "id": "FW-BF-12",
+      "priority": "P1",
+      "title": "建筑色面 · 不对称留白",
+      "product_keys": [
+        "P5"
+      ],
+      "need": "让商品清楚可辨，同时测试有设计感的原创促销表达。",
+      "refs": [
+        "BF-028"
+      ],
+      "concept": "以真实室内色块与地面层次形成不对称的家居海报。",
+      "scene": "选定商品处于可实现的真实房间，墙面、地面形成明暗层次，默认无人。",
+      "layout": "利用墙面色块及留白为文字分组，不复制竞品的建筑模型或原画面。",
+      "copy": [
+        "BLACK FRIDAY",
+        "Angebote für dein Homeoffice",
+        "ANGEBOTE ENTDECKEN"
+      ],
+      "variant_a": "商品占主导，促销信息控制在一组明确留白中。",
+      "variant_b": "保持同一商品与已确认优惠，重新安排机位、光线和文字层级，不只更换道具。",
+      "channels": [
+        "PMax",
+        "Meta"
+      ],
+      "deliverables": "选择单张或四张独立图片；各平台按比例分别排版并检查。",
+      "avoid": "主商品、右手侧前工作长边控制器、桌腿与原图一致；实际折扣、期限和条件由执行者确认；不复制竞品素材。"
+    },
+    {
+      "id": "FW-BF-13",
+      "priority": "P1",
+      "title": "暗调工作位 · 温和局部光",
+      "product_keys": [
+        "P5"
+      ],
+      "need": "让商品清楚可辨，同时测试有设计感的原创促销表达。",
+      "refs": [
+        "BF-028",
+        "BF-030"
+      ],
+      "concept": "用夜间工作环境和克制排版呈现有质感的促销氛围。",
+      "scene": "深色工作区，一盏真实工作灯与低亮环境光，商品原色和真实结构可见。",
+      "layout": "大面积深色照片与浅色文字对比，优惠短句清晰，不加霓虹或人造发光桌腿。",
+      "copy": [
+        "BLACK FRIDAY",
+        "Angebote für dein Homeoffice",
+        "ANGEBOTE ENTDECKEN"
+      ],
+      "variant_a": "商品占主导，促销信息控制在一组明确留白中。",
+      "variant_b": "保持同一商品与已确认优惠，重新安排机位、光线和文字层级，不只更换道具。",
+      "channels": [
+        "PMax",
+        "Meta"
+      ],
+      "deliverables": "选择单张或四张独立图片；各平台按比例分别排版并检查。",
+      "avoid": "主商品、右手侧前工作长边控制器、桌腿与原图一致；实际折扣、期限和条件由执行者确认；不复制竞品素材。"
+    },
+    {
+      "id": "FW-BF-14",
+      "priority": "P1",
+      "title": "工作环境 · 画面边缘字体",
+      "product_keys": [
+        "P5"
+      ],
+      "need": "让商品清楚可辨，同时测试有设计感的原创促销表达。",
+      "refs": [
+        "BF-031",
+        "BF-033"
+      ],
+      "concept": "用工作室纵深、真实场景和简洁促销信息突出工作位。",
+      "scene": "整洁但有使用痕迹的办公室或工作室，主商品与通道可辨。",
+      "layout": "信息按画面留白分组，避免统一左文右图和重复卡片模板。",
+      "copy": [
+        "BLACK FRIDAY",
+        "Angebote für dein Homeoffice",
+        "ANGEBOTE ENTDECKEN"
+      ],
+      "variant_a": "商品占主导，促销信息控制在一组明确留白中。",
+      "variant_b": "保持同一商品与已确认优惠，重新安排机位、光线和文字层级，不只更换道具。",
+      "channels": [
+        "PMax",
+        "Meta"
+      ],
+      "deliverables": "选择单张或四张独立图片；各平台按比例分别排版并检查。",
+      "avoid": "主商品、右手侧前工作长边控制器、桌腿与原图一致；实际折扣、期限和条件由执行者确认；不复制竞品素材。"
     }
   ],
   "insights": [
@@ -1392,12 +1763,12 @@
     }
   ],
   "summary": {
-    "brands": 15,
-    "records": 27,
-    "visuals": 16,
+    "brands": 19,
+    "records": 33,
+    "visuals": 22,
     "text_only": 11,
-    "source_pages": 24,
-    "briefs": 8
+    "source_pages": 29,
+    "briefs": 14
   },
   "priority_rule": "P0/P1/P2用于本轮黑五设计打样与测试安排，不覆盖原需求板块的证据评级。白色和具体尺寸沿用现有线索；预算、小空间、组合购买与L型双屏的具体动机仍需验证。"
 }
