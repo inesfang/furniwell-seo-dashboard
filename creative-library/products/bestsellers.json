@@ -1,0 +1,407 @@
+{
+  "title": "热卖商品 SKU 档案",
+  "importedAt": "2026-11-05",
+  "source": "用户提供的《热卖SKU优化.xlsx》Sheet1",
+  "catalogCheckedAt": "2026-10-28",
+  "scope": "按 Sheet1 原顺序展示，不代表销量排名；表格中价格、库存、表现和成本不纳入产品事实。",
+  "items": [
+    {
+      "sku": "G-HAD241022",
+      "variantId": "44537441747210",
+      "title": "Economy Elektrisch Höhenverstellbarer Schreibtisch",
+      "category": "升降桌",
+      "options": "Weiß - Weiß / 100x60 cm",
+      "url": "https://furniwell.de/products/economy-elektrisch-hohenverstellbarer-schreibtisch?variant=44537441747210",
+      "image": "https://cdn.shopify.com/s/files/1/0580/4615/2882/files/EconomyElektrischHohenverstellbarerSchreibtisch-sku_10.jpg?v=1764671992",
+      "imageRole": "官网目录中与变体绑定的图片",
+      "sheetRow": 2,
+      "notes": [],
+      "guard": "桌板拼接、立柱、脚型和控制器以该 SKU 官网原图为准；不得从其他尺寸或 SKU 补画。",
+      "sheetClaims": [
+        "原表描述列出升降高度 72–116 cm、承重 80 kg；属于页面描述参数，投放前请核对该变体。",
+        "原表描述提及 LCD 控制器和两组记忆高度，按原图及当前规格核对。"
+      ],
+      "workspace": "desk"
+    },
+    {
+      "sku": "FD-SDF101SM0A",
+      "variantId": "41738609688754",
+      "title": "Einzelmotor Höhenverstellbares Tischgestell",
+      "category": "升降桌架",
+      "options": "Schwarz",
+      "url": "https://furniwell.de/products/hohenverstellbarer-schreibtisch-gestell-bis-zu-80-kg?variant=41738609688754",
+      "image": "https://cdn.shopify.com/s/files/1/0580/4615/2882/products/EinzelmotorHohenverstellbaresTischgestellbiszu80kg_2.jpg?v=1703496334",
+      "imageRole": "官网目录中与变体绑定的图片",
+      "sheetRow": 3,
+      "notes": [],
+      "guard": "按单独桌架的实际售卖状态核对，未选桌板或配件不可当作标配。",
+      "sheetClaims": [
+        "原表描述涉及单电机、LCD 控制器和两组记忆高度；尺寸及速度信息存在不一致，应核对官网。"
+      ],
+      "workspace": "frame"
+    },
+    {
+      "sku": "G-SCLB24-0769E-2GY",
+      "variantId": "53805904462090",
+      "title": "Selbstreinigende Katzentoilette 90L für mehrere Katzen",
+      "category": "猫砂盆",
+      "options": "Weiß",
+      "url": "https://furniwell.de/products/selbstreinigende-katzentoilette-90l-fur-mehrere-katzen?variant=53805904462090",
+      "image": "https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0769-M1.jpg?v=1790247675",
+      "imageRole": "官网目录中与变体绑定的图片",
+      "sheetRow": 4,
+      "notes": [],
+      "guard": "以该商品官网原图核对开口和主体结构；猫在舱内不演示清洁。",
+      "sheetClaims": [
+        "原表标题与描述列有 90 L 容量和自动清洁；安全条件按该型号说明核对。"
+      ],
+      "workspace": ""
+    },
+    {
+      "sku": "G-RT24-0534-75BK",
+      "variantId": "53489243783434",
+      "title": "Gartentrampolin mit Sicherheitsnetz und Leiter",
+      "category": "蹦床",
+      "options": "schwarz / 228 cm",
+      "url": "https://furniwell.de/products/gartentrampolin-mit-sicherheitsnetz-und-leiter?variant=53489243783434",
+      "image": "https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0534-BK-S.jpg?v=1786016770",
+      "imageRole": "官网目录中与变体绑定的图片",
+      "sheetRow": 5,
+      "notes": [],
+      "guard": "尺寸、结构和配件以该 SKU 的官网原图和售卖页面为准。",
+      "sheetClaims": [
+        "原表标题提及安全网和梯子；尺寸为 228 cm，配件以官网售卖清单核对。"
+      ],
+      "workspace": ""
+    },
+    {
+      "sku": "FD-SDF101SM2A",
+      "variantId": "41738609655986",
+      "title": "Einzelmotor Höhenverstellbares Tischgestell",
+      "category": "升降桌架",
+      "options": "Weiß",
+      "url": "https://furniwell.de/products/hohenverstellbarer-schreibtisch-gestell-bis-zu-80-kg?variant=41738609655986",
+      "image": "https://cdn.shopify.com/s/files/1/0580/4615/2882/products/EinzelmotorHohenverstellbaresTischgestellbiszu80kg_1.jpg?v=1703496334",
+      "imageRole": "官网目录中与变体绑定的图片",
+      "sheetRow": 6,
+      "notes": [],
+      "guard": "按单独桌架的实际售卖状态核对，未选桌板或配件不可当作标配。",
+      "sheetClaims": [
+        "原表描述涉及单电机、LCD 控制器和两组记忆高度；尺寸及速度信息存在不一致，应核对官网。"
+      ],
+      "workspace": "frame"
+    },
+    {
+      "sku": "G-HAD24122WB",
+      "variantId": "44533451620618",
+      "title": "Economy Elektrisch Höhenverstellbarer Schreibtisch",
+      "category": "升降桌",
+      "options": "Beige - Weiß / 120x60 cm",
+      "url": "https://furniwell.de/products/economy-elektrisch-hohenverstellbarer-schreibtisch?variant=44533451620618",
+      "image": "https://cdn.shopify.com/s/files/1/0580/4615/2882/files/EconomyElektrischHohenverstellbarerSchreibtisch-sku_3.jpg?v=1764671992",
+      "imageRole": "官网目录中与变体绑定的图片",
+      "sheetRow": 7,
+      "notes": [],
+      "guard": "桌板拼接、立柱、脚型和控制器以该 SKU 官网原图为准；不得从其他尺寸或 SKU 补画。",
+      "sheetClaims": [
+        "原表描述提及桌板由四片组成；每个变体的拼接细节以原图核对。",
+        "原表描述列出升降高度 72–116 cm、承重 80 kg；属于页面描述参数，投放前请核对该变体。",
+        "原表描述提及 LCD 控制器和两组记忆高度，按原图及当前规格核对。"
+      ],
+      "workspace": "desk"
+    },
+    {
+      "sku": "FD-OCRC23-0394-LDGY",
+      "variantId": "45600843497738",
+      "title": "Bürostuhl mit Fußstütze, Ergonomischer Gaming Stuhl",
+      "category": "办公椅 / 电竞椅",
+      "options": "Dunkelgrau mit Fußstütze",
+      "url": "https://furniwell.de/products/burostuhl-mit-fussstutze-ergonomischer-gaming-stuhl?variant=45600843497738",
+      "image": "https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0394-2.jpg?v=1718961344",
+      "imageRole": "官网目录中与变体绑定的图片",
+      "sheetRow": 8,
+      "notes": [],
+      "guard": "头枕、腰靠、扶手、脚托、底座与脚轮按该款原图核对，不套用其他款式。",
+      "sheetClaims": [
+        "原表变体名称注明深灰色、带脚托；配件按该变体原图核对。"
+      ],
+      "workspace": "chair"
+    },
+    {
+      "sku": "G-HAD23-0183B-120FWA",
+      "variantId": "44922261930250",
+      "title": "Economy Elektrisch Höhenverstellbarer Schreibtisch",
+      "category": "升降桌",
+      "options": "Vintage braun-Schwarz / 120x60 cm",
+      "url": "https://furniwell.de/products/economy-elektrisch-hohenverstellbarer-schreibtisch?variant=44922261930250",
+      "image": "https://cdn.shopify.com/s/files/1/0580/4615/2882/files/1.2Vintagebraun-Black.png?v=1764671992",
+      "imageRole": "官网目录中与变体绑定的图片",
+      "sheetRow": 9,
+      "notes": [],
+      "guard": "桌板拼接、立柱、脚型和控制器以该 SKU 官网原图为准；不得从其他尺寸或 SKU 补画。",
+      "sheetClaims": [
+        "原表描述提及桌板由四片组成；每个变体的拼接细节以原图核对。",
+        "原表描述列出升降高度 72–116 cm、承重 80 kg；属于页面描述参数，投放前请核对该变体。",
+        "原表描述提及 LCD 控制器和两组记忆高度，按原图及当前规格核对。"
+      ],
+      "workspace": "desk"
+    },
+    {
+      "sku": "G-OCRC23-0393-LDGY",
+      "variantId": "45478280724746",
+      "title": "Bürostuhl mit Massage Lendenkissen, Ergonomischer Gaming Stuhl",
+      "category": "办公椅 / 电竞椅",
+      "options": "Dunkelgrau",
+      "url": "https://furniwell.de/products/burostuhl-mit-massage-lendenkissen-ergonomischer-gaming-stuhl-mit-fussstutze?variant=45478280724746",
+      "image": "https://cdn.shopify.com/s/files/1/0580/4615/2882/files/52.jpg?v=1716544496",
+      "imageRole": "官网目录中与变体绑定的图片",
+      "sheetRow": 10,
+      "notes": [
+        "原表标题含“白色”，与变体选项 Dunkelgrau 不一致；本条按变体选项显示，制作前核对原图。"
+      ],
+      "guard": "头枕、腰靠、扶手、脚托、底座与脚轮按该款原图核对，不套用其他款式。",
+      "sheetClaims": [
+        "原表描述提及腰枕与脚托；不据此推断医疗效果。"
+      ],
+      "workspace": "chair"
+    },
+    {
+      "sku": "G-HAD241200B",
+      "variantId": "44533451555082",
+      "title": "Economy Elektrisch Höhenverstellbarer Schreibtisch",
+      "category": "升降桌",
+      "options": "Schwarz -Schwarz / 120x60 cm",
+      "url": "https://furniwell.de/products/economy-elektrisch-hohenverstellbarer-schreibtisch?variant=44533451555082",
+      "image": "https://cdn.shopify.com/s/files/1/0580/4615/2882/files/EconomyElektrischHohenverstellbarerSchreibtisch-sku_2.jpg?v=1764671992",
+      "imageRole": "官网目录中与变体绑定的图片",
+      "sheetRow": 11,
+      "notes": [],
+      "guard": "桌板拼接、立柱、脚型和控制器以该 SKU 官网原图为准；不得从其他尺寸或 SKU 补画。",
+      "sheetClaims": [
+        "原表描述提及桌板由四片组成；每个变体的拼接细节以原图核对。",
+        "原表描述列出升降高度 72–116 cm、承重 80 kg；属于页面描述参数，投放前请核对该变体。",
+        "原表描述提及 LCD 控制器和两组记忆高度，按原图及当前规格核对。"
+      ],
+      "workspace": "desk"
+    },
+    {
+      "sku": "G-HAD24162WB",
+      "variantId": "44533451882762",
+      "title": "Economy Elektrisch Höhenverstellbarer Schreibtisch",
+      "category": "升降桌",
+      "options": "Beige - Weiß / 160x70 cm",
+      "url": "https://furniwell.de/products/economy-elektrisch-hohenverstellbarer-schreibtisch?variant=44533451882762",
+      "image": "https://cdn.shopify.com/s/files/1/0580/4615/2882/files/EconomyElektrischHohenverstellbarerSchreibtisch-sku_9.jpg?v=1764671992",
+      "imageRole": "官网目录中与变体绑定的图片",
+      "sheetRow": 12,
+      "notes": [],
+      "guard": "桌板拼接、立柱、脚型和控制器以该 SKU 官网原图为准；不得从其他尺寸或 SKU 补画。",
+      "sheetClaims": [
+        "原表描述提及桌板由四片组成；每个变体的拼接细节以原图核对。",
+        "原表描述列出升降高度 72–116 cm、承重 80 kg；属于页面描述参数，投放前请核对该变体。"
+      ],
+      "workspace": "desk"
+    },
+    {
+      "sku": "G-SDF23-0257-0",
+      "variantId": "44884662681866",
+      "title": "Furniwell Dual Ultra X Höhenverstellbares Tischgestell",
+      "category": "升降桌架",
+      "options": "Schwarz / Keine Auswahl / Keine Auswahl",
+      "url": "https://furniwell.de/products/furniwell-dual-ultra-x-henverstellbares-tischgestell?variant=44884662681866",
+      "image": "https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0257C_0579103a-68f4-436d-9b35-e67c558f13ee.jpg?v=1753260155",
+      "imageRole": "官网目录中与变体绑定的图片",
+      "sheetRow": 13,
+      "notes": [
+        "表格不同字段的承重分别写为 150 kg 和 160 kg；暂不采用该数值。此变体为黑色桌架，未选桌板或桌板尺寸。"
+      ],
+      "guard": "按单独桌架的实际售卖状态核对，未选桌板或配件不可当作标配。",
+      "sheetClaims": [
+        "原表描述提及双电机；承重字段不一致，未采用具体数值。"
+      ],
+      "workspace": "frame"
+    },
+    {
+      "sku": "G-HAD241622B",
+      "variantId": "44533451849994",
+      "title": "Economy Elektrisch Höhenverstellbarer Schreibtisch",
+      "category": "升降桌",
+      "options": "Weiß - Weiß / 160x70 cm",
+      "url": "https://furniwell.de/products/economy-elektrisch-hohenverstellbarer-schreibtisch?variant=44533451849994",
+      "image": "https://cdn.shopify.com/s/files/1/0580/4615/2882/files/1.6.png?v=1764671992",
+      "imageRole": "官网目录中与变体绑定的图片",
+      "sheetRow": 14,
+      "notes": [],
+      "guard": "桌板拼接、立柱、脚型和控制器以该 SKU 官网原图为准；不得从其他尺寸或 SKU 补画。",
+      "sheetClaims": [
+        "原表描述提及桌板由四片组成；每个变体的拼接细节以原图核对。",
+        "原表描述列出升降高度 72–116 cm、承重 80 kg；属于页面描述参数，投放前请核对该变体。",
+        "原表描述提及 LCD 控制器和两组记忆高度，按原图及当前规格核对。"
+      ],
+      "workspace": "desk"
+    },
+    {
+      "sku": "G-SDF23-0285-0-B-G-HADT23-0286-BK",
+      "variantId": "45028720378122",
+      "title": "L-Form Eckschreibtisch höhenverstellbar Elektrisch Ergonomischer Stehtisch",
+      "category": "升降桌",
+      "options": "160 cm  x 140 cm  x 60 cm / Schwarz - Schwarz",
+      "url": "https://furniwell.de/products/l-form-eckschreibtisch-hohenverstellbar-elektrisch-ergonomischer-stehtisch?variant=45028720378122",
+      "image": "https://cdn.shopify.com/s/files/1/0580/4615/2882/files/L-Form_Eckschreibtisch_hohenverstellbar_Elektrisch_Ergonomischer_Stehtisch_Schwarz-_Schwarz_abe49266-f00a-463f-b9d4-c0fd761fa9ad.jpg?v=1765536019",
+      "imageRole": "官网目录中与变体绑定的图片",
+      "sheetRow": 15,
+      "notes": [],
+      "guard": "桌板拼接、立柱、脚型和控制器以该 SKU 官网原图为准；不得从其他尺寸或 SKU 补画。",
+      "sheetClaims": [
+        "原表列有防碰撞与四组记忆高度；实际配置以该变体官网和实物为准。"
+      ],
+      "workspace": "desk"
+    },
+    {
+      "sku": "G-OCNC23-0240-2",
+      "variantId": "44820467712266",
+      "title": "Furniwell Klassischer Ergonomischer Bürostühl mit Verstellbarer hoher Rücken",
+      "category": "办公椅 / 电竞椅",
+      "options": "Grauer",
+      "url": "https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467712266",
+      "image": "https://cdn.shopify.com/s/files/1/0580/4615/2882/files/0240-Grey.jpg?v=1698643212",
+      "imageRole": "官网目录中与变体绑定的图片",
+      "sheetRow": 16,
+      "notes": [],
+      "guard": "头枕、腰靠、扶手、脚托、底座与脚轮按该款原图核对，不套用其他款式。",
+      "sheetClaims": [
+        "原表描述提及可调头枕和可上翻扶手；具体调节范围须核对官网与实物。"
+      ],
+      "workspace": "chair"
+    },
+    {
+      "sku": "G-HAD241222B",
+      "variantId": "44533451587850",
+      "title": "Economy Elektrisch Höhenverstellbarer Schreibtisch",
+      "category": "升降桌",
+      "options": "Weiß - Weiß / 120x60 cm",
+      "url": "https://furniwell.de/products/economy-elektrisch-hohenverstellbarer-schreibtisch?variant=44533451587850",
+      "image": "https://cdn.shopify.com/s/files/1/0580/4615/2882/files/EconomyElektrischHohenverstellbarerSchreibtisch-sku_1.jpg?v=1764671992",
+      "imageRole": "官网目录中与变体绑定的图片",
+      "sheetRow": 17,
+      "notes": [],
+      "guard": "桌板拼接、立柱、脚型和控制器以该 SKU 官网原图为准；不得从其他尺寸或 SKU 补画。",
+      "sheetClaims": [
+        "原表描述提及桌板由四片组成；每个变体的拼接细节以原图核对。",
+        "原表描述列出升降高度 72–116 cm、承重 80 kg；属于页面描述参数，投放前请核对该变体。",
+        "原表描述提及 LCD 控制器和两组记忆高度，按原图及当前规格核对。"
+      ],
+      "workspace": "desk"
+    },
+    {
+      "sku": "G-HAD24142WB",
+      "variantId": "44533451718922",
+      "title": "Economy Elektrisch Höhenverstellbarer Schreibtisch",
+      "category": "升降桌",
+      "options": "Beige - Weiß / 140x70 cm",
+      "url": "https://furniwell.de/products/economy-elektrisch-hohenverstellbarer-schreibtisch?variant=44533451718922",
+      "image": "https://cdn.shopify.com/s/files/1/0580/4615/2882/files/EconomyElektrischHohenverstellbarerSchreibtisch-sku_6.jpg?v=1764671992",
+      "imageRole": "官网目录中与变体绑定的图片",
+      "sheetRow": 18,
+      "notes": [],
+      "guard": "桌板拼接、立柱、脚型和控制器以该 SKU 官网原图为准；不得从其他尺寸或 SKU 补画。",
+      "sheetClaims": [
+        "原表描述提及桌板由四片组成；每个变体的拼接细节以原图核对。",
+        "原表描述列出升降高度 72–116 cm、承重 80 kg；属于页面描述参数，投放前请核对该变体。",
+        "原表描述提及 LCD 控制器和两组记忆高度，按原图及当前规格核对。"
+      ],
+      "workspace": "desk"
+    },
+    {
+      "sku": "G-OCNC23-0240-0",
+      "variantId": "44820467613962",
+      "title": "Furniwell Klassischer Ergonomischer Bürostühl mit Verstellbarer hoher Rücken",
+      "category": "办公椅 / 电竞椅",
+      "options": "Schwarz",
+      "url": "https://furniwell.de/products/ergonomischer-burostuhl-mit-verstellbarer-hoher-rucken?variant=44820467613962",
+      "image": "https://cdn.shopify.com/s/files/1/0580/4615/2882/files/Black.jpg?v=1760496205",
+      "imageRole": "官网目录中与变体绑定的图片",
+      "sheetRow": 19,
+      "notes": [],
+      "guard": "头枕、腰靠、扶手、脚托、底座与脚轮按该款原图核对，不套用其他款式。",
+      "sheetClaims": [],
+      "workspace": "chair"
+    },
+    {
+      "sku": "G-HAD241422B",
+      "variantId": "44533451686154",
+      "title": "Economy Elektrisch Höhenverstellbarer Schreibtisch",
+      "category": "升降桌",
+      "options": "Weiß - Weiß / 140x70 cm",
+      "url": "https://furniwell.de/products/economy-elektrisch-hohenverstellbarer-schreibtisch?variant=44533451686154",
+      "image": "https://cdn.shopify.com/s/files/1/0580/4615/2882/files/EconomyElektrischHohenverstellbarerSchreibtisch-sku_4.jpg?v=1764671992",
+      "imageRole": "官网目录中与变体绑定的图片",
+      "sheetRow": 20,
+      "notes": [],
+      "guard": "桌板拼接、立柱、脚型和控制器以该 SKU 官网原图为准；不得从其他尺寸或 SKU 补画。",
+      "sheetClaims": [
+        "原表描述提及桌板由四片组成；每个变体的拼接细节以原图核对。",
+        "原表描述列出升降高度 72–116 cm、承重 80 kg；属于页面描述参数，投放前请核对该变体。",
+        "原表描述提及 LCD 控制器和两组记忆高度，按原图及当前规格核对。"
+      ],
+      "workspace": "desk"
+    },
+    {
+      "sku": "G-HAD23-0183B-102BGA",
+      "variantId": "44922286997770",
+      "title": "Economy Elektrisch Höhenverstellbarer Schreibtisch",
+      "category": "升降桌",
+      "options": "Beige - Weiß / 100x60 cm",
+      "url": "https://furniwell.de/products/economy-elektrisch-hohenverstellbarer-schreibtisch?variant=44922286997770",
+      "image": "https://cdn.shopify.com/s/files/1/0580/4615/2882/files/1beigeWhite_bc6fb4d9-a8e4-4e81-a652-05d04e62b879.png?v=1764671992",
+      "imageRole": "官网目录中与变体绑定的图片",
+      "sheetRow": 21,
+      "notes": [],
+      "guard": "桌板拼接、立柱、脚型和控制器以该 SKU 官网原图为准；不得从其他尺寸或 SKU 补画。",
+      "sheetClaims": [
+        "原表描述提及桌板由四片组成；每个变体的拼接细节以原图核对。",
+        "原表描述列出升降高度 72–116 cm、承重 80 kg；属于页面描述参数，投放前请核对该变体。",
+        "原表描述提及 LCD 控制器和两组记忆高度，按原图及当前规格核对。"
+      ],
+      "workspace": "desk"
+    },
+    {
+      "sku": "G-CB25-1081-BK-DE",
+      "variantId": "53473026769162",
+      "title": "Beleuchtete Glasvitrine für Sammlerstücke",
+      "category": "展示柜",
+      "options": "官网目录中的单一默认款；颜色以原图和官网为准",
+      "url": "https://furniwell.de/products/beleuchtete-glasvitrine-fur-sammlerstucke?variant=53473026769162",
+      "image": "https://cdn.shopify.com/s/files/1/0580/4615/2882/files/1081-1.jpg?v=1784137217",
+      "imageRole": "表格提供的官网主图，未绑定具体变体",
+      "sheetRow": 22,
+      "notes": [
+        "官网目录未提供与变体绑定的图片，当前展示表格提供的商品主图；制作前核对外观。"
+      ],
+      "guard": "尺寸、结构和配件以该 SKU 的官网原图和售卖页面为准。",
+      "sheetClaims": [
+        "原表描述提及玻璃门、RGB 照明与 Wi-Fi 控制；功能与实际配置待官网核验。"
+      ],
+      "workspace": ""
+    },
+    {
+      "sku": "G-LCSL25-1113-GR-4",
+      "variantId": "53761517748490",
+      "title": "Aluminium-Gartenstühle mit verstellbarer Rückenlehne",
+      "category": "户外椅",
+      "options": "4 pcs.",
+      "url": "https://furniwell.de/products/aluminium-gartenstuhle-mit-verstellbarer-ruckenlehne?variant=53761517748490",
+      "image": "https://cdn.shopify.com/s/files/1/0580/4615/2882/files/1113-m1.jpg?v=1786016696",
+      "imageRole": "官网目录中与变体绑定的图片",
+      "sheetRow": 23,
+      "notes": [
+        "原表商品描述误写为厨房柜内容，已排除该描述；本条按商品与 4 件变体归档。"
+      ],
+      "guard": "这是 4 件规格，广告画面中的数量与实际售卖范围应一致。",
+      "sheetClaims": [
+        "原表产品名称为可调靠背铝制花园椅，变体数量为 4 件。"
+      ],
+      "workspace": ""
+    }
+  ]
+}
