@@ -1,0 +1,58 @@
+name: 竞品流量周报 · 飞书推送
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - data/weekly-reports.json
+      - .github/workflows/feishu-weekly-report.yml
+  workflow_dispatch:
+    inputs:
+      send_to_group:
+        description: '勾选后发送最新一期到飞书群。默认核对网页并预览。'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: feishu-weekly-report
+  cancel-in-progress: false
+
+jobs:
+  notify:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: 核对周报并准备群卡片
+        id: prepare
+        run: node scripts/push-weekly-feishu.mjs "$FEISHU_REPORT_MODE"
+        env:
+          FEISHU_REPORT_MODE: ${{ github.event_name == 'push' && 'push' || (inputs.send_to_group && 'send' || 'check') }}
+          GH_TOKEN: ${{ github.token }}
+
+      - name: 发送群卡片
+        id: send
+        if: steps.prepare.outputs.report_date != ''
+        run: node scripts/push-weekly-feishu.mjs deliver
+        env:
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+          FEISHU_SIGNING_SECRET: ${{ secrets.FEISHU_SIGNING_SECRET }}
+
+      - name: 保存投递回执
+        if: ${{ !cancelled() && steps.send.outputs.receipt_date != '' }}
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: feishu-weekly-${{ steps.send.outputs.receipt_date }}
+          path: ${{ runner.temp }}/feishu-weekly-receipt.json
+          if-no-files-found: error
+          retention-days: 90
