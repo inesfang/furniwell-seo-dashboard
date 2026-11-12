@@ -79,11 +79,22 @@
     }
   }
   function setText(node,value){if(node.textContent!==value)node.textContent=value;}
-  function paintForm(mode){const f=forms[mode];if(!f)return;const {w,steps}=f,s=w.state,p=s.product,c=s.chair,idea=B.ideas.find(i=>i.id===w.get('idea').value);const values=[p?(p.sku||p.variant)+' · '+p.variantTitle+(s.referenceConfirmed?' · 原图已选':' · 待确认原图'):'输入 SKU 或商品链接',p&&!window.FurniwellChairLibrary.pairable(p)?'主商品为椅子，不额外搭配':c?c.label+' · '+c.color+' · '+c.sku:'请选择对应椅子',idea?idea.id+' · '+idea.title:'选择库内思路'+(mode==='image'?'与视觉拍法':''),w.get('channel').selectedOptions?.[0]?.textContent||'投放平台与市场'];
+  function paintForm(mode){
+    const f=forms[mode];if(!f)return;
+    const {w,steps}=f,{product:p,chair:c,referenceConfirmed}=w.state;
+    const idea=B.ideas.find(i=>i.id===w.get('idea').value);
+    const chairChoice=w.get('chair-model').value;
+    const visualCount=mode==='image'?w.selectedVisualIds().length:0;
+    const values=[
+      p?(p.sku||p.variant)+' · '+p.variantTitle+(referenceConfirmed?' · 原图已选':' · 待确认原图'):'输入 SKU 或商品链接',
+      !window.FurniwellChairLibrary.pairable(p)?'主商品为椅子':chairChoice==='none'?'不搭配椅子':c?c.label+' · '+c.color+' · '+c.sku:'请选择对应椅子',
+      visualCount?'已选 '+visualCount+' 种风格':idea?idea.id+' · '+idea.title:mode==='image'?'可勾选多种风格':'选择库内思路',
+      w.get('channel').selectedOptions?.[0]?.textContent||'投放平台与市场'
+    ];
     steps.forEach((d,i)=>setText(d.querySelector('.org-step-value'),values[i]||''));
-    if(p&&!s.referenceConfirmed)steps[0].open=true;
-    if(s.result&&!f.hadResult){steps[0].open=false;steps[1].open=false;steps[2].open=false;}
-    f.hadResult=!!s.result;
+    if(p&&!referenceConfirmed)steps[0].open=true;
+    if(w.state.result&&!f.hadResult){steps[0].open=false;steps[1].open=false;steps[2].open=false;}
+    f.hadResult=!!w.state.result;
   }
   function currentRoute(){if(currentView==='cats'&&K)return 'cat-'+K.state.tab;if(currentView==='gallery')return document.body.dataset.imagePanel==='prompt'?'image-prompt':'images';if(currentView==='videos')return {samples:'video-samples',analysis:'video-analysis',directions:'video-ideas',generator:'video-prompt',production:'video-production'}[window.VideoLibrary.getShareState().vt||'samples']||'video-samples';return {top10:'recommended',plans:'all-ideas',needs:'needs',promotions:'promotions',products:productTab}[currentView]||'images';}
   function render(remember=true){const key=currentRoute(),r=routes[key],isCat=r.section==='cats',config=isCat&&K?K.metadata():definitions[r.section];if(remember){if(!isCat)last[r.section]=key;lastCategory[isCat?'cat':'desk']=key;}document.body.dataset.librarySection=r.section;document.body.dataset.libraryCategory=isCat?'cat':'desk';

@@ -5,6 +5,7 @@
     {id:'space',name:'门口全景 · 空间尺度',kind:'wide',
       camera:'从使用者一侧的门口拍摄，等效 28 mm，机位约 1.35 m，轻微俯角；门框只占边缘，完整交代主商品与退出通道，禁止超广角拉长家具。',
       placement:'主商品短边朝向窗所在墙面，长边不贴窗；从靠人的工作面方向看见商品正面和一侧，座椅收在使用位置而非占据前景。',
+      placementWithoutChair:'主商品短边朝向窗所在墙面，长边不贴窗。从工作面一侧看见商品正面和一侧，工作位前方保留真实通道。',
       room:'窄长矩形房间，前景门框、远处封闭储物柜；窗在画面外的右后方。使用哑光浅灰墙与普通木地板，地面不铺地毯。',
       light:'阴天上午的右侧漫射日光，白平衡约 5200 K，低反差、柔软阴影；墙上没有树叶光斑。',
       palette:'中性浅灰与原产品色，通道明暗层次清楚；保留自然纹理，避免奶油黄调色。',
@@ -14,15 +15,18 @@
     {id:'frontal',name:'正面构图 · 深色背景',kind:'wide',
       camera:'使用者一侧的近正面视角，等效 50 mm，机位约 1.10 m，镜头保持水平；构图端正，避免与门口斜拍相同的透视。',
       placement:'主商品长边正对镜头，离背景墙留出真实空隙；座椅沿使用方向摆正并移出主商品轮廓，前景不放遮挡物。',
+      placementWithoutChair:'主商品长边正对镜头，离背景墙留出真实空隙，工作位和前景留空，完整展示主商品轮廓。',
       room:'深蓝灰哑光墙、右侧低矮封闭柜、浅灰硬质地面；没有可见大窗、开放书架或成排盆栽。',
       light:'左上方画外窗的定向中性日光，约 5000 K；阴影方向明确，反差高于柔光家居图，同时保留白色部件细节。',
       palette:'深蓝灰与商品原色形成清晰明度对比，轮廓利落，保持真实摄影质感。',
       props:'一份展开的纸质资料与单个笔筒；若任务需要屏幕，使用简洁不可读的工作界面。',
       people:'以商品轮廓为主，任务需要人物时只保留自然坐姿的侧面，不用挡住桌腿的大椅背。',
+      peopleWithoutChair:'以商品轮廓为主，任务需要人物时，只在工作位侧边安排自然站姿。',
       avoid:'不出现左侧大窗、暖阳、米白窗帘、绿植包围和地毯。'},
     {id:'documentary',name:'人物纪实 · 使用瞬间',kind:'wide',
       camera:'从使用者右前方拍中景，等效 40 mm，机位约 1.55 m，轻微俯角；人物手部与实际任务处于视觉中心，保留商品识别部位。',
       placement:'主商品与背景墙呈小角度摆放，人物自然入座或站立使用；椅子顺着身体方向摆放，不把椅背对着镜头。',
+      placementWithoutChair:'主商品与背景墙呈小角度摆放，工作位前方留空，人物在一侧站立使用。',
       room:'真实有人使用的工作角，灰绿色墙面、窄壁架和一块纸质备忘板；布置有生活痕迹但不凌乱，没有大面积装饰植物。',
       light:'阴雨日下午的画外散射天光与微弱室内补光，约 4800 K；曝光自然，明暗不均匀但产品颜色可辨，不添加夕阳滤镜。',
       palette:'低饱和灰绿与中性肤色，保留布料和纸张质感，呈现真实使用照片。',
@@ -41,6 +45,7 @@
     {id:'evening',name:'夜间工作 · 局部照明',kind:'wide',
       camera:'从使用者左前方拍较低的中远景，等效 35 mm，机位约 1.0 m；保留原有右侧部件可辨，产品完整且透视自然。',
       placement:'主商品置于房间侧墙工作区，长边与墙平行；座椅在远侧自然入位，电脑或资料沿任务方向放置。',
+      placementWithoutChair:'主商品置于房间侧墙工作区，长边与墙平行。工作位留空，电脑或资料沿任务方向放置。',
       room:'深灰蓝墙、窄抽屉柜和一盏独立工作灯；窗在远处且已经暗下，不出现明亮白窗帘或日间花园。',
       light:'傍晚至夜间，独立工作灯约 4000 K，画外微弱冷色环境光；桌面明亮、远处较暗，白色部件保持中性而非橙黄。',
       palette:'局部明亮的工作面与深背景对比，保留阴影细节；不使用霓虹、彩色灯带或改变产品原色。',
@@ -99,11 +104,24 @@
   const ids=profiles.map(p=>p.id);
   function intent(idea){const id=idea?.id||'',t=idea?.title||'';return {space:/FW-C0[19]|FW-C18|FW-C22|ND-R01|ND-L02|ND-L08/.test(id)||/放得下|空间|通道|墙角|转角|腿部/.test(t),bedroom:['FW-C01','FW-C20'].includes(id),living:['FW-C10','FW-C22'].includes(id),detail:/FW-C06|FW-C23|ND-R04|ND-R06|ND-R09|ND-L05/.test(id)};}
   function fit(profile,idea,product){const i=intent(idea);if(i.space&&(profile.studio||['detail','overhead'].includes(profile.id)))return {ok:false,reason:'空间思路需要房间全景与真实通道，不能用局部或棚拍代替。'};if((i.bedroom||i.living)&&profile.id==='workplace')return {ok:false,reason:'此思路需要住宅生活场景。'};if((i.bedroom||i.living)&&profile.studio)return {ok:false,reason:'此思路需要真实住宅使用环境。'};if(i.detail&&profile.id==='warm-stone-studio')return {ok:false,reason:'此思路需要部件特写；暖石色棚拍用于完整商品展示。'};if(product?.caps.family==='frame'&&profile.id==='overhead')return {ok:false,reason:'裸桌架没有售卖桌板，不能生成桌面任务俯拍。'};return {ok:true,reason:''};}
-  function select(o){const count=Number(o.visualCount||1);if(![1,4].includes(count))throw new Error('请选择一套或四套视觉方案。');const available=profiles.filter(p=>fit(p,o.idea,o.product).ok);const chosen=o.visual||'auto';if(chosen!=='auto'&&!ids.includes(chosen))throw new Error('请选择有效视觉方向。');if(chosen!=='auto'&&!fit(profiles.find(p=>p.id===chosen),o.idea,o.product).ok)throw new Error(fit(profiles.find(p=>p.id===chosen),o.idea,o.product).reason);
-    const initial=preferred[o.idea?.id]||'documentary',offset=Math.max(0,ids.indexOf(initial));const ranked=[...profiles.slice(offset),...profiles.slice(0,offset)].filter(p=>available.includes(p));const recent=(o.recentVisuals||[]).filter(id=>ids.includes(id)).slice(-3);const featured=/^FW-BF-(09|1[0-4])$/.test(o.idea?.id||'');const first=chosen==='auto'?(featured?ranked[0]:(ranked.find(p=>!recent.includes(p.id))||ranked[0])):available.find(p=>p.id===chosen);
-    // Difference is scored across location, framing and light, with recent choices deprioritized.
-    const features={space:['home','wide','day'],frontal:['dark','front','day'],documentary:['home','medium','diffuse'],detail:['neutral','close','studio'],evening:['dark','low','night'],studio:['studio','front','studio'],'warm-stone-studio':['studio','front','side-soft'],overhead:['neutral','high','diffuse'],workplace:['office','wide','mixed']};
-    const list=[first];while(list.length<count){const rest=ranked.filter(p=>!list.includes(p));if(!rest.length)throw new Error('当前思路没有足够适用的拍法，请选择一套视觉方案。');const score=p=>Math.min(...list.map(q=>features[p.id].reduce((n,x,i)=>n+(x!==features[q.id][i]?1:0),0)))*3-(recent.includes(p.id)?2:0);rest.sort((a,b)=>score(b)-score(a)||ranked.indexOf(a)-ranked.indexOf(b));list.push(rest[0]);}
+  function select(o){
+    const chosen=[...new Set(o.visualIds||(o.visual&&o.visual!=='auto'?[o.visual]:[]))];
+    let list;
+    if(chosen.length){
+      list=chosen.map(id=>{
+        const profile=profiles.find(p=>p.id===id);
+        if(!profile)throw new Error('请选择有效的视觉风格。');
+        const compatibility=fit(profile,o.idea,o.product);
+        if(!compatibility.ok)throw new Error('「'+profile.name+'」：'+compatibility.reason);
+        return profile;
+      });
+    }else{
+      const offset=ids.indexOf(preferred[o.idea?.id]||'documentary');
+      const ranked=[...profiles.slice(offset),...profiles.slice(0,offset)].filter(p=>fit(p,o.idea,o.product).ok);
+      const recent=(o.recentVisuals||[]).slice(-3);
+      const featured=/^FW-BF-(09|1[0-4])$/.test(o.idea?.id||'');
+      list=[(featured?ranked[0]:ranked.find(p=>!recent.includes(p.id)))||ranked[0]];
+    }
     return list.map(p=>o.idea?.id==='FW-C20'&&p.id!=='evening'?{...p,light:'夜间使用画外中性工作灯与低亮度环境补光，约 '+(p.id==='frontal'?'4500':p.id==='detail'?'5500':'5000')+' K；通过本方案机位对应的侧向光形成明暗，不出现日光或明亮窗外。'}:p);
   }
   function block(p,o){const i=intent(o.idea),family=o.product.caps.family;let context=i.bedroom?'成人卧室的工作区；空间画面保留床边或衣柜的真实尺度。':i.living?'真实客厅里的工作区；保留生活空间与工作空间的关系。':'按以下室内布置安排，生活与工作任务必须真实可信。';if(p.studio)context='商品摄影棚；不把棚拍描述为真实家庭使用证据。';const crop=p.kind==='detail'?'本张是功能近景，允许画面外裁掉与功能无关的部分，但目标部件、所属安装边和比例必须准确。':p.kind==='task'?'本张是桌面任务中近景，允许局部裁切，必须保留足以识别所选商品的原有结构。':'本张是中远景或全景，主商品全貌、支撑结构及底脚完整，必要的操作空间真实存在。';
@@ -111,12 +129,15 @@
     const props=family==='frame'?'按裸桌架售卖状态展示，工具或适配资料独立放在地面外侧；不增加桌板，不把另购部件当作标配。':family==='chair'?'相关笔记、资料放在人物手中或画外；不因道具描述新增椅子结构或随货配件。':p.props;
     if(o.promotion)light=light.replace('纸张、手部和商品表面清楚','纸张与商品表面清楚');
     const promo=o.promotion,hasPerson=promo&&p.kind==='wide'&&(promo.cast==='standing'||promo.cast==='auto'&&['documentary','workplace'].includes(p.id));
-    const person=promo?(hasPerson?'最多一位成年人，完整身体站稳在商品旁，双脚落地、双臂自然垂放且与躯干连续；不接触桌椅和控制器，不坐、不叠加人体或镜中人物。人物与家具之间留出间隔。':'无人画面，不出现任何人、手、腿或人体倒影；椅子如入画保持空置。'):(family==='desk'?p.people:'根据所选商品和任务安排必要人物，不继承桌类特有功能。'+p.people.replace(/升降桌使用原安装位置的右手侧控制器，不虚构按键或显示内容。/,'')).replace('另一位如需出现则远离主商品且不遮挡','不要增加第二人');
+    const withoutChair=!o.chair&&window.FurniwellChairLibrary.pairable(o.product);
+    const people=withoutChair&&p.peopleWithoutChair?p.peopleWithoutChair:p.people;
+    const person=promo?(hasPerson?'最多一位成年人，完整身体站稳在商品旁，双脚落地、双臂自然垂放且与躯干连续；不接触桌椅和控制器，不坐、不叠加人体或镜中人物。人物与家具之间留出间隔。':'无人画面，不出现任何人、手、腿或人体倒影。'):(family==='desk'?people:'根据所选商品和任务安排必要人物，不继承桌类特有功能。'+people.replace(/升降桌使用原安装位置的右手侧控制器，不虚构按键或显示内容。/,'')).replace('另一位如需出现则远离主商品且不遮挡','不要增加第二人');
     const camera=promo?p.camera.replace('人物手部与实际任务处于视觉中心','主商品与真实使用环境处于视觉中心'):p.camera;
-    const placement=promo?p.placement.replace('人物自然入座或站立使用','不安排人物坐下或接触桌椅').replace('人物只在下缘出现手与少量躯干','边缘保留清晰工作面，不能出现悬空手脚'):p.placement;
+    const staging=withoutChair&&p.placementWithoutChair?p.placementWithoutChair:p.placement;
+    const placement=promo?staging.replace(/人物自然入座或站立使用|人物在一侧站立使用/,'人物如出镜则站在一侧，与商品留出间隔').replace('人物只在下缘出现手与少量躯干','边缘保留清晰工作面，不能出现悬空手脚'):staging;
     const avoid=promo?p.avoid.replace('不出现空无一人的完美样板房、','不出现毫无生活感的过度摆拍布置、'):p.avoid;
     const safeProps=promo&&p.id==='detail'?'只保留所选商品和清晰可辨的原装部件；不要新增手部或装饰道具。':props;
-    return ['【独立视觉方案：'+p.name+'】',context,'镜头与景别：'+camera,'产品摆放：'+placement,'室内布置：'+p.room,'光线：'+light,'视觉效果：'+p.palette,'道具组织：'+safeProps,'人物处理：'+person,'人体验收：最多一人；若画面有人，头、躯干、手臂、腿与身体连续，关节自然，人体不穿过桌板、椅子或其他物件；不出现多余肢体、重复手指或漂浮部位。若只拍手部，手臂从画面边缘连续进入且数量符合动作。放大检查，异常时单张重做。',crop,'本方案排除：'+avoid,...(p.qa?['本方案验收：'+p.qa]:[]),o.batchSize>1?`这是整批第 ${o.batchIndex}/${o.batchSize} 张的具体拍法；交付本张独立图片后继续下一任务，全部 ${o.batchSize} 个任务都要完成。`:'每次仅生成这一张独立画面。相同 SKU 的其他方案要分别执行；禁止把多个视觉方案合成一张拼图。','产品结构不参与变化：仅改变光线、机位、摆放、房间、道具和人物任务。相机始终从可核对的使用者一侧取景，不能镜像或推测原图看不见的背面。'].join('\n');
+    return ['【独立视觉方案：'+p.name+'】',context,'镜头与景别：'+camera,'产品摆放：'+placement,'室内布置：'+p.room,'光线：'+light,'视觉效果：'+p.palette,'道具组织：'+safeProps,'人物处理：'+person,'人体验收：最多一人；若画面有人，头、躯干、手臂、腿与身体连续，关节自然，人体不穿过桌板、椅子或其他物件；不出现多余肢体、重复手指或漂浮部位。若只拍手部，手臂从画面边缘连续进入且数量符合动作。放大检查，异常时单张重做。',crop,'本方案排除：'+avoid,...(p.qa?['本方案验收：'+p.qa]:[]),'每次仅生成这一张独立画面。相同 SKU 的其他方案要分别执行；禁止把多个视觉方案合成一张拼图。','产品结构不参与变化：仅改变光线、机位、摆放、房间、道具和人物任务。相机始终从可核对的使用者一侧取景，不能镜像或推测原图看不见的背面。'].join('\n');
   }
   window.FurniwellVisualPlans={profiles,preferred,intent,fit,select,block};
 })();

@@ -11,11 +11,33 @@
  function context(w){return {extra:w.get('extra').value.trim(),idea:B.ideas.find(i=>i.id===w.state.result?.ideaId)};}
  function status(t,s){text(t.kind==='cat'?$('ktLengthStatus'):t.w.get('copy-status'),s);}
  function controls(t){for(const b of t.control.querySelectorAll('[data-cp-set]')){const active=b.dataset.cpSet===t.tool;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));}$(`${t.id}-limit-row`).hidden=t.tool!=='grok';text($(`${t.id}-description`),t.tool==='grok'?`Grok Imagine：逐条执行独立图片、关键帧或视频镜头。本次每条最大 ${T.validLimit(t.limit)?t.limit:'（待填写）'} 字符；超限不能复制或下载，不机械截断结构与动作约束。`:'ChatGPT Work：使用完整资料，可按顺序制作多张独立关键帧，不套用 Imagine 短指令上限。视频任务按当前可用工具执行；没有输出视频文件时交付实际关键帧与镜头指令。');}
- function furniturePart(t){const w=t.w;if(!w.state.result)return;const p=w.get('part');for(const o of p.querySelectorAll('option')){const no=t.tool==='grok'&&(t.mode==='image'?o.value==='batch':!/^(clip|keyframe)-\d+$/.test(o.value));o.hidden=no;o.disabled=no;}if(t.tool==='grok'&&(t.mode==='image'?!/^image-\d+$/.test(p.value):!/^(clip|keyframe)-\d+$/.test(p.value)))p.value=t.mode==='image'?'image-0':'clip-0';}
+ function furniturePart(t){
+  const w=t.w;
+  if(t.mode!=='video'||!w.state.result)return;
+  const part=w.get('part'),standalone=/^(clip|keyframe)-\d+$/;
+  for(const option of part.options){
+   option.hidden=option.disabled=t.tool==='grok'&&!standalone.test(option.value);
+  }
+  if(t.tool==='grok'&&!standalone.test(part.value))part.value='clip-0';
+ }
  function furniture(t){controls(t);const w=t.w,r=w.state.result;furniturePart(t);t.meter.hidden=!r;t.current=null;if(!r){w.get('copy').disabled=true;w.get('download').disabled=true;if(t.mode==='image')w.get('download-current').disabled=true;return;}
   const o=T.furnitureOutput(r,w.get('asset').value,w.get('part').value,t.tool,t.limit,context(w));t.current=o;value(w.get('output'),o.text);t.meter.classList.toggle('cp-invalid',!o.valid);text(t.meter.querySelector('strong'),t.tool==='grok'?'Grok Imagine · 单条执行':'ChatGPT Work · 完整资料');text(t.meter.querySelector('span'),t.tool==='grok'?`${o.count} / ${t.limit} 字符`:`${o.count.toLocaleString()} 字符 · 不套用 Imagine 上限`);w.get('copy').disabled=!o.valid;w.get('download').disabled=t.tool==='grok'&&!T.validLimit(t.limit);if(t.mode==='image')w.get('download-current').disabled=!o.valid;
-  if(t.tool==='grok'){text(w.get('copy'),t.mode==='image'?'复制本张 Grok 短指令':'复制本镜头 Grok 短指令');text(w.get('download'),'下载全部逐条短指令');text(w.get('output-help'),'每次只复制上方这一条。实际上传对应商品图或本镜头已验收首帧；整包用于逐步执行，不整体粘贴到 Imagine。');if(t.mode==='image'){const b=r.batches.find(b=>b.id===w.get('asset').value)||r.batches[0];text(w.get('output-summary'),`本组仍需完成 ${b.count} 张独立图片。Grok 按第 1–${b.count} 张单图任务依次制作。`);text(w.get('download-current'),'下载当前单张短指令');}}
-  else{text(w.get('download'),'下载 ChatGPT Work 完整制作包');if(t.mode==='image'){const b=r.batches.find(b=>b.id===w.get('asset').value)||r.batches[0],batch=w.get('part').value==='batch';text(w.get('copy'),batch?`复制 ${b.count} 张 Work 批量总指令`:'复制本张 Work 完整指令');text(w.get('download-current'),batch?'下载本组完整指令':'下载本张完整指令');text(w.get('output-summary'),batch?`本次交付 ${b.count} 张独立图片，完整指令包含全部任务；逐张输出、不拼图。`:`当前为第 ${o.index!==undefined?o.index+1:Number(w.get('part').value.replace('image-',''))+1}/${b.count} 张完整指令。`);}else text(w.get('copy'),'复制当前 Work 完整资料');text(w.get('output-help'),'完整版保留商品事实、原图、结构、场景与验收细节。关键帧逐张实际交付；视频依当前工具执行，不将文字当作视频成品。');}
+  if(t.mode==='image'){
+   const grok=t.tool==='grok';
+   text(w.get('copy'),grok?'复制本张 Grok 短指令':'复制本张 Work 完整指令');
+   text(w.get('download-current'),grok?'下载本张短指令':'下载本张完整指令');
+   text(w.get('download'),'下载全部版位 Prompt');
+   text(w.get('output-summary'),`第 ${o.index+1}/${r.visuals.length} 条 · ${o.visual.name}`);
+   text(w.get('output-help'),'每条指令对应一张独立图片。全部版位下载按版位收录各风格的指令。');
+  }else if(t.tool==='grok'){
+   text(w.get('copy'),'复制本镜头 Grok 短指令');
+   text(w.get('download'),'下载全部逐条短指令');
+   text(w.get('output-help'),'每次只复制上方这一条。实际上传对应商品图或本镜头已验收首帧；整包用于逐步执行，不整体粘贴到 Imagine。');
+  }else{
+   text(w.get('copy'),'复制当前 Work 完整资料');
+   text(w.get('download'),'下载 ChatGPT Work 完整制作包');
+   text(w.get('output-help'),'完整版保留商品事实、原图、结构、场景与验收细节。关键帧逐张实际交付；视频依当前工具执行，不将文字当作视频成品。');
+  }
   if(!o.valid)status(t,T.validLimit(t.limit)?`当前 ${o.count} 字符，超过本次最大字数 ${t.limit} 或不是独立任务；请精简补充事实、改选独立步骤，或使用 Work 完整版。`:'请填写 100–10000 的整数作为本次最大字数。');
   else status(t,t.tool==='grok'?'当前单条指令在本次最大字数内；复制后单独执行。':'使用 Work 完整版，不套用 Imagine 短指令最大字数。');
  }
@@ -28,16 +50,16 @@
  }
  function refresh(t){if(t.kind==='cat')cat(t);else furniture(t);}
  function sync(){if(window.FurniwellOrganization)window.shareState();}
- function choose(t,tool,persist=true){if(!['work','grok'].includes(tool))tool=t.defaultTool;const changed=t.tool!==tool;if(changed){if(t.kind==='cat'){if(t.tool==='work')t.workPart=K.state.outputKind;else t.grokPart=K.state.outputKind;K.state.outputKind=tool==='work'?(t.workPart||'overview'):(t.grokPart||'video');}else{const p=t.w.get('part');if(t.tool==='work')t.workPart=p.value;else t.grokPart=p.value;t.tool=tool;furniturePart(t);const desired=tool==='work'?t.workPart:t.grokPart;if(desired&&[...p.querySelectorAll('option')].some(o=>o.value===desired&&!o.disabled))p.value=desired;}}
+ function choose(t,tool,persist=true){if(!['work','grok'].includes(tool))tool=t.defaultTool;const changed=t.tool!==tool;if(changed){if(t.kind==='cat'){if(t.tool==='work')t.workPart=K.state.outputKind;else t.grokPart=K.state.outputKind;K.state.outputKind=tool==='work'?(t.workPart||'overview'):(t.grokPart||'video');}else if(t.mode==='video'){const p=t.w.get('part');if(t.tool==='work')t.workPart=p.value;else t.grokPart=p.value;t.tool=tool;furniturePart(t);const desired=tool==='work'?t.workPart:t.grokPart;if(desired&&[...p.querySelectorAll('option')].some(o=>o.value===desired&&!o.disabled))p.value=desired;}}
   t.tool=tool;if(t.kind==='cat'){K.state.limit=tool==='work'?900:Number(t.limit);value($('ktLimit'),String(K.state.limit));}refresh(t);if(changed)status(t,tool==='grok'?'已切换到 Grok 短指令，复制和下载按本次最大字数校验。':'已切换到 Work 完整制作资料，不套用 Imagine 短指令上限。');if(persist)sync();}
  async function copy(t){refresh(t);if(!t.current?.valid){status(t,'当前指令未通过最大字数或独立任务检查，尚未复制。');return;}try{await navigator.clipboard.writeText(t.current.text);status(t,t.tool==='grok'?`已复制 Grok 单条指令（${t.current.count}/${t.limit} 字符）。`:'已复制 ChatGPT Work 完整制作指令。');}catch{const o=t.kind==='cat'?$('ktPrompt'):t.w.get('output');o.focus();if(typeof o.select==='function')o.select();status(t,'请选中上方文本手动复制。');}}
- function exportPacket(t,current=false){refresh(t);const r=t.kind==='cat'?K.state.result:t.w.state.result;if(!r)return;try{let s;if(current){if(!t.current?.valid)throw Error('当前指令超限或不可执行，尚未下载。');s=t.current.text;}else s=t.kind==='cat'?T.catPacket(r,t.tool,t.limit,t.edits):T.furniturePacket(r,t.tool,t.limit,context(t.w));download(`${r.product.sku||r.product.variant}_${t.kind==='cat'?'cat':t.mode}_${t.tool==='grok'?'GrokImagine':'ChatGPTWork'}_${current?'current_task':'production_pack'}.md`,s);status(t,t.tool==='grok'?'已下载逐条短指令包；每个任务分别执行。':'已下载 Work 完整制作包。');}catch(e){status(t,e.message);}}
+ function exportPacket(t,current=false){refresh(t);const r=t.kind==='cat'?K.state.result:t.w.state.result;if(!r)return;try{let s;if(current){if(!t.current?.valid)throw Error('当前指令超限或不可执行，尚未下载。');s=t.current.text;}else s=t.kind==='cat'?T.catPacket(r,t.tool,t.limit,t.edits):T.furniturePacket(r,t.tool,t.limit,context(t.w));const suffix=current?(t.mode==='image'?t.current.placement.id+'_'+t.current.visual.id:'current_task'):'production_pack';download(`${r.product.sku||r.product.variant}_${t.kind==='cat'?'cat':t.mode}_${t.tool==='grok'?'GrokImagine':'ChatGPTWork'}_${suffix}.md`,s);status(t,t.tool==='grok'?'已下载逐条短指令包；每个任务分别执行。':'已下载 Work 完整制作包。');}catch(e){status(t,e.message);}}
  function mount(root,id,kind,w,mode){
   const t={root,id,kind,w,mode,defaultTool:kind==='cat'?'grok':'work',tool:kind==='cat'?'grok':'work',limit:900,current:null,edits:{},raw:null};states[id]=t;const box=document.createElement('div');box.innerHTML=card(id);t.control=box.firstElementChild;root.querySelector(kind==='cat'?'.kt-workspace':'.pb-workspace').before(t.control);
   if(kind!=='cat'){t.meter=document.createElement('div');t.meter.className='cp-meter';t.meter.innerHTML='<strong></strong><span></span>';w.get('output').before(t.meter);const share=w.getShare,gen=w.generate;w.getShare=()=>({...share(),ptool:t.tool,pmaxchars:String(t.limit)});w.generate=function(){gen();refresh(t);};}
   $(`${id}-limit`).addEventListener('input',()=>{t.limit=Number($(`${id}-limit`).value);if(kind==='cat'&&t.tool==='grok'){K.state.limit=t.limit;value($('ktLimit'),String(t.limit));}refresh(t);});$(`${id}-limit`).addEventListener('change',sync);
   root.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.cpSet){e.preventDefault();e.stopImmediatePropagation();choose(t,b.dataset.cpSet);return;}const copyId=kind==='cat'?'ktCopy':'pb-'+mode+'-copy',downloadId=kind==='cat'?null:'pb-'+mode+'-download',currentId=kind==='cat'?null:'pb-'+mode+'-download-current';
-   if(b.id===copyId||b.id===downloadId||b.id===currentId||kind==='cat'&&b.dataset.ktDownload==='packet'||kind!=='cat'&&b.hasAttribute('data-image-task')){e.preventDefault();e.stopImmediatePropagation();if(b.hasAttribute('data-image-task')){w.get('part').value='image-'+b.dataset.imageTask;w.get('part').dispatchEvent(new Event('change',{bubbles:true}));copy(t);}else if(b.id===copyId)copy(t);else exportPacket(t,b.id===currentId);}
+   if(b.id===copyId||b.id===downloadId||b.id===currentId||kind==='cat'&&b.dataset.ktDownload==='packet'){e.preventDefault();e.stopImmediatePropagation();if(b.id===copyId)copy(t);else exportPacket(t,b.id===currentId);}
   },true);
   if(kind==='cat')root.addEventListener('input',e=>{if(e.target.id==='ktPrompt'&&t.tool==='work'){e.stopImmediatePropagation();t.edits[K.state.outputKind+':'+K.state.outputIndex]=e.target.value;refresh(t);}},true);
   root.addEventListener('input',e=>{if(kind==='cat'&&e.target.id==='ktLimit'&&t.tool==='grok'){t.limit=Number(e.target.value);value($(`${id}-limit`),String(t.limit));refresh(t);}if(kind==='cat'&&e.target.id==='ktPrompt'&&t.tool==='grok')refresh(t);});

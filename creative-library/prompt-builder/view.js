@@ -22,26 +22,173 @@
   let visualHistory={};try{const saved=JSON.parse(localStorage.getItem(historyKey)||'{}');if(saved&&typeof saved==='object'&&!Array.isArray(saved))visualHistory=saved;}catch{}
   function recentVisuals(p){return p&&Array.isArray(visualHistory[p.key])?visualHistory[p.key].filter(id=>V.profiles.some(v=>v.id===id)).slice(-12):[];}
   function rememberVisuals(p,visuals){visualHistory[p.key]=[...recentVisuals(p),...visuals.map(v=>v.id).reverse()].slice(-12);const keys=Object.keys(visualHistory);for(const key of keys.slice(0,Math.max(0,keys.length-80)))delete visualHistory[key];try{localStorage.setItem(historyKey,JSON.stringify(visualHistory));}catch{}}
+  function visualPicker(prefix){
+    const groups=[
+      ['棚拍',V.profiles.filter(v=>v.studio)],
+      ['场景',V.profiles.filter(v=>!v.studio&&v.kind==='wide')],
+      ['镜头拍法',V.profiles.filter(v=>v.kind!=='wide')]
+    ];
+    return `<p class="pb-help pb-visual-help">勾选一种或多种风格，每种生成一条独立图片 Prompt。</p>
+      <div id="${prefix}visual">${groups.map(([label,profiles])=>`<fieldset class="pb-visual-group">
+        <legend>${label}</legend>
+        <div class="pb-visual-options">${profiles.map(v=>`<label class="pb-visual-option">
+          <input type="checkbox" value="${safe(v.id)}"><span>${safe(v.name)}</span>
+        </label>`).join('')}</div>
+      </fieldset>`).join('')}</div>
+      <p id="${prefix}visual-summary" class="pb-visual-summary" role="status" aria-live="polite"></p>
+      <div id="${prefix}visual-preview" class="pb-visual-preview"></div>`;
+  }
+  function ideaFields(prefix,mode,sourceNames){
+    return `<div class="pb-fields">
+      <div><label for="${prefix}source">思路来源</label><select id="${prefix}source">${sourceNames.map(name=>`<option value="${safe(name)}">${safe(name)} · ${ideas.filter(i=>i.source===name&&i.modes.includes(mode)).length} 条</option>`).join('')}</select></div>
+      <div><label for="${prefix}idea">生成思路</label><select id="${prefix}idea"></select></div>
+    </div><div id="${prefix}idea-note" class="pb-idea-note"></div>`;
+  }
   const workspaces={};
   function mount(root,mode){const prefix='pb-'+mode+'-',get=k=>document.getElementById(prefix+k);const s={mode,product:null,candidates:[],result:null,request:0,input:'',referenceConfirmed:false,chair:C.defaultChair(),chairData:C.model(C.defaultModel),chairRequest:0,chairBusy:false};const sourceNames=[...new Set(ideas.filter(i=>i.modes.includes(mode)).map(i=>i.source))].sort((a,b)=>mode==='video'?Number(b==='Shorts 视频方向')-Number(a==='Shorts 视频方向'):0);
-    root.innerHTML=`<div class="pb-hero"><div><span class="pb-kicker">FURNIWELL · AD CREATIVE PROMPTS</span><h2>生成${mode==='image'?'图片':'视频'} Prompt</h2><p>输入 SKU 或商品链接，选择库内思路，生成对应商品的中文广告提示词。</p></div><span class="pb-language">中文输出</span></div>
+    root.innerHTML=`<div class="pb-hero"><div><span class="pb-kicker">FURNIWELL · AD CREATIVE PROMPTS</span><h2>生成${mode==='image'?'图片':'视频'} Prompt</h2><p>${mode==='image'?'输入 SKU 或商品链接，勾选视觉风格，生成对应商品的中文图片提示词。':'输入 SKU 或商品链接，选择库内思路，生成对应商品的中文广告提示词。'}</p></div><span class="pb-language">中文输出</span></div>
       <div class="pb-workspace"><div class="pb-inputs"><section class="pb-panel"><h3><span>1</span>识别产品与变体</h3><label for="${prefix}input">产品 SKU 或商品链接</label><div class="pb-lookup"><input id="${prefix}input" type="text" autocomplete="off" spellcheck="false" placeholder="例如 G-HAD241222B，或粘贴 Furniwell 商品链接"><button type="button" id="${prefix}load" class="pb-button">识别商品</button></div><p class="pb-help">支持德国站和法国站。SKU 按完整编号匹配；多个颜色或尺寸需要先选定具体变体。</p><p id="${prefix}status" class="pb-status" role="status" aria-live="polite"></p><div id="${prefix}variant-row" hidden><label for="${prefix}variant">选择具体颜色 / 尺寸</label><select id="${prefix}variant"><option value="">请先选择变体</option></select></div><div id="${prefix}product" class="pb-product" hidden></div><div id="${prefix}reference-row" hidden><label for="${prefix}reference">用于生成的官网产品原图</label><select id="${prefix}reference"></select><label class="pb-check" id="${prefix}reference-check" hidden><input type="checkbox" id="${prefix}reference-confirm">我已核对这张原图与所选变体的颜色、尺寸及结构一致</label></div></section>
-      <section class="pb-panel pb-chair-panel"><h3><span>＋</span>选择搭配椅</h3><p id="${prefix}chair-note" class="pb-help">画面出现搭配椅时，只使用下方选定的 Furniwell 款式与颜色；功能特写和纯商品图可不让椅子入镜。</p><div id="${prefix}chair-controls"><div class="pb-fields"><div><label for="${prefix}chair-model">搭配椅款式</label><select id="${prefix}chair-model">${C.models.map(m=>`<option value="${m.id}">${safe(m.label)}</option>`).join('')}</select></div><div><label for="${prefix}chair-variant">搭配椅颜色</label><select id="${prefix}chair-variant"></select></div></div><p id="${prefix}chair-status" class="pb-status" role="status" aria-live="polite"></p><div id="${prefix}chair-product" class="pb-product" hidden></div><button type="button" id="${prefix}chair-refresh" class="pb-button pb-chair-refresh">核对官网状态</button><p class="pb-help">参考图2用于独立锁定椅子。搭配椅单独销售，不能把同框场景写成赠送椅子或桌椅套装；视频每镜头固定同一款式和颜色。</p></div></section>
-      <section class="pb-panel"><h3><span>2</span>选择素材库已有思路</h3><div class="pb-fields"><div><label for="${prefix}source">思路来源</label><select id="${prefix}source">${sourceNames.map(name=>`<option value="${safe(name)}">${safe(name)} · ${ideas.filter(i=>i.source===name&&i.modes.includes(mode)).length} 条</option>`).join('')}</select></div><div><label for="${prefix}idea">生成思路</label><select id="${prefix}idea"></select></div></div><div id="${prefix}idea-note" class="pb-idea-note"></div>${mode==='image'?`<div class="pb-visual-settings"><h4>视觉拍法</h4><div class="pb-fields"><div><label for="${prefix}visual">光线、机位与布置</label><select id="${prefix}visual"><option value="auto">按思路推荐，避开近期拍法</option>${V.profiles.map(v=>`<option value="${v.id}">${safe(v.name)}</option>`).join('')}</select></div><div><label for="${prefix}visual-count">本次图片数量</label><select id="${prefix}visual-count"><option value="1">1 张图片 · 1 套视觉</option><option value="4">4 张独立图片 · 4 套不同视觉</option></select></div></div><p class="pb-help">同一 SKU 固定结构，每张单独指定光线、镜头、摆放与室内布置。4 张模式会提供完整批量生成指令与第 1–4 张单图任务。自动推荐尽量避开本浏览器最近 3 种拍法；新简报的第一张优先保留该方向的主拍法，其余方案再调整；手动选择可复用。</p><p id="${prefix}visual-summary" class="pb-visual-summary" role="status" aria-live="polite"></p><div id="${prefix}visual-preview" class="pb-visual-preview"></div><p class="pb-help">优先上传白底或清楚展示商品的原图。带场景的原图仅供核对商品，不沿用其装修、光线和构图；不同方案分别生成，不把上张成图作为下一张的产品参考。</p></div>`:`<div class="pb-visual-settings"><h4>视频实拍拍法</h4><label for="${prefix}field-look">场景、光线与镜头</label><select id="${prefix}field-look">${window.CreativeFieldcraft.deskLooks.map(v=>`<option value="${safe(v.id)}">${safe(v.name)}</option>`).join('')}</select><p class="pb-help">同一条视频保持同一房间、商品摆位和光线；机位变化前比对前镜尾帧。选择是原创拍摄建议，并非对参考素材效果的承诺。</p><p id="${prefix}field-look-note" class="pb-visual-summary"></p></div>`}</section>
+      <section class="pb-panel pb-chair-panel">
+        <h3><span>＋</span>选择搭配椅</h3><p id="${prefix}chair-note" class="pb-help"></p>
+        <div id="${prefix}chair-controls">
+          <div class="pb-fields">
+            <div><label for="${prefix}chair-model">搭配椅款式</label><select id="${prefix}chair-model">
+              ${mode==='image'?'<option value="none">不搭配椅子</option>':''}
+              ${C.models.map(m=>`<option value="${m.id}">${safe(m.label)}</option>`).join('')}
+            </select></div>
+            <div id="${prefix}chair-color-row"><label for="${prefix}chair-variant">搭配椅颜色</label><select id="${prefix}chair-variant"></select></div>
+          </div>
+          <div id="${prefix}chair-details">
+            <p id="${prefix}chair-status" class="pb-status" role="status" aria-live="polite"></p>
+            <div id="${prefix}chair-product" class="pb-product" hidden></div>
+            <button type="button" id="${prefix}chair-refresh" class="pb-button pb-chair-refresh">核对官网状态</button>
+            <p class="pb-help">参考图2用于独立锁定搭配椅。搭配椅单独销售。${mode==='video'?'各镜头使用同一款式和颜色。':''}</p>
+          </div>
+        </div>
+      </section>
+      <section class="pb-panel"><h3><span>2</span>${mode==='image'?'选择视觉风格':'选择素材库已有思路'}</h3>
+        ${mode==='image'?`${visualPicker(prefix)}
+          <details id="${prefix}idea-details" class="pb-options"><summary>从素材库带入思路（选填）</summary>${ideaFields(prefix,mode,sourceNames)}</details>`
+        :`${ideaFields(prefix,mode,sourceNames)}
+          <div class="pb-visual-settings"><h4>视频实拍拍法</h4><label for="${prefix}field-look">场景、光线与镜头</label><select id="${prefix}field-look">${window.CreativeFieldcraft.deskLooks.map(v=>`<option value="${safe(v.id)}">${safe(v.name)}</option>`).join('')}</select><p class="pb-help">同一条视频保持同一房间、商品摆位和光线；机位变化前比对前镜尾帧。选择是原创拍摄建议，并非对参考素材效果的承诺。</p><p id="${prefix}field-look-note" class="pb-visual-summary"></p></div>`}
+      </section>
       <section class="pb-panel"><h3><span>3</span>选择投放平台与补充事实</h3><div class="pb-fields"><div><label for="${prefix}channel">投放平台</label><select id="${prefix}channel"><option value="both">Google + Facebook，分版位输出</option><option value="google">仅 Google</option><option value="meta">仅 Facebook / Meta</option></select></div><div><label for="${prefix}market">投放市场与广告文案语言</label><select id="${prefix}market">${Object.entries(E.markets).map(([k,v])=>`<option value="${k}">${safe(v)}</option>`).join('')}</select></div></div><details class="pb-options"><summary>补充已确认结构与实际活动（选填）</summary><label for="${prefix}extra">已确认的产品结构补充</label><textarea id="${prefix}extra" rows="3" maxlength="1600" placeholder="只写已对照原图或实物确认的事实；不确定的节数、配件和性能请留空。"></textarea><label for="${prefix}offer">当前实际活动信息</label><textarea id="${prefix}offer" rows="2" maxlength="500" placeholder="不填写则生成常青素材，不沿用库里的历史价格或优惠码。"></textarea><label class="pb-check"><input type="checkbox" id="${prefix}offer-confirm">我已核对活动对应当前 SKU，且与落地页、期限及附加条件一致</label></details><button type="button" id="${prefix}generate" class="pb-button primary pb-generate">生成中文 Prompt</button><p class="pb-help">先保存并上传所选官网原图。生成结果包含广告表达和导出要求，不代表实际素材已通过平台审核。</p></section></div>
-      <section class="pb-panel pb-output"><div class="pb-output-head"><h3><span>4</span>中文 Prompt</h3><span id="${prefix}result-badge" class="pb-result-badge">等待生成</span></div><div id="${prefix}empty" class="pb-empty"><strong>把同一产品，变成不同广告思路。</strong><p>产品原图锁定结构；库内思路提供场景与任务；投放版位决定比例和表达边界。</p><p>不会把历史简报中的旧尺寸、旧优惠和配件当作新 SKU 的事实。</p></div><div id="${prefix}result" hidden><p id="${prefix}warnings" class="pb-warnings"></p><label for="${prefix}asset">${mode==='image'?'选择本组统一版位':'选择版位版本'}</label><select id="${prefix}asset"></select>${mode==='video'?`<p class="pb-batch-summary">逐镜头制作：先验收首帧，再生成独立 3 秒视频，最后硬切剪辑。人物镜头桌椅固定；升降镜头无人；手部特写只保留一只右手。</p><label for="${prefix}part">选择当前制作步骤</label><select id="${prefix}part">${[1,2,3,4,5].map(i=>`<optgroup label="镜头 ${i} · ${(i-1)*3}–${i*3} 秒"><option value="keyframe-${i-1}">① 镜头 ${i}：制作并验收首帧</option><option value="clip-${i-1}">② 镜头 ${i}：仅 3 秒图生视频</option><option value="shot-${i-1}">镜头 ${i}：两步制作资料（分别执行）</option></optgroup>`).join('')}<optgroup label="剪辑与归档资料"><option value="master">15 秒剪辑计划（不要整段交给 Grok）</option><option value="full">完整制作包（各镜头分别执行）</option></optgroup></select><p id="${prefix}shot-summary" class="pb-help" role="status"></p>`:`<div id="${prefix}image-scope-row"><label for="${prefix}part">复制范围</label><select id="${prefix}part"></select></div><p id="${prefix}output-summary" class="pb-batch-summary" role="status" aria-live="polite"></p><div id="${prefix}image-tasks" class="pb-image-tasks"></div>`}<textarea id="${prefix}output" class="pb-prompt-output" rows="20" readonly aria-label="生成的中文${mode==='image'?'图片':'视频'}Prompt"></textarea><div class="pb-output-actions"><button type="button" id="${prefix}copy" class="pb-button primary">复制当前 Prompt</button>${mode==='image'?`<button type="button" id="${prefix}download-current" class="pb-button">下载本组指令</button>`:''}<button type="button" id="${prefix}download" class="pb-button">下载全部版位制作包</button></div><p id="${prefix}copy-status" class="pb-status" role="status" aria-live="polite"></p><p id="${prefix}output-help" class="pb-help">复制后可按实际素材微调。下载包含全部版位；视频包另含逐镜头首帧和图生视频指令。</p></div><details class="pb-policy"><summary>查看投放规则与来源</summary><p>Google 图片输出含横图与方图；Facebook Feed 使用 4:5，Reels / Stories 使用 9:16。生成模型仍可能输出错误比例、编码或文件体积，导出后需实际检查。</p><p>无叠字是本工具的制作默认值，并非声称所有 Google / Meta 图片都禁止文字；不会套用“Meta 文字必须低于 20%”的旧说法。</p><ul>${E.sources.map(src=>`<li><a href="${safe(src.url)}" target="_blank" rel="noopener noreferrer">${safe(src.name)} ↗</a></li>`).join('')}</ul><small>规则整理 ${E.version}；具体商品权益、AI 标识与最终版位预览需在投放前复核。</small></details></section></div>`;
+      <section class="pb-panel pb-output"><div class="pb-output-head"><h3><span>4</span>中文 Prompt</h3><span id="${prefix}result-badge" class="pb-result-badge">等待生成</span></div><div id="${prefix}empty" class="pb-empty"><strong>把同一产品，变成不同广告思路。</strong><p>${mode==='image'?'识别商品后勾选风格。每种风格生成独立图片 Prompt。':'产品原图锁定结构，库内思路提供场景与任务，投放版位决定比例。'}</p><p>不会把历史简报中的旧尺寸、旧优惠和配件当作新 SKU 的事实。</p></div><div id="${prefix}result" hidden><p id="${prefix}warnings" class="pb-warnings"></p><label for="${prefix}asset">${mode==='image'?'投放版位':'选择版位版本'}</label><select id="${prefix}asset"></select>${mode==='video'?`<p class="pb-batch-summary">逐镜头制作：先验收首帧，再生成独立 3 秒视频，最后硬切剪辑。人物镜头桌椅固定；升降镜头无人；手部特写只保留一只右手。</p><label for="${prefix}part">选择当前制作步骤</label><select id="${prefix}part">${[1,2,3,4,5].map(i=>`<optgroup label="镜头 ${i} · ${(i-1)*3}–${i*3} 秒"><option value="keyframe-${i-1}">① 镜头 ${i}：制作并验收首帧</option><option value="clip-${i-1}">② 镜头 ${i}：仅 3 秒图生视频</option><option value="shot-${i-1}">镜头 ${i}：两步制作资料（分别执行）</option></optgroup>`).join('')}<optgroup label="剪辑与归档资料"><option value="master">15 秒剪辑计划（不要整段交给 Grok）</option><option value="full">完整制作包（各镜头分别执行）</option></optgroup></select><p id="${prefix}shot-summary" class="pb-help" role="status"></p>`:`<div id="${prefix}image-scope-row"><label for="${prefix}part">当前视觉风格</label><select id="${prefix}part"></select></div><p id="${prefix}output-summary" class="pb-batch-summary" role="status" aria-live="polite"></p>`}<textarea id="${prefix}output" class="pb-prompt-output" rows="20" readonly aria-label="生成的中文${mode==='image'?'图片':'视频'}Prompt"></textarea><div class="pb-output-actions"><button type="button" id="${prefix}copy" class="pb-button primary">复制当前 Prompt</button>${mode==='image'?`<button type="button" id="${prefix}download-current" class="pb-button">下载本张指令</button>`:''}<button type="button" id="${prefix}download" class="pb-button">下载全部版位制作包</button></div><p id="${prefix}copy-status" class="pb-status" role="status" aria-live="polite"></p><p id="${prefix}output-help" class="pb-help">复制后可按实际素材微调。下载包含全部版位；视频包另含逐镜头首帧和图生视频指令。</p></div><details class="pb-policy"><summary>查看投放规则与来源</summary><p>Google 图片输出含横图与方图；Facebook Feed 使用 4:5，Reels / Stories 使用 9:16。生成模型仍可能输出错误比例、编码或文件体积，导出后需实际检查。</p><p>无叠字是本工具的制作默认值，并非声称所有 Google / Meta 图片都禁止文字；不会套用“Meta 文字必须低于 20%”的旧说法。</p><ul>${E.sources.map(src=>`<li><a href="${safe(src.url)}" target="_blank" rel="noopener noreferrer">${safe(src.name)} ↗</a></li>`).join('')}</ul><small>规则整理 ${E.version}；具体商品权益、AI 标识与最终版位预览需在投放前复核。</small></details></section></div>`;
     function status(text,error=false){get('status').textContent=text;get('status').classList.toggle('is-error',error);}
     function invalidate(message='产品或参数已变化，请重新生成。'){s.result=null;get('result').hidden=true;get('empty').hidden=false;get('result-badge').textContent='等待生成';get('copy-status').textContent='';if(message)get('empty').querySelector('strong').textContent=message;updateVisualPreview();}
-    function showChair(){const applicable=!s.product||C.pairable(s.product);get('chair-controls').hidden=!applicable;get('chair-note').textContent=applicable?'画面出现搭配椅时，只使用下方选定的 Furniwell 款式与颜色；功能特写和纯商品图可不让椅子入镜。':'主商品本身就是椅子，直接锁定主 SKU 与参考图1，不额外添加搭配椅。';const c=s.chair;get('chair-product').hidden=!c||!applicable;if(!c)return;get('chair-product').innerHTML=`<img src="${safe(c.image)}" alt="${safe(c.label+' · '+c.color)} 官网原图"><div><span class="pb-tag">参考图2 · 单独销售</span><h4>${safe(c.label)} · ${safe(c.color)}</h4><p class="pb-code">SKU ${safe(c.sku)}<br>变体 ${safe(c.id)}</p><p>${c.source==='live'?'本次从官网读取':'官网目录核对'} · ${safe(c.checkedAt)}</p><a href="${safe(c.url)}" target="_blank" rel="noopener noreferrer">对应椅子官网变体 ↗</a> · <a href="${safe(c.image)}" target="_blank" rel="noopener noreferrer">打开椅子原图并保存 ↗</a></div><p class="pb-product-note">${safe(C.facts(c)[0])}</p>`;get('chair-product').querySelector('img').addEventListener('error',event=>{event.target.hidden=true;});}
-    function renderChairVariants(preferred){const m=s.chairData;get('chair-model').value=m.id;get('chair-variant').innerHTML='<option value="">请选择椅子颜色</option>'+m.variants.map(v=>`<option value="${safe(v.id)}"${C.usable(v)?'':' disabled'}>${safe(v.color+' · '+v.sku+(v.available===false?'（暂不可售）':!v.image?'（缺对应主图）':''))}</option>`).join('');const desired=preferred===undefined?m.variants.find(C.usable)?.id:preferred;get('chair-variant').value=m.variants.some(v=>v.id===desired&&C.usable(v))?desired:'';s.chair=C.choose(m,get('chair-variant').value);get('chair-status').textContent=s.chair?'已选 '+s.chair.color+'，生成时请同时上传椅子原图。':'请重新选定当前可用颜色；暂不可售或缺少对应主图的变体不用于默认生成。';showChair();}
-    async function refreshChair(id=get('chair-model').value,preferred=get('chair-variant').value){const token=++s.chairRequest;s.chairBusy=true;get('chair-variant').disabled=true;get('chair-refresh').disabled=true;invalidate('搭配椅正在核对，请完成后重新生成。');get('chair-status').textContent='正在核对椅子官网变体…';try{const m=await loadChairModel(id);if(token!==s.chairRequest)return;s.chairData=m;renderChairVariants(preferred||undefined);get('chair-status').textContent+=(m.source==='live'?' 本次已读取官网。':' 官网暂时无法读取，使用 '+m.checkedAt+' 核对记录，请再次检查对应商品页。');}finally{if(token===s.chairRequest){s.chairBusy=false;get('chair-variant').disabled=false;get('chair-refresh').disabled=false;sync();}}}
+    const noChair=()=>mode==='image'&&get('chair-model').value==='none';
+    function showChair(){
+      const applicable=C.pairable(s.product),withoutChair=noChair();
+      get('chair-controls').hidden=!applicable;
+      get('chair-color-row').hidden=withoutChair;
+      get('chair-details').hidden=withoutChair;
+      get('chair-note').textContent=!applicable?'当前商品为椅子，直接使用主商品原图。'
+        :withoutChair?'只需上传主商品原图。需要人物时，画面采用站姿或手部特写。'
+        :mode==='image'?'场景按所选款式配椅。商品棚拍和功能近景仅需主商品原图。'
+        :'画面中的搭配椅使用下方选定的款式与颜色。';
+      const c=s.chair;
+      get('chair-product').hidden=!c||!applicable;
+      if(!c)return;
+      get('chair-product').innerHTML=`<img src="${safe(c.image)}" alt="${safe(c.label+' · '+c.color)} 官网原图"><div><span class="pb-tag">参考图2 · 单独销售</span><h4>${safe(c.label)} · ${safe(c.color)}</h4><p class="pb-code">SKU ${safe(c.sku)}<br>变体 ${safe(c.id)}</p><p>${c.source==='live'?'本次从官网读取':'官网目录核对'} · ${safe(c.checkedAt)}</p><a href="${safe(c.url)}" target="_blank" rel="noopener noreferrer">对应椅子官网变体 ↗</a> · <a href="${safe(c.image)}" target="_blank" rel="noopener noreferrer">打开椅子原图并保存 ↗</a></div><p class="pb-product-note">${safe(C.facts(c)[0])}</p>`;
+      get('chair-product').querySelector('img').addEventListener('error',event=>{event.target.hidden=true;});
+    }
+    function renderChairVariants(preferred){
+      const m=s.chairData;
+      get('chair-model').value=m.id;
+      get('chair-variant').innerHTML='<option value="">请选择椅子颜色</option>'+m.variants.map(v=>`<option value="${safe(v.id)}"${C.usable(v)?'':' disabled'}>${safe(v.color+' · '+v.sku+(v.available===false?'（暂不可售）':!v.image?'（缺对应主图）':''))}</option>`).join('');
+      const desired=preferred===undefined?m.variants.find(C.usable)?.id:preferred;
+      get('chair-variant').value=m.variants.some(v=>v.id===desired&&C.usable(v))?desired:'';
+      s.chair=C.choose(m,get('chair-variant').value);
+      get('chair-status').textContent=s.chair?'已选 '+s.chair.color+'。':'请选择当前可用且有官网原图的颜色。';
+      showChair();
+    }
+    function setChairBusy(busy){
+      s.chairBusy=busy;
+      get('chair-variant').disabled=busy;
+      get('chair-refresh').disabled=busy;
+    }
+    async function refreshChair(id=get('chair-model').value,preferred=get('chair-variant').value){
+      if(!C.model(id))return;
+      const token=++s.chairRequest;
+      setChairBusy(true);
+      invalidate('搭配椅正在核对，请完成后重新生成。');
+      get('chair-status').textContent='正在核对椅子官网变体…';
+      try{
+        const m=await loadChairModel(id);
+        if(token!==s.chairRequest)return;
+        s.chairData=m;
+        renderChairVariants(preferred||undefined);
+        get('chair-status').textContent+=m.source==='live'?' 本次已读取官网。':' 官网暂时无法读取，使用 '+m.checkedAt+' 核对记录。';
+      }finally{
+        if(token===s.chairRequest){
+          setChairBusy(false);
+          sync();
+        }
+      }
+    }
+    function chooseChair(id,variant,readLive=true){
+      const m=C.model(id);
+      if(!m&&!(mode==='image'&&id==='none'))return;
+      s.chairRequest++;
+      setChairBusy(false);
+      s.chairData=m;
+      if(m)renderChairVariants(variant);
+      else{
+        get('chair-model').value='none';
+        s.chair=null;
+        showChair();
+      }
+      invalidate();
+      if(m&&readLive)refreshChair(id,variant??get('chair-variant').value);
+    }
     function selectedIdea(){return ideas.find(i=>i.id===get('idea').value);}
-    function updateIdeas(preserve=true){const previous=preserve?get('idea').value:'';const list=ideas.filter(i=>i.modes.includes(mode)&&i.source===get('source').value);get('idea').innerHTML='<option value="">请选择生成思路</option>'+list.map(i=>{const fit=s.product?E.compatible(s.product,i):{ok:true};return `<option value="${safe(i.id)}"${fit.ok?'':' disabled'}>${safe(i.id+' · '+i.title+(fit.ok?'':'（不适用于当前商品）'))}</option>`;}).join('');if(list.some(i=>i.id===previous&&(!s.product||E.compatible(s.product,i).ok)))get('idea').value=previous;else get('idea').value='';updateIdeaNote();}
+    function updateIdeas(preserve=true){const previous=preserve?get('idea').value:'';const list=ideas.filter(i=>i.modes.includes(mode)&&i.source===get('source').value);get('idea').innerHTML=(mode==='image'?'<option value="">按所选视觉风格制作</option>':'<option value="">请选择生成思路</option>')+list.map(i=>{const fit=s.product?E.compatible(s.product,i):{ok:true};return `<option value="${safe(i.id)}"${fit.ok?'':' disabled'}>${safe(i.id+' · '+i.title+(fit.ok?'':'（不适用于当前商品）'))}</option>`;}).join('');if(list.some(i=>i.id===previous&&(!s.product||E.compatible(s.product,i).ok)))get('idea').value=previous;else get('idea').value='';updateIdeaNote();}
     function updateIdeaNote(){const idea=selectedIdea();get('idea-note').innerHTML=idea?`<strong>${safe(idea.id)} · ${safe(idea.title)}</strong><p>${safe(idea.purpose)}</p><p>${safe(s.product?E.compatible(s.product,idea).reason:'先识别产品，随后检查思路适用性。')}</p>`:'选择一个已有思路后，生成结果会迁移其需求和构图方法。';updateVisualPreview();}
-    function updateVisualPreview(){if(mode!=='image')return;const idea=selectedIdea();if(!idea){get('visual-summary').textContent='选择思路后查看具体拍法。';get('visual-preview').innerHTML='';return;}for(const option of get('visual').querySelectorAll('option')){const v=V.profiles.find(v=>v.id===option.value);option.disabled=!!v&&!V.fit(v,idea,s.product).ok;}const current=V.profiles.find(v=>v.id===get('visual').value);if(current&&!V.fit(current,idea,s.product).ok)get('visual').value='auto';let plans;try{plans=s.result?.visuals?.length?s.result.visuals:V.select({idea,product:s.product,promotion:window.FurniwellPromoUI?.read(),visual:get('visual').value,visualCount:Number(get('visual-count').value),recentVisuals:recentVisuals(s.product)});}catch(error){get('visual-summary').textContent=error.message;get('visual-preview').innerHTML='';return;}const recent=recentVisuals(s.product).slice(-3);get('visual-summary').textContent=(s.result?'已准备图片任务：':'本次计划：')+plans.map(p=>p.name).join(' / ')+(recent.length?'。近期用过：'+recent.map(id=>V.profiles.find(p=>p.id===id)?.name).join(' / '):'');get('visual-preview').innerHTML=plans.map(v=>visualDetails(v,!!v.reference&&get('visual').value===v.id)).join('');}
+    function visualChoices(){
+      return [...get('visual').querySelectorAll('input[type=checkbox]')];
+    }
+    function selectedVisualIds(){
+      return visualChoices().filter(input=>input.checked).map(input=>input.value);
+    }
+    function seedVisuals(ids){
+      for(const input of visualChoices())input.checked=ids.includes(input.value);
+      invalidate();
+    }
+    function updateVisualPreview(){
+      if(mode!=='image')return;
+      const idea=selectedIdea();
+      for(const input of visualChoices()){
+        const profile=V.profiles.find(v=>v.id===input.value);
+        const fit=V.fit(profile,idea,s.product);
+        input.disabled=!fit.ok&&!input.checked;
+        input.closest('label').title=fit.reason;
+      }
+      const ids=selectedVisualIds();
+      const summary=get('visual-summary'),preview=get('visual-preview');
+      if(!ids.length&&!idea){
+        summary.textContent='';
+        preview.replaceChildren();
+        return;
+      }
+      try{
+        const plans=s.result?.visuals||V.select({idea,product:s.product,visualIds:ids,recentVisuals:recentVisuals(s.product)});
+        summary.textContent=ids.length?`已选 ${plans.length} 种风格 · 每种一条 Prompt`:'思路推荐：'+plans[0].name;
+        const details=plans.map(v=>{
+          const noSeat=C.pairable(s.product)&&!C.forImage(v,s.chair);
+          const detail=noSeat&&v.placementWithoutChair?{...v,placement:v.placementWithoutChair}:v;
+          return visualDetails(detail,plans.length===1&&!!v.reference);
+        }).join('');
+        preview.innerHTML=plans.length>1
+          ?`<details><summary>查看已选风格的拍法</summary><div class="pb-visual-preview pb-visual-preview-list">${details}</div></details>`
+          :details;
+      }catch(error){
+        summary.textContent=error.message+(idea?' 请调整所选风格或素材库思路。':'');
+        preview.replaceChildren();
+      }
+    }
     function sync(){if(window.PromptBuilder&&(currentView==='gallery'||currentView==='videos'))shareState();}
     function showProduct(){const p=s.product;if(!p){get('product').hidden=true;return;}const structure=E.structure(p);get('product').hidden=false;get('product').innerHTML=`<img src="${safe(p.image)}" alt="${safe(p.title+' · '+p.variantTitle)}"><div><span class="pb-tag">${structure.known?'结构已有核对记录':'按所选原图锁定'}</span><h4>${safe(p.title)}</h4><p>${safe(p.variantTitle)}</p><p class="pb-code">SKU ${safe(p.sku||'未提供')}<br>变体 ${safe(p.variant)}</p><p>${p.source==='live'?'本次从官网读取':'目录快照'} · ${safe(p.checkedAt)}</p><a href="${safe(p.url)}" target="_blank" rel="noopener noreferrer">对应官网变体 ↗</a>${p.image?` · <a href="${safe(p.image)}" target="_blank" rel="noopener noreferrer">打开原图并保存 ↗</a>`:''}</div><p class="pb-product-note">${safe(structure.notes)}</p>`;const img=get('product').querySelector('img');img.addEventListener('error',()=>{img.hidden=true;});}
-    function selectProduct(key){s.product=s.candidates.find(p=>p.key===key)||null;invalidate('选定产品和思路后，即可生成中文 Prompt。');get('reference-row').hidden=!s.product;if(!s.product){showProduct();showChair();updateIdeas();return;}showChair();const p=s.product;const refs=p.images.filter(i=>!i.variant_ids?.length||i.variant_ids.includes(p.variant));if(p.image&&!refs.some(i=>i.url===p.image))refs.unshift({url:p.image,id:'exact'});s.exactImage=p.image;s.referenceConfirmed=!!p.image;p.referenceConfirmed=s.referenceConfirmed;get('reference').innerHTML='<option value="">请选择对应变体的官网原图</option>'+refs.map((i,n)=>`<option value="${safe(i.url)}">官网图 ${n+1}${i.url===s.exactImage?' · 该变体绑定图':''}</option>`).join('');get('reference').value=p.image;get('reference-confirm').checked=false;get('reference-check').hidden=!!p.image;showProduct();updateIdeas();if(!p.image)status('所选变体没有独立绑定图。请从官网图中选择对应图片，并确认颜色、尺寸和结构。');else status('已识别 '+(p.sku||p.title)+'。请核对变体，再选择生成思路。');sync();}
+    function selectProduct(key){s.product=s.candidates.find(p=>p.key===key)||null;invalidate(mode==='image'?'选好商品和视觉风格后，即可生成中文 Prompt。':'选定产品和思路后，即可生成中文 Prompt。');get('reference-row').hidden=!s.product;if(!s.product){showProduct();showChair();updateIdeas();return;}showChair();const p=s.product;const refs=p.images.filter(i=>!i.variant_ids?.length||i.variant_ids.includes(p.variant));if(p.image&&!refs.some(i=>i.url===p.image))refs.unshift({url:p.image,id:'exact'});s.exactImage=p.image;s.referenceConfirmed=!!p.image;p.referenceConfirmed=s.referenceConfirmed;get('reference').innerHTML='<option value="">请选择对应变体的官网原图</option>'+refs.map((i,n)=>`<option value="${safe(i.url)}">官网图 ${n+1}${i.url===s.exactImage?' · 该变体绑定图':''}</option>`).join('');get('reference').value=p.image;get('reference-confirm').checked=false;get('reference-check').hidden=!!p.image;showProduct();updateIdeas();if(!p.image)status('所选变体没有独立绑定图。请从官网图中选择对应图片，并确认颜色、尺寸和结构。');else status('已识别 '+(p.sku||p.title)+(mode==='image'?'。请核对变体，再选择视觉风格。':'。请核对变体，再选择生成思路。'));sync();}
     function setCandidates(list){s.candidates=list;if(!list.length)throw new Error('没有找到这个 SKU 或变体。请检查完整编号，或使用对应商品链接。');get('variant-row').hidden=list.length===1;get('variant').innerHTML='<option value="">请选择具体变体，避免颜色或尺寸串款</option>'+list.map(p=>`<option value="${safe(p.key)}">${safe(p.variantTitle+' · '+(p.sku||p.variant))}</option>`).join('');if(list.length===1){get('variant').value=list[0].key;selectProduct(list[0].key);}else{selectProduct('');status('找到 '+list.length+' 个变体，请先选择具体颜色与尺寸。');}}
     async function resolve(){const input=get('input').value.trim(),token=++s.request;s.input=input;s.product=null;invalidate('正在识别商品…');get('product').hidden=true;get('variant-row').hidden=true;get('reference-row').hidden=true;get('load').disabled=true;status('正在读取商品与变体…');try{const parsed=E.parseInput(input);let list=[];if(parsed.kind==='url'){
         try{const p=await live(parsed);list=p.variants.filter(v=>!parsed.variant||v.id===parsed.variant).map(v=>E.variantProduct(p,v,'live'));if(parsed.variant&&!list.length)throw new Error('这个 variant 不属于当前商品。');}
@@ -49,20 +196,147 @@
       }else{const c=await catalog();list=E.lookup(c,parsed);if(list.length===1){const original=list[0];try{const p=await live(original);const v=p.variants.find(v=>E.cleanSku(v.sku)===parsed.sku&&v.id===original.variant);if(v)list=[E.variantProduct(p,v,'live')];}catch{ /* Keep the explicit dated snapshot if the public shop is unavailable. */ }}}
       if(token!==s.request)return;setCandidates(list);
     }catch(error){if(token===s.request){status(error.name==='AbortError'?'官网读取超时，请重试。':error.message,true);get('empty').querySelector('strong').textContent='先完成商品识别，再生成对应的 Prompt。';}}finally{if(token===s.request)get('load').disabled=false;}}
-    function options(){return {mode,product:s.product,idea:selectedIdea(),channel:get('channel').value,market:get('market').value,extra:get('extra').value.trim(),offer:get('offer').value.trim(),offerConfirmed:get('offer-confirm').checked,chair:s.chair,...(mode==='image'?{promotion:window.FurniwellPromoUI?.read(),visual:get('visual').value,visualCount:Number(get('visual-count').value),recentVisuals:recentVisuals(s.product)}:{fieldLook:get('field-look').value})};}
-    function renderOutput(){if(!s.result)return;if(mode==='image'){const output=E.imageOutput(s.result,get('asset').value,get('part').value||'batch'),b=output.batch;get('output').value=output.text;get('image-scope-row').hidden=b.count===1;get('output-summary').textContent=output.count>1?`本次交付：${b.count} 张独立图片，统一 ${b.ratio}。下方完整指令包含任务 1–${b.count}，必须全部执行。`:`当前复制：第 ${(output.index??0)+1}/${b.count} 张单图指令。`+(b.count>1?'完成整批请执行全部单图任务，或切回完整批量指令。':'');get('copy').textContent=output.count>1?`复制 ${b.count} 张批量总指令`:'复制本张 Prompt';get('download-current').textContent=output.count>1?`下载本组 ${b.count} 张指令`:'下载本张指令';get('image-tasks').hidden=b.count===1;get('image-tasks').innerHTML=b.count>1?b.jobs.map((j,i)=>`<article><strong>第 ${j.number} 张 · ${safe(j.visualName)}</strong><button type="button" class="pb-button" data-image-task="${i}">复制第 ${j.number} 张 Prompt</button></article>`).join(''):'';get('output-help').textContent=b.count>1?`默认复制当前版位的 ${b.count} 张批量生成指令，每张独立成图，不拼图。单次只能出一张的生成工具，请按上方 ${b.count} 个单图任务逐张执行。全部版位制作包按版位分组，属于备选指令。`:'本次准备一张独立图片的生成指令；全部版位制作包提供其他比例的备选。';}else{const a=s.result.assets.find(a=>a.id===get('asset').value)||s.result.assets[0],part=get('part').value;let text=a.text;if(part==='master'){text=a.master;get('shot-summary').textContent='15 秒剪辑计划：各镜头单独制作，不整段连续生成。';}else if(/^(keyframe|clip|shot)-\d+$/.test(part)){const kind=part.split('-')[0],shot=a.shots[Number(part.split('-')[1])];text=kind==='keyframe'?shot.keyframe:kind==='clip'?shot.clip:shot.title+'\n\n【先制作首帧，验收后再单独执行图生视频】\n'+shot.keyframe+'\n\n【仅本镜头图生视频提示词】\n'+shot.clip;get('shot-summary').textContent=shot.title+' · '+({empty:'无人镜头：0 人、0 手、0 脚',seated:'人物镜头：坐稳，双手分放大腿',hand:'手部特写：仅一只右手',standing:'人物镜头：已站稳，不接触商品'}[shot.cast]);}else get('shot-summary').textContent='供剪辑与归档：不将全部分镜作为一个连续生成任务。';get('copy').textContent=part.startsWith('keyframe-')?'复制本镜头首帧提示词':part.startsWith('clip-')?'复制本镜头 3 秒视频提示词':'复制当前制作资料';get('output-help').textContent=part.startsWith('keyframe-')?'当前是静止首帧提示词。先检查身体连接、手数、椅背朝向、桌沿与扶手间隙；首帧合格后再选择同一镜头的「仅 3 秒图生视频」。':part.startsWith('clip-')?'只执行这一段 3 秒。先上传产品原图、所需椅子原图与本镜头已验收首帧；不要同时粘贴首帧指令或其他镜头，最终在剪辑中硬切连接。':'制作资料需要按镜头分开执行；不生成入座、起身或转身过渡，不能让人物与桌子同时运动。';get('output').value=text;}get('copy-status').textContent='';}
-    function generate(){try{if(s.chairBusy&&s.product&&C.pairable(s.product))throw new Error('正在核对搭配椅，请稍候再生成。');if(!s.product)throw new Error('请先识别商品并选定具体变体。');if(!s.referenceConfirmed)throw new Error('请先选择并确认同一变体的正确官网原图。');s.result=E.compile(options());get('result').hidden=false;get('empty').hidden=true;if(mode==='image')rememberVisuals(s.product,s.result.visuals);get('result-badge').textContent=mode==='image'?s.result.visuals.length+' 张独立图片 · 本组统一版位':'5 个独立镜头 · 人物交互修订';get('asset').innerHTML=(mode==='image'?s.result.batches:s.result.assets).map(a=>`<option value="${safe(a.id)}">${safe(a.label+' · '+a.ratio+' · '+a.size)}</option>`).join('');if(mode==='image'){const n=s.result.visuals.length;get('part').innerHTML=(n>1?`<option value="batch">完整批量生成：${n} 张独立图片（默认）</option>`:'')+s.result.visuals.map((v,i)=>`<option value="image-${i}">仅第 ${i+1}/${n} 张：${safe(v.name)}</option>`).join('');get('part').value=n>1?'batch':'image-0';}else get('part').value='keyframe-0';get('warnings').textContent=s.result.warnings.join('\n');get('warnings').hidden=!s.result.warnings.length;renderOutput();status(mode==='image'?'已准备 '+s.result.visuals.length+' 张独立图片的生成任务。请选择统一版位并复制整批指令。':'已准备 5 个独立镜头；先制作并验收镜头 1 首帧，再逐段生成视频。');updateVisualPreview();sync();}catch(error){status(error.message,true);}}
-    async function copy(){if(!s.result)return;try{await navigator.clipboard.writeText(get('output').value);get('copy-status').textContent=mode==='image'?(get('part').value==='batch'?'已复制 '+s.result.visuals.length+' 张批量生成总指令，包含全部独立任务。':'已复制第 '+(Number(get('part').value.slice(6))+1)+' 张单图指令。'):'当前中文 Prompt 已复制。';}catch{get('output').focus();get('output').select();get('copy-status').textContent='文本已选中，请按 Ctrl+C / ⌘C 复制。';}}
+    function options(){return {mode,product:s.product,idea:selectedIdea(),channel:get('channel').value,market:get('market').value,extra:get('extra').value.trim(),offer:get('offer').value.trim(),offerConfirmed:get('offer-confirm').checked,chair:s.chair,...(mode==='image'?{promotion:window.FurniwellPromoUI?.read(),visualIds:selectedVisualIds(),recentVisuals:recentVisuals(s.product)}:{fieldLook:get('field-look').value})};}
+    function renderOutput(){
+      if(!s.result)return;
+      if(mode==='image'){
+        const output=E.imageOutput(s.result,get('asset').value,get('part').value);
+        const total=s.result.visuals.length;
+        get('output').value=output.text;
+        get('output').scrollTop=0;
+        get('image-scope-row').hidden=total===1;
+        get('output-summary').textContent=`第 ${output.index+1}/${total} 条 · ${output.visual.name}`;
+        get('copy').textContent='复制当前 Prompt';
+        get('download-current').textContent='下载本张指令';
+        get('output-help').textContent='每条 Prompt 对应一张图片。全部版位制作包按版位收录各风格的独立指令。';
+      }else{const a=s.result.assets.find(a=>a.id===get('asset').value)||s.result.assets[0],part=get('part').value;let text=a.text;if(part==='master'){text=a.master;get('shot-summary').textContent='15 秒剪辑计划：各镜头单独制作，不整段连续生成。';}else if(/^(keyframe|clip|shot)-\d+$/.test(part)){const kind=part.split('-')[0],shot=a.shots[Number(part.split('-')[1])];text=kind==='keyframe'?shot.keyframe:kind==='clip'?shot.clip:shot.title+'\n\n【先制作首帧，验收后再单独执行图生视频】\n'+shot.keyframe+'\n\n【仅本镜头图生视频提示词】\n'+shot.clip;get('shot-summary').textContent=shot.title+' · '+({empty:'无人镜头：0 人、0 手、0 脚',seated:'人物镜头：坐稳，双手分放大腿',hand:'手部特写：仅一只右手',standing:'人物镜头：已站稳，不接触商品'}[shot.cast]);}else get('shot-summary').textContent='供剪辑与归档：不将全部分镜作为一个连续生成任务。';get('copy').textContent=part.startsWith('keyframe-')?'复制本镜头首帧提示词':part.startsWith('clip-')?'复制本镜头 3 秒视频提示词':'复制当前制作资料';get('output-help').textContent=part.startsWith('keyframe-')?'当前是静止首帧提示词。先检查身体连接、手数、椅背朝向、桌沿与扶手间隙；首帧合格后再选择同一镜头的「仅 3 秒图生视频」。':part.startsWith('clip-')?'只执行这一段 3 秒。先上传产品原图、所需椅子原图与本镜头已验收首帧；不要同时粘贴首帧指令或其他镜头，最终在剪辑中硬切连接。':'制作资料需要按镜头分开执行；不生成入座、起身或转身过渡，不能让人物与桌子同时运动。';get('output').value=text;}get('copy-status').textContent='';}
+    function generate(){
+      try{
+        if(!s.product)throw new Error('请先识别商品并选定具体变体。');
+        if(!s.referenceConfirmed)throw new Error('请先选择并确认同一变体的正确官网原图。');
+        if(C.pairable(s.product)&&!noChair()){
+          if(s.chairBusy)throw new Error('正在核对搭配椅，请稍候再生成。');
+          if(!s.chair)throw new Error('请选择可售且有对应官网参考图的搭配椅变体。');
+        }
+        s.result=E.compile(options());
+        get('result').hidden=false;
+        get('empty').hidden=true;
+        const isImage=mode==='image';
+        if(isImage)rememberVisuals(s.product,s.result.visuals);
+        get('result-badge').textContent=isImage?s.result.visuals.length+' 条独立 Prompt':'5 个独立镜头 · 人物交互修订';
+        const placements=isImage?s.result.placements:s.result.assets;
+        const previous=get('asset').value;
+        get('asset').innerHTML=placements.map(a=>`<option value="${safe(a.id)}">${safe(a.label+' · '+a.ratio+' · '+a.size)}</option>`).join('');
+        if(isImage){
+          if(placements.some(p=>p.id===previous))get('asset').value=previous;
+          get('part').innerHTML=s.result.visuals.map((v,i)=>`<option value="image-${i}">${safe(v.name)}</option>`).join('');
+          get('part').value='image-0';
+        }else get('part').value='keyframe-0';
+        get('warnings').textContent=s.result.warnings.join('\n');
+        get('warnings').hidden=!s.result.warnings.length;
+        renderOutput();
+        status(isImage?`已生成 ${s.result.visuals.length} 条独立图片 Prompt。`:'已准备 5 个独立镜头；先制作并验收镜头 1 首帧，再逐段生成视频。');
+        updateVisualPreview();
+        sync();
+      }catch(error){
+        status(error.message,true);
+        get('empty').querySelector('strong').textContent=error.message;
+      }
+    }
+    async function copy(){
+      if(!s.result)return;
+      try{
+        await navigator.clipboard.writeText(get('output').value);
+        get('copy-status').textContent='当前中文 Prompt 已复制。';
+      }catch{
+        get('output').focus();
+        get('output').select();
+        get('copy-status').textContent='文本已选中，请按 Ctrl+C / ⌘C 复制。';
+      }
+    }
     function download(){if(!s.result)return;const url=URL.createObjectURL(new Blob([E.bundleText(s.result)],{type:'text/markdown;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=`Furniwell_${(s.product.sku||s.product.variant).replace(/[^a-zA-Z0-9_-]/g,'_')}_${mode}_Chinese_Prompts.md`;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);get('copy-status').textContent='已导出全部版位中文制作包。';}
-    function downloadCurrent(){if(!s.result)return;const o=E.imageOutput(s.result,get('asset').value,get('part').value||'batch'),url=URL.createObjectURL(new Blob([o.text],{type:'text/markdown;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=`Furniwell_${(s.product.sku||s.product.variant).replace(/[^a-zA-Z0-9_-]/g,'_')}_${o.batch.id}_${o.count>1?o.count+'_images':'image_'+((o.index??0)+1)}_Chinese_Prompts.md`;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);get('copy-status').textContent='已下载'+o.label+'。';}
+    function downloadCurrent(){
+      if(!s.result)return;
+      const o=E.imageOutput(s.result,get('asset').value,get('part').value);
+      const url=URL.createObjectURL(new Blob([o.text],{type:'text/markdown;charset=utf-8'}));
+      const a=document.createElement('a');
+      a.href=url;
+      a.download=`Furniwell_${(s.product.sku||s.product.variant).replace(/[^a-zA-Z0-9_-]/g,'_')}_${o.placement.id}_${o.visual.id}_Prompt.md`;
+      document.body.append(a);
+      a.click();
+      a.remove();
+      setTimeout(()=>URL.revokeObjectURL(url),1000);
+      get('copy-status').textContent='已下载「'+o.label+'」。';
+    }
     get('load').addEventListener('click',resolve);get('input').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();resolve();}});get('input').addEventListener('input',()=>{s.request++;s.product=null;s.input=get('input').value;get('load').disabled=false;get('product').hidden=true;get('variant-row').hidden=true;get('reference-row').hidden=true;invalidate('输入已变化，请重新识别商品。');updateIdeas();status('');});get('variant').addEventListener('change',()=>selectProduct(get('variant').value));
     get('reference').addEventListener('change',()=>{if(!s.product)return;s.product.image=get('reference').value;s.referenceConfirmed=!!s.product.image&&s.product.image===s.exactImage;s.product.referenceConfirmed=s.referenceConfirmed;get('reference-check').hidden=s.referenceConfirmed;get('reference-confirm').checked=false;invalidate();showProduct();});get('reference-confirm').addEventListener('change',()=>{s.referenceConfirmed=!!s.product?.image&&get('reference-confirm').checked;if(s.product)s.product.referenceConfirmed=s.referenceConfirmed;invalidate();});
-    get('source').addEventListener('change',()=>{updateIdeas(false);invalidate();sync();});get('idea').addEventListener('change',()=>{updateIdeaNote();invalidate();sync();});for(const id of ['channel','market','extra','offer','offer-confirm'])get(id).addEventListener(id==='extra'||id==='offer'?'input':'change',()=>{invalidate();sync();});get('generate').addEventListener('click',generate);get('copy').addEventListener('click',copy);get('download').addEventListener('click',download);get('asset').addEventListener('change',renderOutput);get('part').addEventListener('change',renderOutput);if(mode==='image'){get('download-current').addEventListener('click',downloadCurrent);get('image-tasks').addEventListener('click',event=>{const target=event.target.closest('[data-image-task]');if(!target||!s.result)return;const i=Number(target.dataset.imageTask);if(!Number.isInteger(i)||i<0||i>=s.result.visuals.length)return;get('part').value='image-'+i;renderOutput();copy();});}
-    get('chair-model').addEventListener('change',()=>{const id=get('chair-model').value;s.chairData=C.model(id);renderChairVariants();refreshChair(id,get('chair-variant').value);});get('chair-variant').addEventListener('change',()=>{const choice=C.choose(s.chairData,get('chair-variant').value);s.chair=choice&&C.usable(choice)?choice:null;invalidate('搭配椅颜色已变化，请重新生成。');get('chair-status').textContent=s.chair?'已选 '+s.chair.color+'，生成时请同时上传椅子原图。':'请选择可用的椅子颜色。';showChair();sync();});get('chair-refresh').addEventListener('click',()=>{chairLoads.delete(get('chair-model').value);refreshChair();});
+    get('source').addEventListener('change',()=>{updateIdeas(false);invalidate();sync();});get('idea').addEventListener('change',()=>{updateIdeaNote();invalidate();sync();});for(const id of ['channel','market','extra','offer','offer-confirm'])get(id).addEventListener(id==='extra'||id==='offer'?'input':'change',()=>{invalidate();sync();});get('generate').addEventListener('click',generate);get('copy').addEventListener('click',copy);get('download').addEventListener('click',download);get('asset').addEventListener('change',renderOutput);get('part').addEventListener('change',renderOutput);if(mode==='image')get('download-current').addEventListener('click',downloadCurrent);
+    get('chair-model').addEventListener('change',()=>{
+      chooseChair(get('chair-model').value);
+      sync();
+    });
+    get('chair-variant').addEventListener('change',()=>{
+      const choice=C.choose(s.chairData,get('chair-variant').value);
+      s.chair=C.usable(choice)?choice:null;
+      get('chair-status').textContent=s.chair?'已选 '+s.chair.color+'。':'请选择可用的椅子颜色。';
+      showChair();
+      invalidate('搭配椅颜色已变化，请重新生成。');
+      sync();
+    });
+    get('chair-refresh').addEventListener('click',()=>{
+      chairLoads.delete(get('chair-model').value);
+      refreshChair();
+    });
     renderChairVariants(C.defaultVariant);
     if(mode==='video'){const showLook=()=>{get('field-look-note').textContent=window.CreativeFieldcraft.findDesk(get('field-look').value).scene;};get('field-look').addEventListener('change',()=>{showLook();invalidate();sync();});showLook();}
-    if(mode==='image')for(const id of ['visual','visual-count'])get(id).addEventListener('change',()=>{invalidate();sync();});
-    updateIdeas(false);workspaces[mode]={state:s,resolve,generate,get,invalidate,refreshChair,seedChair(id,variant){const m=C.model(id);if(!m)return;s.chairData=m;renderChairVariants(variant||undefined);refreshChair(id,variant);},seed(input,ideaId){get('input').value=input||get('input').value;const idea=ideas.find(i=>i.id===ideaId&&i.modes.includes(mode));if(idea){get('source').value=idea.source;updateIdeas(false);get('idea').value=idea.id;updateIdeaNote();}if(input)resolve();},getShare(){const v={};if(mode==='image')v.ip='prompt';if(s.product)v.psku=s.product.sku||s.product.url;else if(get('input').value)v.psku=get('input').value;if(get('idea').value)v.pidea=get('idea').value;if(get('channel').value!=='both')v.pc=get('channel').value;if(get('market').value!=='de')v.pm=get('market').value;if(s.chair&&(!s.product||C.pairable(s.product))&&s.chair.id!==C.defaultVariant){v.pcm=s.chair.model;v.pcv=s.chair.id;}if(mode==='video'&&get('field-look').value!=='daily')v.pfl=get('field-look').value;if(mode==='image'){if(get('visual').value!=='auto')v.pv=get('visual').value;if(get('visual-count').value==='4')v.pn='4';}return v;}};
+    if(mode==='image')get('visual').addEventListener('change',()=>{invalidate();sync();});
+    updateIdeas(false);
+    workspaces[mode]={
+      state:s,resolve,generate,get,invalidate,selectedVisualIds,seedVisuals,
+      seedChair(id,variant){
+        if(id==='none'&&mode==='image')chooseChair(id,undefined,false);
+        else if(C.model(id))chooseChair(id,variant||undefined);
+        else chooseChair(C.defaultModel,C.defaultVariant,false);
+      },
+      seed(input,ideaId){
+        get('input').value=input||get('input').value;
+        const idea=ideas.find(i=>i.id===ideaId&&i.modes.includes(mode));
+        if(idea){
+          get('source').value=idea.source;
+          updateIdeas(false);
+          get('idea').value=idea.id;
+          if(mode==='image')get('idea-details').open=true;
+          updateIdeaNote();
+        }else if(ideaId===null&&mode==='image'){
+          get('idea').value='';
+          get('idea-details').open=false;
+          updateIdeaNote();
+        }
+        if(input)resolve();
+      },
+      getShare(){
+        const v={};
+        if(mode==='image')v.ip='prompt';
+        if(s.product)v.psku=s.product.sku||s.product.url;
+        else if(get('input').value)v.psku=get('input').value;
+        if(get('idea').value)v.pidea=get('idea').value;
+        if(get('channel').value!=='both')v.pc=get('channel').value;
+        if(get('market').value!=='de')v.pm=get('market').value;
+        if(C.pairable(s.product)){
+          if(noChair())v.pcm='none';
+          else if(s.chair&&s.chair.id!==C.defaultVariant){
+            v.pcm=s.chair.model;
+            v.pcv=s.chair.id;
+          }
+        }
+        if(mode==='video'&&get('field-look').value!=='daily')v.pfl=get('field-look').value;
+        if(mode==='image'){
+          const ids=selectedVisualIds();
+          if(ids.length)v.pv=ids.join(',');
+        }
+        return v;
+      }
+    };
   }
   const imageRoot=document.getElementById('imagePromptBuilder'),videoRoot=document.getElementById('videoPromptBuilder');if(imageRoot)mount(imageRoot,'image');if(videoRoot)mount(videoRoot,'video');
   let imagePanel='browse';
@@ -71,7 +345,24 @@
   function elModalOpen(){return document.getElementById('modal').open;}
   document.getElementById('imageBrowseTab').addEventListener('click',()=>setImagePanel('browse'));document.getElementById('imagePromptTab').addEventListener('click',()=>setImagePanel('prompt'));
   document.addEventListener('click',event=>{const target=event.target.closest('[data-prompt-mode]');if(target)open(target.dataset.promptMode,target.dataset.promptIdea,target.dataset.promptSku);});
-  function restore(params){if(params.get('view')==='gallery'){view('gallery');setImagePanel(params.get('ip')==='prompt'?'prompt':'browse',false);}const mode=params.get('view')==='videos'&&params.get('vt')==='generator'?'video':params.get('view')==='gallery'&&params.get('ip')==='prompt'?'image':null;if(mode){const w=workspaces[mode];if(['both','google','meta'].includes(params.get('pc')))w.get('channel').value=params.get('pc');if(E.markets[params.get('pm')])w.get('market').value=params.get('pm');if(mode==='video'&&window.CreativeFieldcraft.deskLooks.some(x=>x.id===params.get('pfl'))){w.get('field-look').value=params.get('pfl');w.get('field-look').dispatchEvent(new Event('change'));}if(mode==='image'){w.get('visual').value=V.profiles.some(p=>p.id===params.get('pv'))?params.get('pv'):'auto';w.get('visual-count').value=params.get('pn')==='4'?'4':'1';}if(C.model(params.get('pcm')))w.seedChair(params.get('pcm'),params.get('pcv'));if(params.has('psku')||params.has('pidea'))w.seed(params.get('psku')||'',params.get('pidea'));}}
+  function restore(params){
+    if(params.get('view')==='gallery'){
+      view('gallery');
+      setImagePanel(params.get('ip')==='prompt'?'prompt':'browse',false);
+    }
+    const mode=params.get('view')==='videos'&&params.get('vt')==='generator'?'video':params.get('view')==='gallery'&&params.get('ip')==='prompt'?'image':null;
+    if(!mode)return;
+    const w=workspaces[mode];
+    if(['both','google','meta'].includes(params.get('pc')))w.get('channel').value=params.get('pc');
+    if(E.markets[params.get('pm')])w.get('market').value=params.get('pm');
+    if(mode==='video'&&window.CreativeFieldcraft.deskLooks.some(x=>x.id===params.get('pfl'))){
+      w.get('field-look').value=params.get('pfl');
+      w.get('field-look').dispatchEvent(new Event('change'));
+    }
+    if(mode==='image')w.seedVisuals((params.get('pv')||'').split(','));
+    if(mode==='image'||C.model(params.get('pcm')))w.seedChair(params.get('pcm'),params.get('pcv'));
+    if(params.has('psku')||params.has('pidea'))w.seed(params.get('psku')||'',params.get('pidea'));
+  }
   window.PromptBuilder={open,setImagePanel,workspaces,ideas,getShareState(){if(currentView==='gallery'&&imagePanel==='prompt')return workspaces.image.getShare();if(currentView==='videos'&&window.VideoLibrary.getShareState().vt==='generator')return workspaces.video.getShare();return {};}};
   restore(new URLSearchParams(location.hash.slice(1)));window.addEventListener('hashchange',()=>restore(new URLSearchParams(location.hash.slice(1))));
 })();

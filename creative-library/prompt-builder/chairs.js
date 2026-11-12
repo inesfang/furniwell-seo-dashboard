@@ -10,7 +10,8 @@
   function fromProduct(id,p){const config=model(id);if(!config||p.store!=='de'||p.handle!==config.handle)throw new Error('搭配椅商品与指定官网链接不一致。');return {...config,title:p.title,source:'live',checkedAt:p.checkedAt,variants:p.variants.map(v=>({id:String(v.id),sku:v.sku,title:v.title,color:colors[v.title]||v.title,available:v.available,image:v.image||''}))};}
   function choose(m,id){const v=m?.variants.find(v=>v.id===String(id));if(!v)return null;return {...v,model:m.id,label:m.label,handle:m.handle,productTitle:m.title,source:m.source,checkedAt:m.checkedAt,url:'https://furniwell.de/products/'+m.handle+'?variant='+v.id};}
   function defaultChair(){return choose(model(defaultModel),defaultVariant);}
-  function forProduct(p,choice){if(!pairable(p))return null;const c=choice===undefined?defaultChair():choice,config=c&&model(c.model);if(!config||c.handle!==config.handle||!/^\d+$/.test(c.id)||!usable(c))throw new Error('请选择可售且有对应官网参考图的搭配椅变体。');return c;}
+  function forProduct(p,choice){if(!pairable(p)||choice===null)return null;const c=choice===undefined?defaultChair():choice,config=c&&model(c.model);if(!config||c.handle!==config.handle||!/^\d+$/.test(c.id)||!usable(c))throw new Error('请选择可售且有对应官网参考图的搭配椅变体。');return c;}
+  function forImage(visual,chair){return visual.studio||visual.kind==='detail'?null:chair;}
   function facts(c){return c.model==='office'?[
     '保留独立网布头枕、上部高网背和下部独立腰靠；不能改成无头枕的单片网背椅。',
     '保留两侧原装扶手、软垫坐面、原气压杆、五爪底座与五个脚轮。网布、椅架、坐垫和底座的分色严格按此颜色变体原图，不改成通用白椅。',
@@ -21,7 +22,9 @@
     '脚托保持所选官网原图可确认的静态状态，不臆造收折、展开或后仰过程；如需其他状态，先补同 SKU 的对应官方状态图并验收。',
     '官网图中的橙色按摩示意标记属于说明图形，不是发光部件；成图不复制橙色光圈、发光腰枕、能量波或医疗治疗效果。'
   ];}
-  function block(o){const c=o.chair;if(!c)return '【椅子规则】\n主商品本身就是椅子，使用参考图1与主 SKU，不额外生成另一款搭配椅。';return [
+  function block(o){const c=o.chair;if(!c)return pairable(o.product)
+    ?'【座椅安排】\n工作位及背景保持无座椅。人物需要全身入镜时采用自然站姿，功能近景只保留本镜头需要的手部。'
+    :'【椅子规则】\n主商品本身就是椅子，使用参考图1与主 SKU，不额外生成另一款搭配椅。';return [
     '【搭配椅：只使用这一官网变体】',`款式：${c.label}；官网名称：${c.productTitle}`,`椅子 SKU：${c.sku}；变体：${c.id}；颜色：${c.color}（官网选项 ${c.title}）`,
     `椅子商品链接：${c.url}`,`@image2 / 参考图2：${c.image}`,`来源：${c.source==='live'?'本次从官网读取':'官网目录快照'}，核对日期 ${c.checkedAt}。`,
     '先实际上传这张搭配椅原图作为 image2。参考图1只锁定主商品；参考图2独立锁定搭配椅，不能继承桌子原图里的其他椅子。',
@@ -37,5 +40,5 @@
     '商品链接只用于核对来源，不等于已上传附件；若界面不解析 @image 标签，请手动选择对应图片。'
   ].join('\n'):clip?'@image1 @image2\n附件顺序：image1＝主商品官网原图；image2＝本镜头已实际制作并验收的首帧。':'@image1\n附件顺序：image1＝主商品官网原图。';}
   function legacyEnglish(){const c=defaultChair();return ['COMPANION CHAIR — @image2:',`Use only Furniwell high-back office chair, SKU ${c.sku}, variant ${c.id}, grey mesh with its original light frame, padded seat and five-spoke base. Chair reference: ${c.image}`,`Chair product: ${c.url}`,'Actually upload this chair photograph as @image2. Preserve its separate mesh headrest, upper mesh back, separate lower lumbar support, original arms, seat, five-spoke base and five casters. Never substitute a headrest-free generic white chair or gaming chair. Keep the same chair through every shot. Desk @image1 and chair @image2 are independent shape references. The chair stays grounded when the desk rises. This chair is sold separately; do not imply a free chair or desk-and-chair bundle.'].join('\n');}
-  window.FurniwellChairLibrary={models,defaultModel,defaultVariant,model,usable,fromProduct,choose,defaultChair,forProduct,pairable,facts,block,attachments,legacyEnglish};
+  window.FurniwellChairLibrary={models,defaultModel,defaultVariant,model,usable,fromProduct,choose,defaultChair,forProduct,forImage,pairable,facts,block,attachments,legacyEnglish};
 })();

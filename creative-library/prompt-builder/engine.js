@@ -86,33 +86,107 @@
     '默认生成无叠字素材底图或无字幕视频；广告标题、优惠、品牌与 CTA 后期排版或使用平台文字字段。Google PMax 可以使用合规叠字，但每个比例至少保留一份无叠字版本。',
     '投放时按平台当前要求使用适用的 AI 内容标识并保留生成或编辑元数据。提示词无法替代实际素材、落地页、价格权益和平台审核检查。'
   ];
+  const directImageIdea={
+    id:'',title:'按所选视觉风格',family:'any',
+    purpose:'用当前拍法清楚呈现所选商品及可见的已核实细节。',
+    layout:'按本张拍法安排商品、环境和人物，保持可见结构与原图一致。'
+  };
   const badClaim=/(治愈|治疗|减肥|瘦身|根治|保证.{0,8}(效果|收益|转化|健康)|100\s*%.{0,8}(有效|改善|保证)|虚构|假评|fake review)/i;
-  function checkOptions(o){if(!o.product?.image||o.product.referenceConfirmed===false)throw new Error('先为选定变体指定并确认正确的官网产品原图。');if(!o.idea)throw new Error('请选择素材库中已有的生成思路。');const fit=compatible(o.product,o.idea);if(!fit.ok)throw new Error(fit.reason);if(badClaim.test((o.extra||'')+' '+(o.offer||'')))throw new Error('补充信息中含有治疗、夸张保证或虚假证明等表达，请改为可核实的产品事实。');if((o.extra||'').length>1600||(o.offer||'').length>500)throw new Error('补充信息过长，请精简为已确认的结构或实际优惠。');return fit;}
+  function checkOptions(o){if(!o.product?.image||o.product.referenceConfirmed===false)throw new Error('先为选定变体指定并确认正确的官网产品原图。');if(!o.idea)throw new Error(o.mode==='image'?'请至少勾选一种视觉风格，或选用素材库思路。':'请选择素材库中已有的生成思路。');const fit=compatible(o.product,o.idea);if(!fit.ok)throw new Error(fit.reason);if(badClaim.test((o.extra||'')+' '+(o.offer||'')))throw new Error('补充信息中含有治疗、夸张保证或虚假证明等表达，请改为可核实的产品事实。');if((o.extra||'').length>1600||(o.offer||'').length>500)throw new Error('补充信息过长，请精简为已确认的结构或实际优惠。');return fit;}
   function productBlock(p,extra=''){const s=structure(p);return ['【主商品与参考图1】',`官网商品名称：${p.title}`,`SKU：${p.sku||'官网未提供 SKU，以变体编号识别'}；变体编号：${p.variant}`,`官网变体选项：${p.variantTitle}`,`商品链接：${p.url}`,`所选官网原图：${p.image}`,'请先保存并实际上传所选官网原图作为参考图1。链接只用于来源核对，不等于已经上传图片。参考图1只锁定本 SKU 的外形、颜色、拼缝、控制器和支撑结构；原图中的房间、窗户、光线、机位、椅子及摆件不作为复制依据。优先使用清楚展示商品的白底图或实拍产品图，不使用上一张 AI 广告成图继续改图；背景按本次独立视觉方案重新安排。',...s.facts.map(f=>'－'+f),...(['desk','frame'].includes(p.caps.family)?['－'+window.CreativeFieldcraft.hand]:[]),`核验边界：${s.notes}`,extra?'执行者补充并负责核实的结构信息：'+extra:'没有额外确认信息，不补写承重、速度、噪声、记忆键数量或安装耗时。'].join('\n');}
   function adBlock(o,preset){if(o.promotion){const P=window.FurniwellPromotionComposer;return ['【投放要求】',`版位：${preset.label}；比例 ${preset.ratio}；制作尺寸 ${preset.size}。`,preset.safe,preset.export,`投放市场：${markets[o.market]||markets.de}。执行说明为中文，图内文字保留用户填写的原文。`,P.block(o.promotion),...policyRules.filter((r,i)=>i!==5).map((r,i)=>`${i+1}. ${r}`)].join('\n');}const offer=o.offer&&o.offerConfirmed?'执行者已确认与当前所选变体及落地页一致的活动信息：'+o.offer+'。只可用于后期排版，不得自行补优惠码、条件或截止时间。':'没有确认的优惠信息。生成常青素材，不出现价格、折扣、倒计时、赠品或库存承诺。';return ['【投放要求】',`版位：${preset.label}；比例 ${preset.ratio}；制作尺寸 ${preset.size}。`,preset.safe,preset.export,`投放市场：${markets[o.market]||markets.de}。本提示词的执行说明全部使用中文；所需广告文案按目标市场语言在后期制作。`,offer,...policyRules.map((r,i)=>`${i+1}. ${r}`),'生成模型输出的像素、文件大小、编码和音频授权需要导出后核对；不能仅凭提示词宣称素材已通过平台审核。'].join('\n');}
-  function identityLabel(o){const title=o.idea.title.replace(/\d{2,3}\s*[×xX]\s*\d{2,3}(?:\s*[×xX]\s*\d{2,3})?(?:\s*cm)?/g,'所选规格').replace(/\d{2,3}厘米/g,'所选规格').replace(/白色|白桌|黑色/g,'所选颜色');return `采用素材库思路 ${o.idea.id}「${title}」的使用意图。原方向涉及的旧商品、旧尺寸、颜色和优惠仅是历史索引，不作为本商品事实。画面主商品以本次 SKU 与参考图1为准，搭配椅由独立参考图2锁定；主商品本身为椅子时只使用参考图1。`;}
-  function imageTask(o){if(o.promotion&&o.idea.id.startsWith('FW-BF-'))return '以本张拍法和独立版式展示当前商品；将确认的促销文字直接排入成图。';return o.idea.id==='FW-C01'?'按所选商品真实尺寸保留床边、门口、座椅退出空间和通道；不能缩小商品伪造宽敞。':o.idea.id==='FW-C02'?'工作设备数量服从当前所选规格，说明可用宽度与深度；放不下就减少道具，不扩大桌板。':o.idea.layout;}
-  function imagePrompt(o,preset,visual,index=0,total=1){const task=imageTask(o);return [window.FurniwellChairLibrary.attachments(o),'生成一张用于广告投放的写实商品素材。只输出一张完整单幅图片，不输出拼图、九宫格或多个比例拼版。',`本张唯一拍法：${visual.name}。与其他方案分别生成，不能继续套用参考图的原房间与光线。`,productBlock(o.product,o.extra),'【本次创意】',identityLabel(o),`需求与任务：${o.promotion&&total>1&&index>0?'围绕所选促销主题，以本张独立拍法和版式为准。':o.idea.purpose.replace(/\d{2,3}\s*[×xX]\s*\d{2,3}(?:\s*cm)?/g,'所选规格').replace(/白色|黑色|白桌|黑桌/g,'所选颜色')}`,`本张要完成的任务：${task}`,window.FurniwellVisualPlans.block(visual,o),window.FurniwellChairLibrary.block(o),o.promotion?window.FurniwellPromotionComposer.visualBlock(o.promotion,index,o.idea.id):'',o.promotion?'本张人物安排优先于创意简介中的示例动作；无人画面不得因使用场景而补画手脚。':'','商品必须可识别，人物、道具和透视服从实际尺寸；光线可以变化，产品原色、材质和结构不能随风格改变。不要把场景图或人物姿态当作真实性能测试。',adBlock(o,preset),'【输出检查】','先检查产品，再检查视觉差异：对照原图核对控制器外形与按键、安装边、桌板拼缝、立柱粗细顺序和脚型；再核对本方案指定的光线、景别、摆放与布置。只换杯子或盆栽不算执行了不同拍法。全景检查全商品；近景检查可见部件和安装关系，不为展示全桌而破坏景别。'].join('\n\n');}
-  function imageBatchPrompt(o,preset,visuals){const count=visuals.length;return [
-    `【图片生成任务：共 ${count} 张独立图片】`,
-    `请直接制作并交付 ${count} 张成品图片，按下方任务 1–${count} 逐张生成、逐张输出为独立图片附件。全部任务都要完成，不要只完成第 1 张，也不要仅返回提示词或文字说明。`,
-    '禁止拼图、四宫格、九宫格、联系表，禁止把多个场景放进一张图片。每个任务对应一个独立图像文件。',
-    `若生成工具每次只能生成一张，请依次执行 ${count} 次独立生成；完成当前任务后继续下一任务，直到交付全部 ${count} 张。每次都使用同一组主商品与搭配椅原图，不把上一张生成结果当作下一张的产品参考。`,
-    window.FurniwellChairLibrary.attachments(o),
-    `【本组统一版位】${preset.label}；全部 ${count} 张使用 ${preset.ratio}、${preset.size}。其他比例属于备选版位，不在本组混用。`,
-    productBlock(o.product,o.extra),window.FurniwellChairLibrary.block(o),identityLabel(o),
-    `四张视觉差异：${visuals.map((v,i)=>`任务${i+1} ${v.name}：${v.camera}；${v.light}；${v.room}`).join('；')}。逐张按指定方案完成；只换小道具不算不同视觉。`,
-    `共同需求与任务：${o.promotion?'以同一商品和已确认优惠为核心，分别执行下方四种拍法与版式。首张承接所选简报，其余三张为不同视觉方向。':o.idea.purpose.replace(/\d{2,3}\s*[×xX]\s*\d{2,3}(?:\s*cm)?/g,'所选规格').replace(/白色|黑色|白桌|黑桌/g,'所选颜色')}。${imageTask(o)}`,
-    ...visuals.flatMap((v,i)=>[`【任务 ${i+1}/${count}：第 ${i+1} 张图片｜${v.name}】`,window.FurniwellVisualPlans.block(v,{...o,batchSize:count,batchIndex:i+1}),o.promotion?window.FurniwellPromotionComposer.visualBlock(o.promotion,i,o.idea.id):'',o.promotion?'本张人物安排优先于创意简介中的示例动作；无人画面不得因使用场景而补画手脚。':'',`本任务的交付文件：图片 ${i+1}/${count}。产品和椅子保持固定，执行本任务指定的光线、镜头、摆放和布置。`]),
-    adBlock(o,preset),
-    `【整批完成条件】实际输出 ${count} 张独立图片附件，分别对应任务 1–${count}；核对每张的 SKU、椅子、控制器、桌板拼缝及支撑结构，再核对各自的光线和构图。只输出一张图片或一张拼图均不算完成本批任务。`
-  ].join('\n\n');}
-  function imageOutput(result,placementId,part='batch'){const batch=result.batches?.find(b=>b.id===placementId)||result.batches?.[0];if(!batch)throw new Error('请先生成图片任务。');if(part==='batch')return {text:batch.text,count:batch.count,batch,label:batch.count+' 张独立图片批量生成指令'};const index=Number(String(part).replace('image-',''));if(!/^image-\d+$/.test(part)||!batch.jobs[index])throw new Error('请选择有效的单张图片任务。');const job=batch.jobs[index],asset=result.assets.find(a=>a.id===job.assetId);return {text:`【单张任务：第 ${index+1}/${batch.count} 张｜${job.visualName}】\n这里只执行本张任务；完整 ${batch.count} 张请使用批量总指令，或依次执行全部单张任务。\n\n`+asset.text,count:1,batch,index,label:`第 ${index+1}/${batch.count} 张图片指令`};}
+  function identityLabel(o){
+    if(!o.idea.id)return '以所选视觉风格表现当前商品，画面主商品以本次 SKU 与参考图1为准。';
+    const title=o.idea.title.replace(/\d{2,3}\s*[×xX]\s*\d{2,3}(?:\s*[×xX]\s*\d{2,3})?(?:\s*cm)?/g,'所选规格').replace(/\d{2,3}厘米/g,'所选规格').replace(/白色|白桌|黑色/g,'所选颜色');
+    return `采用素材库思路 ${o.idea.id}「${title}」的使用意图。原方向涉及的旧商品、旧尺寸、颜色和优惠仅是历史索引，不作为本商品事实。画面主商品以本次 SKU 与参考图1为准。`;
+  }
+  function imageTask(o){
+    if(o.promotion&&o.idea.id.startsWith('FW-BF-'))return '以本张拍法和独立版式展示当前商品，将确认的促销文字直接排入成图。';
+    const withoutChair=!o.chair&&window.FurniwellChairLibrary.pairable(o.product);
+    if(o.idea.id==='FW-C01')return `按所选商品真实尺寸保留床边、门口、${withoutChair?'工作位前方空地':'座椅退出空间'}和通道；不能缩小商品伪造宽敞。`;
+    if(o.idea.id==='FW-C02')return '工作设备数量服从当前所选规格，说明可用宽度与深度；放不下就减少道具，不扩大桌板。';
+    if(withoutChair&&o.idea.id==='FW-C05')return '如需人物，在已核对的桌高自然站立使用。画面只呈现一个瞬间。';
+    if(withoutChair&&o.idea.id==='FW-C18')return '交代工作位前方、腿部活动范围和通道，以真实商品尺度构图。';
+    return o.idea.layout;
+  }
+  function imageAsset(o,preset,visual,index){
+    const C=window.FurniwellChairLibrary;
+    const chair=C.forImage(visual,o.chair);
+    const imageOptions={...o,chair};
+    const task=imageTask(imageOptions);
+    const purpose=o.idea.purpose.replace(/\d{2,3}\s*[×xX]\s*\d{2,3}(?:\s*cm)?/g,'所选规格').replace(/白色|黑色|白桌|黑桌/g,'所选颜色');
+    const text=[
+      C.attachments(imageOptions),
+      '生成一张用于广告投放的写实商品素材。只输出一张完整单幅图片，不输出拼图、九宫格或多个比例拼版。',
+      `本张唯一拍法：${visual.name}。背景、机位和光线以本张拍法为准。`,
+      productBlock(o.product,o.extra),
+      '【本次创意】',identityLabel(o),
+      `购买需求：${purpose}`,`本张要完成的任务：${task}`,
+      '创意思路中的场景和人物示例，按本张视觉方案及座椅安排调整。',
+      window.FurniwellVisualPlans.block(visual,imageOptions),
+      C.block(imageOptions),
+      o.promotion?window.FurniwellPromotionComposer.visualBlock(o.promotion,index,o.idea.id):'',
+      '商品必须可识别，人物、道具和透视服从实际尺寸；光线可以变化，产品原色、材质和结构保持一致。不要把场景图或人物姿态当作真实性能测试。',
+      adBlock(o,preset),
+      '【输出检查】',
+      '先对照原图核对可见的控制器外形与按键、安装边、桌板拼缝、立柱粗细顺序和脚型，再核对本方案指定的光线、景别、摆放与布置。全景检查全商品，近景检查可见部件和安装关系。'
+    ].filter(Boolean).join('\n\n');
+    return {id:preset.id+'--'+visual.id,placementId:preset.id,visualId:visual.id,visualName:visual.name,chair,task,text};
+  }
+  function imageOutput(result,placementId,part='image-0'){
+    const placement=result.placements?.find(p=>p.id===placementId)||result.placements?.[0];
+    if(!placement)throw new Error('请先生成图片 Prompt。');
+    const match=/^image-(\d+)$/.exec(part);
+    const index=match?Number(match[1]):-1;
+    const visual=result.visuals[index];
+    if(!visual)throw new Error('请选择有效的单张图片任务。');
+    const asset=result.assets.find(a=>a.placementId===placement.id&&a.visualId===visual.id);
+    return {text:asset.text,index,placement,visual,asset,label:visual.name};
+  }
   function videoStages(o){const s=structure(o.product);return window.FurniwellVideoInteraction.plan({direction:o.idea.id,family:o.product.caps.family,lshape:o.product.caps.lshape||o.idea.require==='lshape',hasControl:o.product.caps.electric,canLift:o.product.caps.electric&&s.stage==='inverted2'},'zh');}
   function videoPrompt(o,preset){const C=window.FurniwellChairLibrary,I=window.FurniwellVideoInteraction,steps=videoStages(o),base=productBlock(o.product,o.extra)+'\n\n'+C.block(o).replace('人物自然使用同一把椅子','仅在指定有人镜头中，人物使用同一把椅子'),continuity='人物镜头使用同一成年人、同一服装；房间、光线、商品与道具保持。前＝靠人的工作长边，右＝人入座面对桌面时自己的右手侧；不镜像、不搬移控制器。只按本镜头出镜人数和动作执行，空镜不添加人。'+(structure(o.product).glassDrawer?'G2 保留一片玻璃、一个原装抽屉和前沿内嵌面板，不添加外挂控制器。':'');const master=[C.attachments(o),'【15 秒剪辑计划：5 段独立 3 秒视频】\n这是分镜与剪辑资料，不是让 Grok 单次连续生成的指令。按镜头顺序制作并验收首帧和 3 秒片段，核对每对相邻镜头的尾帧与首帧，最终硬切拼接为 15 秒。每个独立任务只上传本镜头首帧，不混入其他镜头。',base,identityLabel(o),`统一实拍场景：${o.idea.id==='FV-05'?'成人卧室中保留床、门和通道；':''}${window.CreativeFieldcraft.findDesk(o.fieldLook).scene}。画面时段、房间与光线以所选拍法为准。`,continuity,window.CreativeFieldcraft.bridge,I.rules('zh'),...steps.map((step,i)=>[`镜头 ${i+1}（${i*3}–${i*3+3} 秒）`,I.block(step,'zh'),`首帧静止状态：${step.start}`,`唯一动作：${step.action}`,`结束状态：${step.end}`].join('\n')),I.inspection('zh'),adBlock(o,preset),'不让模型生成字幕、口播、音乐、Logo 或价格字样；这些内容在剪辑中添加。人物演示不包装成已真实发生的用户评价。'].join('\n\n');
     const shots=steps.map((step,i)=>({...step,title:`镜头 ${i+1} · ${i*3}–${i*3+3} 秒`,keyframe:[C.attachments(o),`【镜头 ${i+1} 首帧：只生成一张静止图片】`,`画面比例 ${preset.ratio}，制作尺寸 ${preset.size}。`,base,identityLabel(o),`统一实拍场景：${o.idea.id==='FV-05'?'成人卧室中保留床、门和通道；':''}${window.CreativeFieldcraft.findDesk(o.fieldLook).scene}。画面时段、房间与光线以所选拍法为准。`,continuity,I.rules('zh'),I.block(step,'zh'),`只画本镜头起始姿态：${step.start}`,...(i?[`衔接前镜：前一镜结束为「${steps[i-1].end}」；本镜开始为「${step.start}」。${steps[i-1].cast==='seated'&&step.cast==='hand'?'两者间以时间跳切，手在画外自然就位，不假装连续伸手。':''}同机位连续动作承接已验收尾帧；不同机位重做本镜首帧，参考尾帧核对空间与状态。`]:[]),'只画一个瞬间，不画动作轨迹、双重姿态或动作结束状态。不合格的身体连接与接触关系先重做首帧；此处提供提示词，不表示首帧已生成。',I.inspection('zh'),adBlock(o,preset)].join('\n\n'),clip:[C.attachments(o,true),`【镜头 ${i+1}：仅生成这一段独立的 3 秒图生视频】\n先实际上传主商品原图、所需搭配椅原图与本镜头已实际制作并验收的首帧。不要把首帧生成指令或其他镜头一起交给视频模型。`,`从 ${o.chair?'image3':'image2'} 的真实构图和产品位置开始；${o.chair?'参考图1只锁定主商品，参考图2独立锁定搭配椅。':'参考图1锁定主椅，参考图2仅为当前镜头首帧，不添加另一把椅子。'}首帧须与本镜机位相符；上一镜尾帧只用于同机位承接或核对不同机位的空间与状态。`,base,continuity,I.rules('zh'),I.block(step,'zh'),`起始状态：${step.start}`,`此镜头唯一允许的动作：${step.action}`,`结束状态：${step.end}`,window.CreativeFieldcraft.bridge,`画面比例 ${preset.ratio}，制作尺寸 ${preset.size}。`,'镜头内不跳切、不绕拍、不增加部件、不改颜色或拼缝。模型无法维持身体或商品结构时，减少动作或保留已验收静帧；不要在视频中修复错误首帧。',I.inspection('zh'),...policyRules].join('\n\n')}));
     const full=[master,'【逐镜头首帧与图生视频指令：每段分别复制执行，不整包交给 Grok】',...shots.flatMap(s=>[s.title,'首帧提示词：',s.keyframe,'图生视频提示词：',s.clip])].join('\n\n');return {text:full,master,shots};}
-  function compile(o){checkOptions(o);const promotion=o.mode==='image'?window.FurniwellPromotionComposer?.normalize(o.promotion):null;if(promotion)window.FurniwellPromotionComposer.validate(promotion,o.offerConfirmed,o.market);o={...o,promotion,chair:window.FurniwellChairLibrary.forProduct(o.product,o.chair)};const selected=presets[o.mode].filter(p=>o.channel==='both'||p.group===o.channel||p.group==='both');if(!selected.length)throw new Error('请选择有效投放平台。');const warnings=[];if(o.offer&&!o.offerConfirmed)warnings.push('优惠尚未勾选确认，已生成无优惠的常青版本。');if(!structure(o.product).known)warnings.push('所选 SKU 没有逐项核实的结构档案，已按原图锁定并禁止猜测机械伸缩。');if(o.product.source!=='live')warnings.push('商品来自 '+o.product.checkedAt+' 目录快照，投放前再次核对官网变体和售卖范围。');if(o.chair&&o.chair.source!=='live')warnings.push('搭配椅来自 '+o.chair.checkedAt+' 官网快照，生成前核对颜色、主图与当前可售状态。');const visuals=o.mode==='image'?window.FurniwellVisualPlans.select(o):[];const assets=o.mode==='image'?visuals.flatMap((v,i)=>selected.map(p=>({id:p.id+'--'+v.id,label:v.name+'｜'+p.label,visualId:v.id,visualName:v.name,placementId:p.id,placementLabel:p.label,ratio:p.ratio,size:p.size,text:imagePrompt(o,p,v,i,visuals.length)}))):selected.map(p=>({id:p.id,label:p.label,ratio:p.ratio,size:p.size,...videoPrompt(o,p)}));const batches=o.mode==='image'?selected.map(p=>({id:p.id,label:p.label,ratio:p.ratio,size:p.size,count:visuals.length,jobs:visuals.map((v,i)=>({number:i+1,visualId:v.id,visualName:v.name,assetId:p.id+'--'+v.id})),text:visuals.length===1?assets.find(a=>a.placementId===p.id).text:imageBatchPrompt(o,p,visuals)})):[];return {version,...(promotion?{promotion}:{}),mode:o.mode,fieldLook:o.fieldLook||'daily',batches,product:o.product,chair:o.chair,ideaId:o.idea.id,ideaTitle:o.idea.title,warnings,visuals:visuals.map((v,i)=>({...v,...(promotion?{promoDesign:window.FurniwellPromotionComposer.design(promotion,i,o.idea.id).name}:{})})),assets};}
-  function bundleText(result){return [`# Furniwell 中文${result.mode==='image'?'图片':'视频'}广告 Prompt`, `生成规则版本：${version}`,`SKU：${result.product.sku}；变体 ${result.product.variant}`,`选择思路：${result.ideaId} · ${result.ideaTitle}`,`来源：${result.product.url}`,result.chair?`搭配椅：${result.chair.sku} · ${result.chair.color}；${result.chair.url}`:'搭配椅：主商品为椅子，不额外添加。', ...result.warnings.map(w=>'注意：'+w),...(result.mode==='image'?result.batches:result.assets).flatMap(a=>[`\n## ${a.label} · ${a.ratio} · ${a.size}${a.count?' · '+a.count+' 张独立图片':''}`,a.text]),'\n## 平台规则来源',...sources.map(s=>s.name+'：'+s.url),'本工具生成制作提示词，不替平台审核实际素材。'].join('\n\n');}
+  function compile(o){
+    if(o.mode==='image'&&!o.idea&&(o.visualIds?.length||o.visual&&o.visual!=='auto'))o={...o,idea:directImageIdea};
+    checkOptions(o);
+    const promotion=o.mode==='image'?window.FurniwellPromotionComposer?.normalize(o.promotion):null;
+    if(promotion)window.FurniwellPromotionComposer.validate(promotion,o.offerConfirmed,o.market);
+    o={...o,promotion,chair:window.FurniwellChairLibrary.forProduct(o.product,o.chair)};
+    const selected=presets[o.mode].filter(p=>o.channel==='both'||p.group===o.channel||p.group==='both');
+    if(!selected.length)throw new Error('请选择有效投放平台。');
+    const isImage=o.mode==='image';
+    const visuals=isImage?window.FurniwellVisualPlans.select(o):[];
+    const assets=isImage
+      ?selected.flatMap(p=>visuals.map((v,i)=>imageAsset(o,p,v,i)))
+      :selected.map(p=>({id:p.id,label:p.label,ratio:p.ratio,size:p.size,...videoPrompt(o,p)}));
+    const warnings=[];
+    if(o.offer&&!o.offerConfirmed)warnings.push('优惠尚未勾选确认，已生成无优惠的常青版本。');
+    if(!structure(o.product).known)warnings.push('所选 SKU 没有逐项核实的结构档案，已按原图锁定并禁止猜测机械伸缩。');
+    if(o.product.source!=='live')warnings.push('商品来自 '+o.product.checkedAt+' 目录快照，投放前再次核对官网变体和售卖范围。');
+    if(o.chair&&o.chair.source!=='live'&&(!isImage||assets.some(a=>a.chair)))warnings.push('搭配椅来自 '+o.chair.checkedAt+' 官网快照，生成前核对颜色、主图与当前可售状态。');
+    return {
+      version,promotion,mode:o.mode,fieldLook:o.fieldLook||'daily',placements:isImage?selected:[],
+      product:o.product,chair:o.chair,ideaId:o.idea.id,ideaTitle:o.idea.title,warnings,assets,
+      visuals:visuals.map((v,i)=>promotion?{...v,promoDesign:window.FurniwellPromotionComposer.design(promotion,i,o.idea.id).name}:v)
+    };
+  }
+  function bundleText(result){
+    const isImage=result.mode==='image';
+    const content=isImage?result.placements.flatMap(p=>[
+      `## ${p.label} · ${p.ratio} · ${p.size}`,
+      ...result.assets.filter(a=>a.placementId===p.id).flatMap(a=>[`### ${a.visualName}`,a.text])
+    ]):result.assets.flatMap(a=>[`## ${a.label} · ${a.ratio} · ${a.size}`,a.text]);
+    const chair=result.chair
+      ?`搭配椅${isImage?'（适用拍法）':''}：${result.chair.sku} · ${result.chair.color}；${result.chair.url}`
+      :window.FurniwellChairLibrary.pairable(result.product)?'搭配椅：本次不搭配。':'搭配椅：主商品为椅子。';
+    const idea=result.ideaId?`选择思路：${result.ideaId} · ${result.ideaTitle}`:'按所选视觉风格制作，每条 Prompt 对应一张独立图片。';
+    return [
+      `# Furniwell 中文${isImage?'图片':'视频'}广告 Prompt`,`生成规则版本：${version}`,
+      `SKU：${result.product.sku}；变体 ${result.product.variant}`,idea,`来源：${result.product.url}`,chair,
+      ...result.warnings.map(w=>'注意：'+w),...content,'## 平台规则来源',
+      ...sources.map(s=>s.name+'：'+s.url),'本工具生成制作提示词，不替平台审核实际素材。'
+    ].join('\n\n');
+  }
   window.FurniwellPromptEngine={version,stores,markets,sources,presets,cleanSku,parseInput,classify,normalizeProduct,variantProduct,lookup,buildIdeas,structure,compatible,compile,bundleText,imageOutput,policyRules};
 })();

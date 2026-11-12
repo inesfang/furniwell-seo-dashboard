@@ -20,24 +20,38 @@
  };
  const nightNotes={space:'夜间门口全景，完整桌与过道；灰墙、硬地、无地毯，侧方低亮环境灯。',frontal:'夜间近正面构图，深蓝灰墙与封闭柜，左上中性侧灯勾勒轮廓。',documentary:'夜间人物侧前中景，灰绿家庭工作角，局部任务灯照亮纸笔。',evening:'夜间真实工作角，工作灯照亮桌面任务，窗外暗，产品颜色不变。'};
  const promoNotes={space:'门口全景，灰墙木地、阴天漫射光，完整商品与通道。',frontal:'正面水平构图，深蓝灰墙、定向侧光，商品轮廓清楚。',documentary:'侧前中景，灰绿工作角，阴天散射光，有真实生活痕迹。',detail:'原装部件近景，安装边同框，中性柔光，背景简洁。',evening:'夜间工作角，局部工作灯与暗背景，不改变商品原色。',studio:'素色背景完整商品棚拍，柔光与自然地面阴影。',overhead:'高位斜俯拍工作面，中性漫射光，保留前沿与原拼缝。',workplace:'办公空间纵深构图，中性照明与玻璃隔断，保留真实通道。'};
- function identity(result,source='原图'){
+ function identity(result,source='原图',chair=result.chair){
   const p=result.product,S=window.FurniwellPromptEngine.structure(p);
   return [`主商品 SKU ${p.sku||p.variant}，所选变体${p.variantTitle}；只以${source}锁定。`,...S.facts,...(['desk','frame'].includes(p.caps.family)?['如有控制器，在入座者右手边、靠人的前工作长边；人面对镜头时常显示在画面左侧。禁止移到其他边，内嵌款保持内嵌。']:[]),
-   result.chair?`若出现搭配椅，只用已选 SKU ${result.chair.sku}（${result.chair.color}），头枕、扶手、底座、脚轮及是否有脚托均以该椅原图为准，不增加不存在的部件。`:'主商品本身为椅子，不额外添加另一把椅子。',
+   chair?`若出现搭配椅，只用已选 SKU ${chair.sku}（${chair.color}），头枕、扶手、底座、脚轮及是否有脚托均以该椅原图为准，不增加不存在的部件。`:p.caps.family==='chair'?'只展示所选主椅。':'工作位与背景均无座椅。需要全身人物时采用站姿。',
    p.caps.family==='frame'?'这是单独售卖桌架，不增加桌板或将道具当作随货。':'数量、尺寸、比例、材质和原色保持，不镜像，不混用其他 SKU。'].join('');
  }
  function cast(step){return {empty:'本镜头0人0手0脚，椅子空置，不残留桌下腿脚。',hand:'只见同一成年人的一只右手，五指、手腕与前臂连续；另一手、脸和躯干在画外，不换手、不穿过桌板或机件。',seated:'恰好一名成年人已坐稳；坐垫承托骨盆，椅背在身后，双手分放左右大腿、双脚着地；不入座、不起身、不转身。',standing:'恰好一名成年人已站稳，双脚着地、双臂下垂，与商品有可见间隙；不触碰家具、不转身。'}[step.cast]||'人数和首帧姿态保持，不新增肢体。';}
  function furnitureShort(result,placement,part,context={}){
   const extra=String(context.extra||'').trim(),idea=context.idea;
   if(result.mode==='image'){
-   const b=result.batches.find(b=>b.id===placement)||result.batches[0],i=Number(String(part).replace('image-',''));
-   if(!/^image-\d+$/.test(part)||!b.jobs[i])return {text:'请先选择一个单张图片任务。Grok 模式按任务逐张执行。',executable:false};
-   const v=result.visuals[i],task=(idea?.layout||'展示当前 SKU 与真实使用空间。').replace(/\d{2,3}\s*[×xX]\s*\d{2,3}(?:\s*cm)?/g,'所选规格').replace(/白色|黑色|白桌|黑桌/g,'所选颜色'),promo=result.promotion;
-   const hasPerson=promo&&(v.studio||['space','frontal','documentary','evening','workplace'].includes(v.id))&&(promo.cast==='standing'||promo.cast==='auto'&&['documentary','workplace'].includes(v.id));
+   const match=/^image-(\d+)$/.exec(part);
+   if(!match||!result.visuals[Number(match[1])])return {text:'请先选择一条视觉风格的图片 Prompt。',executable:false};
+   const output=window.FurniwellPromptEngine.imageOutput(result,placement,part);
+   const {asset,visual:v,index:i}=output;
+   const task=asset.task.replace(/\d{2,3}\s*[×xX]\s*\d{2,3}(?:\s*cm)?/g,'所选规格').replace(/白色|黑色|白桌|黑桌/g,'所选颜色');
+   const promo=result.promotion;
+   const hasPerson=promo&&v.kind==='wide'&&(promo.cast==='standing'||promo.cast==='auto'&&['documentary','workplace'].includes(v.id));
    const photography=v.short||(promo?promoNotes[v.id]:(idea?.id==='FW-C20'?nightNotes[v.id]:visualNotes[v.id]))||[v.camera,v.light,v.placement,v.room].join('');
-   const promoCast=hasPerson?'一位成人全身站稳于商品旁，双脚着地、双臂下垂，不接触家具；手脚完整，不穿模。':'无人、无手脚、椅子空置。';
-   const text=[result.chair?'实际上传主商品与已选搭配椅原图，分别锁定两件商品。':'实际上传当前主商品原图。',`只生成第${i+1}/${b.count}张完整独立广告图片，${b.ratio}，不拼图；完成后继续其他单张任务。`,identity(result),`本张视觉：${v.name}。${photography}`,promo?window.FurniwellPromotionComposer.shortVisual(promo,i,result.ideaId):`画面任务：${task}`,extra?'已核实补充事实：'+extra:'',promo?window.FurniwellPromotionComposer.block(promo,true)+promoCast+'不伪造评价、认证或赠品。':v.id==='warm-stone-studio'?'无人、无搭配椅，沿用当前变体的材质与结构。无叠字，标题与 CTA 后期或在广告后台填写。':'不复制官网原房间与光线。最多一位成人，身体四肢连续、手腕和手指自然，不多手、穿模；异常需重做。无叠字、价格、认证标识或虚假赠品；真实广告标题和活动后期加入。'].filter(Boolean).join('\n');
-   return {text,executable:true,index:i,label:`第 ${i+1}/${b.count} 张 · ${v.name}`};
+   const framing=asset.chair?photography:photography.replace('座椅退出区','工作位前方通道');
+   const promoCast=hasPerson?'一位成人全身站稳于商品旁，双脚着地、双臂下垂，与家具留间隔。':'无人、无手脚。';
+   const text=[
+    asset.chair?'实际上传主商品与已选搭配椅原图，分别锁定两件商品。':'实际上传当前主商品原图。',
+    `只生成一张完整独立广告图片，${output.placement.ratio}，不拼图。`,
+    identity(result,'原图',asset.chair),
+    `本张视觉：${v.name}。${framing}`,
+    promo?window.FurniwellPromotionComposer.shortVisual(promo,i,result.ideaId):`画面任务：${task}`,
+    extra?'已核实补充事实：'+extra:'',
+    promo?window.FurniwellPromotionComposer.block(promo,true)+promoCast+'不伪造评价、认证或赠品。'
+      :v.id==='warm-stone-studio'?'无人，沿用当前变体的材质与结构。无叠字，标题与 CTA 后期或在广告后台填写。'
+      :'不复制官网原房间与光线。最多一位成人，身体四肢连续、手腕和手指自然，不多手、穿模；异常需重做。无叠字、价格、认证标识或虚假赠品。'
+   ].filter(Boolean).join('\n');
+   return {...output,text,executable:true};
   }
   const a=result.assets.find(a=>a.id===placement)||result.assets[0],m=/^(keyframe|clip)-(\d+)$/.exec(part),i=m&&Number(m[2]),s=m&&a.shots[i];
   if(!s)return {text:'请选择独立首帧或单镜头视频任务。完整制作资料请切换 ChatGPT Work。',executable:false};
@@ -50,7 +64,7 @@
   return {text,executable:true,index:i,label:`镜头 ${i+1}/5 · ${isFrame?'首帧':'短视频'}`};
  }
  function furnitureWork(result,placement,part){
-  if(result.mode==='image')return {...window.FurniwellPromptEngine.imageOutput(result,placement,part||'batch'),executable:true};
+  if(result.mode==='image')return {...window.FurniwellPromptEngine.imageOutput(result,placement,part||'image-0'),executable:true};
   const a=result.assets.find(a=>a.id===placement)||result.assets[0];if(part==='master')return {text:a.master,executable:true};
   if(part==='full')return {text:'请在 ChatGPT Work 按完整资料执行：核对商品与附件，逐张制作并交付5张独立关键帧，再按当前可用工具制作视频或交付对应5条视频指令。没有实际输出视频文件时，不声称视频已完成。\n\n'+a.text,executable:true};
   const m=/^(keyframe|clip|shot)-(\d+)$/.exec(part),s=m&&a.shots[Number(m[2])];return {text:s?(m[1]==='keyframe'?s.keyframe:m[1]==='clip'?s.clip:s.title+'\n\n'+s.keyframe+'\n\n'+s.clip):a.text,executable:true};
@@ -58,7 +72,7 @@
  function furnitureOutput(r,placement,part,tool,limit,context){const o=tool==='grok'?furnitureShort(r,placement,part,context):furnitureWork(r,placement,part);return {...o,count:count(o.text),valid:o.executable&&valid(o.text,tool,limit)};}
  function furniturePacket(r,tool,limit,context={}){
   if(tool==='work')return '# ChatGPT Work · 完整制作资料\n\n不套用 Imagine 短指令的工作上限。关键帧逐张交付；仅在有可用视频工具时输出视频。\n\n'+window.FurniwellPromptEngine.bundleText(r);
-  const rows=[];if(r.mode==='image')for(const b of r.batches)for(let i=0;i<b.count;i++)rows.push({...furnitureShort(r,b.id,'image-'+i,context),label:b.label+' · 第'+(i+1)+'/'+b.count+'张'});
+  const rows=[];if(r.mode==='image')for(const p of r.placements)for(const [i,v] of r.visuals.entries())rows.push({...furnitureShort(r,p.id,'image-'+i,context),label:p.label+' · '+v.name});
   else for(const a of r.assets)for(let i=0;i<a.shots.length;i++)for(const kind of ['keyframe','clip'])rows.push({...furnitureShort(r,a.id,kind+'-'+i,context),label:a.label+' · 镜头'+(i+1)+' · '+(kind==='clip'?'短视频':'首帧')});
   if(rows.some(x=>!x.executable||!valid(x.text,tool,limit)))throw Error('制作包中有指令超出本次最大字数。请精简补充事实、按实际界面调整上限，或选择 Work 完整版。未自动截断。');
   return `# Grok Imagine · 逐条短指令包\n\n每条最大 ${limit} 字符，含空格、标点与换行。此值是本站设置，不代表官网统一上限。逐个任务上传参考图并分别执行，不整包粘贴。\n\n`+rows.map(x=>`## ${x.label}（${count(x.text)} 字符）\n\n${x.text}`).join('\n\n');
