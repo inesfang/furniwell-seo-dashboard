@@ -33,9 +33,10 @@
    const b=result.batches.find(b=>b.id===placement)||result.batches[0],i=Number(String(part).replace('image-',''));
    if(!/^image-\d+$/.test(part)||!b.jobs[i])return {text:'请先选择一个单张图片任务。Grok 模式按任务逐张执行。',executable:false};
    const v=result.visuals[i],task=(idea?.layout||'展示当前 SKU 与真实使用空间。').replace(/\d{2,3}\s*[×xX]\s*\d{2,3}(?:\s*cm)?/g,'所选规格').replace(/白色|黑色|白桌|黑桌/g,'所选颜色'),promo=result.promotion;
-   const hasPerson=promo&&['space','frontal','documentary','evening','studio','workplace'].includes(v.id)&&(promo.cast==='standing'||promo.cast==='auto'&&['documentary','workplace'].includes(v.id));
+   const hasPerson=promo&&(v.studio||['space','frontal','documentary','evening','workplace'].includes(v.id))&&(promo.cast==='standing'||promo.cast==='auto'&&['documentary','workplace'].includes(v.id));
+   const photography=v.short||(promo?promoNotes[v.id]:(idea?.id==='FW-C20'?nightNotes[v.id]:visualNotes[v.id]))||[v.camera,v.light,v.placement,v.room].join('');
    const promoCast=hasPerson?'一位成人全身站稳于商品旁，双脚着地、双臂下垂，不接触家具；手脚完整，不穿模。':'无人、无手脚、椅子空置。';
-   const text=[result.chair?'实际上传主商品与已选搭配椅原图，分别锁定两件商品。':'实际上传当前主商品原图。',`只生成第${i+1}/${b.count}张完整独立广告图片，${b.ratio}，不拼图；完成后继续其他单张任务。`,identity(result),`本张视觉：${v.name}。${promo?promoNotes[v.id]:(idea?.id==='FW-C20'?(nightNotes[v.id]||[v.camera,v.light,v.placement,v.room].join('')):(visualNotes[v.id]||[v.camera,v.light,v.placement,v.room].join('')))}`,promo?window.FurniwellPromotionComposer.shortVisual(promo,i,result.ideaId):`画面任务：${task}`,extra?'已核实补充事实：'+extra:'',promo?window.FurniwellPromotionComposer.block(promo,true)+promoCast+'不伪造评价、认证或赠品。':'不复制官网原房间与光线。最多一位成人，身体四肢连续、手腕和手指自然，不多手、穿模；异常需重做。无叠字、价格、认证标识或虚假赠品；真实广告标题和活动后期加入。'].filter(Boolean).join('\n');
+   const text=[result.chair?'实际上传主商品与已选搭配椅原图，分别锁定两件商品。':'实际上传当前主商品原图。',`只生成第${i+1}/${b.count}张完整独立广告图片，${b.ratio}，不拼图；完成后继续其他单张任务。`,identity(result),`本张视觉：${v.name}。${photography}`,promo?window.FurniwellPromotionComposer.shortVisual(promo,i,result.ideaId):`画面任务：${task}`,extra?'已核实补充事实：'+extra:'',promo?window.FurniwellPromotionComposer.block(promo,true)+promoCast+'不伪造评价、认证或赠品。':v.id==='warm-stone-studio'?'无人、无搭配椅，沿用当前变体的材质与结构。无叠字，标题与 CTA 后期或在广告后台填写。':'不复制官网原房间与光线。最多一位成人，身体四肢连续、手腕和手指自然，不多手、穿模；异常需重做。无叠字、价格、认证标识或虚假赠品；真实广告标题和活动后期加入。'].filter(Boolean).join('\n');
    return {text,executable:true,index:i,label:`第 ${i+1}/${b.count} 张 · ${v.name}`};
   }
   const a=result.assets.find(a=>a.id===placement)||result.assets[0],m=/^(keyframe|clip)-(\d+)$/.exec(part),i=m&&Number(m[2]),s=m&&a.shots[i];
