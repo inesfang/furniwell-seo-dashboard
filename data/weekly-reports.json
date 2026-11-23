@@ -4461,8 +4461,8 @@
       "classification": "public",
       "source": {
         "url": "https://app.ahrefs.com/site-explorer",
-        "note": "已获准公开的域级 Ahrefs 周报。DE / adaptive / monthly；DPJ 为 /de/ prefix，其他为 subdomains。Traffic Value 为 USD；Top 10 未返回时保留 null；DR 为全域评分、RD 为实时引用域，DPJ RD 按 www /de/ prefix。自然与付费均为估算月搜索流量，付费不完整覆盖非搜索广告；付费占比仅以自然加付费搜索为分母。不可用值为 null；旧版本付费比较基线缺失时不回填。估算流量不等于真实访问量。",
-        "coverage": "固定 7 个网站；仅域级汇总，页面和关键词原始明细保留私密。",
+        "note": "2026-11-23 同口径Ahrefs复核；Top10采用关键词历史top3+top4_10，和metrics Top3可能有快照差异。Top Pages已独立核验；Ahrefs流量是估算月值。",
+        "coverage": "固定7站；DPJ /de/ prefix，其余subdomains。",
         "requests": [
           {
             "tool": "site-explorer-metrics",
@@ -4767,8 +4767,8 @@
           "previousKeywords": 201,
           "top3": 74,
           "previousTop3": 81,
-          "top10": null,
-          "previousTop10": null,
+          "top10": 176,
+          "previousTop10": 194,
           "value": 1346.94,
           "previousValue": 469.65,
           "dr": 18,
@@ -4791,8 +4791,8 @@
           "previousKeywords": 368,
           "top3": 165,
           "previousTop3": 164,
-          "top10": null,
-          "previousTop10": null,
+          "top10": 346,
+          "previousTop10": 354,
           "value": 3677.87,
           "previousValue": 3700.99,
           "dr": 39,
@@ -4815,8 +4815,8 @@
           "previousKeywords": 1174,
           "top3": 537,
           "previousTop3": 527,
-          "top10": null,
-          "previousTop10": null,
+          "top10": 1062,
+          "previousTop10": 1102,
           "value": 68129.41,
           "previousValue": 72759.9,
           "dr": 51,
@@ -4839,8 +4839,8 @@
           "previousKeywords": 426,
           "top3": 259,
           "previousTop3": 248,
-          "top10": null,
-          "previousTop10": null,
+          "top10": 433,
+          "previousTop10": 415,
           "value": 103790.87,
           "previousValue": 97391.87,
           "dr": 45,
@@ -4863,8 +4863,8 @@
           "previousKeywords": 259,
           "top3": 70,
           "previousTop3": 70,
-          "top10": null,
-          "previousTop10": null,
+          "top10": 242,
+          "previousTop10": 253,
           "value": 990.74,
           "previousValue": 1081.34,
           "dr": 30,
@@ -4887,8 +4887,8 @@
           "previousKeywords": 351,
           "top3": 187,
           "previousTop3": 184,
-          "top10": null,
-          "previousTop10": null,
+          "top10": 330,
+          "previousTop10": 341,
           "value": 3052.24,
           "previousValue": 3220.43,
           "dr": 51,
@@ -4911,8 +4911,8 @@
           "previousKeywords": 3684,
           "top3": 1784,
           "previousTop3": 1689,
-          "top10": null,
-          "previousTop10": null,
+          "top10": 3545,
+          "previousTop10": 3555,
           "value": 26741.68,
           "previousValue": 27164.63,
           "dr": 55,
@@ -4923,7 +4923,56 @@
           "previousPaidKeywords": 150
         }
       ],
-      "actions": []
+      "actions": [
+        {
+          "priority": "P0",
+          "title": "核验品牌首页增长",
+          "body": "Ahrefs 首页估算流量43→468，整站944→1293；使用GSC核对furniwell品牌词点击、展示、CTR和首页排名，避免将品牌流量增长误判为非品牌SEO成果。",
+          "task": "brand-home"
+        },
+        {
+          "priority": "P0",
+          "title": "排查140×70升降桌下降",
+          "body": "产品页63→49，核心词schreibtisch höhenverstellbar 140x70约第6名。核对GSC排名、CTR、搜索量和页面索引；保留原URL，优先改善相关内链。",
+          "task": "size-mapping"
+        },
+        {
+          "priority": "P0",
+          "title": "优化升降桌主Collection",
+          "body": "Desktronic主分类18463→22017，核心词排名第1。检查Furniwell主分类Title/H1、规格筛选、FAQ、商品可用性与内部链接。",
+          "task": "main-collection"
+        },
+        {
+          "priority": "P1",
+          "title": "加强Schreibtischgestell分类",
+          "body": "Desktronic Gestell 2630→2884；强化桌架与桌板、线缆收纳、适配规格及相关产品的双向内链。",
+          "task": "gestell"
+        },
+        {
+          "priority": "P1",
+          "title": "加强办公椅商业分类",
+          "body": "FlexiSpot办公椅7920→9076、Ergotopia5750→6875；优化ergonomischer Bürostuhl/Bürostuhl搜索意图与产品对比。",
+          "task": "chair"
+        },
+        {
+          "priority": "P1",
+          "title": "布局L型桌与理线管理",
+          "body": "FlexiSpot Eckschreibtische1449→2837，Ergotopia Kabelmanagement556→891；评估对应分类、产品与指南内链。",
+          "task": "category"
+        },
+        {
+          "priority": "P1",
+          "title": "评估Gaming Desk规格入口",
+          "body": "Yaasa Gaming Desk345→513，180×80规格页仍有稳定流量；验证Furniwell现有SKU与搜索意图匹配后再建设独立入口。",
+          "task": "gaming"
+        },
+        {
+          "priority": "P2",
+          "title": "异常数据逐词复核",
+          "body": "FlexiSpot首页64119→55890，Ergotopia Top3增加但整体流量下降；分离品牌与非品牌关键词、搜索量估算重算和真实排名变化。",
+          "task": "anomaly"
+        }
+      ]
     }
   ],
   "flexispotSnapshots": [
